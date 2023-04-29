@@ -1,0 +1,406 @@
+.page-template-contact {
+    &.page {
+        overflow: auto;
+    }
+
+    .body-wrapp {
+        padding-top: 145px;
+        overflow: hidden;
+        max-width: 100vw;
+        position: relative;
+
+        @include media-laptop {
+            padding-top: 65px;
+        }
+    }
+
+    .title_basic {
+        transform: none;
+        opacity: 1;
+    }
+
+    footer {
+        opacity: 1;
+    }
+}
+
+.contact-page {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-top: 130px;
+        padding-bottom: 270px;
+
+        @include media-laptop {
+            flex-direction: column;
+            gap: 40px;
+            padding-top: 82px;
+        }
+
+        @include media-tablet {
+            padding-bottom: 0;
+        }
+
+        @include media-mobile {
+            gap: 84px;
+        }
+    }
+
+    &__info {
+        max-width: 400px;
+        width: 100%;
+
+        @include media-laptop {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 1.25;
+
+        @include media-mobile {
+            font-size: 32px;
+            line-height: 1.18;
+            margin-bottom: 26px;
+        }
+    }
+
+    &__text {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.6;
+
+        @include media-mobile {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+    &__columns {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-top: 60px;
+
+        @include media-laptop {
+            justify-content: start;
+            gap: 50px;
+            padding-top: 42px;
+        }
+
+        @include media-mobile {
+           gap: 40px;
+        }
+    }
+
+    .contact-item {
+        &__title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1.2;
+            color: #fff;
+            margin-bottom: 30px;
+
+            @include media-mobile {
+                font-size: 16px;
+                line-height: 1.25;
+                margin-bottom: 15px;
+            }
+        }
+
+        &__item {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.25;
+            color: $color-hover;
+            margin-bottom: 10px;
+            display: block;
+
+            @include media-mobile {
+                font-size: 12px;
+                line-height: 1.25;
+                margin-bottom: 5px;
+            }
+        }
+
+        a {
+            transition: color 0.3s;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    &__form {
+        max-width: 59.1%;
+        width: 100%;
+        padding: 80px 100px;
+        border: 1px solid $color-border-second;
+        margin-top: 10px;
+        position: relative;
+        z-index: 10;
+        background-color: $color-form-bg;
+
+        @include media-1440 {
+            max-width: 55%;
+            padding: 40px 50px;
+        }
+
+        @include media-laptop {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        @include media-mobile {
+            padding: 40px 15px;
+        }
+
+        input, textarea, input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+            border-radius: 0;
+            width: 100%;
+            padding: 10px 10px 10px 0;
+            border-bottom: 1px solid $color-border-second;
+            margin-bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.25;
+            color: #fff;
+            background-color: transparent;
+            transition: border-color 0.3s;
+
+            @include media-mobile {
+                font-size: 12px;
+                line-height: 1.25;
+                margin-bottom: 14px;
+            }
+
+            ::placeholder {
+                color: $color-border-second;
+                text-transform: uppercase;
+            }
+
+            &:hover {
+                border-color: #fff;
+            }
+
+            &:focus {
+                border-color: $color-main;
+            }
+
+        }
+
+        textarea {
+            max-height: 100px;
+
+            @include media-mobile {
+                max-height: 70px;
+            }
+        }
+
+        input[type="submit"] {
+            padding: 22px;
+            border: solid 1px $color-border-second;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.25;
+            letter-spacing: 0.05em;
+            text-align: center;
+            margin-bottom: -8px;
+            transition: border-color 0.3s, background-color 0.3s;
+
+            &:hover {
+                border-color: $color-main;
+            }
+
+            &:active {
+                background-color: $color-main;
+                color: $main-color-bg;
+            }
+        }
+
+        .wpcf7-spinner {
+            position: absolute;
+        }
+
+        .privacy {
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: $color-border-second;
+            margin-bottom: 65px;
+
+            @include media-mobile {
+                line-height: 1.5;
+                padding-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            a {
+                color: $color-hover;
+                transition: color 0.3s;
+
+                @include media-mobile {
+                    display: inline-block;
+                }
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+
+        .invalid {
+            .wpcf7-response-output, .wpcf7-not-valid-tip {
+                color: $color-red;
+                @include media-tablet {
+                    font-size: 12px;
+                }
+            }
+            .wpcf7-response-output {
+                text-align: center;
+            }
+        }
+
+        .wpcf7-not-valid-tip {
+            @include media-tablet {
+            font-size: 12px;
+            }
+        }
+
+        .wpcf7-response-output {
+            border: none!important;
+            color: $color-main;
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+
+    &__form-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 58px;
+
+        @include media-mobile {
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+    }
+
+    .pin {
+        width: 300px;
+        height: 300px;
+        top: 37%!important;
+        left: 12% !important;
+
+        @include media-laptop {
+           display: none;
+        }
+    }
+
+    .pin__ellipse-big, .pin__ellipse-small {
+        animation: size-pin-contact 3s linear alternate-reverse infinite;
+    }
+
+    .pin__ellipse-small {
+        animation: size-pin-2-contact 2s linear alternate-reverse infinite;
+    }
+
+    &__map-main {
+        padding: 100px 0;
+        //margin-top: -600px;
+        position: absolute;
+        top: 450px;
+
+        @include media-1440 {
+            //margin-top: -450px;
+            top: 500px;
+        }
+
+        @include media-tablet {
+            margin-top: -610px;
+            position: static;
+        }
+    }
+
+    &__map {
+        width: 100vw;
+        position: relative;
+
+        @include media-laptop {
+            height: 50vh;
+        }
+
+        @include media-tablet {
+            height: 660px;
+        }
+
+        &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include media-mobile {
+                object-fit: cover;
+            }
+        }
+
+        .map-desktop {
+            @include media-tablet {
+                display: none;
+            }
+        }
+
+        .map-mobile {
+            display: none;
+
+            @include media-tablet {
+                display: block;
+            }
+        }
+
+        .pin__icon {
+            width: 60px;
+            height: 60px;
+
+            .pin-bato {
+                width: 25px;
+            }
+        }
+    }
+}
+
+@keyframes size-pin-2-contact {
+    0% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+@keyframes size-pin-contact {
+    0% {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+

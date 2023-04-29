@@ -1,0 +1,99 @@
+//section-privacy
+.section-privacy {
+  &__wrapper {
+    padding: 100px 0;
+
+    @include media-mobile {
+      padding: 50px 0;
+    }
+  }
+
+  &__subtitle {
+    @include font-subtitle;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    opacity: 1;
+    transform: none;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: $color-text;
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    a {
+      transition: color 0.3s;
+      &:hover {
+        color: $color-main;
+      }
+    }
+
+    ul, ol {
+      color: $color-main;
+      margin-bottom: 15px;
+      padding-left: 20px;
+
+      li {
+        list-style: disc;
+        padding: 0 5px 5px;
+        color: $color-text;
+
+        &::marker {
+          color: $color-main;
+        }
+      }
+    }
+
+    ol {
+      li {
+        list-style: decimal;
+      }
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: $color-main;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: $color-main;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: $color-main;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: $color-main;
+    }
+
+    h5, h6 {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: $color-main;
+    }
+  }
+}
+
+body.privacy-policy {
+  overflow: visible;
+  padding: 120px 0 0 0;
+
+  footer {
+    opacity: 1;
+  }
+}
+

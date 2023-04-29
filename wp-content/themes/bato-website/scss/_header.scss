@@ -1,0 +1,218 @@
+.header {
+    padding: 45px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+    //box-shadow: 0 10px 40px rgba(0, 158, 212, 0.1);
+    background: rgba(6, 12, 13, 0.7);
+
+    @include media-laptop {
+        padding: 25px 0;
+        background: rgba(255, 255, 255, 0.01);
+        border-bottom: 1px solid transparent;
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        max-width: 120px;
+        width: 100%;
+
+        @include media-mobile  {
+            max-width: 100px;
+        }
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    &__navigation {
+        // transition: transform 1s;
+        transition: transform 1s cubic-bezier(.74,-0.02,.24,1.01);
+        will-change: transform;
+
+        @include media-laptop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100vh;
+            padding: 25px;
+            transform: translateY(-100%);
+        }
+
+        @include media-mobile {
+            padding: 15px;
+        }
+
+        .menu-header-menu-container {
+
+            @include media-laptop {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .header-menu {
+            display: flex;
+            flex-wrap: wrap;
+
+            @include media-laptop {
+                flex-direction: column;
+            }
+
+            @include montserrat;
+            font-weight: 500;
+
+            .menu-item {
+                margin-left: 65px;
+                @include font-nav;
+
+                @include media-laptop {
+                    margin-left: 0;
+                    text-align: center;
+                    margin-bottom: 40px;
+                }
+    
+                a {
+                    color: $color-nav;
+                    display: flex;
+
+                    @include media-laptop {
+                        display: block;
+                    }
+
+                    &[aria-current="page"] {
+                        color: $color-hover;
+                        .wave-item, .wave-item-clone {
+                            border-bottom: 1px solid $color-hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navigation-bar {
+        display: none;
+
+        .logo {
+            visibility: hidden;
+        }
+        
+        @include media-laptop {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 16px;
+            left: 25px;
+            right: 25px;
+        }
+
+        @include media-mobile {
+            left: 15px;
+            right: 15px;
+        }
+
+        span {
+
+            @include media-laptop {
+                @include montserrat;
+                display: inline-block;
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 12px;
+                letter-spacing: 0.05em;
+                margin-right: 5px;
+                text-transform: uppercase;
+            }
+        }
+
+        .navigation-icon-close {
+
+            @include media-laptop {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    .navigation-icon {
+        display: none;
+
+        @include media-laptop {
+            display: block;
+        }
+    }
+
+    .open-menu {
+        transform: translateY(0);
+    }
+}
+
+.open-header-menu {
+    .navigation-icon {
+        @include media-laptop {
+            visibility: hidden;
+        }
+    }
+
+    @include media-laptop {
+        height: 100vh;
+        backdrop-filter: blur(75px);
+        -webkit-backdrop-filter: blur(75px);
+    }
+}
+
+.header-mobile-border {
+    @include media-laptop {
+        border-color: #333333;
+    }
+}
+
+.home {
+    .header {
+        position: absolute;
+        transition: opacity 1s linear;
+
+        &.header-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transform: translateY(0);
+            animation: visibleHeader 0.3s linear forwards;
+        }
+    }
+}
+
+@keyframes visibleHeader {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

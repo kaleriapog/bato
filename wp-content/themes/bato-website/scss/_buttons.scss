@@ -1,0 +1,27 @@
+// buttons style
+
+.button-default {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding: 5px 32px 5px 0;
+    overflow: hidden;
+
+    &__link {
+        @include font-button-default;
+        text-align: center;
+        position: relative;
+    }
+}
+
+.button-big-color {
+    padding: 5px 48px 5px 0;
+
+    &__link {
+        font-size: 32px;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.3;
+        color: $color-hover;
+        font-weight: 400;
+    }
+}
