@@ -1382,10 +1382,10 @@
     @include media-laptop {
       display: flex;
       gap: 40px;
-      overflow-x: scroll;
+      overflow: scroll;
       width: 100vw;
       margin: 0 -15px 15px;
-      padding: 0 15px 10px;
+      padding: 0 15px 30px;
     }
 
     @include media-mobile {
@@ -1411,8 +1411,12 @@
 
     @include media-laptop {
       flex: 1 0 auto;
-      max-width: 450px;
+      max-width: 70vw;
       margin: unset;
+    }
+
+    @include media-mobile {
+      max-width: 450px;
     }
 
     @include media-height-500 {

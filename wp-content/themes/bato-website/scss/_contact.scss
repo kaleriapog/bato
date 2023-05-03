@@ -29,8 +29,8 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    padding-top: 130px;
-    padding-bottom: 220px;
+    padding-top: 135px;
+    padding-bottom: 275px;
 
     @include media-1440 {
       padding-bottom: 350px;
@@ -39,7 +39,7 @@
     @include media-laptop {
       flex-direction: column;
       gap: 40px;
-      padding: 82px 0 200px;
+      padding: 90px 0 200px;
     }
 
     @include media-tablet {
@@ -47,7 +47,7 @@
     }
 
     @include media-mobile {
-      gap: 84px;
+      gap: 95px;
     }
   }
 
@@ -202,7 +202,7 @@
       width: 100%;
       padding: 10px 10px 10px 0;
       border-bottom: 1px solid $color-border-second;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       font-family: "Montserrat", sans-serif;
       font-size: 16px;
       font-weight: 500;
@@ -271,6 +271,7 @@
       line-height: 1.6;
       color: $color-border-second;
       margin-bottom: 65px;
+      padding-top: 20px;
 
       @include media-mobile {
         line-height: 1.5;
@@ -337,7 +338,7 @@
   .pin {
     width: 300px;
     height: 300px;
-    top: 37% !important;
+    top: 24% !important;
     left: 12% !important;
 
     @include media-laptop {
@@ -358,7 +359,7 @@
     padding: 100px 0;
     //margin-top: -600px;
     position: absolute;
-    top: 450px;
+    top: 485px;
 
     @include media-1440 {
       //margin-top: -450px;
@@ -369,15 +370,19 @@
       margin-top: -610px;
       position: static;
     }
+
+    @include media-mobile {
+      padding-bottom: 55px;
+    }
   }
 
   &__map {
     width: 100vw;
-    height: 800px;
+    height: 630px;
     position: relative;
 
     @include media-laptop {
-      height: 660px;
+      height: 740px;
     }
 
     @include media-tablet {
@@ -385,7 +390,7 @@
     }
 
     @include media-mobile {
-      height: 660px;
+      height: 605px;
     }
 
     & > img {
@@ -445,7 +450,15 @@
 
 .wpcf7-form-control-wrap {
   display: block;
-  //margin-bottom: 50px;
+  margin-bottom: 20px;
+
+  @include media-mobile {
+    margin-bottom: 0;
+  }
+
+  & ~ br {
+    display: none;
+  }
 }
 
 .wpcf7-not-valid-tip {
