@@ -22,7 +22,7 @@ export default function sectionOurValues(el) {
     // animation track for items
     timelineSectionOurValues.fromTo(
       [".section-our-values__items-list"],
-      { transform: "translateY(40%)" },
+      { transform: `translateY(20vh)` },
       { transform: "translateY(-70%)", ease: Linear.easeNone }
     );
 

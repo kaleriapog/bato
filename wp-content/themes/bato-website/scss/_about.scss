@@ -702,6 +702,10 @@
 
       .pin-bato {
         width: 10px;
+
+        @include media-mobile {
+          width: 7px;
+        }
       }
 
       &__ellipse-small, &__ellipse-big {
@@ -717,6 +721,16 @@
     .pin-fr {
       top: calc(42%);
       left: calc(9.5%);
+
+      @include media-mobile {
+        top: calc(41%);
+        left: calc(6.5%);
+      }
+
+      @include media-mobile-500 {
+        top: calc(41%);
+        left: calc(6.5%);
+      }
     }
 
     .pin-kh {
@@ -734,8 +748,18 @@
       }
 
       @include media-mobile {
-        top: 31%;
-        right: 3%;
+        top: 36%;
+        right: 7%;
+      }
+
+      @include media-mobile-500 {
+        top: 34%;
+        right: 5%;
+      }
+
+      @include media-mobile-380 {
+        top: 32%;
+        right: 4%;
       }
     }
   }

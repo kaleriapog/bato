@@ -91,6 +91,12 @@ $mediaHeight-500: 500px;
   }
 }
 
+@mixin media-mobile-380 {
+  @media (max-width: 380px) {
+    @content;
+  }
+}
+
 @mixin media-mobile-small {
   @media (max-width: $mediaWidthMobileSmall) {
     @content;
