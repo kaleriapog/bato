@@ -7,10 +7,10 @@
     overflow-x: hidden;
   }
 
-  .title {
-    transform: none;
-    opacity: 1;
-  }
+  // .title {
+  //   transform: none;
+  //   opacity: 1;
+  // }
 
   .body-wrapp {
     padding-top: 145px;
@@ -46,6 +46,8 @@
     font-size: 20px;
     font-weight: 300;
     line-height: 1.6;
+    opacity: 0;
+    animation: main_animation_title 1.5s ease forwards 1s;
 
     @include media-mobile {
       font-size: 16px;
@@ -59,10 +61,17 @@
 }
 
 .section-projects {
-  padding: 15px 0 40px;
+  padding: 15px 0 140px;
 
   @include media-mobile {
-    padding: 15px 0 100px;
+    padding: 15px 0 50px;
+  }
+
+  &.animation {
+    .section-projects__item {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   &__list {
@@ -83,6 +92,9 @@
 
   &__item {
     width: calc(50% - 25px);
+    opacity: 0;
+    transform: translateY(30%);
+    transition: opacity 1.5s, transform 1.5s;
 
     @include media-width-small {
       width: 100%;
@@ -129,6 +141,7 @@
 
         .section-projects__item-image img {
           transform: scale(1.1);
+          filter: grayscale(1);
         }
       }
     }
@@ -161,7 +174,7 @@
       }
 
       img {
-        transition: transform 0.5s ease;
+        transition: transform 0.5s ease, filter 0.5s ease;
         object-fit: cover;
       }
     }
@@ -282,6 +295,52 @@
     align-items: center;
     justify-content: center;
 
+    @include media-laptop {
+      padding-top: 100px;
+      margin-top: 0;
+      height: auto;
+    }
+
+    @include media-tablet {
+      padding-bottom: 100px;
+    }
+
+    @include media-mobile {
+      height: auto;
+      padding: 50px 0;
+    }
+
+    @include media-mobile-horizontal {
+      margin-bottom: 50px;
+      height: auto;
+    }
+
+    @include media-height-500 {
+      height: auto;
+    }
+
+    &.animation {
+      .section-projects-reviews__text {
+        will-change: transform, opacity;
+        transform: translate3d(0px, 2em, 0px) scale3d(1, 1, 1) rotateX(0deg)
+          rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+        transform-style: preserve-3d;
+        animation: main_animation 1.5s ease 0.7s forwards;
+      }
+
+      .section-projects-reviews__rating {
+        opacity: 1;
+
+        @include media-height-600 {
+          display: none;
+        }
+      }
+
+      .reviews-items {
+        opacity: 1;
+      }
+    }
+
     @include media-mobile {
       height: auto;
     }
@@ -309,6 +368,7 @@
       line-height: 1.6;
       font-size: 20px;
       text-align: center;
+      opacity: 0;
 
       @include media-height-800 {
         font-size: 16px;
@@ -332,6 +392,8 @@
       justify-content: center;
       gap: 10px;
       margin-bottom: 38px;
+      opacity: 0;
+      transition: opacity 0.7s ease 1s;
     }
 
     &__rating-inner {
@@ -345,13 +407,54 @@
       background-clip: text;
     }
 
+    .reviews-items {
+      opacity: 0;
+      transition: opacity 0.7s ease 1s;
+      position: relative;
+    }
+
+    .reviews-items-light {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(
+        49.41% 49.24% at 35.41% 46.21%,
+        #00ffff 53.18%,
+        rgba(0, 158, 212, 0.5) 100%
+      );
+      filter: blur(125px);
+      top: 20px;
+      right: 180px;
+      transform: translate(-50%, -50%);
+      opacity: 0.6;
+
+      @include media-laptop {
+        right: -43vw;
+      }
+    }
+
     &__items {
       position: relative;
 
       @include media-height-500 {
         display: flex;
         gap: 30px;
-        overflow: scroll;
+        overflow-x: scroll;
+        margin: 0 -15px 15px;
+        padding: 0 15px 10px;
+      }
+
+      @include media-laptop {
+        display: flex;
+        gap: 40px;
+        overflow-x: scroll;
+        width: 100vw;
+        margin: 0 -15px 15px;
+        padding: 0 15px 10px;
+      }
+
+      @include media-mobile {
+        gap: 20px;
       }
     }
 
@@ -361,9 +464,9 @@
       margin: auto;
       padding: 1px;
       background: linear-gradient(
-                      180deg,
-                      #b9b9b9 0%,
-                      rgba(102, 102, 102, 0) 100%
+        180deg,
+        #b9b9b9 0%,
+        rgba(102, 102, 102, 0) 100%
       );
       position: relative;
 
@@ -371,8 +474,15 @@
         max-width: 750px;
       }
 
+      @include media-laptop {
+        flex: 1 0 auto;
+        max-width: 450px;
+        margin: unset;
+      }
+
       @include media-height-500 {
         min-width: 400px;
+        margin: unset;
       }
 
       &:not(:first-child) {
@@ -389,6 +499,12 @@
           //top: 0;
           transform: translateY(0);
         }
+
+        @include media-laptop {
+          position: relative;
+          //top: 0;
+          transform: translateY(0);
+        }
       }
 
       .reviews-item-bg {
@@ -398,9 +514,9 @@
         right: 0;
         bottom: 0;
         background: linear-gradient(
-                        180deg,
-                        #06ffff 0%,
-                        rgba(6, 255, 255, 0) 133.17%
+          180deg,
+          #06ffff 0%,
+          rgba(6, 255, 255, 0) 133.17%
         );
       }
 
@@ -436,6 +552,14 @@
           padding: 20px;
         }
 
+        @include media-height-600 {
+          height: 100%;
+        }
+
+        @include media-laptop {
+          height: 100%;
+        }
+
         @include media-mobile {
           padding: 25px 15px;
         }
@@ -447,7 +571,11 @@
         margin: 0 auto 30px;
         max-width: 560px;
         width: 100%;
-        font-size: 20px;
+        max-height: 150px;
+        min-height: 120px;
+        overflow-y: auto;
+        font-size: 16px;
+        padding-right: 4px;
         font-weight: 300;
         line-height: 1.4;
         text-align: center;
@@ -511,13 +639,24 @@
   }
 
   .title {
-    transform: none;
-    opacity: 1;
-    margin: 0;
+    margin-bottom: 0;
 
     @include media-mobile {
       font-size: 32px;
     }
+  }
+
+  &.animation {
+    .button-default {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .button-default {
+    transform: translateY(-10%);
+    opacity: 0;
+    transition: opacity 0.7s ease 1s, transform 0.7s ease 1s;
   }
 
   .button-default__link {

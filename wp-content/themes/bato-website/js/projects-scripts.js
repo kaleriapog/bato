@@ -1,31 +1,38 @@
 import sectionAboutReviews from "./modules/sectionAboutReviews.js";
-import mobileMenu from './modules/mobileMenu.js';
-import preloader from './modules/preloader.js';
-import animationWave from './modules/animationWave.js';
-import cookies from "./modules/cookies.js";
+import preloader from "./modules/preloader.js";
+import animationSections from "./modules/animationSections.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const page = document.querySelector(".page");
-    const sectionAReviews = document.querySelector(".section-projects-reviews");
+  const sectionAReviews = document.querySelector(".section-projects-reviews");
+  const sections = document.querySelectorAll(".section");
 
-    // for video for Mozilla Firefox, Safari
-    if (
-        navigator.userAgent.indexOf("Safari") != -1 &&
-        navigator.userAgent.indexOf("Chrome") === -1
-    ) {
-        page.classList.add("body-safari");
-    } else if (navigator.userAgent.indexOf("Firefox") != -1) {
-        page.classList.add("body-firefox");
-    }
+  const target = document.querySelector(".section-projects");
 
-    const menuMainItems = document.querySelectorAll('.header-menu .menu-item a');
-    const socialMedia = document.querySelectorAll('.social-media .menu-item a');
-    const cookiesBlock = document.querySelector('.block-cookies')
+  const observerOptions = {
+    root: null,
+    rootMargin: "200px",
+    threshold: 0.2,
+  };
 
-    mobileMenu();
-    preloader();
-    animationWave(menuMainItems);
-    animationWave(socialMedia);
-    cookies(cookiesBlock)
-    sectionAboutReviews(sectionAReviews);
+  let observer = new IntersectionObserver(observerCallback, observerOptions);
+  function observerCallback(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animation");
+      }
+    });
+  }
+
+  observer.observe(target);
+
+  animationSections(sections);
+  preloader();
+
+  sectionAboutReviews(sectionAReviews);
+
+  // window.addEventListener("resize", () => {
+  //   if (window.innerWidth <= 1024 || window.innerHeight <= 500) {
+  //     location.reload();
+  //   }
+  // });
 });

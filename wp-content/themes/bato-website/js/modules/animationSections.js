@@ -1,10 +1,10 @@
-export default function animationSections(sections) {
+export default function animationSections(sections, thresholdCustom = 0.3) {
   if (!sections) return;
 
   const observerOptions = {
     root: null,
-    rootMargin: "100px",
-    threshold: 0.1,
+    rootMargin: "0px",
+    threshold: thresholdCustom,
   };
 
   let observer = new IntersectionObserver(observerCallback, observerOptions);

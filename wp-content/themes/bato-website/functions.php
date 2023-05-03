@@ -252,6 +252,8 @@ function scripts_bato()
 {
 
     wp_enqueue_script('connection_scripts_jquery', 'https://code.jquery.com/jquery-3.6.0.js');
+    wp_enqueue_script('connection_scripts_main',  get_template_directory_uri() . '/js/main.js');
+
     if (!is_admin()) {
         wp_deregister_script('connection_scripts_jquery');
     }
@@ -270,10 +272,10 @@ function scripts_bato()
 
     if ($template_slug === 'about.php') {
         wp_enqueue_script('connection_script_splide', get_template_directory_uri() . '/js/splide.min.js');
-//        wp_enqueue_script('connection_script_tweenLite', get_template_directory_uri() . '/js/TweenLite.min.js');
-//        wp_enqueue_script('connection_script_tweenMax', get_template_directory_uri() . '/js/TweenMax.min.js');
+        //        wp_enqueue_script('connection_script_tweenLite', get_template_directory_uri() . '/js/TweenLite.min.js');
+        //        wp_enqueue_script('connection_script_tweenMax', get_template_directory_uri() . '/js/TweenMax.min.js');
         wp_enqueue_script('connection_script_splide-extension-grid', get_template_directory_uri() . '/js/splide-extension-grid.min.js');
-       // wp_enqueue_script('connection_script_splide_auto_scroll', get_template_directory_uri() . '/js/splide-extension-auto-scroll.min.js');
+        // wp_enqueue_script('connection_script_splide_auto_scroll', get_template_directory_uri() . '/js/splide-extension-auto-scroll.min.js');
         wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js');
         wp_enqueue_script('connection_script_scroll-magic', get_template_directory_uri() . '/js/ScrollMagic.min.js');
         wp_enqueue_script('connection_script_scroll-magic_debug', get_template_directory_uri() . '/js/debug.addIndicators.min.js');
@@ -290,9 +292,8 @@ function scripts_bato()
 
     if ($template_slug === 'contact.php') {
         wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/contact-scripts.js');
-
     }
-    
+
     if ($template_slug === 'projects.php') {
         wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js');
         wp_enqueue_script('connection_script_scroll-magic', get_template_directory_uri() . '/js/ScrollMagic.min.js');
@@ -394,7 +395,7 @@ add_filter('script_loader_tag', 'add_type_attribute', 10, 3);
 function add_type_attribute($tag, $handle, $src)
 {
     // if not your script, do nothing and return original $tag
-    if ('connection_scripts-module' !== $handle) {
+    if ('connection_scripts-module' !== $handle && 'connection_scripts_main' !== $handle) {
         return $tag;
     }
     // change the script tag by adding type="module" and return it.

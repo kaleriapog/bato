@@ -7,13 +7,13 @@ $color-nav: #cdcdcd;
 $color-hover: #06ffff;
 $color-white: #ffffff;
 $color-text: #bbbbbb;
-$color-main: #00FFFF;
+$color-main: #00ffff;
 $color-red: #ff5349;
 $color-form-bg: #050506;
 
 $color-item: #cdcdcd;
 
-$color-border: #A7A7AD;
+$color-border: #a7a7ad;
 $color-border-second: #666666;
 $color-border-button: #999999;
 
@@ -22,8 +22,9 @@ $color-grey: #222;
 
 //transition
 %sectionAboutHqMap {
-    transition: all 2s;
+  transition: all 2s;
 }
+
 // mixin for media width
 $mediaWidthMobileSmall-360: 360px;
 $mediaWidthMobileSmall: 320px;
@@ -43,442 +44,465 @@ $mediaHeight-600: 600px;
 $mediaHeight-500: 500px;
 
 @mixin media-tablet {
-    @media (max-width: $mediaWidthTablet) {
-        @content;
-    }
+  @media (max-width: $mediaWidthTablet) {
+    @content;
+  }
 }
 
 @mixin media-tablet-horizontal {
-    @media (max-height: $mediaWidthTabletHorizontal) {
-        @content;
-    }
+  @media (max-height: $mediaWidthTabletHorizontal) {
+    @content;
+  }
 }
 
 @mixin media-tablet-large {
-    @media (max-width: $mediaWidthTabletLarge) {
-        @content;
-    }
+  @media (max-width: $mediaWidthTabletLarge) {
+    @content;
+  }
 }
 
 @mixin media-laptop {
-    @media (max-width: $mediaWidthLaptop) {
-        @content;
-    }
+  @media (max-width: $mediaWidthLaptop) {
+    @content;
+  }
 }
 
 @mixin media-laptop-horizontal {
-    @media (max-height: $mediaWidthLaptop) and (max-width: $mediaWidthLaptop) and (orientation: landscape) {
-        @content;
-    }
+  @media (max-height: $mediaWidthLaptop) and (max-width: $mediaWidthLaptop) and (orientation: landscape) {
+    @content;
+  }
 }
 
 @mixin media-mobile {
-    @media (max-width: $mediaWidthMobile) {
-        @content;
-    }
+  @media (max-width: $mediaWidthMobile) {
+    @content;
+  }
 }
 
 @mixin media-mobile-regular {
-    @media (max-width: $mediaWidthMobileRegular) {
-        @content;
-    }
+  @media (max-width: $mediaWidthMobileRegular) {
+    @content;
+  }
 }
 
 @mixin media-mobile-500 {
-    @media (max-width: $mediaWidthMobile-500) {
-        @content;
-    }
+  @media (max-width: $mediaWidthMobile-500) {
+    @content;
+  }
 }
 
 @mixin media-mobile-small {
-    @media (max-width: $mediaWidthMobileSmall) {
-        @content;
-    }
+  @media (max-width: $mediaWidthMobileSmall) {
+    @content;
+  }
 }
 
 @mixin media-width-small {
-    @media (max-width: $mediaWidthSmall) {
-        @content;
-    }
+  @media (max-width: $mediaWidthSmall) {
+    @content;
+  }
 }
 
 @mixin media-mobile-small-360 {
-    @media (max-width: $mediaWidthMobileSmall-360) {
-        @content;
-    }
+  @media (max-width: $mediaWidthMobileSmall-360) {
+    @content;
+  }
 }
 
 @mixin media-mobile-and-height-750 {
-    @media (max-width: $mediaWidthMobile) and (max-height: 750px) {
-        @content;
-    }
+  @media (max-width: $mediaWidthMobile) and (max-height: 750px) {
+    @content;
+  }
 }
 
 @mixin media-1366 {
-    @media (max-width: $mediaWidth-1366) {
-        @content;
-    }
+  @media (max-width: $mediaWidth-1366) {
+    @content;
+  }
 }
 
 @mixin media-1440 {
-    @media (max-width: $mediaWidth-1440) {
-        @content;
-    }
+  @media (max-width: $mediaWidth-1440) {
+    @content;
+  }
 }
 
 @mixin media-955 {
-    @media (max-width: 955px) {
-        @content;
-    }
+  @media (max-width: 955px) {
+    @content;
+  }
 }
 
 @mixin media-mobile-horizontal {
-    @media (max-height: $mediaWidthMobile) and (max-width: $mediaWidthTablet) and (orientation: landscape) {
-        @content;
-    }
+  @media (max-height: $mediaWidthMobile) and (max-width: $mediaWidthTablet) and (orientation: landscape) {
+    @content;
+  }
 }
 
 @mixin media-portrait {
-    @media (orientation: portrait) {
-        @content;
-    }
+  @media (orientation: portrait) {
+    @content;
+  }
 }
 
 @mixin media-height-1000 {
-    @media (max-height: 1000px) {
-        @content;
-    }
+  @media (max-height: 1000px) {
+    @content;
+  }
 }
 
 @mixin media-height-800 {
-    @media (max-height: $mediaHeight-800) {
-        @content;
-    }
+  @media (max-height: $mediaHeight-800) {
+    @content;
+  }
 }
 
 @mixin media-height-820 {
-    @media (max-height: $mediaHeight-820) {
-        @content;
-    }
+  @media (max-height: $mediaHeight-820) {
+    @content;
+  }
 }
 
 @mixin media-height-min-820 {
-    @media (min-height: $mediaHeight-820) {
-        @content;
-    }
+  @media (min-height: $mediaHeight-820) {
+    @content;
+  }
 }
 
 @mixin media-height-600 {
-    @media (max-height: $mediaHeight-600) {
-        @content;
-    }
+  @media (max-height: $mediaHeight-600) {
+    @content;
+  }
 }
 
 @mixin media-height-680 {
-    @media (max-height: 680px) {
-        @content;
-    }
+  @media (max-height: 680px) {
+    @content;
+  }
 }
 
 @mixin media-height-500 {
-    @media (max-height: $mediaHeight-500) {
-        @content;
-    }
+  @media (max-height: $mediaHeight-500) {
+    @content;
+  }
+}
+
+@mixin media-height-780 {
+  @media (max-height: 780px) {
+    @content;
+  }
+}
+
+@mixin media-width-1600 {
+  @media (max-width: 1600px) {
+    @content;
+  }
 }
 
 // transition timing
-$main-transition-timing: cubic-bezier(.22,.17,0,.98);
+$main-transition-timing: cubic-bezier(0.22, 0.17, 0, 0.98);
 
 // blur on card
 @mixin blur-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(100px);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(100px);
 }
 
 // fonts
 @mixin krona-one {
-    font-family: 'Krona One', sans-serif;
+  font-family: "Krona One", sans-serif;
 }
 
 @mixin poppins {
-    font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 @mixin montserrat {
-    font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 @mixin oswald {
-    font-family: 'Oswald';
+  font-family: "Oswald";
 }
 
 // section size colors
 .main-size {
-    max-width: 1440px;
-    width: 100%;
-    padding: 0 20px;
-    margin: auto;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 20px;
+  margin: auto;
 
-    @media (min-width: 1366px) and (max-width: 1440px) {
-        padding: 0 75px;
-    }
+  @media (min-width: 1366px) and (max-width: 1440px) {
+    padding: 0 75px;
+  }
 
-    @include media-laptop {
-        padding: 0 25px;
-    }
+  @include media-laptop {
+    padding: 0 25px;
+  }
 
-    @include media-mobile {
-        padding: 0 15px;
-    }
+  @include media-mobile {
+    padding: 0 15px;
+  }
 }
 
 @mixin card-icon-services {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 140px;
-    max-height: 140px;
-    transition: all 0.3s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 140px;
+  max-height: 140px;
+  transition: all 0.3s;
 }
 
 @mixin card-text-second {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.3;
-    text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
 
-    @include montserrat;
-    @include media-mobile {
-        text-transform: uppercase;
-        font-size: 12px;
-        letter-spacing: 0.05em;
-    }
+  @include montserrat;
+  @include media-mobile {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
 }
 
 @mixin font-nav {
-    font-size: 16px;
-    line-height: 1.25;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 
-    @include media-mobile {
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 20px;
-        letter-spacing: 0em;
-    }
+  @include media-mobile {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+  }
 }
 
 @mixin font-social-media {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.25;
-    text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-transform: uppercase;
 
-    @include montserrat;
+  @include montserrat;
 }
 
 @mixin font-subtitle {
-    font-size: 24px;
-    line-height: 1.4;
-    font-weight: 300;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 300;
 
-    @include poppins;
+  @include poppins;
 }
 
 @mixin font-text {
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 1.6;
-    color: $color-text;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: $color-text;
 
-    @include media-mobile() {
-        font-size: 16px;
-        line-height: 24px;
-    }
+  @include media-mobile() {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 @mixin font-button-default {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.25;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 
-    @include montserrat;
+  @include montserrat;
 }
 
 @mixin font-slider {
-    font-size: 80px;
-    font-weight: 800;
-    line-height: 1.5;
-    @include poppins;
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 1.5;
+  @include poppins;
 
-    @include media-laptop {
-        font-size: 60px;
-    }
+  @include media-laptop {
+    font-size: 60px;
+  }
 
-    @include media-mobile {
-        font-size: 32px;
-    }
+  @include media-mobile {
+    font-size: 32px;
+  }
 }
 
 @mixin font-slider-hover {
-    background: linear-gradient(141.8deg, #00FFFF 14.44%, #01C4E5 86.47%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-text-stroke: 0 $color-item;
+  background: linear-gradient(141.8deg, #00ffff 14.44%, #01c4e5 86.47%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 0 $color-item;
 }
 
 @mixin card-number {
-    background: -webkit-linear-gradient(141.8deg, #00FFFF 14.44%, #01C4E5 86.47%);
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 4px transparent;
-    color: $main-color-bg;
-    font-size: 80px;
-    font-weight: 400;
-    line-height: 1.25;
-    text-align: center;
-    @include krona-one;
+  background: -webkit-linear-gradient(141.8deg, #00ffff 14.44%, #01c4e5 86.47%);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  color: $main-color-bg;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  @include krona-one;
 
-    @include media-laptop {
-        font-size: 6vw;
-    }
+  @include media-laptop {
+    font-size: 6vw;
+  }
 
-    @include media-width-small {
-        font-size: 55px;
-    }
+  @include media-width-small {
+    font-size: 55px;
+  }
 }
 
 @mixin card-team-name {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+
+  @include montserrat;
+
+  @include media-width-small {
     font-size: 20px;
-    font-weight: 600;
-    line-height: 24px;
-
-    @include montserrat;
-
-    @include media-width-small {
-        font-size: 20px;
-    }
+  }
 }
 
 @mixin card-team-position {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.25;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    @include montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  @include montserrat;
 
-    @include media-mobile {
-        font-size: 10px;
-    }
+  @include media-mobile {
+    font-size: 10px;
+  }
 }
 
 @mixin font-title-not-found {
-    @include montserrat;
-    font-size: 150px;
-    line-height: 1;
+  @include montserrat;
+  font-size: 150px;
+  line-height: 1;
 
-    @include media-mobile {
-        font-size: 100px;
-    }
+  @include media-mobile {
+    font-size: 100px;
+  }
 }
 
 @mixin font-link-to-home {
-    @include montserrat;
-    font-size: 40px;
-    line-height: 1;
-    text-transform: uppercase;
+  @include montserrat;
+  font-size: 40px;
+  line-height: 1;
+  text-transform: uppercase;
 
-    @include media-mobile {
-        font-size: 30px;
-    }
+  @include media-mobile {
+    font-size: 30px;
+  }
 }
 
 @mixin font-contact {
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 1.3;
-    @include poppins;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.3;
+  @include poppins;
 
-    @include media-mobile {
-        font-size: 18px;
-        line-height: 24px;
-    }
+  @include media-mobile {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 // variables  transition
 @mixin transition-main {
-    transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 // style for hover and active slider
 @mixin mark-slider {
-    display: block;
-    width: 200px;
-    height: 150px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(49.41% 49.24% at 35.41% 46.21%, #00FFFF 53.18%, rgba(0, 158, 212, 0.5) 100%);
-    filter: blur(100px);
-    opacity: 60%;
+  display: block;
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    49.41% 49.24% at 35.41% 46.21%,
+    #00ffff 53.18%,
+    rgba(0, 158, 212, 0.5) 100%
+  );
+  filter: blur(100px);
+  opacity: 60%;
+  transition: all;
 }
 
 // animation
 @keyframes sphere {
-    0% {
-        right: 0%;
-        transform: rotate(0);
-    }
-    100% {
-        right: 25%;
-        transform: rotate(360deg);
-    }
+  0% {
+    right: 0%;
+    transform: rotate(0);
+  }
+  100% {
+    right: 25%;
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes backlight {
-    0% {
-        left: 0%;
-    }
-    100% {
-        left: 25%;
-    }
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 25%;
+  }
 }
 
 // border
 
 @mixin card-border {
-    border: 1px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(180deg, #B9B9B9 0%, rgba(102, 102, 102, 0) 100%);
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    180deg,
+    #b9b9b9 0%,
+    rgba(102, 102, 102, 0) 100%
+  );
 }
 
 // main animation
 @mixin main-animation {
-    opacity: 0;
-    will-change: transform, opacity;
-    transform: translate3d(0px, 3em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
-    transform-style: preserve-3d;
+  opacity: 0;
+  will-change: transform, opacity;
+  transform: translate3d(0px, 3em, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+  transform-style: preserve-3d;
 }
 
 @mixin card_basic_style {
-    transform: translateY(30%);
-    opacity: 0;
+  transform: translateY(30%);
+  opacity: 0;
 }
 
 @mixin main-animation-small {
-    opacity: 0;
-    will-change: transform, opacity;
-    transform: translate3d(0px, 2em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
-    transform-style: preserve-3d;
+  opacity: 0;
+  will-change: transform, opacity;
+  transform: translate3d(0px, 2em, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+  transform-style: preserve-3d;
 }
 
 // margin
@@ -487,82 +511,88 @@ $gap-card: 20px;
 
 // basic style font
 .title_basic {
-    color: $color-white;
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 1.45;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    @include oswald;
+  color: $color-white;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.45;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  @include oswald;
 
-    @include media-laptop {
-        margin-bottom: 30px;
-        font-size: 40px;
-    }
+  @include media-laptop {
+    margin-bottom: 30px;
+    font-size: 40px;
+  }
 
-    @include media-mobile {
-        font-size: 32px;
-        line-height: 38px;
-        margin-bottom: 55px;
-    }
+  @include media-mobile {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 55px;
+  }
 
-    h2 {
-        font-size: inherit;
-        font-weight: inherit;
-    }
+  h2 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
 }
 
 .title-large {
-    font-family: 'Oswald', sans-serif;
-    font-size: 72px;
-    font-weight: 400;
-    line-height: 1.04;
-    text-align: left;
-    color: $color-white;
-    text-transform: uppercase;
-    margin-bottom: 50px;
+  font-family: "Oswald", sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.04;
+  text-align: left;
+  color: $color-white;
+  text-transform: uppercase;
+  margin-bottom: 50px;
 
-    @include media-mobile {
-        font-size: 50px;
-        line-height: 1.05;
-    }
+  @include media-mobile {
+    font-size: 50px;
+    line-height: 1.05;
+  }
 
-    h1, h2 {
-        font-size: inherit;
-        font-weight: inherit;
-    }
+  h1,
+  h2 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
 }
 
 .title {
-    h1, h2, h3, h4, h5, h6 {
-        font-size: inherit;
-        line-height: inherit;
-        color: inherit;
-        font-family: inherit;
-        font-weight: inherit;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+  }
 }
 
 .card-title {
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 1.5;
-    margin-bottom: 40px;
-    @include poppins;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  @include poppins;
 
-    @include media-1366 {
-        font-size: 24px;
-        margin-bottom: 30px;
-    }
+  @include media-1366 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
 }
 
 .card-text {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.75;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
 
-    @include media-mobile {
-        font-size: 14px;
-        line-height: 22px;
-    }
+  @include media-mobile {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
