@@ -310,7 +310,6 @@ add_action('wp_enqueue_scripts', 'style_splide');
 
 function style_splide()
 {
-
     wp_enqueue_style('connection_style', get_template_directory_uri() . '/splide.min.css');
 }
 

@@ -7,8 +7,6 @@ export default function mapAbout(el) {
     const interactiveHeight = el.querySelector('.section-about-hq__interactive-height').offsetHeight
     const offsetH1000 = -((window.innerHeight - interactiveHeight) / 2)
 
-    console.log(offsetH1000)
-
     let sectionAboutHqScene =  new ScrollMagic.Scene({triggerElement: '.section-about-hq__interactive', offset: mediaH1000 ? offsetH1000 : mediaMobile ? offsetH1000 : '0', duration: mediaMobile ? '200%' : '300%', triggerHook: 0 })
         .setPin('.section-about-hq__interactive')
         .setTween(

@@ -456,7 +456,7 @@
       @include media-laptop {
         display: flex;
         gap: 40px;
-        overflow: scroll;
+        overflow-x: scroll;
         width: 100vw;
         margin: 0 -15px 15px;
         padding: 0 15px 30px;

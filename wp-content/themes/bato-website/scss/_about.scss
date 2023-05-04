@@ -264,7 +264,7 @@
   }
 
   .title {
-    padding-bottom: 80px;
+    padding-bottom: 20px;
     margin-bottom: 0;
     width: 100%;
     transition: all 0.3s;
@@ -1278,7 +1278,7 @@
     text-align: center;
 
     @include media-height-800 {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     @include media-mobile {
@@ -1300,11 +1300,8 @@
     text-align: center;
 
     @include media-height-800 {
-      font-size: 16px;
-    }
-
-    @include media-height-600 {
-      margin-bottom: 40px;
+      font-size: 14px;
+      margin-bottom: 20px;
     }
 
     @include media-mobile {
@@ -1330,6 +1327,10 @@
     opacity: 0;
     transition: opacity 0.7s ease 1s;
 
+    @include media-height-800 {
+      margin: 0 auto 20px;
+    }
+
     @include media-height-600 {
       display: none;
     }
@@ -1350,6 +1351,13 @@
     }
 
     img {
+      @include media-height-800 {
+        height: 20px;
+      }
+
+      @include media-mobile {
+        height: 30px;
+      }
       @include media-mobile-and-height-750 {
         max-height: 3.5vh;
       }
@@ -1406,7 +1414,7 @@
     @include media-laptop {
       display: flex;
       gap: 40px;
-      overflow: scroll;
+      overflow-x: scroll;
       width: 100vw;
       margin: 0 -15px 15px;
       padding: 0 15px 30px;
@@ -1430,7 +1438,7 @@
     position: relative;
 
     @include media-height-820 {
-      max-width: 750px;
+      max-width: 850px;
     }
 
     @include media-laptop {
@@ -1495,7 +1503,8 @@
 
       @include media-height-800 {
         margin: 0 auto 20px;
-        max-height: 30px;
+        max-height: 16px;
+        font-size: 60px;
       }
 
       @include media-mobile {
@@ -1551,6 +1560,7 @@
 
     @include media-height-800 {
       font-size: 14px;
+      min-height: 70px;
     }
 
     @include media-mobile {

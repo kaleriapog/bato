@@ -2,10 +2,14 @@ export default function sectionAboutReviews(el) {
   if (!el) return;
 
   const mediaHeightMobileExtraSmall = window.innerHeight <= 500;
+  const mediaHeightSmall = window.innerHeight <= 700;
+
   let controller = new ScrollMagic.Controller();
   const mediaMobile = window.innerWidth <= 767;
   const mediaLaptop = window.innerWidth <= 1030;
   const mediaMobileSmall = window.innerWidth <= 350;
+
+  console.log(window.innerWidth,  window.innerHeight)
 
   if (!mediaHeightMobileExtraSmall) {
     if (!mediaLaptop) {
@@ -56,7 +60,7 @@ export default function sectionAboutReviews(el) {
         triggerElement: el,
         duration: durationReviews,
         triggerHook: "onLeave",
-        offset: mediaLaptop ? 0 : -20,
+        offset: mediaHeightSmall ? -10 : mediaLaptop ? 0 : -20,
       })
         .setPin(el)
         .setTween(timelineSectionAboutReviews)
