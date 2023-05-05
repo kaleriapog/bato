@@ -29,6 +29,13 @@ package-lock.json
 
 /wp-content/themes/bato-website/.idea/
 /wp-content/themes/bato-website/node_modules/
+wp-content/themes/bato-website/node_modules/
+wp-content/themes/bato-website/node_modules/*
+wp-content\themes\bato-website\node_modules\
+wp-content\themes\bato-website\node_modules\*
+\wp-content\themes\bato-website\node_modules\*
+\wp-content\themes\bato-website\node_modules
 /wp-content/uploads/
+/wp-content/plugins/
 /wp-config.php
 
