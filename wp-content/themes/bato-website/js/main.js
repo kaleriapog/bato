@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // }
 
      animationWave(menuMainItems);
-    animationWave(socialMedia);
+     animationWave(socialMedia);
   // if (document.querySelector("body").classList.contains("body-safari")) {
   //   menuMainItems.forEach((item) => {
   //     item.classList.add("animation-no-wave");
@@ -51,26 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if(blocksToScroll) {
-    // let myScroll = new IScroll('#myContainer');
-    // let myScroll = new IScroll('#myContainer', {
-    //   scrollX: true,
-    //   scrollY: false,
-    //   mouseWheel: true,
-    //   scrollbars: true
-    // });
-    //  new IScroll('#myContainer', {
-    //   scrollbars: true,
-    //   scrollX: true,
-    //   scrollY: false,
-    //   mouseWheel: true
-    // });
+    const mediaLaptop = window.innerWidth <= 1024
 
-    let Scrollbar = window.Scrollbar;
+    if(mediaLaptop) {
+      let Scrollbar = window.Scrollbar;
 
-    blocksToScroll.forEach((block) => {
-      Scrollbar.init(block, {
-        alwaysShowTracks: true,
-      });
-    })
+      blocksToScroll.forEach((block) => {
+        Scrollbar.init(block, {
+          alwaysShowTracks: true,
+        });
+      })
+    }
   }
 });

@@ -72,7 +72,6 @@ get_header();
 </div>
 <main id="primary" class="site-main">
 
-
     <?php if (!empty($section_hero)) { ?>
 
         <section class="section-about-hero section">
@@ -97,6 +96,7 @@ get_header();
             </div>
             <div class="section-about-hero__media">
                 <div id="lottie-people-inner" class="lottie-people-inner"></div>
+                <div class="lottie-mask"></div>
             </div>
         </section>
 

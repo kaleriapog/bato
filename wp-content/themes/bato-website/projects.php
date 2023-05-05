@@ -243,7 +243,7 @@ get_header();
 
                         <div class="reviews-items">
 
-                            <ul class="section-projects-reviews__items">
+                            <ul class="section-projects-reviews__items custom-scrollbar">
 
                                 <?php foreach ($projects_reviews['items'] as $key => $item) : ?>
 
@@ -254,7 +254,7 @@ get_header();
 
                                             <?php if (!empty($item['text'])) : ?>
 
-                                                <div class="section-projects-reviews__item-text go-opacity"><?php echo $item['text'] ?></div>
+                                                <div class="section-projects-reviews__item-text custom-scrollbar go-opacity"><?php echo $item['text'] ?></div>
 
                                             <?php endif ?>
 
@@ -309,9 +309,6 @@ get_header();
     <?php endif ?>
 
 </main>
-
-
-
 
 <?php
 

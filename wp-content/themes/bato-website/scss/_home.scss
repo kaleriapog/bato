@@ -230,10 +230,20 @@ html {
     height: 4px;
   }
 
+  .scrollbar-track-y {
+    width: 4px;
+    height: 100%;
+    background-color: darkgrey;
+  }
+
   .scrollbar-thumb {
     background-color: $color-main;
     border-radius: 3px;
     height: 4px;
+  }
+
+  .scrollbar-thumb-y {
+    width: 4px;
   }
 }
 

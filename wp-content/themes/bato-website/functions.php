@@ -252,10 +252,9 @@ function scripts_bato()
 {
 
     wp_enqueue_script('connection_scripts_jquery', 'https://code.jquery.com/jquery-3.6.0.js');
-    wp_enqueue_script('connection_scripts_iscroll',  get_template_directory_uri() . '/js/iscroll.js');
+//    wp_enqueue_script('connection_scripts_iscroll',  get_template_directory_uri() . '/js/iscroll.js');
 //    wp_enqueue_script('connection_scripts_overlayscrollbars',  get_template_directory_uri() . '/js/overlayscrollbars.mjs');
     wp_enqueue_script('connection_scripts_smooth-scrollbar',  get_template_directory_uri() . '/js/smooth-scrollbar.js');
-
     wp_enqueue_script('connection_scripts_main',  get_template_directory_uri() . '/js/main.js');
 
     if (!is_admin()) {
@@ -315,7 +314,7 @@ add_action('wp_enqueue_scripts', 'style_splide');
 function style_splide()
 {
     wp_enqueue_style('connection_style', get_template_directory_uri() . '/splide.min.css');
-    wp_enqueue_style('connection_style', get_template_directory_uri() . '/overlayscrollbars.min.css');
+//    wp_enqueue_style('connection_style', get_template_directory_uri() . '/overlayscrollbars.min.css');
 
 }
 
@@ -341,56 +340,87 @@ remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
 
 /* insert image START */
-function insertImage($file, $class = '', $width = 100, $height = 100, $return = 0)
-{
-
+function insertImage($file, $class = '', $width = 100, $height = 100, $crop = 0, $return = 0) {
     if (!empty($file)) {
-
-        if (!is_array($file)) {
-            $file_url = _IMAGES_ . '/' . $file;
+        if(!is_array($file)) {
+            $url = parse_url($file);
+            if (!empty($url['scheme'])) {
+                $file_url = $file;
+            } else {
+                $file_url = _IMAGES_.'/'.$file;
+            }
             $file_title =  pathinfo($file, PATHINFO_FILENAME);
             $extension = pathinfo($file, PATHINFO_EXTENSION);
         } else {
             $file_url = $file['url'];
-            $file_title = $file['alt'] ? $file['alt'] : $file['title'];
+            $file_title = $file['alt'];
             $extension = pathinfo($file['filename'], PATHINFO_EXTENSION);
         }
-
-        $context = stream_context_create(array(
-            'http' => [
-                'header' => 'Authorization: Basic ' . base64_encode("demo:a30599b78355")
-            ],
-            'ssl' => [
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-            ],
-        ));
-
-        if (!@file_get_contents($file_url, false, $context) === false) {
-            if ($extension == 'svg') {
-                $content = file_get_contents($file_url, false, $context);
-                $content = str_replace('<?xml version="1.0" encoding="UTF-8"?>', '', $content);
-                if ($return) {
-                    return $content;
-                }
-
-                echo $content;
+        if (!str_contains($file_url, "http")) {
+            if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+                $protocol = 'https://';
             } else {
-                $content = '<img 
-                  class="' . $class . '" 
-                  src="' . $file_url . '" 
-                  alt="' . $file_title . '"
-                  width="' . $width . '"
-                  height="' . $height . '" 
-              />';
-
-                if ($return) {
-                    return $content;
-                }
-
-                echo $content;
+                $protocol = 'http://';
             }
+            $file_url = $protocol . $_SERVER['HTTP_HOST'] . $file_url;
         }
+        if ($extension == 'svg') {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $file_url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 400);
+            if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW'])) {
+                $username = $_SERVER['PHP_AUTH_USER'];
+                $password = $_SERVER['PHP_AUTH_PW'];
+                curl_setopt($ch, CURLOPT_USERPWD, $username . ':' . $password);
+            }
+            $ip_address = $_SERVER['REMOTE_ADDR'];
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Forwarded-For: '.$ip_address, 'REMOTE_ADDR: '.$ip_address));
+            if(FALSE === ($content = curl_exec($ch))) {
+                $errno = curl_errno($ch);
+                $errmsg = curl_error($ch);
+                echo "CURL error $errno: $errmsg";
+            }
+            $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+            if ($status_code != 200) {
+                $content = '<img 
+                    class="' . $class . '" 
+                    src="' . $file_url . '" 
+                    width="' . $width . '"
+                    height="' . $height . '" 
+                    alt="status_'.$status_code.'" 
+                    loading="lazy" 
+                />';
+            } else {
+                $content = str_replace('<?xml version="1.0" encoding="UTF-8"?>', '', $content);
+            }
+        } else {
+            $content = '<img 
+                class="'.$class.'" 
+                src="'.$file_url. '" 
+                alt="'.$file_title.'"
+                width="'.$width.'"
+                height="'.$height.'" 
+                loading="lazy" 
+            />';
+        }
+        if (!empty($content)) {
+            if ($return) {
+                return $content;
+            }
+            echo $content;
+        }
+    }
+}
+add_action('wp_login', 'create_cropped_folder', 10, 2);
+function create_cropped_folder() {
+    $dir_path = get_template_directory() . '/images/cropped';
+    if (!is_dir($dir_path)) {
+        wp_mkdir_p($dir_path);
     }
 }
 /* insert image END */
