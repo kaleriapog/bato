@@ -252,6 +252,10 @@ function scripts_bato()
 {
 
     wp_enqueue_script('connection_scripts_jquery', 'https://code.jquery.com/jquery-3.6.0.js');
+    wp_enqueue_script('connection_scripts_iscroll',  get_template_directory_uri() . '/js/iscroll.js');
+//    wp_enqueue_script('connection_scripts_overlayscrollbars',  get_template_directory_uri() . '/js/overlayscrollbars.mjs');
+    wp_enqueue_script('connection_scripts_smooth-scrollbar',  get_template_directory_uri() . '/js/smooth-scrollbar.js');
+
     wp_enqueue_script('connection_scripts_main',  get_template_directory_uri() . '/js/main.js');
 
     if (!is_admin()) {
@@ -311,6 +315,8 @@ add_action('wp_enqueue_scripts', 'style_splide');
 function style_splide()
 {
     wp_enqueue_style('connection_style', get_template_directory_uri() . '/splide.min.css');
+    wp_enqueue_style('connection_style', get_template_directory_uri() . '/overlayscrollbars.min.css');
+
 }
 
 // REMOVE EMOJI ICONS

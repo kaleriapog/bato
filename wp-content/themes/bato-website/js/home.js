@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".section-contact__phrase a"
   );
   const heroHome = document.querySelectorAll(".section-banner");
+  const heroHomeFirst = document.querySelector(".section-banner");
   const sliderHome = document.querySelector(".section-slider .slider-home");
   const sectionService = document.querySelectorAll(".section-cards");
   const sectionAbout = document.querySelectorAll(".section-about");
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   preloader();
   teamCubes();
   magneticBtn(linkContactPhrase);
-  slider(sliderHome);
+  // slider(sliderHome);
   animationSections(sectionService);
   animationSections(sectionAbout);
   animationSections(sectionOffers);
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   animationFooter(footer);
   homeAnimationPause();
   accordion(accordionBlock);
-  fixedHeader(heroHome);
+  fixedHeader(heroHomeFirst);
   interactiveBlock(footerMain);
 
   if (!document.querySelector("body").classList.contains("body-safari")) {

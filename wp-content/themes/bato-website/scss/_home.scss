@@ -209,7 +209,9 @@ body {
 
 html {
   scroll-behavior: smooth;
+
   ::-webkit-scrollbar {
+    -webkit-appearance: none;
     width: 4px;
     height: 4px;
   }
@@ -221,6 +223,17 @@ html {
   ::-webkit-scrollbar-thumb {
     background-color: $color-main;
     border-radius: 3px;
+  }
+
+  .scrollbar-track {
+    background-color: darkgrey;
+    height: 4px;
+  }
+
+  .scrollbar-thumb {
+    background-color: $color-main;
+    border-radius: 3px;
+    height: 4px;
   }
 }
 
@@ -646,35 +659,6 @@ html {
         min-height: 60px;
         margin-left: auto;
       }
-    }
-  }
-}
-
-.section-slider {
-  padding: 150px 0;
-  width: 100vw;
-
-  @include media-laptop {
-    padding: 55px 0;
-  }
-
-  &__inner {
-    .slider-inner {
-      overflow: visible;
-    }
-
-    .slider-items {
-      height: auto;
-    }
-
-    .slider-item-name {
-      display: inline-block;
-      position: relative;
-      color: transparent;
-      -webkit-text-stroke: 1px $color-item;
-      word-wrap: break-word;
-
-      @include font-slider;
     }
   }
 }

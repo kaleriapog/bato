@@ -8,6 +8,7 @@ import sliderAboutTeam from "./modules/sliderAboutTeam.js";
 import mapAbout from "./modules/mapAbout.js";
 import sectionAboutReviews from "./modules/sectionAboutReviews.js";
 import animationAboutFamily from "./modules/animationAboutFamily.js";
+import fixedHeader from "./modules/fixed-header.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardTitleItems = document.querySelectorAll(
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   const sectionAboutHero = document.querySelector(".section-about-hero");
+  const sectionAboutHeroText = document.querySelector('.section-about-hero__wrapper')
   const sectionAboutOurValues = document.querySelector(".section-our-values");
   const sectionAboutSliderTeam = document.querySelector(".section-about-team");
   const sectionAboutMap = document.querySelector(".section-about-hq");
@@ -34,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mapAbout(sectionAboutMap);
   sectionAboutReviews(sectionAReviews);
   animationAboutFamily(sectionAboutFamily);
+  fixedHeader(sectionAboutHero);
 
   // window.addEventListener("resize", () => {
   //   if (window.screen.width <= 1024) {

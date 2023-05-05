@@ -164,7 +164,9 @@
   &__content {
     max-width: 730px;
     width: 100%;
-    margin: 0 auto 50px;
+    margin: 0 auto -20px;
+    position: relative;
+    z-index: 2;
   }
 
   &__media {
@@ -344,7 +346,7 @@
       right: -50vw;
       left: -50vw;
       bottom: auto;
-      background: linear-gradient(180deg, #050506 0%, rgba(5, 5, 6, 0) 100%);
+      background: linear-gradient(180deg, #020102 0%, rgba(2, 1, 2, 0) 100%);
       z-index: 1;
       height: 30%;
     }
@@ -352,7 +354,7 @@
     &:before {
       top: auto;
       bottom: 0;
-      background: linear-gradient(180deg, rgba(5, 5, 6, 0) 0%, #050506 100%);
+      background: linear-gradient(180deg, rgba(2, 1, 2, 0) 0%, #020102 100%);
     }
   }
 
@@ -767,11 +769,7 @@
   &__content {
     max-width: 885px;
     width: 100%;
-    margin: 0 auto 100px;
-
-    @include media-height-1000 {
-      margin: 0 auto 4vh;
-    }
+    margin: 0 auto 60px;
 
     @include media-laptop {
       margin: 0 auto 40px;
@@ -1408,13 +1406,13 @@
     @include media-height-500 {
       display: flex;
       gap: 30px;
-      overflow: scroll;
+      //overflow-x: scroll;
     }
 
     @include media-laptop {
       display: flex;
       gap: 40px;
-      overflow-x: scroll;
+      //overflow-x: scroll;
       width: 100vw;
       margin: 0 -15px 15px;
       padding: 0 15px 30px;
@@ -1605,3 +1603,12 @@
   }
 }
 
+
+.custom-scrollbar {
+  overflow: auto;
+
+  .scroll-content {
+    display: flex;
+    gap: 40px;
+  }
+}

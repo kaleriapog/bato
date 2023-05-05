@@ -212,23 +212,27 @@ body {
   }
 }
 
-// header
+
+//body:not(.home) {
+//  .header {
+//    -webkit-backdrop-filter: blur(25px);
+//    backdrop-filter: blur(25px);
+//    box-shadow: 0 10px 40px rgba(0, 158, 212, 0.1);
+//    background: rgba(6, 12, 13, 0.7);
+//    animation: opacity 1s linear 1s forwards, header 0.5s linear 1s forwards;
+//  }
+//}
+
 header {
   opacity: 0;
   transform: translateY(-30px);
-  // animation: opacity 1s linear forwards, header 0.5s linear forwards;
+   animation: opacity 1s linear 3s forwards, header 0.5s linear 3s forwards;
 }
 
-body:not(.home) {
-  .header {
+.page-template-projects, .page-template-contact {
+  header {
     animation: opacity 1s linear 1s forwards, header 0.5s linear 1s forwards;
   }
-}
-
-.home header {
-  opacity: 0;
-  transform: translateY(-30px);
-  // animation: opacity 1s linear 3s forwards, header 0.5s linear 3s forwards;
 }
 
 // section banner

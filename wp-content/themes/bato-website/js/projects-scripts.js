@@ -1,10 +1,12 @@
 import sectionAboutReviews from "./modules/sectionAboutReviews.js";
 import preloader from "./modules/preloader.js";
 import animationSections from "./modules/animationSections.js";
+import fixedHeader from "./modules/fixed-header.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const sectionAReviews = document.querySelector(".section-projects-reviews");
   const sections = document.querySelectorAll(".section");
+  const sectionHero = document.querySelector(".section-projects-hero");
 
   const target = document.querySelector(".section-projects");
 
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   preloader();
 
   sectionAboutReviews(sectionAReviews);
+  fixedHeader(sectionHero);
 
   // window.addEventListener("resize", () => {
   //   if (window.innerWidth <= 1024 || window.innerHeight <= 500) {

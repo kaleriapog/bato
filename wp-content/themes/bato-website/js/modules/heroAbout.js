@@ -14,6 +14,7 @@ export default function sliderTeam(el) {
 
   const mediaLaptop = window.screen.width <= 1024;
   const mediamobile = window.screen.width <= 767;
+  const windowHeight = window.innerHeight;
   let controller = new ScrollMagic.Controller();
 
   let animScroll = bodymovin.loadAnimation({
@@ -31,23 +32,27 @@ export default function sliderTeam(el) {
     const heightElem = document.getElementById("lottie-people-inner")
       .clientHeight;
 
-    timelineToLottie.to({ frame: 0 }, 1, {
-      frame: animScroll.totalFrames - 1,
-      onUpdate: function () {
-        animScroll.goToAndStop(Math.round(this._targets[0].frame), true);
-      },
-      Ease: Linear.easeNone,
-    });
+    let triggerPositionLaptop = -windowHeight * 0.1
+
+    timelineToLottie
+        .to({ frame: 30 }, 1, { frame: animScroll.totalFrames - 1, onUpdate: function () { animScroll.goToAndStop(Math.round(this._targets[0].frame), true);}, Ease: Linear.easeNone, }, '<');
 
     new ScrollMagic.Scene({
       triggerElement: ".section-about-hero__media",
-      offset: mediaLaptop ? -65 : -120,
-      duration: mediaLaptop ? "100%" : "100%",
-      triggerHook: mediamobile ? "onLeave" : mediaLaptop ? 0.3 : "onLeave",
+      offset: mediaLaptop ? triggerPositionLaptop : -120,
+      duration: "200%",
+      triggerHook: mediamobile ? "onLeave" : mediaLaptop ? 0.15 : "onLeave",
     })
       .setTween(timelineToLottie)
       .setPin("#lottie-people-inner")
-    //   .addIndicators({ name: "trigger-line" })
+      // .addIndicators({ name: "trigger-line" })
       .addTo(controller);
+
+    //start of the first 15 frames before the section is fixed
+    new ScrollMagic.Scene({ triggerElement: ".section-about-hero__media", duration: mediamobile ? '50%' : mediaLaptop ? '15%' : '50%',  offset: mediaLaptop ? triggerPositionLaptop : -120, triggerHook:  mediamobile ? 0.5 : mediaLaptop ? 0.3 : 0.5})
+        .setTween(new TimelineMax({ repeat: 0 })
+          .to({ frame: 0 }, 1, { frame: animScroll.totalFrames - 30, onUpdate: function () { animScroll.goToAndStop(Math.round(this._targets[0].frame), true);}, Ease: Linear.easeNone, }, '<'))
+        // .addIndicators({ name: "trigger-lineTo222" })
+        .addTo(controller);
   });
 }

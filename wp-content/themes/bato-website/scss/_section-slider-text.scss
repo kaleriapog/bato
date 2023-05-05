@@ -1,0 +1,28 @@
+.section-slider {
+  padding: 150px 0;
+  width: 100vw;
+
+  @include media-laptop {
+    padding: 55px 0;
+  }
+
+  &__inner {
+    .slider-inner {
+      overflow: visible;
+    }
+
+    .slider-items {
+      height: auto;
+    }
+
+    .slider-item-name {
+      display: inline-block;
+      position: relative;
+      color: transparent;
+      -webkit-text-stroke: 1px $color-item;
+      word-wrap: break-word;
+
+      @include font-slider;
+    }
+  }
+}

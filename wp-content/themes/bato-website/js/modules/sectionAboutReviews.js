@@ -9,8 +9,6 @@ export default function sectionAboutReviews(el) {
   const mediaLaptop = window.innerWidth <= 1030;
   const mediaMobileSmall = window.innerWidth <= 350;
 
-  console.log(window.innerWidth,  window.innerHeight)
-
   if (!mediaHeightMobileExtraSmall) {
     if (!mediaLaptop) {
       let timelineSectionAboutReviews = new TimelineMax();

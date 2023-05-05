@@ -657,7 +657,7 @@ get_header();
                     <?php if (!empty($about_reviews_reviews)) {  ?>
 
                         <div class="reviews-items">
-                            <ul class="section-about-reviews__items">
+                            <ul class="section-about-reviews__items custom-scrollbar">
 
                                 <?php foreach ($about_reviews_reviews as $key => $review) {
                                     $text = $review['review_text'];
@@ -668,7 +668,7 @@ get_header();
                                         <div class="reviews-item-bg"></div>
                                         <div class="section-about-reviews__item-content">
                                             <span class="quotation-mark go-opacity">“</span>
-                                            <div class="section-about-reviews__item-text go-opacity"><?php echo $text ?></div>
+                                            <div class="section-about-reviews__item-text custom-scrollbar go-opacity"><?php echo $text ?></div>
                                             <div class="section-about-reviews__item-name go-opacity"><?php echo $name ?></div>
                                         </div>
                                     </li>

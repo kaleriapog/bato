@@ -40,13 +40,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // }
 
   const cookiesBlock = document.querySelector(".block-cookies");
-
   const footer = document.querySelectorAll(".footer");
+  let blocksToScroll = document.querySelectorAll(".custom-scrollbar");
 
   mobileMenu();
   animationFooter(footer);
 
   if (cookiesBlock) {
     cookies(cookiesBlock);
+  }
+
+  if(blocksToScroll) {
+    // let myScroll = new IScroll('#myContainer');
+    // let myScroll = new IScroll('#myContainer', {
+    //   scrollX: true,
+    //   scrollY: false,
+    //   mouseWheel: true,
+    //   scrollbars: true
+    // });
+    //  new IScroll('#myContainer', {
+    //   scrollbars: true,
+    //   scrollX: true,
+    //   scrollY: false,
+    //   mouseWheel: true
+    // });
+
+    let Scrollbar = window.Scrollbar;
+
+    blocksToScroll.forEach((block) => {
+      Scrollbar.init(block, {
+        alwaysShowTracks: true,
+      });
+    })
   }
 });
