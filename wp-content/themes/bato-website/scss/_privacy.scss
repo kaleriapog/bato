@@ -29,9 +29,6 @@
 
     a {
       transition: color 0.3s;
-      &:hover {
-        color: $color-main;
-      }
     }
 
     ul, ol {
