@@ -1,0 +1,318 @@
+@media screen and (min-width: 1025px) {
+  .body-safari {
+    .card-services__inner {
+      &:hover .animation-no-wave {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .section-numbers {
+    &__number {
+      &:hover::after {
+        transition: 2.2s linear;
+        background-position: 100% 0%;
+      }
+    }
+  }
+
+  .section-team {
+    &__card-team-link {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .cube-item.front-cube {
+      .front-cube-inner {
+        &:hover:before {
+          transform: translate(0, 0);
+  
+          @include media-laptop {
+            transform: translate(-100%, -100%);
+          }
+        }
+      }
+    }
+  }
+
+  .section-about-team {
+    .splide__arrow {
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+
+        .splide__arrow-svg-hover {
+          opacity: 1;
+        }
+      }
+        
+      &:disabled {
+        &:hover {
+          &:after {
+            opacity: 0;
+          }
+  
+          .splide__arrow-svg-hover {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .section-about-follow {
+    &__link {
+      a {
+        &:hover {
+          color: #fff;
+          border-color: #fff;
+        }
+      }
+    }
+  }
+
+  .section-about-ready {
+    .button-default {
+      &:hover {
+        border-color: $color-main;
+      }
+    }
+  }
+
+  .section-about-reviews {
+    &__rating {
+      &:hover {
+        .section-about-reviews__rating-inner,
+        .section-about-reviews__rating-image {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .error404 {
+    .error-404 {
+      .link-to-home {
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
+  }
+
+  .block-cube-small {
+    .stage .cube:hover {
+      animation-play-state: paused;
+  
+      .back {
+        color: #f2f2f2;
+        -ms-transform: rotateY(180deg) translateZ(50px);
+        -webkit-transform: rotateY(180deg) translateZ(50px);
+        transform: rotateY(180deg) translateZ(50px);
+      }
+  
+      .top {
+        -ms-transform: rotateX(90deg) translateZ(50px);
+        -webkit-transform: rotateX(90deg) translateZ(50px);
+        transform: rotateX(90deg) translateZ(50px);
+      }
+  
+      .bottom {
+        -ms-transform: rotateX(-90deg) translateZ(50px);
+        -webkit-transform: rotateX(-90deg) translateZ(50px);
+        transform: rotateX(-90deg) translateZ(50px);
+        -webkit-backface-visibility: visible;
+        -ms-backface-visibility: visible;
+        backface-visibility: visible;
+        -webkit-box-reflect: none;
+      }
+  
+      .left {
+        -ms-transform: rotateY(-90deg) translateZ(50px);
+        -webkit-transform: rotateY(-90deg) translateZ(50px);
+        transform: rotateY(-90deg) translateZ(50px);
+      }
+  
+      .right {
+        -ms-transform: rotateY(90deg) translateZ(50px);
+        -webkit-transform: rotateY(90deg) translateZ(50px);
+        transform: rotateY(90deg) translateZ(50px);
+      }
+  
+      .front {
+        -ms-transform: translateZ(50px);
+        -webkit-transform: translateZ(50px);
+        transform: translateZ(50px);
+      }
+    }
+  }
+
+  .block-cookies {
+    &__link {
+      &:hover {
+        color: $color-main;
+      }
+    }
+
+    &__button { 
+      &:hover {
+        background-color: $color-main;
+        color: $main-color-bg;
+      }
+    }
+  }
+
+  .section-accordion {
+    &__rating {
+      &:hover {
+        .section-accordion__rating-inner,
+        .section-accordion__rating-image {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .accordion {
+    &__item-inner {
+      &:hover::before {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  .section-privacy {
+    &__text {
+      a {
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
+  }
+
+  .section-projects {
+    &__item {
+      &-image-inner {
+        &:hover:before {
+          transform: translate(0, 0);
+        }
+
+        &:hover {
+          .section-projects__item-overlay {
+            opacity: 1;
+            visibility: visible;
+          }
+  
+          .section-projects__item-image img {
+            transform: scale(1.1);
+            filter: grayscale(1);
+          }
+        }
+      }
+    }
+  }
+
+  .contact-page {
+    .contact-item {
+      a {
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    &__form {
+      input[type="submit"] {
+        &:hover {
+          border-color: $color-main;
+        }
+      }
+
+      .privacy {
+        a {
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .animation-wrapp-wave:hover .wave-item span {
+    transform: translateY(-100%) rotateX(-90deg);
+  }
+  
+  .animation-wrapp-wave:hover .wave-item-clone span {
+    transform: translate(0) rotateX(0);
+  }
+  
+  .button-default {
+    &:hover .button-default__link::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    &:hover:after {
+      animation: arrow_after 0.5s ease-out;
+    }
+  
+    &:hover:before {
+      animation: arrow_before 0.5s ease-out;
+    }
+  }
+
+  .section-slider {
+    .slider-visible {
+      opacity: 100%;
+    }
+  }
+
+  .section-cards {
+    .card-services {
+      &__inner {
+        &:hover:before,
+        &:hover:focus {
+          transform: translate(0, 0);
+        }
+
+        &:hover {
+          .animation-wrapp-wave .wave-item span {
+            transform: translateY(-100%) rotateX(-90deg);
+          }
+      
+          .animation-wrapp-wave .wave-item-clone span {
+            transform: translate(0) rotateX(0);
+          }
+
+          &::after {
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+
+  .card-services-0:hover,
+  .card-services-1:hover,
+  .card-services-2:hover,
+  .card-services-3:hover {
+    .card-icon {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .animation-no-wave {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  #donation-popup-close:hover {
+    border-color: #06ffff;
+  }
+}

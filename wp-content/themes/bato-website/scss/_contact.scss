@@ -151,10 +151,6 @@
 
     a {
       transition: color 0.3s;
-
-      &:hover {
-        color: #fff;
-      }
     }
   }
 
@@ -251,10 +247,6 @@
       margin-bottom: -8px;
       transition: border-color 0.3s, background-color 0.3s;
 
-      &:hover {
-        border-color: $color-main;
-      }
-
       &:active {
         background-color: $color-main;
         color: $main-color-bg;
@@ -285,10 +277,6 @@
 
         @include media-mobile {
           display: inline-block;
-        }
-
-        &:hover {
-          color: #fff;
         }
       }
     }

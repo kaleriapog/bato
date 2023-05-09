@@ -1,14 +1,11 @@
 export default function accordion(el) {
     if (!el) return;
 
-    el.forEach((accordion) => {
-        let items = accordion.querySelectorAll('.accordion__item')
-
-        items.forEach((item) => {
-            item.addEventListener('click', (e) => {
-                item.classList.toggle('active')
-            })
-        })
-    })
-
+    jQuery(document).ready(function($) {
+        $(document).on('click', '.accordion__item', function(){
+            let _text = $(this).find('.accordion__item-description');
+            $(this).toggleClass('active');
+            _text.slideToggle();
+        });
+    });
 }

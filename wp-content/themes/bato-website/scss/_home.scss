@@ -6,7 +6,7 @@ body {
   font-weight: 300;
 
   .body-wrapp.home {
-    overflow: hidden;
+    overflow-x: clip;
   }
 
   .site-main {
@@ -821,11 +821,6 @@ html {
     span {
       @include card-number;
     }
-
-    &:hover::after {
-      transition: 2.2s linear;
-      background-position: 100% 0%;
-    }
   }
 
   &__text {
@@ -907,10 +902,6 @@ html {
 
   &__card-team-link {
     transition: opacity 0.3s;
-
-    &:hover {
-      opacity: 0.5;
-    }
   }
 
   .photo-cube-inner {
@@ -1067,11 +1058,6 @@ html {
         color: $color-white;
         transition: color 0.5s ease-in;
         max-width: 400px;
-
-        &:hover {
-          color: $color-main;
-          border-color: $color-main;
-        }
       }
 
       @include media-tablet {
@@ -1198,10 +1184,6 @@ html {
     .link-to-home {
       @include font-link-to-home;
       transition: color 0.3s;
-
-      &:hover {
-        color: $color-main;
-      }
     }
   }
 }
@@ -1258,51 +1240,6 @@ html {
       height: 60px;
       top: calc(50% - 50px);
       left: calc(50% - 24px);
-    }
-  }
-
-  .stage .cube:hover {
-    animation-play-state: paused;
-
-    .back {
-      color: #f2f2f2;
-      -ms-transform: rotateY(180deg) translateZ(50px);
-      -webkit-transform: rotateY(180deg) translateZ(50px);
-      transform: rotateY(180deg) translateZ(50px);
-    }
-
-    .top {
-      -ms-transform: rotateX(90deg) translateZ(50px);
-      -webkit-transform: rotateX(90deg) translateZ(50px);
-      transform: rotateX(90deg) translateZ(50px);
-    }
-
-    .bottom {
-      -ms-transform: rotateX(-90deg) translateZ(50px);
-      -webkit-transform: rotateX(-90deg) translateZ(50px);
-      transform: rotateX(-90deg) translateZ(50px);
-      -webkit-backface-visibility: visible;
-      -ms-backface-visibility: visible;
-      backface-visibility: visible;
-      -webkit-box-reflect: none;
-    }
-
-    .left {
-      -ms-transform: rotateY(-90deg) translateZ(50px);
-      -webkit-transform: rotateY(-90deg) translateZ(50px);
-      transform: rotateY(-90deg) translateZ(50px);
-    }
-
-    .right {
-      -ms-transform: rotateY(90deg) translateZ(50px);
-      -webkit-transform: rotateY(90deg) translateZ(50px);
-      transform: rotateY(90deg) translateZ(50px);
-    }
-
-    .front {
-      -ms-transform: translateZ(50px);
-      -webkit-transform: translateZ(50px);
-      transform: translateZ(50px);
     }
   }
 
@@ -1462,10 +1399,6 @@ html {
     color: #fff;
     text-decoration: underline;
     transition: color 0.3s;
-
-    &:hover {
-      color: $color-main;
-    }
   }
 
   &__button {
@@ -1474,11 +1407,6 @@ html {
     padding: 12px 35px;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     cursor: pointer;
-
-    &:hover {
-      background-color: $color-main;
-      color: $main-color-bg;
-    }
   }
 }
 
@@ -1506,14 +1434,18 @@ html {
   }
 
   &__text {
+    align-self: flex-start;
     max-width: 505px;
     width: 100%;
     font-size: 20px;
     font-weight: 300;
     line-height: 1.6;
+    position: sticky;
+    top: 10rem;
 
     @include media-width-small {
       max-width: 100%;
+      position: static;
     }
 
     @include media-mobile {
@@ -1527,21 +1459,18 @@ html {
     align-items: start;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 38px;
+    margin-bottom: 0;
     font-size: 16px;
     font-weight: 600;
     color: $color-main;
     width: fit-content;
 
-    @include media-mobile {
-      display: flex;
+    @include media-laptop {
+      margin-bottom: 38px;
     }
 
-    &:hover {
-      .section-accordion__rating-inner,
-      .section-accordion__rating-image {
-        opacity: 0.7;
-      }
+    @include media-mobile {
+      display: flex;
     }
   }
 
@@ -1596,10 +1525,6 @@ html {
     overflow: hidden;
 
     &.active {
-      .accordion__item-description {
-        max-height: 1000px;
-        transition: max-height 1.5s ease-in;
-      }
       .accordion__item-icon {
         transform: rotate(180deg);
 
@@ -1645,12 +1570,10 @@ html {
       transform: translate(-100%, -100%);
       border-radius: 50%;
       transition: transform 0.7s linear;
-    }
 
-    &:hover:before,
-    &:hover:focus,
-    &:active:before {
-      transform: translate(0, 0);
+      .active & {
+        transform: translate(0, 0);
+      }
     }
 
     @include media-mobile {
@@ -1686,9 +1609,7 @@ html {
   }
 
   &__item-description {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.8s ease;
+    display: none;
   }
 
   &__item-icon {

@@ -14,7 +14,7 @@
 
   .body-wrapp {
     padding-top: 145px;
-    overflow: hidden;
+    overflow-x: clip;
     max-width: 100vw;
     position: relative;
 
@@ -135,22 +135,8 @@
         transition: transform 0.7s linear;
       }
 
-      &:hover:before,
-      &:hover:focus,
       &:active:before {
         transform: translate(0, 0);
-      }
-
-      &:hover {
-        .section-projects__item-overlay {
-          opacity: 1;
-          visibility: visible;
-        }
-
-        .section-projects__item-image img {
-          transform: scale(1.1);
-          filter: grayscale(1);
-        }
       }
     }
 
