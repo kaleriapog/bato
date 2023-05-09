@@ -11,7 +11,6 @@ import animationAboutFamily from "./modules/animationAboutFamily.js";
 import fixedHeader from "./modules/fixed-header.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  alert('test')
   const cardTitleItems = document.querySelectorAll(
     ".section-cards .card-title"
   );

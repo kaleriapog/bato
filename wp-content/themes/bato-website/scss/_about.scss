@@ -4,8 +4,8 @@
   }
 
   .body-wrapp {
-    padding-top: 145px;
-    overflow-x: clip;
+    //padding-top: 145px;
+    overflow: hidden;
     max-width: 100vw;
     position: relative;
 
@@ -57,10 +57,84 @@
   }
 }
 
-.page-about-balls {
+//.page-about-balls {
+//  position: absolute;
+//  top: -0.5%;
+//  right: -6%;
+//
+//  @include media-tablet {
+//    position: absolute;
+//    top: -1%;
+//    right: 42%;
+//    transform: translate(100%, 0);
+//  }
+//
+//  @include media-mobile {
+//    top: -0.5%;
+//  }
+//
+//  &__large {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    width: 645px;
+//    height: 645px;
+//    background: linear-gradient(180deg, #00ffff 0%, #2366b5 100%);
+//    mix-blend-mode: color-dodge;
+//    opacity: 0.1;
+//    filter: blur(60px);
+//    backdrop-filter: blur(68.8657px);
+//    border-radius: 50%;
+//
+//    @include media-mobile-500 {
+//      height: 500px;
+//    }
+//
+//    @include media-mobile {
+//      width: 215px;
+//      height: 215px;
+//    }
+//  }
+//
+//  &__large-inner-ellipse {
+//    width: 200px;
+//    height: 200px;
+//    position: absolute;
+//    top: 50%;
+//    left: 0;
+//    transform: translate(-50%, -50%) matrix(-1, 0, 0, 1, 0, 0);
+//    background: radial-gradient(
+//        35.94% 36.06% at 56.79% 55.92%,
+//        #00ffff 47.34%,
+//        rgba(0, 203, 232, 0.732548) 67.65%,
+//        rgba(0, 158, 212, 0.5) 100%
+//      );
+//    opacity: 0.6;
+//    filter: blur(50px);
+//    //animation: inner-circle 15s linear infinite;
+//
+//    @include media-mobile {
+//      width: 135px;
+//      height: 135px;
+//      filter: blur(30px);
+//      top: 65%;
+//    }
+//  }
+//
+//  &__large-inner {
+//    width: 645px;
+//    height: 645px;
+//    background: linear-gradient(209.12deg, cyan 10.92%, #2366b5 28.03%);
+//    mix-blend-mode: soft-light;
+//    backdrop-filter: blur(40px);
+//  }
+//}
+
+.about-decorative-page {
   position: absolute;
   top: -0.5%;
   right: -6%;
+  max-width: 745px;
 
   @include media-tablet {
     position: absolute;
@@ -72,74 +146,22 @@
   @include media-mobile {
     top: -0.5%;
   }
-
-  &__large {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 645px;
-    height: 645px;
-    background: linear-gradient(180deg, #00ffff 0%, #2366b5 100%);
-    mix-blend-mode: color-dodge;
-    opacity: 0.1;
-    filter: blur(60px);
-    backdrop-filter: blur(68.8657px);
-    border-radius: 50%;
-
-    @include media-mobile-500 {
-      height: 500px;
-    }
-
-    @include media-mobile {
-      width: 215px;
-      height: 215px;
-    }
-  }
-
-  &__large-inner-ellipse {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%) matrix(-1, 0, 0, 1, 0, 0);
-    background: radial-gradient(
-        35.94% 36.06% at 56.79% 55.92%,
-        #00ffff 47.34%,
-        rgba(0, 203, 232, 0.732548) 67.65%,
-        rgba(0, 158, 212, 0.5) 100%
-      );
-    opacity: 0.6;
-    filter: blur(50px);
-    //animation: inner-circle 15s linear infinite;
-
-    @include media-mobile {
-      width: 135px;
-      height: 135px;
-      filter: blur(30px);
-      top: 65%;
-    }
-  }
-
-  &__large-inner {
-    width: 645px;
-    height: 645px;
-    background: linear-gradient(209.12deg, cyan 10.92%, #2366b5 28.03%);
-    mix-blend-mode: soft-light;
-    backdrop-filter: blur(40px);
-  }
 }
 
 .section-about-hero {
-  padding: 128px 0 100px 0;
+  //padding: 128px 0 100px 0;
 
-  @include media-laptop {
-    padding: 90px 0;
-  }
+  //padding: 0 0 100px 0;
+  //margin-bottom: -100vh;
+  padding-bottom: 100vh;
 
-  @include media-mobile {
-    padding-bottom: 0;
-  }
+  //@include media-laptop {
+  //  padding: 90px 0;
+  //}
+
+  //@include media-mobile {
+  //  padding-bottom: 0;
+  //}
 
   .title-large {
     animation: main_animation_title 1.5s ease 2s forwards;
@@ -163,8 +185,17 @@
   &__content {
     max-width: 730px;
     width: 100%;
-    margin: 0 auto -20px;
-    position: relative;
+    margin: 0 auto 0;
+    //position: relative;
+    //z-index: 2;
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 280px;
+    left: 0;
+    right: 0;
+    width: 100vw;
     z-index: 2;
   }
 
@@ -183,10 +214,11 @@
   }
 
   .lottie-people-inner {
-    width: 100vw;
+    //height: 100vh;
+    width: 180vh;
 
-    @include media-mobile {
-      width: 180vh;
+    @include media-height-700 {
+      width: 100vw;
     }
   }
 
@@ -214,7 +246,7 @@
     .section-about-our-story__text {
       will-change: transform, opacity;
       transform: translate3d(0px, 2em, 0px) scale3d(1, 1, 1) rotateX(0deg)
-        rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+      rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
       transform-style: preserve-3d;
       animation: main_animation 1.5s ease 1s forwards;
     }
@@ -311,9 +343,9 @@
       line-height: 1;
       text-align: center;
       background-image: linear-gradient(
-        141.8deg,
-        #00ffff 14.44%,
-        #01c4e5 86.47%
+                      141.8deg,
+                      #00ffff 14.44%,
+                      #01c4e5 86.47%
       );
       filter: grayscale(1);
       -webkit-background-clip: text;
@@ -519,7 +551,18 @@
 
       &:disabled {
         opacity: 0.3;
-        cursor: not-allowed;
+        //
+        //&:hover {
+        //  cursor: not-allowed;
+        //
+        //  &:after {
+        //    opacity: 0;
+        //  }
+        //
+        //  .splide__arrow-svg-hover {
+        //    opacity: 0;
+        //  }
+        //}
       }
 
       &:after {
@@ -549,6 +592,16 @@
         background-color: $color-border-second;
         z-index: -1;
       }
+
+      //&:hover {
+      //  &:after {
+      //    opacity: 1;
+      //  }
+      //
+      //  .splide__arrow-svg-hover {
+      //    opacity: 1;
+      //  }
+      //}
 
       &:first-child {
         .splide__arrow-svg-hover {
@@ -594,6 +647,14 @@
 
   .splide__list {
     padding: 2px;
+  }
+
+  .front-cube-inner:hover {
+    @include media-mobile {
+      &:before {
+        transform: translate(-100%, -100%) !important;
+      }
+    }
   }
 }
 
@@ -1138,6 +1199,11 @@
       color: $color-main;
       transition: color 0.3s, border-color 0.3s;
       border-bottom: 1px solid transparent;
+
+      //&:hover {
+      //  color: #fff;
+      //  border-color: #fff;
+      //}
     }
   }
 
@@ -1189,6 +1255,10 @@
     opacity: 0;
     transition: opacity 0.7s ease 1s, transform 0.7s ease 1s, border-color 0.7s ease;
     border-bottom: 1px solid transparent;
+
+    //&:hover {
+    //  border-color: $color-main;
+    //}
   }
 
   .button-default__link {
@@ -1205,7 +1275,7 @@
     .section-about-reviews__text {
       will-change: transform, opacity;
       transform: translate3d(0px, 2em, 0px) scale3d(1, 1, 1) rotateX(0deg)
-        rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+      rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
       transform-style: preserve-3d;
       animation: main_animation 1.5s ease 0.7s forwards;
     }
@@ -1316,6 +1386,13 @@
       margin-bottom: 20px;
     }
 
+    //&:hover {
+    //  .section-about-reviews__rating-inner,
+    //  .section-about-reviews__rating-image {
+    //    opacity: 0.7;
+    //  }
+    //}
+
     img {
       @include media-height-800 {
         height: 20px;
@@ -1397,9 +1474,9 @@
     margin: auto;
     padding: 1px;
     background: linear-gradient(
-      180deg,
-      #b9b9b9 0%,
-      rgba(102, 102, 102, 0) 100%
+                    180deg,
+                    #b9b9b9 0%,
+                    rgba(102, 102, 102, 0) 100%
     );
     position: relative;
 
@@ -1450,9 +1527,9 @@
       right: 0;
       bottom: 0;
       background: linear-gradient(
-        180deg,
-        #06ffff 0%,
-        rgba(6, 255, 255, 0) 133.17%
+                      180deg,
+                      #06ffff 0%,
+                      rgba(6, 255, 255, 0) 133.17%
       );
     }
 
@@ -1592,4 +1669,10 @@ body.windows {
   }
 }
 
-//test
+.body-safari {
+  .card-services__inner {
+    //&:hover .animation-no-wave {
+    //  opacity: 0.7;
+    //}
+  }
+}
