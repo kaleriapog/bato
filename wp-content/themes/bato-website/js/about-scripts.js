@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionAReviews = document.querySelector(".section-about-reviews");
   const sectionAboutFamily = document.querySelector(".section-about-family");
   const sections = document.querySelectorAll(".section");
+  const secondBlockInPage = document.querySelector(".section-our-values");
 
   preloader();
   animationWave(cardTitleItems);
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mapAbout(sectionAboutMap);
   sectionAboutReviews(sectionAReviews);
   animationAboutFamily(sectionAboutFamily);
-  fixedHeader(sectionAboutHero);
+  fixedHeader(secondBlockInPage);
 
   // window.addEventListener("resize", () => {
   //   if (window.screen.width <= 1024) {

@@ -62,21 +62,24 @@ $about_reviews_rating = $about_reviews['rating'];
 
 get_header();
 ?>
-<div class="page-about-balls">
-    <div class="page-about-balls__large-inner-ellipse"></div>
-    <div class="page-about-balls__large">
-        <div class="page-about-balls__large-inner"></div>
-    </div>
-</div>
+
 <div class="preloader-menu-mob">
+</div>
+<div class="about-decorative-page">
+    <img src="<?php echo get_template_directory_uri() ?>/images/effect-about.png" alt="decorative image">
 </div>
 <main id="primary" class="site-main">
 
     <?php if (!empty($section_hero)) { ?>
 
         <section class="section-about-hero section">
-            <div class="main-size">
-                <div class="section-about-hero__wrapper">
+            <div class="section-about-hero__media">
+                <div id="lottie-people-inner" class="lottie-people-inner">
+                    <div class="lottie-mask"></div>
+                </div>
+            </div>
+            <div class="section-about-hero__wrapper">
+                <div class="main-size">
                     <div class="section-about-hero__content">
 
                         <?php if (!empty($hero_title)) { ?>
@@ -93,10 +96,6 @@ get_header();
 
                     </div>
                 </div>
-            </div>
-            <div class="section-about-hero__media">
-                <div id="lottie-people-inner" class="lottie-people-inner"></div>
-                <div class="lottie-mask"></div>
             </div>
         </section>
 
