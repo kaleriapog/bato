@@ -100,45 +100,23 @@ export default function sliderTeam(el) {
   });
 
   animScroll.addEventListener("DOMLoaded", function () {
-    let timelineToLottie = new TimelineMax({ repeat: 0 });
-    const heightElem = document.getElementById("lottie-people-inner").clientHeight;
-    const lottieMask = document.querySelector(".lottie-mask");
-    const heroMedia = document.querySelector(".section-about-hero__media")
+    // let timelineToLottie = new TimelineMax({ repeat: 0 });
+    // const heightElem = document.getElementById("lottie-people-inner").clientHeight;
+    // const lottieMask = document.querySelector(".lottie-mask");
+    // const heroMedia = document.querySelector(".section-about-hero__media")
+    // const height700 = window.innerHeight <= 700;
+    const mediaMobile = window.innerWidth <= 767;
 
-    let triggerPositionLaptop = -windowHeight * 0.1
-    //
-    // timelineToLottie
-    //     .to({ frame: 30 }, 1, { frame: animScroll.totalFrames - 1, onUpdate: function () { animScroll.goToAndStop(Math.round(this._targets[0].frame), true);}, Ease: Linear.easeNone, }, '<');
-    //
-    // new ScrollMagic.Scene({
-    //   triggerElement: ".section-about-hero__media",
-    //   offset: 0,
-    //   duration: "200%",
-    //   triggerHook: 0,
-    // })
-    //     .setTween(timelineToLottie)
-    //     .setPin("#lottie-people-inner")
-    //     .addIndicators({ name: "trigger-line" })
-    //     .addTo(controller);
+    console.log(mediaMobile)
 
-    //start of the first 15 frames before the section is fixed
-    new ScrollMagic.Scene({ triggerElement: ".lottie-people-inner", duration: '300%',  offset: 0, triggerHook: 0})
+    // let triggerPositionLaptop = -windowHeight * 0.1
+
+    new ScrollMagic.Scene({ triggerElement: ".lottie-people-inner", duration: mediaMobile ? '100%' : 1800,  offset: 0, triggerHook: 0})
         .setPin(".lottie-people-inner")
         .setTween(new TimelineMax({ repeat: 0 })
             .fromTo(['.lottie-mask'], {}, {opacity: 0, duration: 0.2, ease: Linear.easeNone})
             .fromTo(['.about-decorative-page'], {}, {opacity: 0, duration: 0.2, ease: Linear.easeNone}, '<')
             .to({ frame: 0 }, 1, { frame: animScroll.totalFrames - 1, onUpdate: function () { animScroll.goToAndStop(Math.round(this._targets[0].frame), true);}, Ease: Linear.easeNone, }))
-        // .addIndicators({ name: "trigger-lineTo222" })
-        // .on("start end", function (e) {
-        //   if (e.type === 'start' && e.state === 'DURING') {
-        //     lottieMask.style.opacity = '0'
-        //     heroMedia.style.zIndex = '0'
-        //   }
-        //   if (e.type === 'start' && e.state === 'BEFORE') {
-        //     lottieMask.style.opacity = '1'
-        //     heroMedia.style.zIndex = '-1'
-        //   }
-        // })
         .addTo(controller);
   });
 }

@@ -144,24 +144,28 @@
   }
 
   @include media-mobile {
-    top: -0.5%;
+    top: -0.3%;
+    left: -76%;
+    max-width: 325px;
+    transform: translate(100%, 0) rotate(332deg);
   }
 }
 
 .section-about-hero {
-  //padding: 128px 0 100px 0;
+  padding-bottom: 20vh;
 
-  //padding: 0 0 100px 0;
-  //margin-bottom: -100vh;
-  padding-bottom: 100vh;
+  @include media-height-1000 {
+    padding-bottom: 100vh;
+  }
 
-  //@include media-laptop {
-  //  padding: 90px 0;
-  //}
+  @include media-mobile {
+    padding-bottom: 20vh;
+  }
 
-  //@include media-mobile {
-  //  padding-bottom: 0;
-  //}
+  @include media-laptop-horizontal {
+    padding-bottom: 0;
+    padding-top: 150px;
+  }
 
   .title-large {
     animation: main_animation_title 1.5s ease 2s forwards;
@@ -197,6 +201,14 @@
     right: 0;
     width: 100vw;
     z-index: 2;
+
+    @include media-mobile {
+      top: 90px;
+    }
+
+    @include media-laptop-horizontal {
+      position: static;
+    }
   }
 
   &__media {
@@ -208,7 +220,7 @@
     position: relative;
     z-index: -1;
 
-    @include media-mobile-horizontal {
+    @include media-laptop-horizontal {
       display: none;
     }
   }
@@ -219,6 +231,10 @@
 
     @include media-height-700 {
       width: 100vw;
+    }
+
+    @include media-mobile {
+      width: 180vh;
     }
   }
 
@@ -1250,23 +1266,27 @@
     }
   }
 
-  .button-default {
-    transform: translateY(-10%);
-    opacity: 0;
-    transition: opacity 0.7s ease 1s, transform 0.7s ease 1s, border-color 0.7s ease;
-    border-bottom: 1px solid transparent;
-
-    //&:hover {
-    //  border-color: $color-main;
-    //}
-  }
-
-  .button-default__link {
-    font-size: 19px;
-  }
+  //.button-default {
+  //  transform: translateY(-10%);
+  //  opacity: 0;
+  //  transition: opacity 0.7s ease 1s, transform 0.7s ease 1s, border-color 0.7s ease;
+  //
+  //  &:hover {
+  //    border-color: $color-main;
+  //  }
+  //}
+  //
+  //.button-default__link {
+  //  font-size: 19px;
+  //}
 
   .button-big-color {
     padding: 5px 34px 5px 0;
+
+    .button-default__link {
+      font-size: 19px;
+      color: $color-hover;
+    }
   }
 }
 

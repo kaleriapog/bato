@@ -753,13 +753,13 @@ get_header();
 
                     <?php } ?>
 
-                    <?php if (!empty($about_ready_link)) { ?>
+                    <?php if (!empty($about_ready_link)) : ?>
 
-                        <div class="button-default button-big-color">
-                            <a class="button-default__link button-big-color__link" target="_blank" href="<?php echo $about_ready_link['url'] ?>"><?php echo $about_ready_link['title'] ?></a>
-                        </div>
+                        <a class="button-default button-big-color" target="<?php echo $about_ready_link['target'] ? $about_ready_link['target'] : '_self' ?>" href="<?php echo $about_ready_link['url'] ?>">
+                            <span class="button-default__link"><?php echo $about_ready_link['title'] ?></span>
+                        </a>
 
-                    <?php } ?>
+                    <?php endif ?>
 
                 </div>
             </div>
