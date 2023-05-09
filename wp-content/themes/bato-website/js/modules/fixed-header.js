@@ -3,6 +3,7 @@ export default function fixedHeader(sectionTrigger) {
 
     let heightBlock = sectionTrigger.offsetHeight;
     const header = document.querySelector('.header');
+    header.classList.add("inited");
 
     if(sectionTrigger.classList.contains('section-about-hero')) {
         const aboutHeroMedia = sectionTrigger.querySelector('.section-about-hero__media')

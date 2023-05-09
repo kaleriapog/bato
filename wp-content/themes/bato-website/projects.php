@@ -47,7 +47,7 @@ get_header();
 
                     <?php foreach ($projects_list['projects_list'] as $item) : ?>
 
-                        <div class="section-projects__item">
+                        <a class="section-projects__item" href="<?php echo $item['link']['url'] ?>" target="<?php echo $item['link']['target'] ?  $item['link']['target'] : '_self' ?>">
 
                             <?php if (!empty($item['image'])) : ?>
 
@@ -62,7 +62,7 @@ get_header();
                                             <div class="section-projects__item-overlay">
 
                                                 <div class="button-default button-big-color">
-                                                    <a class="section-projects__item-link button-default__link button-big-color__link" href="<?php echo $item['link']['url'] ?>" target="<?php echo $item['link']['target'] ?  $item['link']['target'] : '_self' ?>"><?php echo $item['link']['title'] ?></a>
+                                                    <span class="section-projects__item-link button-default__link button-big-color__link"><?php echo $item['link']['title'] ?></span>
                                                 </div>
 
                                             </div>
@@ -122,7 +122,7 @@ get_header();
 
                             <?php endif ?>
 
-                        </div>
+                        </a>
 
 
 
