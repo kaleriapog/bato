@@ -14,6 +14,11 @@ export default function fixedHeader(sectionTrigger) {
         heightBlock = windowHeight
     }
 
+    document.addEventListener("DOMContentLoaded", function() {
+        var header = document.querySelector(".header");
+        header.classList.add("inited");
+    });
+
     window.addEventListener('scroll', () => {
         if (window.pageYOffset >= heightBlock - 150) {
             header.classList.add('bg-header');

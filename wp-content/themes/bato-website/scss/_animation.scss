@@ -202,7 +202,7 @@ body {
 //  }
 //}
 
-header {
+header.inited {
   opacity: 0;
   transform: translateY(-30px);
    animation: opacity 1s linear 3s forwards, header 0.5s linear 3s forwards;
