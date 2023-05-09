@@ -217,7 +217,9 @@
     backdrop-filter: blur(0);
     box-shadow: 0 0 0 rgba(0,158,212,0.1);
     background: rgba(6,12,13,0);
-    transition: 0.3s;
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: 1s;
 
     &.header-fixed {
       position: fixed;
@@ -226,7 +228,7 @@
       right: 0;
       opacity: 0;
       transform: translateY(0);
-      animation: visibleHeader 0.3s linear forwards;
+      animation: visibleHeader 1s linear forwards;
     }
   }
 //}

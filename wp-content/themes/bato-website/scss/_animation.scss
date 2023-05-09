@@ -203,14 +203,14 @@ body {
 //}
 
 header.inited {
-  opacity: 0;
-  transform: translateY(-30px);
-   animation: opacity 1s linear 3s forwards, header 0.5s linear 3s forwards;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s linear 3s;
 }
 
 .page-template-projects, .page-template-contact {
-  header {
-    animation: opacity 1s linear 1s forwards, header 0.5s linear 1s forwards;
+  header.inited {
+    transition: opacity 1s linear 1s;
   }
 }
 
