@@ -1,0 +1,29 @@
+.radial-gradient {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(35.94% 36.06% at 56.79% 55.92%, cyan 47.34%, rgba(0,203,232,0.732548) 67.65%, rgba(0,158,212,0.5) 100%);
+    border-radius: 100%;
+    opacity: 0.8;
+    filter: blur(80px);
+
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99;
+
+    animation: pulse_radiant 5s linear infinite;
+}
+
+@keyframes pulse_radiant {
+    from {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
