@@ -25,10 +25,7 @@
 
 <?php get_template_part('template-parts/cookie-block', null) ?>
 
-<div class="radial-gradient"></div>
-
 </div>
-
 
 <?php wp_footer(); ?>
 

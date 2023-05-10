@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section");
   const sectionContact = document.querySelector(".contact-page");
 
-  animationSections(sections);
+  animationSections(sections, 0);
   fixedHeader(sectionContact);
 
   preloader();

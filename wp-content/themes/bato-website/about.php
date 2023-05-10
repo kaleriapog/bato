@@ -106,6 +106,9 @@ get_header();
         <section class="section-about-our-story section">
             <div class="main-size">
                 <div class="section-about-our-story__wrapper">
+                    <div class="section-about-our-story__bg">
+                        <img src="<?php echo get_template_directory_uri() ?>/images/effect-story.png" alt="decorative image">
+                    </div>
                     <div class="section-about-our-story__content">
 
                         <?php if (!empty($our_story_title)) { ?>
@@ -137,7 +140,9 @@ get_header();
 
                         <?php if (!empty($our_values_title)) { ?>
 
-                            <div class="title_basic title"><?php echo $our_values_title ?></div>
+                            <div class="title_basic title our-values-fake-mask-parent"><?php echo $our_values_title ?>
+                                <div class="our-values-fake-mask"></div>
+                            </div>
 
                         <?php } ?>
 

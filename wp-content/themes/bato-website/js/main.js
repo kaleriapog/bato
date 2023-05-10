@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
      animationWave(menuMainItems);
      animationWave(socialMedia);
-     cursor(cursorBlock);
+     // cursor(cursorBlock);
 
   // if (document.querySelector("body").classList.contains("body-safari")) {
   //   menuMainItems.forEach((item) => {

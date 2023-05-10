@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionAReviews = document.querySelector(".section-projects-reviews");
   const sections = document.querySelectorAll(".section");
   const sectionHero = document.querySelector(".section-projects-hero");
-
   const target = document.querySelector(".section-projects");
 
   const observerOptions = {
@@ -27,9 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(target);
 
-  animationSections(sections);
+  animationSections(sections, 0);
   preloader();
-
   sectionAboutReviews(sectionAReviews);
   fixedHeader(sectionHero);
 

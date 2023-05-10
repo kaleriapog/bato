@@ -9,6 +9,10 @@ body {
     overflow-x: clip;
   }
 
+  &.home .body-wrapp {
+    opacity: 0;
+  }
+
   .site-main {
     position: relative;
 
@@ -560,6 +564,10 @@ html {
         width: 100%;
         max-width: calc(100% - 60px);
       }
+
+      @include media-mobile-small {
+        max-width: 100%;
+      }
     }
 
     .card-services-0 {
@@ -639,10 +647,18 @@ html {
       @include media-mobile-small-360 {
         font-size: 20px;
       }
+
+      @include media-mobile-small {
+        max-width: calc(100% - 60px);
+      }
     }
 
     .card-text {
       max-width: 95%;
+
+      @include media-mobile-small {
+        max-width: 100%;
+      }
     }
 
     .card-icon {
@@ -668,6 +684,12 @@ html {
         max-height: 60px;
         min-height: 60px;
         margin-left: auto;
+      }
+
+      @include media-mobile-small {
+        max-width: 50px;
+        max-height: 50px;
+        min-height: 50px;
       }
     }
   }
@@ -862,10 +884,10 @@ html {
     justify-content: center;
     //margin: 0 -10px;
 
-    @include media-mobile {
-      //margin: 0 -10px;
-      flex-wrap: nowrap;
-    }
+    //@include media-mobile {
+    //  //margin: 0 -10px;
+    //  flex-wrap: nowrap;
+    //}
   }
 
   &__card-team-name {

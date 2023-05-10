@@ -20,11 +20,9 @@ export default function sectionOurValues(el) {
     mask.style.height = `${heightListMask}px`;
 
     // animation track for items
-    timelineSectionOurValues.fromTo(
-      [".section-our-values__items-list"],
-      { transform: `translateY(20vh)` },
-      { transform: "translateY(-70%)", ease: Linear.easeNone }
-    );
+    timelineSectionOurValues
+        .fromTo( [".section-our-values__items-list"], { transform: `translateY(20vh)` }, { transform: "translateY(-70%)", ease: Linear.easeNone })
+        .fromTo( [".our-values-fake-mask"], {}, {height: '300px', opacity: 1, duration: '0.1', ease: Linear.easeNone }, '<')
 
     new ScrollMagic.Scene({
       triggerElement: ".section-our-values",
