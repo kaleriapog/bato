@@ -9,10 +9,6 @@ export default function interactiveBlock(section) {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 cubeSmall.style.transform = `translateY(-${heightSection}px)`;
-
-                if (mediaMobile) {
-                    cubeSmall.style.transform = `translateY(-${heightSection * 2}px)`;
-                }
             }
 
             if (!entry.isIntersecting) {

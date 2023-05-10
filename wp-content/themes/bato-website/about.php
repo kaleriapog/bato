@@ -202,17 +202,17 @@ get_header();
     <?php if (!empty($about_team_team)) { ?>
 
         <section class="section-team section-about-team section" id="section-team">
-            <div class="section-team__inner main-size">
-                <div class="splide splide-about-team">
-                    <div class="splide__arrows splide__arrows--ltr">
+            <div class="main-size">
+                <div class="section-team__inner">
+                    <div class="section-team__nav">
                         <h2 class="title_basic title"><?php echo $about_team_title ?></h2>
-                        <div class="splide__buttons">
-                            <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide" aria-controls="splide01-track">
-                                <span class="splide__arrow-inner">
+                        <div class="slider__buttons">
+                            <button class="swiper-button-prev">
+                                <span class="swiper-button__arrow-inner">
                                     <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0.292892 7.29289C-0.0976315 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM21 7L1 7V9L21 9V7Z" fill="#666666" />
                                     </svg>
-                                    <svg class="splide__arrow-svg-hover" width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="swiper-button__arrow-svg-hover" width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM20 7L0 7V9L20 9V7Z" fill="url(#paint0_linear_1663_1877)" />
                                         <defs>
                                             <linearGradient id="paint0_linear_1663_1877" x1="16.5328" y1="7.87834" x2="16.4822" y2="6.59326" gradientUnits="userSpaceOnUse">
@@ -223,12 +223,12 @@ get_header();
                                     </svg>
                                 </span>
                             </button>
-                            <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide" aria-controls="splide01-track">
-                                <span class="splide__arrow-inner">
+                            <button class="swiper-button-next">
+                                <span class="swiper-button__arrow-inner">
                                     <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0.292892 7.29289C-0.0976315 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM21 7L1 7V9L21 9V7Z" fill="#666666" />
                                     </svg>
-                                    <svg class="splide__arrow-svg-hover" width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="swiper-button__arrow-svg-hover" width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM20 7L0 7V9L20 9V7Z" fill="url(#paint0_linear_1663_18772)" />
                                         <defs>
                                             <linearGradient id="paint0_linear_1663_18772" x1="16.5328" y1="7.87834" x2="16.4822" y2="6.59326" gradientUnits="userSpaceOnUse">
@@ -241,8 +241,9 @@ get_header();
                             </button>
                         </div>
                     </div>
-                    <div class="splide__track">
-                        <div class="section-team__items splide__list">
+                    <div class="swiper swiper-about-team">
+
+                        <div class="swiper-wrapper section-team__items">
 
                             <?php foreach ($about_team_team as $key => $team_item) {
                                 $name = $team_item['name'];
@@ -252,7 +253,7 @@ get_header();
 
                             ?>
 
-                                <div class="section-team__items-wrapp splide__slide item-photo item-photo-<?php echo $key ?>">
+                                <div class="swiper-slide section-team__items-wrapp item-photo item-photo-<?php echo $key ?>">
                                     <div class="container">
                                         <div class="viewport">
                                             <div class="cube">

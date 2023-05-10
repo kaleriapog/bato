@@ -107,8 +107,6 @@ export default function sliderTeam(el) {
     // const height700 = window.innerHeight <= 700;
     const mediaMobile = window.innerWidth <= 767;
 
-    console.log(mediaMobile)
-
     // let triggerPositionLaptop = -windowHeight * 0.1
 
     new ScrollMagic.Scene({ triggerElement: ".lottie-people-inner", duration: mediaMobile ? '100%' : 1800,  offset: 0, triggerHook: 0})

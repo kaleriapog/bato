@@ -844,6 +844,13 @@ html {
     }
   }
 
+  &__nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .title_basic {
     max-width: 500px;
     line-height: 1.3;
@@ -857,6 +864,7 @@ html {
 
     @include media-mobile {
       margin: 0 -10px;
+      flex-wrap: nowrap;
     }
   }
 
@@ -919,10 +927,8 @@ html {
     }
   }
 
-  .splide-about-team {
+  .swiper-about-team {
     .section-team__items {
-      display: flex;
-      flex-wrap: inherit;
       justify-content: start;
     }
 
@@ -933,8 +939,10 @@ html {
       transform: translateY(120%) scale(0.99);
 
       @include media-1440 {
-        width: 22.75vw;
-        height: 22.75vw;
+        //width: 22.75vw;
+        //height: 22.75vw;
+        width: 23.2vw;
+        height: 23.2vw;
       }
 
       @media (min-width: 1366px) and (max-width: 1440px) {
