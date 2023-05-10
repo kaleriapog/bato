@@ -136,29 +136,29 @@ get_header();
 
     <?php if (!empty($projects_reviews)) : ?>
 
-        <section class="section-projects-reviews section">
+        <section class="section-about-reviews section-projects-reviews section">
             <div class="main-size">
-                <div class="section-projects-reviews__wrapper">
+                <div class="section-about-reviews__wrapper">
 
                     <?php if (!empty($projects_reviews['title'])) : ?>
 
-                        <h2 class="section-projects-reviews__title title title_basic"><?php echo $projects_reviews['title'] ?></h2>
+                        <h2 class="section-about-reviews__title title title_basic"><?php echo $projects_reviews['title'] ?></h2>
 
                     <?php endif ?>
 
                     <?php if (!empty($projects_reviews['text'])) : ?>
 
-                        <div class="section-projects-reviews__text"><?php echo $projects_reviews['text'] ?></div>
+                        <div class="section-about-reviews__text"><?php echo $projects_reviews['text'] ?></div>
 
                     <?php endif ?>
 
                     <?php if (!empty($projects_reviews['link'])) : ?>
 
-                        <a href="<?php echo $projects_reviews['link']['url'] ?>" target="<?php echo $projects_reviews['link']['target'] ? $projects_reviews['link']['target'] : '_self' ?>" class="section-projects-reviews__rating">
+                        <a href="<?php echo $projects_reviews['link']['url'] ?>" target="<?php echo $projects_reviews['link']['target'] ? $projects_reviews['link']['target'] : '_self' ?>" class="section-about-reviews__rating">
 
                             <?php if (!empty($projects_reviews['logo'])) : ?>
 
-                                <div class="section-projects-reviews__rating-image">
+                                <div class="section-about-reviews__rating-image">
 
                                     <?php insertImage($projects_reviews['logo']) ?>
 
@@ -168,7 +168,7 @@ get_header();
 
                             <?php if (!empty($projects_reviews['rating'])) : ?>
 
-                                <div class="section-projects-reviews__rating-inner">
+                                <div class="section-about-reviews__rating-inner">
 
                                     <span class="section-about-reviews__rating-number"><?php echo $projects_reviews['rating'] ?></span>
                                     <span class="section-about-reviews__rating-stars">
@@ -243,24 +243,24 @@ get_header();
 
                         <div class="reviews-items">
 
-                            <ul class="section-projects-reviews__items custom-scrollbar">
+                            <ul class="section-about-reviews__items custom-scrollbar">
 
                                 <?php foreach ($projects_reviews['items'] as $key => $item) : ?>
 
-                                    <li class="section-projects-reviews__item anim-item anim-item-<?php echo $key ?> section-projects-reviews__item-<?php echo $key ?>">
+                                    <li class="section-about-reviews__item anim-item anim-item-<?php echo $key ?> section-about-reviews__item-<?php echo $key ?>">
                                         <div class="reviews-item-bg"></div>
-                                        <div class="section-projects-reviews__item-content">
+                                        <div class="section-about-reviews__item-content">
                                             <span class="quotation-mark go-opacity">“</span>
 
                                             <?php if (!empty($item['text'])) : ?>
 
-                                                <div class="section-projects-reviews__item-text custom-scrollbar go-opacity"><?php echo $item['text'] ?></div>
+                                                <div class="section-about-reviews__item-text custom-scrollbar go-opacity"><?php echo $item['text'] ?></div>
 
                                             <?php endif ?>
 
                                             <?php if (!empty($item['title'])) : ?>
 
-                                                <div class="section-projects-reviews__item-name go-opacity"><?php echo $item['title'] ?></div>
+                                                <div class="section-about-reviews__item-name go-opacity"><?php echo $item['title'] ?></div>
 
                                             <?php endif ?>
 
