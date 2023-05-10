@@ -1626,3 +1626,8 @@ html {
     }
   }
 }
+
+.grecaptcha-badge {
+  right: auto !important;
+  left: -99999px;
+}

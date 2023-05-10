@@ -1,3 +1,11 @@
+<?php 
+    if(!empty($args)) {
+        foreach ($args as $field_name => $field) {
+            ${"$field_name"} = $field;
+        }
+    }
+?>
+
 <section class="section-contact" id="section-contact">
     <div class="section-contact__inner main-size">
         <div class="section-contact__description">
