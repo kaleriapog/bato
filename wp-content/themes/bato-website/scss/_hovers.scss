@@ -218,8 +218,9 @@
   .contact-page {
     .contact-item {
       a {
-        &:hover {
-          color: #fff;
+        &:hover::before {
+          transform: scaleX(1);
+          transform-origin: left;
         }
       }
     }
@@ -233,8 +234,9 @@
 
       .privacy {
         a {
-          &:hover {
-            color: #fff;
+          &:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
           }
         }
       }
