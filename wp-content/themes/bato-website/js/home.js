@@ -3,14 +3,12 @@ import preloader from "./modules/preloader.js";
 import animationWave from "./modules/animationWave.js";
 import teamCubes from "./modules/teamCubes.js";
 import magneticBtn from "./modules/magneticBtn.js";
-import slider from "./modules/slider.js";
 import animationSections from "./modules/animationSections.js";
 import animationFooter from "./modules/animationFooter.js";
 import accordion from "./modules/accordion.js";
 import fixedHeader from "./modules/fixed-header.js";
 import interactiveBlock from "./modules/interactive-block.js";
 import homeAnimationPause from "./modules/homeAnimationPause.js";
-import cursor from "./modules/cursor.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardTitleItems = document.querySelectorAll(
