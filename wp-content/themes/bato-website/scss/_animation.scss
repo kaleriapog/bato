@@ -105,6 +105,7 @@ body {
 .title-large {
   @include main-animation;
   animation: main_animation_title 1.5s ease forwards;
+  animation-delay: 0.1s; /* temp solution for doubling animation */
 }
 
 // menu
