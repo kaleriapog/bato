@@ -4,8 +4,12 @@ export default function cookies(el) {
     let button = el.querySelector('.block-cookies__button')
 
     button.addEventListener('click', () => {
+        // const expirationDate = new Date(Date.now() + 86400000).toUTCString();
+        // document.cookie = "cookies-accepted=true; expires=" + expirationDate;
+
         const expirationDate = new Date(Date.now() + 86400000).toUTCString();
-        document.cookie = "cookies-accepted=true; expires=" + expirationDate;
+        const cookiePath = "/";
+        document.cookie = "cookies-accepted=true; expires=" + expirationDate + "; path=" + cookiePath;
 
         el.style.transform = 'translateY(100%)'
 
