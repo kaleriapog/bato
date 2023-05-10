@@ -7,7 +7,6 @@ $title = $fields['title'];
 $subtitle = $fields['subtitle'];
 $text = $fields['text'];
 
-
 get_header();
 ?>
 

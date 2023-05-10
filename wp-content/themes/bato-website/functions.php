@@ -82,7 +82,8 @@ function enqueue_js_css() {
     }
 
     if ($template_slug === 'privacy.php') {
-        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/contact-scripts.js');
+//        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/contact-scripts.js');
+        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/privacy.js');
     }
 }
 /* add js/css END */
