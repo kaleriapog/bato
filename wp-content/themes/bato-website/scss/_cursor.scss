@@ -14,6 +14,10 @@
     z-index: 99;
 
     animation: pulse_radiant 5s linear infinite;
+
+    @include media-laptop {
+        display: none;
+    }
 }
 
 @keyframes pulse_radiant {
