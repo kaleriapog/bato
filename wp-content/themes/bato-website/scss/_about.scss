@@ -277,9 +277,18 @@
   }
 
   &__bg {
-    max-width: 710px;
+    max-width: 950px;
     position: absolute;
-    top: 0;
+    top: -39%;
+    left: -124px;
+
+    @include media-mobile {
+      max-width: 700px;
+      min-width: 700px;
+      top: -278px;
+      left: -326px;
+      transform: rotate(105deg);
+    }
   }
 
   .title {
