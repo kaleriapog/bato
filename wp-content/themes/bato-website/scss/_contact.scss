@@ -38,7 +38,7 @@
 
     @include media-laptop {
       flex-direction: column;
-      gap: 40px;
+      gap: 80px;
       padding: 90px 0 200px;
     }
 
@@ -57,9 +57,13 @@
       transform: translateY(0);
     }
 
-    .contact-page__form {
-      opacity: 1;
-      transform: translateY(0);
+    .contact-page__text,
+    .contact-page__columns {
+      opacity: 0;
+      will-change: transform, opacity;
+      transform: translate3d(0px, 3em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+      transform-style: preserve-3d;
+      animation: main_animation_title 1.5s ease forwards;
     }
   }
 
@@ -96,6 +100,8 @@
       font-size: 16px;
       line-height: 1.5;
     }
+
+    
   }
 
   &__columns {
@@ -150,7 +156,24 @@
     }
 
     a {
-      transition: color 0.3s;
+      width: max-content;
+      max-width: 100%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        bottom: -2px;
+        background: #06ffff;
+        height: 1px;
+        width: 100%;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform;
+      }
     }
   }
 
@@ -163,9 +186,6 @@
     position: relative;
     z-index: 10;
     background-color: $color-form-bg;
-    opacity: 0;
-    transition: opacity 1.5s, transform 1.5s;
-    transition-delay: 1s;
 
     @include media-1440 {
       max-width: 55%;
@@ -273,10 +293,23 @@
 
       a {
         color: $color-hover;
-        transition: color 0.3s;
-
-        @include media-mobile {
-          display: inline-block;
+        width: max-content;
+        max-width: 100%;
+        position: relative;
+  
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          bottom: -2px;
+          background: #06ffff;
+          height: 1px;
+          width: 100%;
+          transform-origin: right;
+          transform: scaleX(0);
+          transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+          will-change: transform;
         }
       }
     }
@@ -287,6 +320,7 @@
         color: $color-red;
         @include media-tablet {
           font-size: 12px;
+          margin-top: -10px;
         }
       }
       .wpcf7-response-output {

@@ -1267,6 +1267,11 @@
 
     .section-about-reviews__rating {
       opacity: 1;
+
+      &-inner,
+      &-image {
+        transition: 0.3s;
+      }
     }
 
     .reviews-items {

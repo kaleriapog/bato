@@ -92,6 +92,17 @@
     }
   }
 
+  .section-projects-reviews {
+    &__rating {
+      &:hover {
+        .section-projects-reviews__rating-inner,
+        .section-projects-reviews__rating-image {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
   .error404 {
     .error-404 {
       .link-to-home {
@@ -218,8 +229,9 @@
   .contact-page {
     .contact-item {
       a {
-        &:hover {
-          color: #fff;
+        &:hover::before {
+          transform: scaleX(1);
+          transform-origin: left;
         }
       }
     }
@@ -233,8 +245,9 @@
 
       .privacy {
         a {
-          &:hover {
-            color: #fff;
+          &:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
           }
         }
       }
