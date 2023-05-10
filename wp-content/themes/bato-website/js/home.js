@@ -10,6 +10,7 @@ import accordion from "./modules/accordion.js";
 import fixedHeader from "./modules/fixed-header.js";
 import interactiveBlock from "./modules/interactive-block.js";
 import homeAnimationPause from "./modules/homeAnimationPause.js";
+import cursor from "./modules/cursor.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardTitleItems = document.querySelectorAll(
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelectorAll(".footer");
   const accordionBlock = document.querySelectorAll(".accordion");
   const footerMain = document.querySelector(".footer");
+  const cursorBlock = document.querySelector('.radial-gradient');
 
   animationText();
   preloader();
@@ -51,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   accordion(accordionBlock);
   fixedHeader(heroHomeFirst);
   interactiveBlock(footerMain);
+  cursor(cursorBlock);
 
   if (!document.querySelector("body").classList.contains("body-safari")) {
     animationWave(cardTitleItems);
