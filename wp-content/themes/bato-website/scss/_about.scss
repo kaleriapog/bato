@@ -46,10 +46,6 @@
 
   }
 
-  .swiper-about-team {
-    overflow: visible;
-  }
-
   .section-team .cube-item.front-cube .front-cube-content {
     @include media-mobile-small-360 {
       padding: 10px 14px;
@@ -507,6 +503,10 @@
 
 .section-about-team {
   z-index: 2;
+
+  .swiper-slide {
+    width: fit-content;
+  }
 
   //.item-photo {
   //  opacity: 1;

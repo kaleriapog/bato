@@ -860,10 +860,10 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 -10px;
+    //margin: 0 -10px;
 
     @include media-mobile {
-      margin: 0 -10px;
+      //margin: 0 -10px;
       flex-wrap: nowrap;
     }
   }
@@ -930,6 +930,7 @@ html {
   .swiper-about-team {
     .section-team__items {
       justify-content: start;
+      //gap: 20px;
     }
 
     .section-team__items-wrapp {
@@ -939,10 +940,8 @@ html {
       transform: translateY(120%) scale(0.99);
 
       @include media-1440 {
-        //width: 22.75vw;
-        //height: 22.75vw;
-        width: 23.2vw;
-        height: 23.2vw;
+        width: 22.8vw;
+        height: 22.8vw;
       }
 
       @media (min-width: 1366px) and (max-width: 1440px) {

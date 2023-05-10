@@ -11,7 +11,6 @@
     left: 0;
     pointer-events: none;
     z-index: 99;
-
     animation: pulse_radiant 5s linear infinite;
 
     @include media-laptop {

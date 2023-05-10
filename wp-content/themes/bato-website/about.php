@@ -252,8 +252,8 @@ get_header();
                                 $image = $team_item['image'];
 
                             ?>
-
-                                <div class="swiper-slide section-team__items-wrapp item-photo item-photo-<?php echo $key ?>">
+                                <div class="swiper-slide">
+                                <div class=" section-team__items-wrapp item-photo item-photo-<?php echo $key ?>">
                                     <div class="container">
                                         <div class="viewport">
                                             <div class="cube">
@@ -301,7 +301,7 @@ get_header();
                                         </div>
                                     </div>
                                 </div>
-
+                                </div>
                             <?php } ?>
 
                         </div>

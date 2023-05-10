@@ -2,6 +2,7 @@ import animationWave from "./modules/animationWave.js";
 import mobileMenu from "./modules/mobileMenu.js";
 import animationFooter from "./modules/animationFooter.js";
 import cookies from "./modules/cookies.js"
+import cursor from "./modules/cursor.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (navigator.platform !== "MacIntel") {
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const menuMainItems = document.querySelectorAll(".header-menu .menu-item a");
   const socialMedia = document.querySelectorAll(".social-media .menu-item a");
+  const cursorBlock = document.querySelector('.radial-gradient');
 
   // if (!document.querySelector("body").classList.contains("body-safari")) {
   //   animationWave(menuMainItems);
@@ -30,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
      animationWave(menuMainItems);
      animationWave(socialMedia);
+     cursor(cursorBlock);
+
   // if (document.querySelector("body").classList.contains("body-safari")) {
   //   menuMainItems.forEach((item) => {
   //     item.classList.add("animation-no-wave");
