@@ -1,13 +1,24 @@
 export default function mapAbout(el) {
     if (!el) return;
 
+    let _offset;
     let controller = new ScrollMagic.Controller()
-    const mediaMobile = window.screen.width <= 767
-    const mediaH1000 = window.innerHeight > 1000
-    const interactiveHeight = el.querySelector('.section-about-hq__interactive-height').offsetHeight
-    const offsetH1000 = -((window.innerHeight - interactiveHeight) / 2)
+    
+    function toggleScrollMagic() {
+        let interactiveHeight = el.querySelector('.section-about-hq__interactive-height').offsetHeight
+        let mediaMobile = window.screen.width <= 767
+        let mediaH1000 = window.innerHeight > 1000
+        let offsetH1000 = -((window.innerHeight - interactiveHeight) / 2)
 
-    let sectionAboutHqScene =  new ScrollMagic.Scene({triggerElement: '.section-about-hq__interactive', offset: mediaH1000 ? offsetH1000 : mediaMobile ? offsetH1000 : '0', duration: mediaMobile ? '200%' : '300%', triggerHook: 0 })
+        controller.destroy(true);
+        controller = new ScrollMagic.Controller();
+
+        new ScrollMagic.Scene({
+            triggerElement: '.section-about-hq__interactive', 
+            offset: mediaH1000 ? offsetH1000 : mediaMobile ? offsetH1000 : '0', 
+            duration: mediaMobile ? '200%' : '300%', 
+            triggerHook: 0 
+        })
         .setPin('.section-about-hq__interactive')
         .setTween(
             new TimelineMax()
@@ -21,5 +32,11 @@ export default function mapAbout(el) {
         .addTo(controller)
         .reverse(true);
 
-    // offset: -50,
+    }
+    toggleScrollMagic();
+
+    window.addEventListener('resize', function() {
+        toggleScrollMagic();
+        console.log('resized');
+    });
 }
