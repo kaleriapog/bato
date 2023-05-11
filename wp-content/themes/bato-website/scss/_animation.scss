@@ -265,13 +265,13 @@ header.inited {
         display: inline-block;
 
         .anim & {
-          animation: circle 10s linear infinite;
+          //animation: circle 10s linear infinite;
         }
       }
 
       .circle-item-big-wrapp {
         .anim & {
-          animation: circle 15s linear infinite;
+          //animation: circle 15s linear infinite;
         }
       }
 
@@ -294,7 +294,7 @@ header.inited {
       .circle-item-small {
         width: 60px;
         height: 60px;
-        animation: inner-circle 10s linear infinite;
+        //animation: inner-circle 10s linear infinite;
         transform-origin: 2% 14px;
 
         @include media-mobile {
@@ -309,7 +309,7 @@ header.inited {
         transform-origin: 2% 14px;
 
         .anim & {
-          animation: inner-circle 15s linear infinite;
+          //animation: inner-circle 15s linear infinite;
         }
 
         @include media-mobile {
@@ -1869,4 +1869,26 @@ body.windows {
 
 .animation-no-wave {
   transition: opacity 0.3s;
+}
+
+.section-technologies {
+  .section-technologies__item {
+    opacity: 0;
+    transform: translateY(120%);
+    transition: opacity 2s cubic-bezier(0.22, 0.17, 0, 0.98),
+    transform 2s cubic-bezier(0.22, 0.17, 0, 0.98);
+  }
+
+  @for $i from 0 through 8 {
+    .section-technologies__item-#{$i} {
+      transition-delay: #{$i * 0.2 + 0.5}s;
+    }
+  }
+
+  &.animation {
+    .section-technologies__item{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

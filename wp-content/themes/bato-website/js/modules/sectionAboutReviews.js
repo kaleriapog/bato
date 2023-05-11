@@ -6,6 +6,7 @@ export default function sectionAboutReviews(el) {
   let timelineSectionAboutReviews = new TimelineMax();
   let items = el.querySelectorAll(".anim-item");
   let durationReviews = items.length * 800;
+  let mediaLaptop = window.innerWidth <= 1024
 
   items.forEach((item, idx) => {
     let lastItem = items.length - 1 === idx;
@@ -61,10 +62,13 @@ export default function sectionAboutReviews(el) {
         .reverse(true);
     }
   }
+
   toggleScrollMagic();
 
   window.addEventListener('resize', function() {
-    toggleScrollMagic();
+      if(!mediaLaptop) {
+          toggleScrollMagic();
+      }
   });
 
   /* reviews slider START */

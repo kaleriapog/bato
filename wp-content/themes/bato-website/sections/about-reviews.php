@@ -96,6 +96,7 @@
                                     </svg>
                                 </span>
                             </div>
+
                         <?php endif ?>
                     </a>
                 <?php endif ?>

@@ -36,7 +36,8 @@ export default function mapAbout(el) {
     toggleScrollMagic();
 
     window.addEventListener('resize', function() {
-        toggleScrollMagic();
-        console.log('resized');
+        if(!mediaLaptop) {
+            toggleScrollMagic();
+        };
     });
 }

@@ -16,9 +16,9 @@ if(!empty($args)) {
 
             <ul class="section-technologies__images">
 
-                <?php foreach ($images as $item) : ?>
+                <?php foreach ($images as $key=>$item) : ?>
 
-                    <li class="section-technologies__item">
+                    <li class="section-technologies__item section-technologies__item-<?php echo $key ?>">
                         <div class="section-technologies__image">
                             <div class="section-technologies__image-wrapper">
                                 <img src="<?php echo $item['link'] ?>" alt="<?php echo $item['title'] ?>">

@@ -328,4 +328,12 @@
   #donation-popup-close:hover {
     border-color: #06ffff;
   }
+
+  .section-technologies__item {
+    &:hover {
+      &:before {
+        transform: translate(80%, 80%);
+      }
+    }
+  }
 }
