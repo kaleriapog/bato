@@ -19,11 +19,13 @@ export default function mobileMenu() {
   iconOpenNav.addEventListener("click", () => {
     setTimeout(() => {
       header.classList.add("open-header-menu");
-    }, 400);
+    }, 500);
     navBlockHeader.classList.add("open-menu");
-    page.classList.remove("visible");
+    // page.classList.remove("visible");
     page.classList.add("no-scroll");
     preloaderMenuMob.classList.add("preloader-menu-mob-start");
+
+    // header.classList.add("open-header-menu");
   });
 
   // close nav
@@ -54,4 +56,12 @@ export default function mobileMenu() {
       });
     });
   }
+
+  window.addEventListener("resize", () => {
+    navBlockHeader.classList.add("no-transition");
+
+    setTimeout(() => {
+      navBlockHeader.classList.remove("no-transition");
+    }, 1500);
+  })
 }
