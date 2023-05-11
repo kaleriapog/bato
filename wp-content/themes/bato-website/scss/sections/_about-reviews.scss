@@ -1,4 +1,8 @@
 .section-about-reviews {
+
+  @include media-tablet {
+    padding: 50px 0;
+  }
   
   .section-about-reviews__pin-section {
     min-height: 100vh;

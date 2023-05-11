@@ -2,28 +2,17 @@ export default function sectionAboutReviews(el) {
   if (!el) return;
 
   let _offset;
-  let reviews_controller = new ScrollMagic.Controller();
+  let controller = new ScrollMagic.Controller();
   let timelineSectionAboutReviews = new TimelineMax();
   let items = el.querySelectorAll(".anim-item");
   let durationReviews = items.length * 800;
 
-  new ScrollMagic.Scene({
-    triggerElement: el,
-    duration: durationReviews,
-    triggerHook: "onLeave",
-  })
-    .setPin(el)
-    .setTween(timelineSectionAboutReviews)
-    .addTo(reviews_controller)
-    .offset(_offset*-1)
-    .reverse(true);
-
   function toggleScrollMagic() {
     _offset = document.querySelector(".header").offsetHeight;
 
-    reviews_controller.destroy(true);
+    controller.destroy(true);
     if (window.innerWidth > 1024) {
-      reviews_controller = new ScrollMagic.Controller();
+      controller = new ScrollMagic.Controller();
 
       new ScrollMagic.Scene({
         triggerElement: el,
@@ -32,7 +21,7 @@ export default function sectionAboutReviews(el) {
       })
         .setPin(el)
         .setTween(timelineSectionAboutReviews)
-        .addTo(reviews_controller)
+        .addTo(controller)
         .offset(_offset*-1)
         .reverse(true);
     }
