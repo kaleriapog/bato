@@ -75,6 +75,9 @@ function enqueue_js_css() {
     }
 
     if ($template_slug === 'projects.php') {
+        wp_enqueue_style('connection_style', get_template_directory_uri() . '/swiper-bundle.min.css');
+
+        wp_enqueue_script('connection_script_swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js');        
         wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js');
         wp_enqueue_script('connection_script_scroll-magic', get_template_directory_uri() . '/js/ScrollMagic.min.js');
         wp_enqueue_script('connection_script_animation_gsap', get_template_directory_uri() . '/js/animation.gsap.js');

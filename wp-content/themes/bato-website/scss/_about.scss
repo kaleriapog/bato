@@ -18,11 +18,6 @@
     margin: 0;
   }
 
-  // .title {
-  //   transform: none;
-  //   opacity: 1;
-  // }
-
   .section-team__items {
     @include media-mobile {
       flex-wrap: nowrap;
@@ -891,6 +886,10 @@
     padding: 200px 0 100px;
   }
 
+  @include media-laptop {
+    margin-bottom: -200px;
+  }
+
   @include media-mobile {
     margin-bottom: 0;
     padding: 50px 0;
@@ -903,7 +902,7 @@
   }
 
   @include media-mobile-horizontal {
-    display: none;
+    /* display: none; */
   }
 
   &__title {
@@ -1309,194 +1308,6 @@
       font-size: 19px;
       color: $color-hover;
     }
-  }
-}
-
-.section-about-reviews {
-  &.animation {
-    .section-about-reviews__text {
-      will-change: transform, opacity;
-      transform: translate3d(0px, 2em, 0px) scale3d(1, 1, 1) rotateX(0deg)
-      rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
-      transform-style: preserve-3d;
-      animation: main_animation 1.5s ease 0.7s forwards;
-    }
-
-    .section-about-reviews__rating {
-      opacity: 1;
-
-      &-inner,
-      &-image {
-        transition: 0.3s;
-      }
-    }
-
-    .reviews-items {
-      opacity: 1;
-    }
-  }
-
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 50px;
-  margin-top: -50px;
-
-  .title {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  &__text {
-    max-width: 590px;
-    width: 100%;
-    margin: 0 auto 28px;
-    font-size: 20px;
-    line-height: 1.6;
-    opacity: 0;
-    text-align: center;
-  }
-
-  &__rating {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 0 auto 38px;
-    opacity: 0;
-    transition: opacity 0.7s ease 1s;
-  }
-
-  &__rating-number {
-    background: linear-gradient(141.8deg, #00FFFF 14.44%, #01C4E5 86.47%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  .reviews-items {
-    opacity: 0;
-    transition: opacity 0.7s ease 1s;
-
-    @include media-laptop {
-      position: absolute;
-      left: -9999px;
-    }
-  }
-
-  &__rating-inner,
-  &__rating-image {
-    transition: opacity 0.3s;
-  }
-
-  &__rating-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  &__rating-stars {
-    position: relative;
-    display: block;
-
-    .rating-stars-color {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-  }
-
-  &__items {
-    position: relative;
-  }
-
-  &__item {
-    max-width: 700px;
-    width: 100%;
-    margin: auto;
-    padding: 1px;
-    background: linear-gradient(
-      180deg,
-      #b9b9b9 0%,
-      rgba(102, 102, 102, 0) 100%
-    );
-    position: relative;
-
-    &:not(:first-child) {
-      position: absolute;
-      //top: 100vh;
-      top: 0;
-      transform: translateY(100vh);
-      left: 0;
-      right: 0;
-      z-index: 1;
-    }
-
-    .reviews-item-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        180deg,
-        #06ffff 0%,
-        rgba(6, 255, 255, 0) 133.17%
-      );
-    }
-
-    .quotation-mark {
-      display: block;
-      margin: 0 auto 30px;
-      font-family: "Montserrat", sans-serif;
-      font-size: 80px;
-      font-weight: 600;
-      line-height: 1;
-      text-align: center;
-      color: $color-main;
-      max-height: 40px;
-    }
-  }
-
-  &__item-content {
-    padding: 45px;
-    background-color: $main-color-bg;
-    position: relative;
-  }
-
-  &__item-text {
-    display: block;
-    font-family: "Poppins", sans-serif;
-    margin: 0 auto 30px;
-    max-width: 560px;
-    width: 100%;
-    max-height: 150px;
-    min-height: 120px;
-    overflow-y: auto;
-    font-size: 16px;
-    padding-right: 4px;
-    font-weight: 300;
-    line-height: 1.4;
-    text-align: center;
-  }
-
-  &__item-name {
-    display: block;
-    padding-top: 30px;
-    border-top: 1px solid $color-text;
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.2;
-    text-align: center;
-    color: $color-main;
   }
 }
 

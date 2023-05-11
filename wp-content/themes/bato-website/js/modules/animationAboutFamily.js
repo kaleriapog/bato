@@ -113,20 +113,6 @@ export default function animationAboutFamily(el) {
       );
   }
 
-  new ScrollMagic.Scene({
-    triggerElement: mediaMobile
-      ? ".section-about-family"
-      : ".section-about-family__content",
-    triggerHook: "onLeave",
-    duration: mediaMobile ? "100%" : "200%",
-    offset: mediaTabletC ? -(window.screen.width / 3) : mediaMobile ? -80 : 50,
-  })
-    .setPin(".section-about-family__content")
-    // .addIndicators({name: 'section-interactive'})
-    .setTween(timelineSectionAboutFamily)
-    .addTo(controller)
-    .reverse(true);
-
   const observerOptions = {
     root: null,
     rootMargin: "400px",
@@ -145,4 +131,30 @@ export default function animationAboutFamily(el) {
   }
 
   observer.observe(target);
+
+  function toggleScrollMagic() {
+    controller.destroy(true);
+    controller = new ScrollMagic.Controller();
+
+    new ScrollMagic.Scene({
+      triggerElement: mediaMobile
+        ? ".section-about-family"
+        : ".section-about-family__content",
+      triggerHook: "onLeave",
+      duration: mediaMobile ? "100%" : "200%",
+      offset: mediaTabletC ? -(window.screen.width / 3) : mediaMobile ? -80 : 50,
+    })
+      .setPin(".section-about-family__content")
+      // .addIndicators({name: 'section-interactive'})
+      .setTween(timelineSectionAboutFamily)
+      .addTo(controller)
+      .reverse(true);
+
+  }
+  toggleScrollMagic();
+
+  window.addEventListener('resize', function() {
+    toggleScrollMagic();
+    console.log('resized');
+  });
 }
