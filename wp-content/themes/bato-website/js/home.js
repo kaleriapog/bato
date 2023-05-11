@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   animationSections(sectionService);
   animationSections(sectionAbout);
   animationSections(sectionOffers);
-  animationSections(sectionTeam);
+  animationSections(sectionTeam, 0.1);
   animationSections(sectionNumbers);
   animationSections(sectionContact);
   animationSections(sectionAccordion);

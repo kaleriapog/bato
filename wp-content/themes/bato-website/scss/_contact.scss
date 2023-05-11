@@ -201,6 +201,14 @@
       padding: 40px 15px;
     }
 
+    form[novalidate="novalidate"] {
+    .wpcf7-response-output:last-child {
+      @include media-tablet {
+        margin-top: 0;
+      }
+    }
+  }
+
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
