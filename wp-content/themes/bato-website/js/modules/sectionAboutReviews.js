@@ -7,32 +7,6 @@ export default function sectionAboutReviews(el) {
   let items = el.querySelectorAll(".anim-item");
   let durationReviews = items.length * 800;
 
-  function toggleScrollMagic() {
-    _offset = document.querySelector(".header").offsetHeight;
-
-    controller.destroy(true);
-    if (window.innerWidth > 1024) {
-      controller = new ScrollMagic.Controller();
-
-      new ScrollMagic.Scene({
-        triggerElement: el,
-        duration: durationReviews,
-        triggerHook: "onLeave",
-      })
-        .setPin(el)
-        .setTween(timelineSectionAboutReviews)
-        .addTo(controller)
-        .offset(_offset*-1)
-        .reverse(true);
-    }
-  }
-  toggleScrollMagic();
-
-  window.addEventListener('resize', function() {
-    toggleScrollMagic();
-    console.log('resized');
-  });
-
   items.forEach((item, idx) => {
     let lastItem = items.length - 1 === idx;
 
@@ -66,6 +40,31 @@ export default function sectionAboutReviews(el) {
           "<"
         );
     }
+  });
+
+  function toggleScrollMagic() {
+    _offset = document.querySelector(".header").offsetHeight;
+
+    controller.destroy(true);
+    if (window.innerWidth > 1024) {
+      controller = new ScrollMagic.Controller();
+
+      new ScrollMagic.Scene({
+        triggerElement: el,
+        duration: durationReviews,
+        triggerHook: "onLeave",
+      })
+        .setPin(el)
+        .setTween(timelineSectionAboutReviews)
+        .addTo(controller)
+        .offset(_offset*-1)
+        .reverse(true);
+    }
+  }
+  toggleScrollMagic();
+
+  window.addEventListener('resize', function() {
+    toggleScrollMagic();
   });
 
   /* reviews slider START */

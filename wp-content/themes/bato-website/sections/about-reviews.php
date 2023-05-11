@@ -107,6 +107,14 @@
                             <?php
                                 $text = $review['review_text'];
                                 $name = $review['review_name'];
+
+                                if(empty($text)) {
+                                    $text = $review['text'];
+                                }
+
+                                if(empty($name)) {
+                                    $name = $review['title'];
+                                }
                             ?>
 
                             <li class="section-about-reviews__item anim-item anim-item-<?php echo $key ?>">
@@ -130,6 +138,14 @@
                                 <?php
                                     $text = $review['review_text'];
                                     $name = $review['review_name'];
+
+                                    if(empty($text)) {
+                                        $text = $review['text'];
+                                    }
+    
+                                    if(empty($name)) {
+                                        $name = $review['title'];
+                                    }
                                 ?>
 
                                 <div class="swiper-slide">
