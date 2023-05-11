@@ -85,12 +85,23 @@
       padding: 15px;
     }
 
+    @include media-mobile-horizontal {
+      padding: 0;
+    }
+
     .menu-header-menu-container {
       @include media-laptop {
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+
+      @include media-mobile-horizontal {
+        overflow-y: scroll;
+        height: 100vh;
+        width: 100vw;
+        align-items: start;
       }
     }
 
@@ -100,6 +111,10 @@
 
       @include media-laptop {
         flex-direction: column;
+      }
+
+      @include media-mobile-horizontal {
+        padding: 70px 0;
       }
 
       @include montserrat;

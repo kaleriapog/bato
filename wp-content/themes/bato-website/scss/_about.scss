@@ -25,8 +25,18 @@
 
   .section-team__items {
     @include media-mobile {
-      //margin: 0 -10px;
       flex-wrap: nowrap;
+    }
+
+    @include media-mobile-horizontal {
+      flex-wrap: nowrap;
+      gap: 0;
+    }
+
+    .item-photo {
+      @include media-mobile-horizontal {
+        transform: scale(0.95);
+      }
     }
   }
 
@@ -683,6 +693,10 @@
 }
 
 .section-about-hq {
+  @include media-mobile-horizontal {
+    display: none;
+  }
+
   &.animation {
     .section-about-hq__title {
       opacity: 1;
