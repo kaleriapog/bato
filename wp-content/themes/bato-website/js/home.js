@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionNumbers = document.querySelectorAll(".section-numbers");
   const sectionContact = document.querySelectorAll(".section-contact");
   const sectionAccordion = document.querySelectorAll(".section-accordion");
+  const sectionTechnologies = document.querySelectorAll(".section-technologies");
+
   const footer = document.querySelectorAll(".footer");
   const accordionBlock = document.querySelectorAll(".accordion");
   const footerMain = document.querySelector(".footer");
@@ -45,12 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
   animationSections(sectionNumbers);
   animationSections(sectionContact);
   animationSections(sectionAccordion);
+  animationSections(sectionTechnologies);
   animationFooter(footer);
   homeAnimationPause();
   accordion(accordionBlock);
   fixedHeader(heroHomeFirst);
   interactiveBlock(footerMain);
-
 
   if (!document.querySelector("body").classList.contains("body-safari")) {
     animationWave(cardTitleItems);

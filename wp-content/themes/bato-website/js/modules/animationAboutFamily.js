@@ -4,6 +4,7 @@ export default function animationAboutFamily(el) {
   let controller = new ScrollMagic.Controller();
   let timelineSectionAboutFamily = new TimelineMax();
   const mediaMobile = window.screen.width <= 767;
+  const mediaLaptop = window.innerWidth <= 1024;
   const mediaTabletC =
     window.screen.width <= 1024 &&
     window.screen.width > 767 &&
@@ -132,7 +133,21 @@ export default function animationAboutFamily(el) {
 
   observer.observe(target);
 
-  function toggleScrollMagic() {
+
+  function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+      let context = this, args = arguments;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(function() {
+          inThrottle = false;
+        }, limit);
+      }
+    };
+  }
+    function toggleScrollMagic() {
     controller.destroy(true);
     controller = new ScrollMagic.Controller();
 
@@ -151,10 +166,11 @@ export default function animationAboutFamily(el) {
       .reverse(true);
 
   }
-  toggleScrollMagic();
+    toggleScrollMagic();
 
   window.addEventListener('resize', function() {
-    toggleScrollMagic();
-    console.log('resized');
+    if(!mediaLaptop) {
+      toggleScrollMagic();
+    }
   });
 }

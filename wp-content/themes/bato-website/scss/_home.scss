@@ -1660,6 +1660,74 @@ html {
   }
 }
 
+.section-technologies {
+  padding: 100px 0;
+
+  @include media-laptop {
+    padding: 50px 0;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    @include media-mobile {
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 1px;
+    overflow: hidden;
+    border-radius: 10px;
+
+    &:before {
+      content: '';
+      height: 500%;
+      width: 500%;
+      background: linear-gradient(138.18deg, #06FFFF 0%, rgba(6, 255, 255, 0) 12%, #666666 88%, rgba(102, 102, 102, 0) 91%);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      transition: transform 0.7s ease;
+    }
+  }
+
+  &__image {
+    width: 170px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $main-color-bg;
+    border-radius: 9px;
+
+    @include media-mobile {
+      width: 120px;
+      height: 105px;
+    }
+  }
+
+  &__image-wrapper {
+    width: 90px;
+    height: 90px;
+
+    @include media-mobile {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
 .grecaptcha-badge {
   right: auto !important;
   left: -99999px;

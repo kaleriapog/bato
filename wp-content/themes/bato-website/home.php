@@ -51,6 +51,13 @@ get_header();
             ]
         );
 
+        get_template_part('sections/technologies', NULL,
+            [
+                'title' => $title,
+                'images' => $images,
+            ]
+        );
+
         get_template_part('sections/cards', NULL, 
             [
                 'cards_title' => $cards_title,
