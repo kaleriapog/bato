@@ -534,7 +534,7 @@
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 32px;
     margin-bottom: 40px;
     color: $color-grey;
@@ -760,6 +760,10 @@
       right: 0;
       bottom: 0;
       opacity: 0;
+
+      @include media-laptop {
+        opacity: 1;
+      }
     }
 
     img {
@@ -771,6 +775,10 @@
       height: 100px;
       opacity: 0;
       transition: none;
+
+      @include media-laptop {
+        opacity: 1;
+      }
 
       @include media-mobile {
         width: 50px;
@@ -894,7 +902,8 @@
   }
 
   @include media-laptop {
-    margin-bottom: -200px;
+    margin-bottom: 0;
+    padding: 100px;
   }
 
   @include media-mobile {
@@ -906,10 +915,34 @@
     .section-about-family__title {
       opacity: 1;
     }
-  }
 
-  @include media-mobile-horizontal {
-    /* display: none; */
+    .section-about-family__images-column {
+      will-change: transform, opacity;
+      transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg)
+      rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+      transform-style: preserve-3d;
+      animation: main_animation 1.5s ease  forwards;
+
+      &:nth-child(1) {
+        animation-delay: 0.7s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 1s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 1.3s;
+      }
+    }
+
+    .family-images-mobile {
+      .section-about-family__image {
+        opacity: 1 !important;
+        transform: translate(0, 0) !important;
+      }
+    }
+
   }
 
   &__title {
@@ -957,7 +990,7 @@
 
     @include media-laptop {
       gap: 20px;
-      transform: translateY(-200px);
+      transform: translateY(0);
     }
 
     &.family-images-desktop {
@@ -977,53 +1010,71 @@
         transform: translateY(0);
       }
 
+      @for $i from 0 through 9 {
+        .image-#{$i} {
+          //transition-delay: #{$i * 0.2 + 0.5}s;
+          transition: opacity .7s ease #{$i * 0.2 + 0.5}s, transform .7s ease #{$i * 0.2 + 0.5}s;
+        }
+      }
+
       .section-about-family__image {
+        @include media-laptop {
+          //transition: opacity 0.7s ease, transform 0.7s ease;
+        }
         &:nth-child(1) {
           transform: rotate(-5deg) translate(17vw, 7vw);
+
           @include media-laptop {
-            transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 3rem);
+            opacity: 0;
           }
         }
 
         &:nth-child(2) {
           transform: rotate(5deg) translate(-17vw, 7vw);
           @include media-laptop {
-            transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 3rem);
+            opacity: 0;
           }
         }
 
         &:nth-child(3) {
           transform: rotate(-5deg) translate(21vw, -39vw);
           @include media-laptop {
-            transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 3rem);
+            opacity: 0;
           }
         }
 
         &:nth-child(4) {
           transform: rotate(5deg) translate(-21vw, -40vw);
           @include media-laptop {
-            transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 3rem);
+            opacity: 0;
           }
         }
 
         &:nth-child(5) {
           transform: rotate(-5deg) translate(25vw, -86vw);
           @include media-laptop {
-            transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 3rem);
+            opacity: 0;
           }
         }
 
         &:nth-child(6) {
           transform: rotate(5deg) translate(-25vw, -87vw);
           @include media-laptop {
-            transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 3rem);
+            opacity: 0;
           }
         }
 
         &:nth-child(7) {
           transform: rotate(0deg) translate(0, -141vw);
           @include media-laptop {
-            transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 3rem);
+            opacity: 0;
           }
         }
 
@@ -1055,6 +1106,10 @@
 
     @include media-laptop {
       max-width: calc((100% - 40px) / 3);
+      opacity: 0;
+      will-change: transform, opacity;
+      transform: translate3d(0px, 4em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+      transform-style: preserve-3d;
     }
 
     &:nth-child(1) {
@@ -1063,11 +1118,13 @@
           transform: translate(calc(100% + 50px), calc(50% + 50px)) rotate(2deg);
 
           @include media-laptop {
-            transform: translate(calc(100% + 20px), calc(50% + 20px));
+            //transform: translate(calc(100% + 20px), calc(50% + 20px));
+            transform: translate(0, 0);
           }
         }
         &.image-1 {
-          transform: translate(100%, -51%) rotate(-5deg);
+          //transform: translate(100%, -51%) rotate(-5deg);
+          transform: translate(0, 0);
         }
       }
     }
@@ -1078,16 +1135,16 @@
           transform: translate(0, calc(50% + 250px));
 
           @include media-laptop {
-            //transform: translate(0, calc(50% + 60px));
-            transform: translate(0, calc(50% + 17vw));
+            //transform: translate(0, calc(50% + 17vw));
+            transform: translate(0, 0);
           }
         }
         &.image-2 {
           transform: translate(0, calc(-50% - 250px));
 
           @include media-laptop {
-            //transform: translate(0, calc(-50% - 60px));
-            transform: translate(0, calc(-50% - 17vw));
+            //transform: translate(0, calc(-50% - 17vw));
+            transform: translate(0, 0);
           }
         }
       }
@@ -1099,7 +1156,8 @@
           transform: translate(-100%, calc(50% + 50px)) rotate(5deg);
 
           @include media-laptop {
-            transform: translate(-100%, calc(50% + 20px)) rotate(5deg);
+            //transform: translate(-100%, calc(50% + 20px)) rotate(5deg);
+            transform: translate(0, 0);
           }
         }
 
@@ -1107,7 +1165,8 @@
           transform: translate(calc(-100% - 50px), calc(-50% - 50px));
 
           @include media-laptop {
-            transform: translate(calc(-100% - 20px), calc(-50% - 20px));
+            //transform: translate(calc(-100% - 20px), calc(-50% - 20px));
+            transform: translate(0, 0);
           }
 
           .section-about-family__image-bg {
@@ -1167,6 +1226,10 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.6);
     @extend %sectionAboutHqMap;
+
+    @include media-laptop {
+      display: none;
+    }
   }
 }
 

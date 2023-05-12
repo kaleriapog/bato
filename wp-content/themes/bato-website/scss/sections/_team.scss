@@ -35,11 +35,6 @@
     @include media-mobile-horizontal {
       gap: 10px;
     }
-
-    //@include media-mobile {
-    //  //margin: 0 -10px;
-    //  flex-wrap: nowrap;
-    //}
   }
 
   &__card-team-name {
@@ -104,7 +99,6 @@
   .swiper-about-team {
     .section-team__items {
       justify-content: start;
-      //gap: 20px;
     }
 
     .section-team__items-wrapp {

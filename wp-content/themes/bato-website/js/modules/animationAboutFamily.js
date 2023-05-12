@@ -1,7 +1,7 @@
 export default function animationAboutFamily(el) {
   if (!el) return;
 
-  const mediaLaptop = window.innerHeight <= 1024
+  const mediaLaptop = window.innerWidth <= 1024
 
   if(!mediaLaptop) {
 
