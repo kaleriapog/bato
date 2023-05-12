@@ -30,7 +30,64 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body <?php body_class(); ?>>
+
+<style>
+	@keyframes preloader_animation {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-100%);
+		}
+	}
+
+	.preloader {
+		transition: transform 3s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: #121212;
+		overflow: hidden;
+	}
 	
+    .preloader__wrapp {
+      position: relative;
+    }
+
+	.preloader__wrapp::after {
+	  content: "";
+	  background-color: rgba(18, 18, 18, 0.5);
+	  position: absolute;
+	  z-index: 1;
+	  left: 0;
+	  right: 0;
+	  top: 0;
+	  bottom: 0;
+	  transform: translateY(0);
+	}
+
+	.preloader-start {
+		animation: preloader_animation 1s cubic-bezier(0.22, 0.17, 0, 0.98) 1.5s forwards;
+	}
+
+    .preloader-start .preloader__wrapp::after {
+		animation: preloader_animation 1.5s linear forwards;
+    }
+</style>
+
+<div class="preloader">
+    <div class="preloader__wrapp"><?php insertImage('preloader.svg') ?></div>
+</div>
+<div class="preloader-menu-mob"></div>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NP7JMT5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -42,9 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<header id="masthead" class="header">
 		<div class="header__inner main-size"> 
 			<div class="logo">
-					<?php
-						the_custom_logo();
-					?>
+				<?php the_custom_logo(); ?>
 			</div>
 			<nav id="header-navigation" class="header__navigation">
 				<div class="navigation-bar">

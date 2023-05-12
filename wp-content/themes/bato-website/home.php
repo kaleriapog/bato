@@ -97,12 +97,6 @@ get_header();
     ?>
 </main>
 
-<div class="preloader">
-    <div class="preloader__wrapp"><?php insertImage('preloader.svg') ?></div>
-</div>
-
-<div class="preloader-menu-mob"></div>
-
 <div class="block-cube-small">
     <div class="fallback-stage"></div>
     <div class="container">

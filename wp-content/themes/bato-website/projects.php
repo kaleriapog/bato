@@ -9,8 +9,7 @@ $projects_ready = get_field('section_projects_ready', $post->ID);
 get_header();
 
 ?>
-<div class="preloader-menu-mob">
-</div>
+
 <main id="primary" class="site-main">
 
     <?php if (!empty($projects_hero)) : ?>

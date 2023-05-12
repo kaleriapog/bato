@@ -16,8 +16,6 @@ $image_map_mobile = get_field('image_map_mobile', $post->ID);
 get_header();
 ?>
 
-<div class="preloader-menu-mob">
-</div>
 <main id="primary" class="site-main">
     <section class="contact-page section">
         <div class="main-size">

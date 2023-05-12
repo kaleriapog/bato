@@ -252,33 +252,6 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<div class="preloader">
-		<div class="preloader__wrapp">
-			<img alt="preloader" src="<?php echo get_template_directory_uri(); ?>/images/preloader.svg">
-		</div>
-	</div>
-	<!-- <div class="cursor-follow">
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-			<span class="cursor-follow-item animation-cursor"></span>
-	</div> -->
 </main>	
 
 <?php

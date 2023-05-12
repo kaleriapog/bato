@@ -10,8 +10,6 @@ $text = $fields['text'];
 get_header();
 ?>
 
-    <div class="preloader-menu-mob">
-    </div>
     <main id="primary" class="site-main">
 
         <section class="section-privacy">
