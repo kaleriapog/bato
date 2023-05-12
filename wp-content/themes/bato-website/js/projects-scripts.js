@@ -1,5 +1,4 @@
 import sectionAboutReviews from "./modules/sectionAboutReviews.js";
-import preloader from "./modules/preloader.js";
 import animationSections from "./modules/animationSections.js";
 import fixedHeader from "./modules/fixed-header.js";
 
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(target);
 
   animationSections(sections, 0);
-  preloader();
   sectionAboutReviews(sectionAReviews);
   fixedHeader(sectionHero);
 });

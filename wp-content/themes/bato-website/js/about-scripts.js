@@ -1,4 +1,3 @@
-import preloader from "./modules/preloader.js";
 import animationWave from "./modules/animationWave.js";
 import teamCubes from "./modules/teamCubes.js";
 import animationSections from "./modules/animationSections.js";
@@ -25,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section");
   const secondBlockInPage = document.querySelector(".section-our-values");
 
-  preloader();
   animationWave(cardTitleItems);
 
   teamCubes();

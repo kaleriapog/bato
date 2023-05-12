@@ -1,0 +1,21 @@
+<svg class="pin__ellipse-small" width="250" height="250" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_d_1939_363)">
+        <circle cx="125" cy="125" r="44.5" stroke="url(#paint0_linear_1939_363)" shape-rendering="geometricPrecision" />
+    </g>
+    <defs>
+        <filter id="filter0_d_1939_363" x="0" y="0" width="250" height="250" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset />
+            <feGaussianBlur stdDeviation="40" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1939_363" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1939_363" result="shape" />
+        </filter>
+        <linearGradient id="paint0_linear_1939_363" x1="95.6024" y1="90.9492" x2="151.895" y2="162.493" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#00FFFF" />
+            <stop offset="1" stop-color="#01C4E5" />
+        </linearGradient>
+    </defs>
+</svg>

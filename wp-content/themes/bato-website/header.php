@@ -1,10 +1,12 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<meta name="p:domain_verify" content="8c4ebfbe04b8294e2c9379ddc0abcc4f"/>
+	<title><?php bloginfo( 'name' ); ?></title>
 	<?php wp_head(); ?>
 	
 	<!-- Google Tag Manager -->
@@ -20,45 +22,40 @@
 
 <body <?php body_class(); ?>>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NP7JMT5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NP7JMT5"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 
-<?php get_template_part('template-parts/preloader') ?>
+	<?php get_template_part('template-parts/preloader') ?>
 
-<div class="body-wrapp">
-<?php wp_body_open(); ?>
+	<div class="body-wrapp">
 
-	<header id="masthead" class="header">
-		<div class="header__inner main-size"> 
-			<div class="logo">
-				<?php the_custom_logo(); ?>
-			</div>
-			<nav id="header-navigation" class="header__navigation">
-				<div class="navigation-bar">
-					<div class="logo">
-						<?php the_custom_logo(); ?>
-					</div>
-					<div class="navigation-icon-close">
-						<span>close</span>
-						<div>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/icon-close-nav-header.svg" alt="icon menu close">
+		<header id="masthead" class="header">
+			<div class="header__inner main-size"> 
+
+				<div class="logo"><?php the_custom_logo(); ?></div>
+
+				<nav id="header-navigation" class="header__navigation">
+					<div class="navigation-bar">
+						<div class="logo"><?php the_custom_logo(); ?></div>
+						<div class="navigation-icon-close">
+							<span>close</span>
+							<div><?php insertImage('icon-close-nav-header.svg') ?></div>
 						</div>
 					</div>
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-header',
+								'menu_id'        => 'header-menu',
+								'menu_class'	 => 'header-menu',
+							)
+						);
+					?>
+				</nav> 
+				<div class="navigation-icon">
+					<?php insertImage('menu-icon-header.svg') ?>
 				</div>
-				<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-header',
-							'menu_id'        => 'header-menu',
-							'menu_class'	 => 'header-menu',
-						)
-					);
-				?>
-			</nav> 
-			<div class="navigation-icon">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/menu-icon-header.svg" alt="icon menu">
 			</div>
-        </div>
-	</header>
+		</header>

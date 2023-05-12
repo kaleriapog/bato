@@ -1,4 +1,3 @@
-import preloader from "./modules/preloader.js";
 import animationSections from "./modules/animationSections.js";
 import fixedHeader from "./modules/fixed-header.js";
 
@@ -8,6 +7,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animationSections(sections, 0);
   fixedHeader(sectionContact);
-
-  preloader();
 });

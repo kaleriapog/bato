@@ -18,11 +18,6 @@
 	</div>
 </footer>
 
-<div id="back-to-top" class="back-to-top">
-	<span>up</span>
-	<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-to-top.svg" alt="to top">
-</div>
-
 <?php get_template_part('template-parts/cookie-block', null) ?>
 
 </div>

@@ -1,5 +1,4 @@
 import animationText from "./modules/animationText.js";
-import preloader from "./modules/preloader.js";
 import animationWave from "./modules/animationWave.js";
 import teamCubes from "./modules/teamCubes.js";
 import magneticBtn from "./modules/magneticBtn.js";
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerMain = document.querySelector(".footer");
 
   animationText();
-  preloader();
   teamCubes();
   magneticBtn(linkContactPhrase);
   // slider(sliderHome);

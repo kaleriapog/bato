@@ -59,8 +59,6 @@ function enqueue_js_css() {
     if ($template_slug === 'about.php') {
         wp_enqueue_style('connection_style', get_template_directory_uri() . '/swiper-bundle.min.css');
 
-//        wp_enqueue_script('connection_script_splide', get_template_directory_uri() . '/js/splide.min.js',array('jquery'),null,true);
-//        wp_enqueue_script('connection_script_splide-extension-grid', get_template_directory_uri() . '/js/splide-extension-grid.min.js',array('jquery'),null,true);
         wp_enqueue_script('connection_script_swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js',array('jquery'),null,true);
         wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js',array('jquery'),null,true);
         wp_enqueue_script('connection_script_scroll-magic', get_template_directory_uri() . '/js/ScrollMagic.min.js',array('jquery'),null,true);
@@ -87,15 +85,10 @@ function enqueue_js_css() {
     }
 
     if ($template_slug === 'privacy.php') {
-//        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/contact-scripts.js',array('jquery'),null,true);
         wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/privacy.js',array('jquery'),null,true);
     }
 }
 /* add js/css END */
-
-
-
-remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
 
 /* insert image START */
@@ -206,28 +199,3 @@ function my_acf_json_load_point($paths) {
     $paths[] = get_stylesheet_directory() . '/acf-json';
     return $paths;
 }
-
-
-function set_file_cache() {
-    $file_types = array(
-        'svg' => 'image/svg+xml',
-        'woff' => 'application/font-woff',
-        'woff2' => 'application/font-woff2',
-        'mp4' => 'video/mp4',
-        'png' => 'image/png',
-        'jpg' => 'image/jpeg',
-        'jpeg' => 'image/jpeg',
-        'webp' => 'image/webp',
-        'css' => 'text/css',
-        'js' => 'application/javascript'
-    );
-    $file_path = $_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI'];
-    $file_type = wp_check_filetype( $file_path, $file_types );
-
-    if ( $file_type['type'] ) {
-        header("Cache-Control: max-age=1209600, public");
-        header("Expires: " . gmdate("D, d M Y H:i:s", time() + 1209600) . " GMT");
-        header("Content-Type: " . $file_type['type']);
-    }
-}
-add_action( 'wp', 'set_file_cache' );
