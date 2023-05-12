@@ -7,6 +7,7 @@ $color-nav: #cdcdcd;
 $color-hover: #06ffff;
 $color-white: #ffffff;
 $color-text: #bbbbbb;
+$color-text-second: #999999;
 $color-main: #00ffff;
 $color-red: #ff5349;
 $color-form-bg: #050506;
@@ -153,6 +154,12 @@ $mediaHeight-500: 500px;
 
 @mixin media-height-1000 {
   @media (max-height: 1000px) {
+    @content;
+  }
+}
+
+@mixin media-height-900 {
+  @media (max-height: 900px) {
     @content;
   }
 }

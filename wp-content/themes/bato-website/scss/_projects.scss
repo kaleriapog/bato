@@ -154,7 +154,7 @@
     }
 
     &-image {
-      height: 450px;
+      height: 380px;
       overflow: hidden;
       background-color: #000;
       padding: 10px;
@@ -246,6 +246,7 @@
     &-text {
       margin-bottom: 40px;
       line-height: 1.75;
+      color: $color-text-second;
 
       @include media-mobile {
         margin-bottom: 20px;
