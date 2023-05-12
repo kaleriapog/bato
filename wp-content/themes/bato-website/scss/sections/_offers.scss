@@ -1,0 +1,78 @@
+.section-offers {
+  padding: 100px 0;
+
+  @include media-laptop {
+    padding: 100px 0 0;
+    margin-top: -100px;
+  }
+
+  &__inner {
+    @include media-laptop {
+      padding-top: 55px;
+      padding-bottom: 45px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: $gap-card;
+  }
+
+  &__card {
+    max-width: calc(33.3% - 20px);
+    width: 100%;
+    padding: 50px 40px 10px;
+    position: relative;
+    mix-blend-mode: normal;
+    line-height: 1.75;
+    @include blur-card;
+    @include card-border;
+
+    @include media-tablet {
+      max-width: 100%;
+    }
+
+    @include media-laptop {
+      padding: 40px 25px 30px;
+    }
+
+    @include media-mobile {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      content: "";
+      background: url("./images/noise-card.png") center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 5%;
+      mix-blend-mode: overlay;
+    }
+
+    .card-title {
+      color: $color-white;
+      @include poppins;
+      margin-bottom: 50px;
+
+      @include media-laptop {
+        margin-bottom: 30px;
+      }
+    }
+
+    p {
+      margin-bottom: 25px;
+
+      @include media-laptop {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+}

@@ -1,16 +1,29 @@
 // imports
 
-@import "_reset.scss";
-@import "_variables.scss";
-@import "_header.scss";
-@import "_footer.scss";
-@import "_buttons.scss";
-@import "_fonts.scss";
-@import "_animation.scss";
-@import "_hovers.scss";
+@import "main/_reset.scss";
+@import "main/_variables.scss";
+@import "main/_header.scss";
+@import "main/_footer.scss";
+@import "main/_buttons.scss";
+@import "main/_fonts.scss";
+@import "main/_animation.scss";
+@import "main/_hovers.scss";
+
 @import "pages/_home.scss";
 @import "pages/_contact.scss";
 @import "pages/_privacy.scss";
 @import "pages/_projects.scss";
-@import "_about.scss";
-@import "sections/_about-reviews.scss";
+@import "pages/_about.scss";
+@import "pages/_404.scss";
+
+@import "sections/_banner.scss";
+@import "sections/_about.scss";
+@import "sections/_accordion.scss";
+@import "sections/_technologies.scss";
+@import "sections/_cards.scss";
+@import "sections/_offers.scss";
+@import "sections/_team.scss";
+@import "sections/_numbers.scss";
+@import "sections/_contact.scss";
+
+@import "sections/_reviews.scss";

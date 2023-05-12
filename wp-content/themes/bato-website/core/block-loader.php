@@ -22,10 +22,4 @@ if(!empty($args['force'])) {
             ); 
         }
     ?>
-<?php elseif(empty($args['force'])): ?>
-    <section class="page-content">
-        <div class="page-content__wrapper wrapper">
-            <?php the_content(); ?>
-        </div>
-    </section>
 <?php endif ?>

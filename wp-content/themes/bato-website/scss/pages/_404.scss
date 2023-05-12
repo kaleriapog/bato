@@ -1,0 +1,31 @@
+.error404 {
+  .body-wrapp,
+  main {
+    height: 100%;
+  }
+  .header {
+    animation-delay: 0s;
+
+    .header__navigation,
+    .navigation-icon {
+      display: none;
+    }
+  }
+
+  .error-404 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .title-not-found {
+      @include font-title-not-found;
+      margin-bottom: 50px;
+    }
+
+    .link-to-home {
+      @include font-link-to-home;
+      transition: color 0.3s;
+    }
+  }
+}
