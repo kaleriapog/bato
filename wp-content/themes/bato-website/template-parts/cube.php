@@ -1,14 +1,22 @@
+<?php
+    $sides = [
+        'back',
+        'top',
+        'bottom',
+        'left',
+        'right',
+        'front',
+    ];
+?>
+
 <div class="block-cube-small">
     <div class="fallback-stage"></div>
     <div class="container">
         <div class="stage">
-            <a href="<?php echo home_url('contact') ?>" class="cube">
-                <span class="back"><span class="text-only">START A PROJECT</span></span>
-                <span class="top"><span class="text-only">START A PROJECT</span></span>
-                <span class="bottom"><span class="text-only">START A PROJECT</span></span>
-                <span class="left"><span class="text-only">START A PROJECT</span></span>
-                <span class="right"><span class="text-only">START A PROJECT</span></span>
-                <span class="front"><span class="text-only">START A PROJECT</span></span>
+            <a class="cube" href="<?php echo home_url('contact') ?>">
+                <?php foreach($sides as $s) : ?>
+                    <span class="<?php echo $s ?>"><span class="text-only"><?php _e('START A PROJECT', 'theme'); ?></span></span>
+                <?php endforeach ?>
             </a>
         </div>
     </div>

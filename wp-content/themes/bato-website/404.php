@@ -6,7 +6,7 @@
 			<h1 class="title-not-found">404</h1>
 			<a class="link-to-home" href="<?php echo get_home_url() ?>"><?php _e('home', 'theme') ?></a>
 		</div>
-	</section><
+	</section>
 </main>
 
 <?php get_footer(); ?>

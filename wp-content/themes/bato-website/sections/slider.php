@@ -18,11 +18,8 @@
 
                         <li class="slider-item">
                             <div class="slider-item-name">
-
                                 <?php echo $item["slide"] ?>
-
                                 <p class="slider-item-name-hover">
-
                                     <?php echo $item["slide"] ?>
                                 </p>
                             </div>
