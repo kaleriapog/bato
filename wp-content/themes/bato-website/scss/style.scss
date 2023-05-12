@@ -1,5 +1,4 @@
-// imports
-
+//main
 @import "main/_reset.scss";
 @import "main/_variables.scss";
 @import "main/_header.scss";
@@ -9,6 +8,7 @@
 @import "main/_animation.scss";
 @import "main/_hovers.scss";
 
+//pages
 @import "pages/_home.scss";
 @import "pages/_contact.scss";
 @import "pages/_privacy.scss";
@@ -16,6 +16,7 @@
 @import "pages/_about.scss";
 @import "pages/_404.scss";
 
+//sections
 @import "sections/_banner.scss";
 @import "sections/_about.scss";
 @import "sections/_accordion.scss";
@@ -26,4 +27,10 @@
 @import "sections/_numbers.scss";
 @import "sections/_contact.scss";
 
+@import "sections/_projects-hero.scss";
+@import "sections/_projects.scss";
+@import "sections/_projects-ready.scss";
+
 @import "sections/_reviews.scss";
+
+@import "sections/_privacy.scss";
