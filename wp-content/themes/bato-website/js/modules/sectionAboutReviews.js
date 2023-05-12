@@ -76,22 +76,20 @@ export default function sectionAboutReviews(el) {
 
     }
 
-  /* reviews slider START */
-  const reviews_slider = [];
-  jQuery(document).find('.reviews-slider').each(function(el) {
-      let _slider = jQuery(this).find('.swiper');
-      let _scrollbar = jQuery(this).find('.slider-scrollbar');
+    /* reviews slider START */
+    const _reviews = document.querySelector('.reviews-slider');
+    const _slider = _reviews.querySelector('.swiper');
+    const _scrollbar = _reviews.querySelector('.slider-scrollbar');
 
-      reviews_slider[el] = new Swiper(_slider[0], {
-          slidesPerView: 'auto',
-          spaceBetween: 20,
-          observer: true,
-          scrollbar: {
-              el: _scrollbar[0],
-              draggable: true,
-              hide: false,
-          },
-      });
-  });
-  /* reviews slider END */
+    const _reviews_slider = new Swiper(_slider, {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        observer: true,
+        scrollbar: {
+            el: _scrollbar,
+            draggable: true,
+            hide: false,
+        },
+    });
+    /* reviews slider END */
 }
