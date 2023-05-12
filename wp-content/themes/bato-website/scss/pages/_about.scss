@@ -577,12 +577,12 @@
   //  transform: translateY(120%) scale(0.99)!important;
   //}
   //
-  //&.animation {
-  //  .item-photo {
-  //    opacity: 1;
-  //    transform: translateY(0) scale(0.99)!important;
-  //  }
-  //}
+  &.animation {
+    .item-photo {
+      opacity: 1;
+      transform: translateY(0) scale(0.99)!important;
+    }
+  }
 
   .title {
     // opacity: 1;
@@ -980,34 +980,58 @@
       .section-about-family__image {
         &:nth-child(1) {
           transform: rotate(-5deg) translate(17vw, 7vw);
+          @include media-laptop {
+            transform: rotate(0) translate(0, 0);
+          }
         }
 
         &:nth-child(2) {
           transform: rotate(5deg) translate(-17vw, 7vw);
+          @include media-laptop {
+            transform: rotate(0) translate(0, 0);
+          }
         }
 
         &:nth-child(3) {
           transform: rotate(-5deg) translate(21vw, -39vw);
+          @include media-laptop {
+            transform: rotate(0) translate(0, 0);
+          }
         }
 
         &:nth-child(4) {
           transform: rotate(5deg) translate(-21vw, -40vw);
+          @include media-laptop {
+            transform: rotate(0) translate(0, 0);
+          }
         }
 
         &:nth-child(5) {
           transform: rotate(-5deg) translate(25vw, -86vw);
+          @include media-laptop {
+            transform: rotate(0) translate(0, 0);
+          }
         }
 
         &:nth-child(6) {
           transform: rotate(5deg) translate(-25vw, -87vw);
+          @include media-laptop {
+            transform: rotate(0) translate(0, 0);
+          }
         }
 
         &:nth-child(7) {
           transform: rotate(0deg) translate(0, -141vw);
+          @include media-laptop {
+            transform: rotate(0) translate(0, 0);
+          }
         }
 
         &.default-position {
           transform: rotate(0) translate(0, 0);
+          @include media-laptop {
+            transform: rotate(0) translate(0, 0);
+          }
         }
       }
     }
