@@ -795,16 +795,9 @@ header.inited {
       transform 2s cubic-bezier(0.22, 0.17, 0, 0.98);
   }
 
-  @for $i from 0 through 9 {
+  @for $i from 0 through 20 {
     .item-photo-#{$i} {
       transition-delay: #{$i * 0.2 + 0.5}s;
-      // animation: translate-item-team
-      //   2s
-      //   $main-transition-timing
-      //   #{$i *
-      //   0.2 +
-      //   0.5}s
-      //   forwards;
     }
   }
 

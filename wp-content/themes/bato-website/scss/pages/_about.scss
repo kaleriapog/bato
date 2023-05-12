@@ -564,6 +564,13 @@
     .section-about-hq__interactive {
       opacity: 1;
     }
+
+    .section-about-hq__interactive-wrapper {
+      @include media-laptop {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   }
 
   &__wrapper {
@@ -580,6 +587,13 @@
 
   &__interactive-wrapper {
     position: relative;
+
+    @include media-laptop {
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 1.5s cubic-bezier(0.22, 0.17, 0, 0.98),
+      opacity 1.5s cubic-bezier(0.22, 0.17, 0, 0.98);
+    }
   }
 
   &__interactive-height {
@@ -868,15 +882,13 @@
 
       @for $i from 0 through 9 {
         .image-#{$i} {
-          //transition-delay: #{$i * 0.2 + 0.5}s;
-          transition: opacity .7s ease #{$i * 0.2 + 0.5}s, transform .7s ease #{$i * 0.2 + 0.5}s;
+          @include media-mobile {
+            transition: opacity .7s ease #{$i * 0.2 + 0.5}s, transform .7s ease #{$i * 0.2 + 0.5}s;
+          }
         }
       }
 
       .section-about-family__image {
-        @include media-laptop {
-          //transition: opacity 0.7s ease, transform 0.7s ease;
-        }
         &:nth-child(1) {
           transform: rotate(-5deg) translate(17vw, 7vw);
 
@@ -979,8 +991,12 @@
           }
         }
         &.image-1 {
-          //transform: translate(100%, -51%) rotate(-5deg);
-          transform: translate(0, 0);
+          transform: translate(100%, -51%) rotate(-5deg);
+
+          @include media-laptop {
+            transform: translate(0, 0);
+          }
+
         }
       }
     }
