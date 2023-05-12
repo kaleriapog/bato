@@ -1256,16 +1256,6 @@ footer {
   }
 }
 
-// back to top
-.back-to-top {
-  opacity: 0;
-  transform: translateY(120%);
-
-  &.back-to-top-animation {
-    animation: opacity 2s ease 1s forwards, translate_to_top 3s ease forwards;
-  }
-}
-
 // style fo safari
 .body-safari {
   .halo {

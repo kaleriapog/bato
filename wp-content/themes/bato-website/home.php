@@ -39,12 +39,6 @@ get_header();
             ]
         );
 
-        /* get_template_part('sections/slider', NULL, 
-            [
-                'slider_items' => $slider_items,
-            ]
-        ); */
-
         get_template_part('sections/accordion', NULL, 
             [
                 'accordion' => $accordion,
@@ -97,20 +91,6 @@ get_header();
     ?>
 </main>
 
-<div class="block-cube-small">
-    <div class="fallback-stage"></div>
-    <div class="container">
-        <div class="stage">
-            <a href="<?php echo home_url('contact') ?>" class="cube">
-                <span class="back"><span class="text-only">START A PROJECT</span></span>
-                <span class="top"><span class="text-only">START A PROJECT</span></span>
-                <span class="bottom"><span class="text-only">START A PROJECT</span></span>
-                <span class="left"><span class="text-only">START A PROJECT</span></span>
-                <span class="right"><span class="text-only">START A PROJECT</span></span>
-                <span class="front"><span class="text-only">START A PROJECT</span></span>
-            </a>
-        </div>
-    </div>
-</div>
+<?php get_template_part('template-parts/cube');  ?>
 
 <?php get_footer(); ?>

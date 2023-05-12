@@ -2,7 +2,7 @@ import animationWave from "./modules/animationWave.js";
 import mobileMenu from "./modules/mobileMenu.js";
 import animationFooter from "./modules/animationFooter.js";
 import cookies from "./modules/cookies.js"
-import cursor from "./modules/cursor.js";
+import preloader from "./modules/preloader.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (navigator.platform !== "MacIntel") {
@@ -67,4 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   }
+
+  preloader();
 });
