@@ -41,9 +41,9 @@ add_action('get_footer', 'enqueue_js_css');
 function enqueue_js_css() {
     wp_enqueue_style('bato-website-style', get_stylesheet_uri());
 
-    wp_deregister_script( 'jquery' );
+/*     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), array(), false, true );
-    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'jquery' ); */
 
     wp_enqueue_script('connection_scripts_smooth-scrollbar',  get_template_directory_uri() . '/js/smooth-scrollbar.js',array('jquery'),null,true);
     wp_enqueue_script('connection_scripts_main',  get_template_directory_uri() . '/js/main.js',array('jquery'),null,true);
