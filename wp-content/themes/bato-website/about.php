@@ -221,7 +221,7 @@ get_header();
                                 $image = $team_item['image'];
 
                             ?>
-                                <div class="">
+    
                                 <div class="section-team__items-wrapp item-photo item-photo-<?php echo $key ?>">
                                     <div class="container">
                                         <div class="viewport">
@@ -270,7 +270,7 @@ get_header();
                                         </div>
                                     </div>
                                 </div>
-                                </div>
+
                             <?php } ?>
 
                         </div>

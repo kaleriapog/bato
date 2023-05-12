@@ -35,6 +35,11 @@
     @include media-mobile-horizontal {
       gap: 10px;
     }
+
+    //@include media-mobile {
+    //  //margin: 0 -10px;
+    //  flex-wrap: nowrap;
+    //}
   }
 
   &__card-team-name {
@@ -92,29 +97,6 @@
       img {
         object-fit: cover;
         width: 100%;
-      }
-    }
-  }
-
-  .swiper-about-team {
-    .section-team__items {
-      justify-content: start;
-    }
-
-    .section-team__items-wrapp {
-      width: 333px;
-      height: 333px;
-      margin: 0;
-      transform: translateY(120%) scale(0.99);
-
-      @include media-1440 {
-        width: 22.8vw;
-        height: 22.8vw;
-      }
-
-      @media (min-width: 1366px) and (max-width: 1440px) {
-        width: 21.26vw;
-        height: 21.26vw;
       }
     }
   }

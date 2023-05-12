@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const linkContactPhrase = document.querySelectorAll(
     ".section-contact__phrase a"
   );
-  const heroHome = document.querySelectorAll(".section-banner");
   const heroHomeFirst = document.querySelector(".section-banner");
-  const sliderHome = document.querySelector(".section-slider .slider-home");
   const sectionService = document.querySelectorAll(".section-cards");
   const sectionAbout = document.querySelectorAll(".section-about");
   const sectionOffers = document.querySelectorAll(".section-offers");

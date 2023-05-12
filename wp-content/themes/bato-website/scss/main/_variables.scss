@@ -514,7 +514,7 @@ $main-transition-timing: cubic-bezier(0.22, 0.17, 0, 0.98);
   will-change: transform, opacity;
   transform: translate3d(0px, 3em, 0px) scale3d(1, 1, 1) rotateX(0deg)
     rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
-  transform-style: preserve-3d;
+  /* transform-style: preserve-3d; */
 }
 
 @mixin card_basic_style {
@@ -527,7 +527,7 @@ $main-transition-timing: cubic-bezier(0.22, 0.17, 0, 0.98);
   will-change: transform, opacity;
   transform: translate3d(0px, 2em, 0px) scale3d(1, 1, 1) rotateX(0deg)
     rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
-  transform-style: preserve-3d;
+  /* transform-style: preserve-3d; */
 }
 
 // margin

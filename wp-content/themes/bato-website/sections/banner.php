@@ -52,7 +52,7 @@
 
         <?php if (!empty($image_bg_mobile)) : ?>
             <div class="section-banner__bg-mobile">
-                <?php insertImage($image_bg_mobile) ?>
+                <img src="<?php echo $image_bg_mobile['url'] ?>" alt="<?php echo $image_bg_mobile['alt'] ?>" width="742" height="1080">
             </div>
         <?php endif ?>
 

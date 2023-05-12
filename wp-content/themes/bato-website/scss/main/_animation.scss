@@ -158,7 +158,7 @@ header.inited {
   position: relative;
 
   .headline-items {
-    @include main-animation;
+    //@include main-animation;
     opacity: 0;
     animation: main_animation 2s cubic-bezier(0.22, 0.17, 0.26, 0.83) 2s
       forwards;
@@ -1402,7 +1402,7 @@ footer {
     opacity: 1;
     transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg)
       rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    transform-style: preserve-3d;
+    /* transform-style: preserve-3d; */
   }
 }
 
@@ -1414,7 +1414,7 @@ footer {
     opacity: 1;
     transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg)
       rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    transform-style: preserve-3d;
+    //transform-style: preserve-3d;
   }
 }
 
