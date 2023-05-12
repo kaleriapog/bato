@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionAboutHero = document.querySelector(".section-about-hero");
   const sectionAboutHeroText = document.querySelector('.section-about-hero__wrapper')
   const sectionAboutOurValues = document.querySelector(".section-our-values");
-  const sectionAboutSliderTeam = document.querySelector(".section-about-team");
+  // const sectionAboutSliderTeam = document.querySelector(".section-about-team");
   const sectionAboutMap = document.querySelector(".section-about-hq");
   const sectionAReviews = document.querySelector(".section-about-reviews__pin-section");
   const sectionAboutFamily = document.querySelector(".section-about-family");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   heroAbout(sectionAboutHero);
   sectionOurValues(sectionAboutOurValues);
-  sliderAboutTeam(sectionAboutSliderTeam);
+  // sliderAboutTeam(sectionAboutSliderTeam);
   mapAbout(sectionAboutMap);
   sectionAboutReviews(sectionAReviews);
   animationAboutFamily(sectionAboutFamily);
