@@ -131,7 +131,6 @@ get_header();
     <?php } ?>
 
     <?php if (!empty($our_values)) { ?>
-
         <section class="section-our-values section">
             <div class="main-size">
                 <div class="section-our-values__wrapper">

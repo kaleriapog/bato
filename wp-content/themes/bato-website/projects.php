@@ -3,8 +3,14 @@
 
 $projects_hero = get_field('section_projects_hero', $post->ID);
 $projects_list = get_field('section_projects_list', $post->ID);
-$projects_reviews = get_field('section_projects_reviews', $post->ID);
+$projects_reviews = get_field('projects_reviews', $post->ID);
 $projects_ready = get_field('section_projects_ready', $post->ID);
+
+$about_reviews = $projects_reviews;
+$about_reviews_title = $about_reviews['title'];
+$about_reviews_text = $about_reviews['text'];
+$about_reviews_reviews = $about_reviews['reviews'];
+$about_reviews_rating = $about_reviews['rating'];
 
 get_header();
 
@@ -135,13 +141,13 @@ get_header();
     <?php endif ?>
 
     <?php 
-        get_template_part('sections/about-reviews', NULL, 
+        get_template_part('sections/about-reviews', NULL,
             [
-                'about_reviews' => $projects_reviews,
-                'about_reviews_title' => $projects_reviews['title'],
-                'about_reviews_text' => $projects_reviews['text'],
-                'about_reviews_reviews' => $projects_reviews['items'],
-                'about_reviews_rating' => $projects_reviews['rating'],
+                'about_reviews' => $about_reviews,
+                'about_reviews_title' => $about_reviews_title,
+                'about_reviews_text' => $about_reviews_text,
+                'about_reviews_reviews' => $about_reviews_reviews,
+                'about_reviews_rating' => $about_reviews_rating,
             ]
         );
     ?>
