@@ -222,7 +222,7 @@ get_header();
 
                             ?>
                                 <div class="">
-                                <div class=" section-team__items-wrapp item-photo item-photo-<?php echo $key ?>">
+                                <div class="section-team__items-wrapp item-photo item-photo-<?php echo $key ?>">
                                     <div class="container">
                                         <div class="viewport">
                                             <div class="cube">

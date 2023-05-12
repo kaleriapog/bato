@@ -194,6 +194,12 @@ $mediaHeight-500: 500px;
   }
 }
 
+@mixin media-height-550 {
+  @media (max-height: 550px) {
+    @content;
+  }
+}
+
 @mixin media-height-680 {
   @media (max-height: 680px) {
     @content;
