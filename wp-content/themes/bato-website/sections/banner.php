@@ -42,21 +42,15 @@
     <div class="section-banner__bg">
 
         <?php if (!empty($video)) : ?>
-
             <video autoplay muted playsinline preload="true" loop id="video-bg">
                 <source src="<?php echo $video['url'] ?>" type="video/mp4">
             </video>
-
         <?php endif ?>
 
         <?php if (!empty($image_bg_mobile)) : ?>
-
             <div class="section-banner__bg-mobile">
-
                 <?php insertImage($image_bg_mobile) ?>
-
             </div>
-
         <?php endif ?>
 
         <div class="banner-circle-light">

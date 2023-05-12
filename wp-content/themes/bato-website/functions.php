@@ -1,16 +1,5 @@
 <?php
 
-/*  DISABLE GUTENBERG STYLE IN HEADER */
-add_action('wp_enqueue_scripts', 'wps_deregister_styles', 100);
-function wps_deregister_styles() {
-    wp_dequeue_style('global-styles');
-}
-
-add_action('wp_enqueue_scripts', 'wpassist_remove_block_library_css');
-function wpassist_remove_block_library_css() {
-    wp_dequeue_style('wp-block-library');
-}
-
 // REMOVE EMOJI ICONS
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
@@ -35,10 +24,21 @@ function bato_website_setup() {
 /* menus END */
 
 
-/* add js/css START */
-add_action('wp_enqueue_scripts', 'enqueue_js_css');
-function enqueue_js_css() {
 
+/* REMOVE GUTENBERG STYLES START */
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
+function smartwp_remove_wp_block_library_css() {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('global-styles');
+    wp_dequeue_style('classic-theme-styles');
+}
+/* REMOVE GUTENBERG STYLES END */
+
+
+/* add js/css START */
+add_action('get_footer', 'enqueue_js_css');
+function enqueue_js_css() {
     wp_enqueue_style('bato-website-style', get_stylesheet_uri());
 
     wp_deregister_script( 'jquery' );
@@ -206,3 +206,28 @@ function my_acf_json_load_point($paths) {
     $paths[] = get_stylesheet_directory() . '/acf-json';
     return $paths;
 }
+
+
+function set_file_cache() {
+    $file_types = array(
+        'svg' => 'image/svg+xml',
+        'woff' => 'application/font-woff',
+        'woff2' => 'application/font-woff2',
+        'mp4' => 'video/mp4',
+        'png' => 'image/png',
+        'jpg' => 'image/jpeg',
+        'jpeg' => 'image/jpeg',
+        'webp' => 'image/webp',
+        'css' => 'text/css',
+        'js' => 'application/javascript'
+    );
+    $file_path = $_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI'];
+    $file_type = wp_check_filetype( $file_path, $file_types );
+
+    if ( $file_type['type'] ) {
+        header("Cache-Control: max-age=1209600, public");
+        header("Expires: " . gmdate("D, d M Y H:i:s", time() + 1209600) . " GMT");
+        header("Content-Type: " . $file_type['type']);
+    }
+}
+add_action( 'wp', 'set_file_cache' );

@@ -15,8 +15,7 @@ $about_reviews_rating = $about_reviews['rating'];
 get_header();
 
 ?>
-<div class="preloader-menu-mob">
-</div>
+
 <main id="primary" class="site-main">
 
     <?php if (!empty($projects_hero)) : ?>

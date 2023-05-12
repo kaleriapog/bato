@@ -63,8 +63,6 @@ $about_reviews_rating = $about_reviews['rating'];
 get_header();
 ?>
 
-<div class="preloader-menu-mob">
-</div>
 <div class="about-decorative-page">
     <img src="<?php echo get_template_directory_uri() ?>/images/effect-about.png" alt="decorative image">
 </div>
@@ -653,13 +651,6 @@ get_header();
         </section>
 
     <?php } ?>
-    <div class="preloader">
-        <div class="preloader__wrapp">
-
-            <?php insertImage('preloader.svg') ?>
-
-        </div>
-    </div>
 </main>
 
 <?php
