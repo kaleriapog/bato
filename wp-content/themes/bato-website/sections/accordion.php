@@ -38,7 +38,7 @@
 
                         <?php if (!empty($accordion_rating['logo'])) : ?>
                             <div class="section-accordion__rating-image">
-                                <img src="<?php echo $accordion_rating['logo']['url'] ?>" alt="<?php echo $accordion_rating['logo']['name'] ?>" loading="lazy">
+                                <?php insertImage($accordion_rating['logo']) ?>
                             </div>
                         <?php endif ?>
 

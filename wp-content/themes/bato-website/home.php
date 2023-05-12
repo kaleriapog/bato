@@ -12,14 +12,14 @@ get_header();
 ?>
 
 <?php if (!empty($subtitles)) : ?>
-
     <script>
         const subTitles = '<?php echo json_encode($subtitles); ?>';
     </script>
-
 <?php endif ?>
 
 <main id="primary" class="site-main">
+    <?php get_template_part('core/block-loader'); ?>
+
     <?php 
         get_template_part('sections/banner', NULL, 
             [
