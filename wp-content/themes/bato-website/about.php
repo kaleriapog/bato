@@ -15,9 +15,6 @@ $section_about_reviews = $page_about['section_about_reviews'];
 $section_about_follow = $page_about['section_about_follow'];
 $section_about_ready = $page_about['section_about_ready'];
 
-var_dump($section_about_ready);
-
-
 get_header();
 ?>
 
