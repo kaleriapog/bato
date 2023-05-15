@@ -28,6 +28,7 @@ get_header();
                 'link' => $link,
                 'video' => $video,
                 'image_bg_mobile' => $image_bg_mobile,
+                'image_bg_if_not_video' => $image_bg_if_not_video
             ]
         );
 

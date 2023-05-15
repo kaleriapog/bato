@@ -50,6 +50,12 @@
             </video>
         <?php endif ?>
 
+        <?php if (!empty($image_bg_if_not_video)) : ?>
+            <div class="section-banner__bg-image">
+                <img src="<?php echo $image_bg_if_not_video['url'] ?>" alt="<?php echo $image_bg_if_not_video['alt'] ?>" width="742" height="1080">
+            </div>
+        <?php endif ?>
+
         <?php if (!empty($image_bg_mobile)) : ?>
             <div class="section-banner__bg-mobile">
                 <img src="<?php echo $image_bg_mobile['url'] ?>" alt="<?php echo $image_bg_mobile['alt'] ?>" width="742" height="1080">
@@ -57,17 +63,18 @@
         <?php endif ?>
 
         <div class="banner-circle-light">
-            <div class="banner-circles">
-                <div class="circle-item-small-wrapp">
-                    <span id="circle-item-small" class="banner-circle-item circle-item-small"></span>
-                </div>
-                <div class="circle-item-big-wrapp">
-                    <span id="circle-item-big" class="banner-circle-item circle-item-big"></span>
-                </div>
-            </div>
-            <div class="banner-light-wrapp">
-                <span id="banner-light" class="banner-light"></span>
-            </div>
+<!--            <div class="banner-circles">-->
+<!--                <div class="circle-item-small-wrapp">-->
+<!--                    <span id="circle-item-small" class="banner-circle-item circle-item-small"></span>-->
+<!--                </div>-->
+<!--                <div class="circle-item-big-wrapp">-->
+<!--                    <span id="circle-item-big" class="banner-circle-item circle-item-big"></span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="banner-light-wrapp">-->
+<!--                <span id="banner-light" class="banner-light"></span>-->
+<!--            </div>-->
+            <img src="<?php echo get_template_directory_uri() ?>/images/effect-home-hero.png" alt="decorative image">
         </div>
     </div>
     <div class="halo halo-hiden"></div>

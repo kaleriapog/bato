@@ -18,11 +18,27 @@ export default function fixedHeader(sectionTrigger) {
     }
 
     if(!mediaLaptop) {
+        let prevScrollPos = window.pageYOffset;
+
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset >= heightBlock - 150) {
+            const currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos && window.pageYOffset >= heightBlock - 150) {
                 header.classList.add('bg-header');
                 header.classList.add('header-fixed');
             }
+
+            if(prevScrollPos < currentScrollPos) {
+                header.classList.remove('bg-header');
+                header.classList.remove('header-fixed');
+            }
+
+            prevScrollPos = currentScrollPos;
+
+            // if (window.pageYOffset >= heightBlock - 150) {
+            //     header.classList.add('bg-header');
+            //     header.classList.add('header-fixed');
+            // }
 
             if (window.pageYOffset <= 0) {
                 header.classList.remove('bg-header');

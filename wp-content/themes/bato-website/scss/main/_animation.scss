@@ -171,17 +171,22 @@ header.inited {
   &__bg {
     .banner-circle-light {
       position: absolute;
-      top: 27%;
-      left: -3%;
-      width: 150px;
-      height: 150px;
+      //top: 27%;
+      //left: -3%;
+      //width: 150px;
+      //height: 150px;
+      top: 37%;
+      left: -19%;
+      width: 420px;
+      height: 420px;
 
       @include media-laptop {
         top: 40%;
+        left: 40%;
       }
 
       @include media-mobile {
-        top: 27%;
+        top: 47%;
       }
 
       .banner-circles {
@@ -338,7 +343,9 @@ header.inited {
     top: 0;
     bottom: 0;
     right: 0;
-    left: 18%;
+    //left: 18%;
+    left: 3%;
+    max-width: fit-content;
 
     @include media-laptop {
       top: -60%;
@@ -370,6 +377,10 @@ header.inited {
 
       @include media-tablet {
         top: -29%;
+      }
+
+      @include media-height-1280-width-1024 {
+        top: -60px;
       }
 
       @include media-mobile {

@@ -152,6 +152,12 @@ $mediaHeight-500: 500px;
   }
 }
 
+@mixin media-height-1280-width-1024 {
+  @media (max-height: 1280px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
 @mixin media-height-1000 {
   @media (max-height: 1000px) {
     @content;

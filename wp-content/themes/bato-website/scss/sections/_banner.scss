@@ -18,6 +18,38 @@
     @include font-subtitle;
   }
 
+  &.no-video {
+    .section-banner__bg-image {
+      display: block;
+
+      @include media-laptop {
+        display: none;
+      }
+    }
+
+    .section-banner__bg {
+      top: 42px;
+    }
+
+    .halo {
+      display: none;
+
+      @include media-laptop {
+        display: block;
+      }
+    }
+
+    video {
+      display: none;
+    }
+  }
+
+  &__bg-image {
+    display: none;
+    max-width: 820px;
+    max-height: 820px;
+  }
+
   &__bg {
     top: 0;
     right: 0;

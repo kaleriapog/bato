@@ -31,7 +31,7 @@
   &.bg-header {
     -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
-    box-shadow: 0 10px 40px rgba(0, 158, 212, 0.1);
+    border-bottom: 1px solid #333;
     background: rgba(6, 12, 13, 0.7);
   }
 
@@ -66,7 +66,6 @@
   }
 
   &__navigation {
-    // transition: transform 1s;
     transition: transform 1s cubic-bezier(0.74, -0.02, 0.24, 1.01), border 1.5s;
     will-change: transform;
 
@@ -158,10 +157,6 @@
   .navigation-bar {
     display: none;
 
-    // .logo {
-    //   visibility: hidden;
-    // }
-
     @include media-laptop {
       display: flex;
       align-items: center;
@@ -209,10 +204,6 @@
       display: block;
     }
   }
-
-  //.open-menu {
-  //  transform: translateY(0);
-  //}
 }
 
 .open-menu {
@@ -227,12 +218,6 @@
       visibility: hidden;
     }
   }
-
-  //@include media-laptop {
-  //  height: 100vh;
-  //  //backdrop-filter: blur(75px);
-  //  //-webkit-backdrop-filter: blur(75px);
-  //}
 
   .logo {
     visibility: hidden;

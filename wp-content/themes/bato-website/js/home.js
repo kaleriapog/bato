@@ -67,7 +67,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const video = document.querySelector("#video-bg");
+
   if (video) {
+    let videoPlayOnLoad = true
+
+    // if(videoPlayOnLoad) {
+      function isSafariNoVideo() {
+        //hide video on safari if the user has power saving mode enabled
+        //monitor whether the browser has paused the video
+        // video.addEventListener("pause", () => {
+          const mediaLaptop = window.innerWidth <= 1024;
+
+          if (!mediaLaptop) {
+            heroHomeFirst.classList.add("no-video")
+            videoPlayOnLoad = false
+          }
+        // })
+      }
+
+    // }
+
+    video.addEventListener("pause", () => {
+      if(videoPlayOnLoad) {
+          isSafariNoVideo()
+      }
+    })
+
     window.innerWidth <= 1024 ? video.pause() : video.play();
     const observerOptions = {
       root: null,
@@ -80,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entry.isIntersecting) {
           entry.target.play();
         } else {
+          videoPlayOnLoad = false
           entry.target.pause();
         }
       });
