@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const accordionBlock = document.querySelectorAll(".accordion");
   const footerMain = document.querySelector(".footer");
 
-  // animationText();
+  animationText();
   accordion(accordionBlock);
   teamCubes();
   magneticBtn(linkContactPhrase);
