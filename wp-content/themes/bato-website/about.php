@@ -15,6 +15,7 @@ $section_about_reviews = $page_about['section_about_reviews'];
 $section_about_follow = $page_about['section_about_follow'];
 $section_about_ready = $page_about['section_about_ready'];
 
+var_dump($section_about_ready);
 
 
 get_header();
@@ -77,7 +78,7 @@ get_header();
 
         get_template_part('sections/cta', NULL, 
             [
-                'fields' => $section_about_follow,
+                'fields' => $section_about_ready,
             ]
         );
     ?>
