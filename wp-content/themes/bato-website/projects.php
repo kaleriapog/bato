@@ -180,7 +180,7 @@ get_header();
                             <a rel="nofollow" class="button-default button-big-color" target="_blank" href="<?php echo $projects_creative_space['link'] ?>">
                                 <span class="button-default__link">
                                     <div class="section-creative-space__logo_name">
-                                        <img src="<?php echo $projects_creative_space['logo_name']['url'] ?>" alt="<?php echo $projects_creative_space['logo_name']['title'] ?>">
+                                        <?php insertImage($projects_creative_space['logo_name']) ?>
                                     </div>
                                 </span>
                             </a>
@@ -195,7 +195,7 @@ get_header();
     <?php endif ?>
 
     <?php 
-        get_template_part('sections/about-reviews', NULL,
+        get_template_part('sections/reviews', NULL,
             [
                 'about_reviews' => $about_reviews,
                 'about_reviews_title' => $about_reviews_title,

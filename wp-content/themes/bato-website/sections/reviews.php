@@ -4,6 +4,11 @@
             ${"$field_name"} = $field;
         }
     }
+
+    $about_reviews_title = $fields['title'];
+    $about_reviews_text = $fields['text'];
+    $about_reviews_reviews = $fields['reviews'];
+    $about_reviews_rating = $fields['rating'];
 ?>
 
 <?php if (!empty($about_reviews) && !empty($about_reviews_reviews)) : ?>
