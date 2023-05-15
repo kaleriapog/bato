@@ -4,7 +4,6 @@
 
 $page_about = get_field('page_about', $post->ID);
 
-
 $section_hero = $page_about['section_hero'];
 $section_our_story = $page_about['section_our_story'];
 $section_our_values = $page_about['section_our_values'];
@@ -14,9 +13,6 @@ $section_about_family = $page_about['section_about_family'];
 $section_about_reviews = $page_about['section_about_reviews'];
 $section_about_follow = $page_about['section_about_follow'];
 $section_about_ready = $page_about['section_about_ready'];
-
-var_dump($section_about_ready);
-
 
 get_header();
 ?>
