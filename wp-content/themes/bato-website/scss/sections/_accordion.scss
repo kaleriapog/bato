@@ -196,7 +196,8 @@
   }
 
   &__item-description {
-    display: none;
+    height: 0;
+    overflow: hidden;
   }
 
   &__item-icon {

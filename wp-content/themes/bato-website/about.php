@@ -13,10 +13,7 @@ $section_about_hq = $page_about['section_about_hq'];
 $section_about_family = $page_about['section_about_family'];
 $section_about_reviews = $page_about['section_about_reviews'];
 $section_about_follow = $page_about['section_about_follow'];
-
-$about_ready = $page_about['section_about_ready'];
-$about_ready_title = $about_ready['title'];
-$about_ready_link = $about_ready['link'];
+$section_about_ready = $page_about['section_about_ready'];
 
 
 
@@ -77,39 +74,13 @@ get_header();
                 'fields' => $section_about_follow,
             ]
         );
+
+        get_template_part('sections/cta', NULL, 
+            [
+                'fields' => $section_about_follow,
+            ]
+        );
     ?>
-
-    <?php if (!empty($about_ready)) { ?>
-
-        <section class="section-about-ready section">
-            <div class="main-size">
-                <div class="section-about-ready__wrapper">
-
-                    <?php if (!empty($about_ready_title)) { ?>
-
-                        <div class="title title_basic">
-
-                            <?php echo $about_ready_title ?>
-
-                        </div>
-
-                    <?php } ?>
-
-                    <?php if (!empty($about_ready_link)) : ?>
-
-                        <a class="button-default button-big-color" target="<?php echo $about_ready_link['target'] ? $about_ready_link['target'] : '_self' ?>" href="<?php echo $about_ready_link['url'] ?>">
-                            <span class="button-default__link"><?php echo $about_ready_link['title'] ?></span>
-                        </a>
-
-                    <?php endif ?>
-
-                </div>
-            </div>
-        </section>
-
-    <?php } ?>
 </main>
 
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>
