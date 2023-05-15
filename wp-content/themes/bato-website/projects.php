@@ -197,11 +197,7 @@ get_header();
     <?php 
         get_template_part('sections/reviews', NULL,
             [
-                'about_reviews' => $about_reviews,
-                'about_reviews_title' => $about_reviews_title,
-                'about_reviews_text' => $about_reviews_text,
-                'about_reviews_reviews' => $about_reviews_reviews,
-                'about_reviews_rating' => $about_reviews_rating,
+                'fields' => $about_reviews,
             ]
         );
     ?>
