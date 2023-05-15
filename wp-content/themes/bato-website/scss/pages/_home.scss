@@ -272,7 +272,7 @@ html {
   right: 70px;
   bottom: 60px;
   z-index: 10;
-  transition: transform 0.5s ease-in-out;
+  //transition: transform 0.5s ease-in-out;
 
   .text-only {
     font-family: "Montserrat", sans-serif;
@@ -306,8 +306,8 @@ html {
     transform-style: preserve-3d;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    -webkit-animation: rotate 20s infinite linear;
-    animation: rotate 20s infinite linear;
+    //-webkit-animation: rotate 20s infinite linear;
+    //animation: rotate 20s infinite linear;
     position: absolute;
     top: calc(50% - 80px);
     left: calc(50% - 80px);
@@ -407,6 +407,10 @@ html {
       -ms-transform: translateZ(25px);
       -webkit-transform: translateZ(25px);
       transform: translateZ(25px);
+    }
+
+    .text-only {
+      transform: revert;
     }
   }
 

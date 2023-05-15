@@ -715,22 +715,30 @@
     }
 
     .section-about-family__images-column {
-      will-change: transform, opacity;
-      transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg)
-      rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
-      transform-style: preserve-3d;
-      animation: main_animation 1.5s ease  forwards;
+      @include media-laptop {
+        will-change: transform, opacity;
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg)
+        rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+        transform-style: preserve-3d;
+        animation: main_animation 1.5s ease  forwards;
+      }
 
       &:nth-child(1) {
+        @include media-laptop {
         animation-delay: 0.7s;
+        }
       }
 
       &:nth-child(2) {
-        animation-delay: 1s;
+        @include media-laptop {
+          animation-delay: 1s;
+        }
       }
 
       &:nth-child(3) {
-        animation-delay: 1.3s;
+        @include media-laptop {
+          animation-delay: 1.3s;
+        }
       }
     }
 
@@ -1013,6 +1021,10 @@
         width: calc((100vw / 2) - 20px);
         height: calc((100vw / 2) - 20px);
       }
+    }
+
+    img {
+      object-fit: cover;
     }
   }
 

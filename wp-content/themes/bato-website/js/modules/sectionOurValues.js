@@ -80,12 +80,6 @@ export default function sectionOurValues(el) {
                   { filter: "grayscale(1)", ease: Linear.easeNone },
                   "<"
               )
-
-            // .fromTo(
-            //   [`.section-our-values__item-${idx}`],
-            //   {},
-            //   { opacity: "0.3", ease: Linear.easeNone }
-            // )
         )
         .addTo(controller)
         .reverse(true);

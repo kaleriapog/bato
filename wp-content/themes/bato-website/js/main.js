@@ -25,23 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const socialMedia = document.querySelectorAll(".social-media .menu-item a");
   const cursorBlock = document.querySelector('.radial-gradient');
 
-  // if (!document.querySelector("body").classList.contains("body-safari")) {
-  //   animationWave(menuMainItems);
-  //   animationWave(socialMedia);
-  // }
-
      animationWave(menuMainItems);
      animationWave(socialMedia);
-     // cursor(cursorBlock);
-
-  // if (document.querySelector("body").classList.contains("body-safari")) {
-  //   menuMainItems.forEach((item) => {
-  //     item.classList.add("animation-no-wave");
-  //   });
-  //   socialMedia.forEach((item) => {
-  //     item.classList.add("animation-no-wave");
-  //   });
-  // }
 
   const cookiesBlock = document.querySelector(".block-cookies");
   const footer = document.querySelectorAll(".footer");

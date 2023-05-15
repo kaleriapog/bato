@@ -9,7 +9,6 @@ export default function preloader() {
       preloaderBlock.classList.add("preloader-start");
       page.classList.add("visible");
       bodyWrapp.style.opacity = "1";
-      // halo.classList.remove("halo-hiden");
     });
   }
 }
