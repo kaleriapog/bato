@@ -4,7 +4,6 @@
 
 $page_about = get_field('page_about', $post->ID);
 
-
 $section_hero = $page_about['section_hero'];
 $section_our_story = $page_about['section_our_story'];
 $section_our_values = $page_about['section_our_values'];
