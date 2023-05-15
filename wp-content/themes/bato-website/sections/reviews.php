@@ -11,7 +11,7 @@
     $about_reviews_rating = $fields['rating'];
 ?>
 
-<?php if (!empty($about_reviews) && !empty($about_reviews_reviews)) : ?>
+<?php if (!empty($fields) && !empty($about_reviews_reviews)) : ?>
 
 <section class="section-about-reviews section">
     <div class="section-about-reviews__pin-section">
