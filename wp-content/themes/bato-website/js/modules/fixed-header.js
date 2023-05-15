@@ -35,11 +35,6 @@ export default function fixedHeader(sectionTrigger) {
 
             prevScrollPos = currentScrollPos;
 
-            // if (window.pageYOffset >= heightBlock - 150) {
-            //     header.classList.add('bg-header');
-            //     header.classList.add('header-fixed');
-            // }
-
             if (window.pageYOffset <= 0) {
                 header.classList.remove('bg-header');
                 header.classList.remove('header-fixed');

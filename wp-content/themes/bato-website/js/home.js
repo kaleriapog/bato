@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const accordionBlock = document.querySelectorAll(".accordion");
   const footerMain = document.querySelector(".footer");
 
-  animationText();
+  // animationText();
+  accordion(accordionBlock);
   teamCubes();
   magneticBtn(linkContactPhrase);
-  // slider(sliderHome);
   animationSections(sectionService);
   animationSections(sectionAbout);
   animationSections(sectionOffers);
@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   animationSections(sectionTechnologies);
   animationFooter(footer);
   homeAnimationPause();
-  accordion(accordionBlock);
   fixedHeader(heroHomeFirst);
   interactiveBlock(footerMain);
 

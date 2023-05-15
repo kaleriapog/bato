@@ -129,17 +129,6 @@ body {
   }
 }
 
-
-//body:not(.home) {
-//  .header {
-//    -webkit-backdrop-filter: blur(25px);
-//    backdrop-filter: blur(25px);
-//    box-shadow: 0 10px 40px rgba(0, 158, 212, 0.1);
-//    background: rgba(6, 12, 13, 0.7);
-//    animation: opacity 1s linear 1s forwards, header 0.5s linear 1s forwards;
-//  }
-//}
-
 header.inited {
   opacity: 1;
   transform: translateY(0);
@@ -158,7 +147,6 @@ header.inited {
   position: relative;
 
   .headline-items {
-    //@include main-animation;
     opacity: 0;
     animation: main_animation 2s cubic-bezier(0.22, 0.17, 0.26, 0.83) 2s
       forwards;
@@ -171,10 +159,6 @@ header.inited {
   &__bg {
     .banner-circle-light {
       position: absolute;
-      //top: 27%;
-      //left: -3%;
-      //width: 150px;
-      //height: 150px;
       top: 37%;
       left: -19%;
       width: 420px;
@@ -204,16 +188,6 @@ header.inited {
         width: 20px;
         height: 20px;
         display: inline-block;
-
-        .anim & {
-          //animation: circle 10s linear infinite;
-        }
-      }
-
-      .circle-item-big-wrapp {
-        .anim & {
-          //animation: circle 15s linear infinite;
-        }
       }
 
       .banner-circle-item {
@@ -248,10 +222,6 @@ header.inited {
         width: 100px;
         height: 100px;
         transform-origin: 2% 14px;
-
-        .anim & {
-          //animation: inner-circle 15s linear infinite;
-        }
 
         @include media-mobile {
           width: 80px;
@@ -290,19 +260,6 @@ header.inited {
   }
 
   .halo {
-    //position: absolute;
-    //right: 0;
-    //width: 30%;
-    //height: 100%;
-    //top: 0;
-    //// left: 0;
-    //// bottom: 0;
-    //// background: linear-gradient(180deg, #00ffff 0%, #2366b5 100%);
-    //mix-blend-mode: color-dodge;
-    //opacity: 0.21;
-    //filter: blur(137.731px);
-    //z-index: 1;
-
     position: absolute;
     right: 0;
     width: 100%;
@@ -321,10 +278,6 @@ header.inited {
       display: none;
     }
   }
-
-  //.halo-hiden {
-  //  display: none;
-  //}
 
   .button-default {
     opacity: 0;
