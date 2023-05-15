@@ -7,43 +7,19 @@ $projects_reviews = get_field('projects_reviews', $post->ID);
 $projects_ready = get_field('section_projects_ready', $post->ID);
 $projects_creative_space = get_field('section_creative_space', $post->ID);
 
-$about_reviews = $projects_reviews;
-$about_reviews_title = $about_reviews['title'];
-$about_reviews_text = $about_reviews['text'];
-$about_reviews_reviews = $about_reviews['reviews'];
-$about_reviews_rating = $about_reviews['rating'];
-
 get_header();
 
 ?>
 
 <main id="primary" class="site-main">
 
-    <?php if (!empty($projects_hero)) : ?>
-
-        <section class="section-projects-hero section">
-            <div class="main-size">
-                <div class="section-projects-hero__wrapper">
-                    <div class="section-projects-hero__content">
-
-                        <?php if (!empty($projects_hero['title'])) : ?>
-
-                            <h1 class="title-large"><?php echo $projects_hero['title'] ?></h1>
-
-                        <?php endif ?>
-
-                        <?php if (!empty($projects_hero['text'])) : ?>
-
-                            <div class="section-projects-hero__text"><?php echo $projects_hero['text'] ?></div>
-
-                        <?php endif ?>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    <?php endif ?>
+    <?php 
+        get_template_part('sections/hero-projects', NULL,
+            [
+                'fields' => $projects_hero,
+            ]
+        );
+    ?>
 
     <?php if (!empty($projects_list)) : ?>
 
@@ -197,7 +173,7 @@ get_header();
     <?php 
         get_template_part('sections/reviews', NULL,
             [
-                'fields' => $about_reviews,
+                'fields' => $projects_reviews,
             ]
         );
     ?>

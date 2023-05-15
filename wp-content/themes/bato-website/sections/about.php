@@ -28,13 +28,7 @@
 
         </div>
         <div class="circles-about">
-<!--            <div class="circle-about-big-wrapp">-->
-<!--                <div id="circle-about-big" class="circle-about-big"></div>-->
-<!--            </div>-->
-<!--            <div class="circle-about-light-wrapp">-->
-<!--                <div id="circle-about-light" class="circle-about-light"></div>-->
-<!--            </div>-->
-                <img src="<?php echo get_template_directory_uri() ?>/images/effect-about.png" alt="decorative image">
+            <?php insertImage('effect-about.png') ?>
         </div>
     </div>
 </section>

@@ -1,23 +1,17 @@
 <?php 
-    if(!empty($args)) {
-        foreach ($args as $field_name => $field) {
-            ${"$field_name"} = $field;
-        }
-    }
-
-    $title = $fields['title'];
-    $items = $fields['images'];
+    $current_file_name = basename(__FILE__, '.php');
+    include(__DIR__.'/../core/fields-generator.php');
 
     $sizes = array(2, 3, 2, 2, 3, 2);
     $chunks = array();
     $start = 0;
     foreach ($sizes as $size) {
-        $chunks[] = array_slice($items, $start, $size);
+        $chunks[] = array_slice($images, $start, $size);
         $start += $size;
     }
 ?>
 
-<?php if (!empty($items) || !empty($title)) : ?>
+<?php if (!empty($images) || !empty($title)) : ?>
 
 <section class="section-about-family section">
     <div class="main-size">
@@ -28,7 +22,7 @@
                     <div class="section-about-family__title title title_basic"><?php echo $title ?></div>
                 <?php endif ?>
 
-                <?php if (!empty($items)) : ?>
+                <?php if (!empty($images)) : ?>
                     <ul class="section-about-family__images family-images-desktop">
                         <?php foreach ($chunks as $item) : ?>
                             <li class="section-about-family__images-column">
@@ -45,7 +39,7 @@
                     </ul>
 
                     <ul class="section-about-family__images family-images-mobile">
-                        <?php foreach ($items as $key => $image) : ?>
+                        <?php foreach ($images as $key => $image) : ?>
                             <li class="section-about-family__image image-<?php echo $key ?>">
                                 <?php insertImage($image['image']) ?>
                                 <div class="section-about-family__image-bg"></div>

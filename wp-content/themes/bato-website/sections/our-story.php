@@ -1,12 +1,6 @@
 <?php 
-    if(!empty($args)) {
-        foreach ($args as $field_name => $field) {
-            ${"$field_name"} = $field;
-        }
-    }
-
-    $our_story_title = $fields['title'];
-    $our_story_text = $fields['text'];
+    $current_file_name = basename(__FILE__, '.php');
+    include(__DIR__.'/../core/fields-generator.php');
 ?>
 
 <?php if (!empty($fields)) : ?>
@@ -19,12 +13,12 @@
             </div>
 
             <div class="section-about-our-story__content">
-                <?php if (!empty($our_story_title)) : ?>
-                    <div class="title title_basic"><?php echo $our_story_title ?></div>
+                <?php if (!empty($title)) : ?>
+                    <div class="title title_basic"><?php echo $title ?></div>
                 <?php endif ?>
 
-                <?php if (!empty($our_story_text)) : ?>
-                    <div class="section-about-our-story__text"><?php echo $our_story_text ?></div>
+                <?php if (!empty($text)) : ?>
+                    <div class="section-about-our-story__text"><?php echo $text ?></div>
                 <?php endif ?>
             </div>
         </div>

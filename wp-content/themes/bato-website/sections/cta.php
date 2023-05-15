@@ -1,12 +1,6 @@
 <?php 
-    if(!empty($args)) {
-        foreach ($args as $field_name => $field) {
-            ${"$field_name"} = $field;
-        }
-    }
-
-    $title = $fields['title'];
-    $link = $fields['link'];
+    $current_file_name = basename(__FILE__, '.php');
+    include(__DIR__.'/../core/fields-generator.php');
 ?>
 
 <?php if (!empty($fields)) : ?>

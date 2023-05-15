@@ -1,27 +1,21 @@
 <?php 
-    if(!empty($args)) {
-        foreach ($args as $field_name => $field) {
-            ${"$field_name"} = $field;
-        }
-    }
-
-    $about_team_title = $fields['title'];
-    $about_team_team = $fields['team'];
+    $current_file_name = basename(__FILE__, '.php');
+    include(__DIR__.'/../core/fields-generator.php');
 ?>
 
-<?php if (!empty($about_team_team)) : ?>
+<?php if (!empty($fields)) : ?>
 
 <section class="section-team section-about-team section" id="section-team">
     <div class="main-size">
         <div class="section-team__inner">
             <div class="section-team__nav">
-                <h2 class="title_basic title"><?php echo $about_team_title ?></h2>
+                <h2 class="title_basic title"><?php echo $title ?></h2>
             </div>
             <div class="swiper-about-team">
 
                 <div class="section-team__items">
 
-                    <?php foreach ($about_team_team as $key => $item) : ?>
+                    <?php foreach ($team as $key => $item) : ?>
                         <?php
                             foreach ($item as $item_key => $item_value) {
                                 ${"item_$item_key"} = $item_value;

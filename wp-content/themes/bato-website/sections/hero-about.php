@@ -1,13 +1,6 @@
 <?php 
-    if(!empty($args)) {
-        foreach ($args as $field_name => $field) {
-            ${"$field_name"} = $field;
-        }
-    }
-
-    $hero_title = $fields['title'];
-    $hero_text = $fields['text'];
-    $hero_file = $fields['lottiefile'];
+    $current_file_name = basename(__FILE__, '.php');
+    include(__DIR__.'/../core/fields-generator.php');
 ?>
 
 <?php if (!empty($fields)) : ?>
@@ -22,12 +15,12 @@
         <div class="main-size">
             <div class="section-about-hero__content">
 
-                <?php if (!empty($hero_title)) : ?>
-                    <div class="title-large"><?php echo $hero_title ?></div>
+                <?php if (!empty($title)) : ?>
+                    <div class="title-large"><?php echo $title ?></div>
                 <?php endif ?>
 
-                <?php if (!empty($hero_text)) : ?>
-                    <div class="section-about-hero__text"><?php echo $hero_text ?></div>
+                <?php if (!empty($text)) : ?>
+                    <div class="section-about-hero__text"><?php echo $text ?></div>
                 <?php endif ?>
 
             </div>
