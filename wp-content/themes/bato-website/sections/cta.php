@@ -8,19 +8,8 @@
 <section class="section-about-ready section">
     <div class="main-size">
         <div class="section-about-ready__wrapper">
-
-            <?php if (!empty($title)) : ?>
-                <div class="title title_basic">
-                    <?php echo $title ?>
-                </div>
-            <?php endif ?>
-
-            <?php if (!empty($link)) : ?>
-                <a class="button-default button-big-color" target="<?php echo $link['target'] ? $link['target'] : '_self' ?>" href="<?php echo $link['url'] ?>">
-                    <span class="button-default__link"><?php echo $link['title'] ?></span>
-                </a>
-            <?php endif ?>
-
+            <?php insertTitle($title, 'title title_basic') ?>
+            <?php insertLink($link, 'button-big-color') ?>
         </div>
     </div>
 </section>

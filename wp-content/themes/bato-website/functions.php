@@ -178,6 +178,42 @@ function create_cropped_folder() {
 /* insert image END */
 
 
+
+/* insert link START */
+function insertLink($link, $class = '', $child_class = '') {
+    if (!empty($link)) {
+        get_template_part('elements/link', '' , array('link' => $link, 'class' => $class));
+    }
+}
+/* insert link END */
+
+
+
+/* insert title START */
+function insertTitle($text = '', $class='title', $tag = 'div', $child = '') {
+    if (!empty($text)) {
+        $text = strip_tags($text, '<br><strong><span>');
+        $child_class = '';
+        
+        if(!empty($child)) {
+            $child = explode('.', $child);
+            if(!empty($child[1])) {
+                $child_class = $child[1];
+            }
+            $text = str_replace($text, "<$child[0] class='".$child_class."'>$text</$child>", $text);
+        }
+
+        $title  = '<'.$tag;
+        $title .= ' class="'.$class.'"';
+        $title .= '>';
+        $title .= $text;
+        $title .= '</'.$tag.'>';
+        echo $title;
+    }
+}
+/* insert title END */
+
+
 add_filter('script_loader_tag', 'add_type_attribute', 10, 3);
 function add_type_attribute($tag, $handle, $src) {
     if ('connection_scripts-module' !== $handle && 'connection_scripts_main' !== $handle) {
