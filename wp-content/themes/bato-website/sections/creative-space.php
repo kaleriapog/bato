@@ -10,10 +10,7 @@
         <div class="section-creative-space__wrapper">
 
             <?php insertTitle($fields['title'], 'title_basic title', 'h2') ?>
-
-            <?php if (!empty($fields['text'])) : ?>
-                <div class="section-creative-space__text"><?php echo $fields['text'] ?></div>
-            <?php endif ?>
+            <?php insertText($fields['text'], 'section-creative-space__text') ?>
 
             <div class="section-creative-space__media">
                 <div class="section-creative-space__ball">

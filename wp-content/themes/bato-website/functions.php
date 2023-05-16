@@ -248,6 +248,19 @@ function insertTitle($text = '', $class='title', $tag = 'div', $child = '') {
 /* insert title END */
 
 
+
+/* insert text START */
+function insertText($text = '', $class='') {
+    if (!empty($text)) {
+        $html .= '<div class="'.$class.'">';
+        $html .= $text;
+        $html .= '</div>';
+        echo $html;
+    }
+}
+/* insert text END */
+
+
 /* dump START */
 function dump($array, $depth = 0, $scripts = false) {
     if (!$scripts) {
@@ -277,17 +290,21 @@ function dump($array, $depth = 0, $scripts = false) {
     }
 
     echo '<div class="dump-array">';
-    foreach ($array as $key => $value) {
-        echo '<div class="dump-array__element">';
-        if (is_array($value)) {
-            echo '<button class="dump-array__button"></button>';
-            echo '<strong>'.$key.'</strong> => ';
-            dump($value, $depth + 1, true);
-        } else {
-            echo '<span class="dump-array__space"></span>';
-            echo '<strong>'.$key.'</strong> => ' . htmlspecialchars($value);
+    if(is_array($array)) {
+        foreach ($array as $key => $value) {
+            echo '<div class="dump-array__element">';
+            if (is_array($value)) {
+                echo '<button class="dump-array__button"></button>';
+                echo '<strong>'.$key.'</strong> => ';
+                dump($value, $depth + 1, true);
+            } else {
+                echo '<span class="dump-array__space"></span>';
+                echo '<strong>'.$key.'</strong> => ' . htmlspecialchars($value);
+            }
+            echo '</div>';
         }
-        echo '</div>';
+    } else {
+        var_dump($array);
     }
     echo '</div>';
 }

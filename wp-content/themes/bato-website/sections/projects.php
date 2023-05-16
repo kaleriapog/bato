@@ -10,7 +10,7 @@
         <div class="section-projects__list">
 
             <?php foreach ($fields['projects_list'] as $item) : ?>
-                <a class="section-projects__item" href="<?php echo $item['link']['url'] ?>" target="_blank>" rel="nofollow">
+                <a class="section-projects__item" href="<?php echo $item['link']['url'] ?>" target="_blank" rel="nofollow">
 
                     <?php if (!empty($item['image'])) : ?>
                         <div class="section-projects__item-image-wrap">
@@ -34,26 +34,16 @@
                             <time datetime="<?php echo $item['date'] ?>" class="section-projects__item-date"><?php echo $item['date'] ?></time>
                         <?php endif ?>
 
-                        <?php if (!empty($item['title'])) : ?>
-                            <h2 class="section-projects__item-title"><?php echo $item['title'] ?></h2>
-                        <?php endif ?>
-
-                        <?php if (!empty($item['subtitle'])) : ?>
-                            <div class="section-projects__item-subtitle"><?php echo $item['subtitle'] ?></div>
-                        <?php endif ?>
-
-                        <?php if (!empty($item['text'])) : ?>
-                            <div class="section-projects__item-text"><?php echo $item['text'] ?></div>
-                        <?php endif ?>
+                        <?php insertTitle($item['title'], 'section-projects__item-title', 'h2') ?>
+                        <?php insertTitle($item['subtitle'], 'section-projects__item-subtitle') ?>
+                        <?php insertText($item['text'], 'section-projects__item-text') ?>
 
                     </div>
 
                     <?php if (!empty($item['technologies'])) : ?>
                         <div class="section-projects__item-technologies">
                             <?php foreach ($item['technologies'] as $el) : ?>
-                                <?php if (!empty($el['title'])) : ?>
-                                    <div class="section-projects__item-technologies-el"><?php echo $el['title'] ?></div>
-                                <?php endif ?>
+                                <?php insertTitle($el['title'], 'section-projects__item-technologies-el') ?>
                             <?php endforeach ?>
                         </div>
                     <?php endif ?>
