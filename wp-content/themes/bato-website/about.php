@@ -18,7 +18,7 @@ get_header();
 ?>
 
 <div class="about-decorative-page">
-    <img src="<?php echo get_template_directory_uri() ?>/images/effect-about.png" alt="decorative image">
+    <?php insertImage('effect-about.png', '', 0) ?>
 </div>
 
 <main id="primary" class="site-main">

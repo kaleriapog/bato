@@ -9,19 +9,8 @@
     <div class="main-size">
         <div class="section-projects-hero__wrapper">
             <div class="section-projects-hero__content">
-
-                <?php if (!empty($title)) : ?>
-
-                    <h1 class="title-large"><?php echo $title ?></h1>
-
-                <?php endif ?>
-
-                <?php if (!empty($text)) : ?>
-
-                    <div class="section-projects-hero__text"><?php echo $text ?></div>
-
-                <?php endif ?>
-
+                <?php insertTitle($title, 'title-large', 'h1') ?>
+                <?php insertText($text, 'section-projects-hero__text') ?>
             </div>
         </div>
     </div>
