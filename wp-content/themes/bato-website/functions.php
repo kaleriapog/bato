@@ -36,6 +36,33 @@ function smartwp_remove_wp_block_library_css() {
 /* REMOVE GUTENBERG STYLES END */
 
 
+add_filter('script_loader_tag', 'add_type_attribute', 10, 3);
+function add_type_attribute($tag, $handle, $src) {
+    if ('connection_scripts-module' !== $handle && 'connection_scripts_main' !== $handle) {
+        return $tag;
+    }
+    $tag = '<script type="module" src="' . esc_url($src) . '"></script>';
+    return $tag;
+}
+
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+function my_acf_json_save_point($path) {
+    $path = get_stylesheet_directory() . '/acf-json';
+    return $path;
+}
+
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+function my_acf_json_load_point($paths) {
+    unset($paths[0]);
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    return $paths;
+}
+
+function theme_custom_logo_support() {
+    add_theme_support('custom-logo');
+}
+add_action('after_setup_theme', 'theme_custom_logo_support');
+
 /* add js/css START */
 add_action('get_footer', 'enqueue_js_css');
 function enqueue_js_css() {
@@ -214,24 +241,47 @@ function insertTitle($text = '', $class='title', $tag = 'div', $child = '') {
 /* insert title END */
 
 
-add_filter('script_loader_tag', 'add_type_attribute', 10, 3);
-function add_type_attribute($tag, $handle, $src) {
-    if ('connection_scripts-module' !== $handle && 'connection_scripts_main' !== $handle) {
-        return $tag;
+/* dump START */
+function dump($array, $depth = 0, $scripts = false) {
+    if (!$scripts) {
+        echo '<style>
+        .dump-array { background-color: black; padding: 5px; border-left: 1px solid currentColor; margin: 0 20px; position: relative; z-index: 9999; font-family: system-ui; }
+        .dump-array__element { padding: 3px 0; color: darkcyan;}
+        .dump-array__element > .dump-array {display: none}
+        .dump-array__button { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; padding: 0; color: lime; background-color: black; border: none; cursor: pointer; }
+        .dump-array__button::before { content: "+"; }
+        .dump-array__element.expanded {color: lime}
+        .dump-array__element.expanded > .dump-array { display: block; }
+        .dump-array__element.expanded > .dump-array__button::before { content: "-"; }
+        .dump-array__space {display: inline-block; width: 15px}
+        </style>';
+
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const expandButtons = document.querySelectorAll(".dump-array__button");
+            expandButtons.forEach(function(button) {
+                button.addEventListener("click", function() {
+                    const parent = button.parentElement;
+                    parent.classList.toggle("expanded");
+                });
+            });
+        });
+        </script>';
     }
-    $tag = '<script type="module" src="' . esc_url($src) . '"></script>';
-    return $tag;
-}
 
-add_filter('acf/settings/save_json', 'my_acf_json_save_point');
-function my_acf_json_save_point($path) {
-    $path = get_stylesheet_directory() . '/acf-json';
-    return $path;
+    echo '<div class="dump-array">';
+    foreach ($array as $key => $value) {
+        echo '<div class="dump-array__element">';
+        if (is_array($value)) {
+            echo '<button class="dump-array__button"></button>';
+            echo '<strong>'.$key.'</strong> => ';
+            dump($value, $depth + 1, true);
+        } else {
+            echo '<span class="dump-array__space"></span>';
+            echo '<strong>'.$key.'</strong> => ' . htmlspecialchars($value);
+        }
+        echo '</div>';
+    }
+    echo '</div>';
 }
-
-add_filter('acf/settings/load_json', 'my_acf_json_load_point');
-function my_acf_json_load_point($paths) {
-    unset($paths[0]);
-    $paths[] = get_stylesheet_directory() . '/acf-json';
-    return $paths;
-}
+/* dump END */
