@@ -213,11 +213,12 @@
 
 .section-our-values {
   position: relative;
-  margin-bottom: -90vh;
+  //margin-bottom: -90vh;
+  margin-bottom: -650px;
 
-  @include media-height-min-820 {
-    margin-bottom: -50vh;
-  }
+  //@include media-height-min-820 {
+  //  margin-bottom: -50vh;
+  //}
 
   @include media-height-600 {
     margin-bottom: -120vh;

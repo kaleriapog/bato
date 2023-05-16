@@ -14,18 +14,11 @@
 
   @include media-laptop {
     padding: 25px 0;
-    //background: rgba(255, 255, 255, 0.01);
     border-bottom: 1px solid transparent;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    -webkit-backdrop-filter: blur(25px);
-    backdrop-filter: blur(25px);
-    box-shadow: 0 10px 40px rgba(0, 158, 212, 0.1);
-    background: rgba(6, 12, 13, 0.7);
   }
 
   &.bg-header {
@@ -213,6 +206,12 @@
 
 .open-header-menu {
   height: 100vh;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 10px 40px rgba(0, 158, 212, 0.1);
+  background: rgba(6, 12, 13, 0.7);
+
   .navigation-icon {
     @include media-laptop {
       visibility: hidden;
@@ -233,6 +232,11 @@
 .header-mobile-border {
   @include media-laptop {
     border-color: #333333;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 10px 40px rgba(0, 158, 212, 0.1);
+    background: rgba(6, 12, 13, 0.7);
   }
 }
 

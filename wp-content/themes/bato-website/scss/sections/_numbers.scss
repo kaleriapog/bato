@@ -41,13 +41,16 @@
     justify-content: center;
     border: 1px solid $color-border-second;
 
+    @include media-1366 {
+      min-height: 30vw;
+    }
+
     @include media-width-small {
       max-width: calc(33% - 20px);
     }
 
     @include media-laptop {
       padding: 20px;
-      min-height: 30vh;
     }
 
     @include media-tablet {
@@ -63,6 +66,16 @@
   &__number {
     @include card-number;
     margin-bottom: 40px;
+
+    @include media-1366 {
+      white-space: nowrap;
+      font-size: 6vw;
+    }
+
+    @include media-laptop {
+      white-space: normal;
+      @include card-number;
+    }
 
     span {
       @include card-number;

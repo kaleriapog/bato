@@ -226,7 +226,7 @@
       width: 100%;
       padding: 10px 10px 10px 0;
       border-bottom: 1px solid $color-border-second;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-family: "Montserrat", sans-serif;
       font-size: 16px;
       font-weight: 500;
@@ -387,14 +387,12 @@
 
   &__map-main {
     padding: 100px 0;
-    //margin-top: -600px;
     position: absolute;
     top: 485px;
     opacity: 0;
     transition: opacity 1.5s;
 
     @include media-1440 {
-      //margin-top: -450px;
       top: 500px;
     }
 

@@ -765,12 +765,18 @@ header.inited {
     }
   }
 
-  .cube-item {
-    border: 1px solid $color-border-second;
-  }
-
   .cube-item.front-cube {
-    border: transparent;
+
+    background-image: linear-gradient(141.8deg, cyan 0%, #01c4e5 50%, #666 50%, #666 100%);
+    background-size: 200% 200%;
+    background-position: 100% 100%;
+    padding: 1px;
+    transition: background-position 0.7s linear;
+
+    &>div {
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+    }
   }
 
   .container {
@@ -810,18 +816,6 @@ header.inited {
       @include main-animation;
       animation: main_animation_title 3s ease forwards;
     }
-
-    // @for $i from 0 through 8 {
-    //   .item-photo-#{$i} {
-    //     animation: translate-item-team
-    //       2s
-    //       $main-transition-timing
-    //       #{$i *
-    //       0.2 +
-    //       0.5}s
-    //       forwards;
-    //   }
-    // }
 
     .item-photo {
       opacity: 1;
@@ -908,35 +902,35 @@ header.inited {
 
     .front-cube-inner {
       background: $main-color-bg;
-      width: calc(100% - 2px);
-      height: calc(100% - 2px);
+      //width: calc(100% - 2px);
+      //height: calc(100% - 2px);
+      //
+      //&::after,
+      //&::before {
+      //  content: "";
+      //  position: absolute;
+      //}
 
-      &::after,
-      &::before {
-        content: "";
-        position: absolute;
-      }
+      //&::after {
+      //  z-index: -2;
+      //  top: -2px;
+      //  bottom: -2px;
+      //  left: -2px;
+      //  right: -2px;
+      //  background-color: #666666;
+      //}
 
-      &::after {
-        z-index: -2;
-        top: -2px;
-        bottom: -2px;
-        left: -2px;
-        right: -2px;
-        background-color: #666666;
-      }
-
-      &::before {
-        // z-index: -1;
-        top: calc(-2px - 25%);
-        bottom: calc(-2px - 25%);
-        left: calc(-2px - 25%);
-        right: calc(-2px - 25%);
-        background: linear-gradient(141.8deg, #00ffff 14.44%, #01c4e5 86.47%);
-        transform: translate(-100%, -100%);
-        border-radius: 50%;
-        transition: transform 0.7s linear;
-      }
+      //&::before {
+      //  // z-index: -1;
+      //  top: calc(-2px - 25%);
+      //  bottom: calc(-2px - 25%);
+      //  left: calc(-2px - 25%);
+      //  right: calc(-2px - 25%);
+      //  background: linear-gradient(141.8deg, #00ffff 14.44%, #01c4e5 86.47%);
+      //  transform: translate(-100%, -100%);
+      //  border-radius: 50%;
+      //  transition: transform 0.7s linear;
+      //}
     }
   }
 
