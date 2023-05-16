@@ -26,11 +26,19 @@ export default function fixedHeader(sectionTrigger) {
             if (prevScrollPos > currentScrollPos && window.pageYOffset >= heightBlock - 150) {
                 header.classList.add('bg-header');
                 header.classList.add('header-fixed');
+                header.style.opacity = 1
+                header.style.transition = 'opacity 0.3s linear 0s'
             }
 
             if(prevScrollPos < currentScrollPos) {
-                header.classList.remove('bg-header');
-                header.classList.remove('header-fixed');
+
+                header.style.opacity = 0
+                header.style.transition = 'opacity 0.3s linear 0s'
+
+                setTimeout(() => {
+                    header.classList.remove('bg-header');
+                    header.classList.remove('header-fixed');
+                }, 300)
             }
 
             prevScrollPos = currentScrollPos;
