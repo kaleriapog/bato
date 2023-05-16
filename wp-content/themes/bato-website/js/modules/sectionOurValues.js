@@ -32,12 +32,13 @@ export default function sectionOurValues(el) {
     })
       .setPin(".section-our-values")
       .setTween(timelineSectionOurValues)
-      // .addIndicators({name: 'section-interactive'})
       .addTo(controller)
       .reverse(true);
 
     // animation item
     ourValuesItems.forEach((item, idx) => {
+      idx = idx + 1
+
       new ScrollMagic.Scene({
         triggerElement: `.section-our-values__item-${idx}`,
         triggerHook: "0.8",
@@ -46,42 +47,14 @@ export default function sectionOurValues(el) {
       })
         .setTween(
           new TimelineMax()
-            .fromTo(
-              [
-                `.section-our-values__item-${idx} .section-our-values__item-title`,
-              ],
-              {},
-              { filter: "grayscale(0)", ease: Linear.easeNone }
-            )
-            .fromTo(
-              [`.section-our-values__item-${idx} .item-number`],
-              {},
-              { filter: "grayscale(0)", ease: Linear.easeNone },
-              "<"
-            )
-            .fromTo(
-              [
-                `.section-our-values__item-${idx} .section-our-values__item-text`,
-              ],
-              {},
-              { color: "#bbbbbb", ease: Linear.easeNone },
-              "<"
-            )
-              .fromTo(
-                  [
-                    `.section-our-values__item-${idx-1} .section-our-values__item-title`,
-                  ],
-                  {},
-                  { filter: "grayscale(1)", ease: Linear.easeNone }, '-=0.6'
-              )
-              .fromTo(
-                  [`.section-our-values__item-${idx-1} .item-number`],
-                  {},
-                  { filter: "grayscale(1)", ease: Linear.easeNone },
-                  "<"
-              )
+            .fromTo([`.section-our-values__item-${idx} .section-our-values__item-title`,], {},{ filter: "grayscale(0)", ease: Linear.easeNone })
+            .fromTo([`.section-our-values__item-${idx} .item-number`], {}, { filter: "grayscale(0)", ease: Linear.easeNone }, "<")
+            .fromTo([`.section-our-values__item-${idx} .section-our-values__item-text`,], {}, { color: "#bbbbbb", ease: Linear.easeNone }, "<")
+            .fromTo([`.section-our-values__item-${idx-1} .section-our-values__item-title`,], {}, { filter: "grayscale(1)", ease: Linear.easeNone }, '-=0.6')
+            .fromTo([`.section-our-values__item-${idx-1} .item-number`], {}, { filter: "grayscale(1)", ease: Linear.easeNone }, "<")
         )
         .addTo(controller)
+        // .addIndicators({name: 'section-interactive'})
         .reverse(true);
     });
   }

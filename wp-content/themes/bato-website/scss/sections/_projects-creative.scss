@@ -57,10 +57,6 @@
     will-change: transform, opacity;
     transform: translate3d(0px, 3em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
     transform-style: preserve-3d;
-
-    @include media-mobile {
-      height: 300px;
-    }
   }
 
   &__ball {
