@@ -565,6 +565,18 @@
       }
     }
 
+    .image-globe-active-dots {
+      @include media-laptop {
+       position: relative;
+      }
+    }
+
+    .image-globe-active, .image-globe {
+      @include media-laptop {
+        display: none;
+      }
+    }
+
     img {
       object-fit: contain;
     }
@@ -1019,8 +1031,9 @@
 
     &:last-child {
       @include media-mobile {
-        width: calc((100vw / 2) - 20px);
-        height: calc((100vw / 2) - 20px);
+        //width: calc((100vw / 2) - 20px);
+        //height: calc((100vw / 2) - 20px);
+        display: none;
       }
     }
 

@@ -26,7 +26,7 @@
                     <div class="section-about-hq__interactive">
                         <div class="section-about-hq__interactive-height">
                             <div class="section-about-hq__interactive-wrapper">
-                                <?php insertImage($image) ?>
+                                <?php insertImage($image, 'image-globe') ?>
                                 <?php insertImage($image_color, 'image-globe-active') ?>
                                 <?php insertImage($image_with_dots, 'image-globe-active-dots') ?>
 

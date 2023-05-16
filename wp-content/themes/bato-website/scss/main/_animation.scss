@@ -1653,25 +1653,25 @@ body.windows {
     position: relative;
   }
 
-  .reviews-items-light {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(
-      49.41% 49.24% at 35.41% 46.21%,
-      #00ffff 53.18%,
-      rgba(0, 158, 212, 0.5) 100%
-    );
-    filter: blur(125px);
-    top: 20px;
-    right: 180px;
-    transform: translate(-50%, -50%);
-    opacity: 0.6;
-
-    @include media-laptop {
-      right: -43vw;
-    }
-  }
+  //.reviews-items-light {
+  //  position: absolute;
+  //  width: 200px;
+  //  height: 200px;
+  //  background: radial-gradient(
+  //    49.41% 49.24% at 35.41% 46.21%,
+  //    #00ffff 53.18%,
+  //    rgba(0, 158, 212, 0.5) 100%
+  //  );
+  //  filter: blur(125px);
+  //  top: 20px;
+  //  right: 180px;
+  //  transform: translate(-50%, -50%);
+  //  opacity: 0.6;
+  //
+  //  @include media-laptop {
+  //    right: -43vw;
+  //  }
+  //}
 }
 
 @keyframes size-pin {

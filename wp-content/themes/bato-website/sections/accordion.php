@@ -34,7 +34,7 @@
 
                 <?php if (!empty($accordion_rating)) : ?>
 
-                    <a href="<?php echo $accordion_rating['link']['url'] ?>" class="section-accordion__rating">
+                    <a href="<?php echo $accordion_rating['link']['url'] ?>" target="<?php echo $accordion_rating['link']['target'] ? $accordion_rating['link']['target'] : '_self'; ?>" class="section-accordion__rating">
 
                         <?php if (!empty($accordion_rating['logo'])) : ?>
                             <div class="section-accordion__rating-image">

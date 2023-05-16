@@ -193,7 +193,7 @@ get_header();
                     <?php if (!empty($projects_ready['link'])) : ?>
 
                         <div class="button-default button-big-color">
-                            <a class="button-default__link button-big-color__link" target="<?php echo $target = $projects_ready['link']['target'] ? $projects_ready['link']['target'] : '_self' ?>" href="<?php echo $projects_ready['link']['url'] ?>"><?php echo $projects_ready['link']['title'] ?></a>
+                            <a class="button-default__link button-big-color__link" target="<?php echo $projects_ready['link']['target'] ? $projects_ready['link']['target'] : '_self' ?>" href="<?php echo $projects_ready['link']['url'] ?>"><?php echo $projects_ready['link']['title'] ?></a>
                         </div>
 
                     <?php endif ?>
