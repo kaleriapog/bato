@@ -1,14 +1,11 @@
 <?php
-// Template Name: Home page
-// Template Post Type: post, page
+    $fields = get_fields();
 
-$fields = get_fields();
+    foreach ($fields as $field_name => $field) {
+        ${"$field_name"} = $field;
+    }
 
-foreach ($fields as $field_name => $field) {
-    ${"$field_name"} = $field;
-}
-
-get_header();
+    get_header();
 ?>
 
 <?php if (!empty($subtitles)) : ?>

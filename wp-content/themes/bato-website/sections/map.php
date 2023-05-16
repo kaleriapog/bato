@@ -28,7 +28,7 @@
                             <div class="section-about-hq__interactive-wrapper">
                                 <?php insertImage($image, 'image-globe') ?>
                                 <?php insertImage($image_color, 'image-globe-active') ?>
-                                <?php insertImage($image_with_dots, 'image-globe-active-dots') ?>
+                                <?php insertImage($image_with_dots, 'image-globe-active-dots', 0, '345', '225') ?>
 
                                 <div class="pin pin-fr">
                                     <?php insertImage($ellipse_big) ?>
