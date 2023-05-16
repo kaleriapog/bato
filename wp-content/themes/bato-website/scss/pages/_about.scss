@@ -1162,6 +1162,10 @@
   }
 }
 
+.section-about-reviews + .section-about-ready {
+  padding-top: 75px;
+}
+
 .section-about-ready {
   &__wrapper {
     display: flex;
