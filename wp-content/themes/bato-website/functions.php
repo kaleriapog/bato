@@ -119,7 +119,7 @@ function enqueue_js_css() {
 
 
 /* insert image START */
-function insertImage($file, $class = '', $width = 100, $height = 100, $crop = 0, $return = 0) {
+function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100, $crop = 0, $return = 0) {
     if (!empty($file)) {
         if(!is_array($file)) {
             $url = parse_url($file);
@@ -143,6 +143,13 @@ function insertImage($file, $class = '', $width = 100, $height = 100, $crop = 0,
             }
             $file_url = $protocol . $_SERVER['HTTP_HOST'] . $file_url;
         }
+
+        if($lazy) {
+            $lazyload = 'loading="lazy"';
+        } else {
+            $lazyload = '';
+        }
+
         if ($extension == 'svg') {
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $file_url);
@@ -172,7 +179,7 @@ function insertImage($file, $class = '', $width = 100, $height = 100, $crop = 0,
                     width="' . $width . '"
                     height="' . $height . '" 
                     alt="status_'.$status_code.'" 
-                    loading="lazy" 
+                    '.$lazyload.'
                 />';
             } else {
                 $content = str_replace('<?xml version="1.0" encoding="UTF-8"?>', '', $content);
@@ -184,7 +191,7 @@ function insertImage($file, $class = '', $width = 100, $height = 100, $crop = 0,
                 alt="'.$file_title.'"
                 width="'.$width.'"
                 height="'.$height.'" 
-                loading="lazy" 
+                '.$lazyload.' 
             />';
         }
         if (!empty($content)) {
