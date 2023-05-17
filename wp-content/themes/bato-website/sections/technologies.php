@@ -10,9 +10,7 @@ if(!empty($args)) {
     <div class="main-size">
         <div class="section-technologies__wrapper">
 
-            <?php if (!empty($title)) : ?>
-                <h2 class="title_basic title"><?php echo $title ?></h2>
-            <?php endif ?>
+            <?php insertTitle($title, 'title_basic title', 'h2') ?>
 
             <ul class="section-technologies__images">
                 <?php foreach ($images as $key => $item) : ?>

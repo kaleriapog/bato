@@ -40,7 +40,7 @@
 					<div class="navigation-bar">
 						<div class="logo"><?php the_custom_logo(); ?></div>
 						<div class="navigation-icon-close">
-							<span>close</span>
+							<span><?php _e('close', 'theme') ?></span>
 							<div><?php insertImage('icon-close-nav-header.svg') ?></div>
 						</div>
 					</div>

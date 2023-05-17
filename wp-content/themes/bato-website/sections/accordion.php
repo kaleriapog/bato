@@ -20,17 +20,8 @@
         <div class="section-accordion__wrapper">
             <div class="section-accordion__text">
 
-                <?php if (!empty($accordion_title)) : ?>
-                    <div class="title_basic title">
-                        <?php echo $accordion_title ?>
-                    </div>
-                <?php endif ?>
-
-                <?php if (!empty($accordion_text)) : ?>
-                    <div class="section-accordion__description">
-                        <?php echo $accordion_text ?>
-                    </div>
-                <?php endif ?>
+                <?php insertTitle($accordion_title, 'title_basic title') ?>
+                <?php insertText($accordion_text, 'section-accordion__description') ?>
 
                 <?php if (!empty($accordion_rating)) : ?>
 
@@ -94,27 +85,15 @@
             <?php if (!empty($accordion_items)) : ?>
 
                 <ul class="section-accordion__items accordion">
-
                     <?php foreach ($accordion_items as $key => $accordion_item) : ?>
-                    <?php
-                        $text = $accordion_item['text'];
-                        $title = $accordion_item['title'];
-                        $link = $accordion_item['link'];
-                    ?>
-
                         <li class="accordion__item accordion__item-<?php echo $key ?>">
                             <div class="accordion__item-inner">
                                 <div class="accordion__item-content">
-                                    <h3 class="accordion__item-title"><?php echo $title ?></h3>
+                                    <?php insertTitle($accordion_item['title'], 'accordion__item-title', 'h3') ?>
+                                    
                                     <div class="accordion__item-description">
-                                        <div class="accordion__item-text"><?php echo $text ?></div>
-
-                                        <?php if (!empty($link)) : ?>
-                                            <a class="button-default" href="<?php echo $link['url'] ?>">
-                                                <span class="button-default__link"><?php echo $link['title'] ?></span>
-                                            </a>
-                                        <?php endif ?>
-
+                                        <?php insertText($accordion_item['text'], 'accordion__item-text') ?>
+                                        <?php insertLink($accordion_item['link'], 'button-default__link') ?>
                                     </div>
                                 </div>
                                 <div class="accordion__item-icon"><?php insertImage('accordion-arrow.svg') ?></div>
@@ -122,9 +101,7 @@
                         </li>
 
                     <?php endforeach ?>
-
                 </ul>
-
             <?php endif ?>
 
         </div>

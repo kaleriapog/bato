@@ -10,9 +10,7 @@
 
                 <?php if (!empty($text)) : ?>
                     <div class="section-about-hq__content">
-                        <div class="section-about-hq__title">
-                            <?php echo $text ?>
-                        </div>
+                        <?php insertTitle($text, 'section-about-hq__title') ?>
                     </div>
                 <?php endif ?>
 

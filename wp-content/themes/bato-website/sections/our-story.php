@@ -13,13 +13,8 @@
             </div>
 
             <div class="section-about-our-story__content">
-                <?php if (!empty($title)) : ?>
-                    <div class="title title_basic"><?php echo $title ?></div>
-                <?php endif ?>
-
-                <?php if (!empty($text)) : ?>
-                    <div class="section-about-our-story__text"><?php echo $text ?></div>
-                <?php endif ?>
+                <?php insertTitle($title, 'title title_basic') ?>
+                <?php insertText($text, 'section-about-our-story__text') ?>
             </div>
         </div>
     </div>

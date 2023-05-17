@@ -30,14 +30,13 @@
 
                     <div class="section-projects__item-content">
  
-                       <?php if (!empty($item['date'])) : ?>
+                        <?php if (!empty($item['date'])) : ?>
                             <time datetime="<?php echo $item['date'] ?>" class="section-projects__item-date"><?php echo $item['date'] ?></time>
                         <?php endif ?>
 
                         <?php insertTitle($item['title'], 'section-projects__item-title', 'h2') ?>
                         <?php insertTitle($item['subtitle'], 'section-projects__item-subtitle') ?>
                         <?php insertText($item['text'], 'section-projects__item-text') ?>
-
                     </div>
 
                     <?php if (!empty($item['technologies'])) : ?>

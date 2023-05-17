@@ -250,11 +250,13 @@ function insertTitle($text = '', $class='title', $tag = 'div', $child = '') {
 
 
 /* insert text START */
-function insertText($text = '', $class='') {
+function insertText($text = '', $class='', $tag = 'div') {
     if (!empty($text)) {
-        $html .= '<div class="'.$class.'">';
+        $html  = '<'.$tag;
+        $html .= ' class="'.$class.'"';
+        $html .= '>';
         $html .= $text;
-        $html .= '</div>';
+        $html .= '</'.$tag.'>';
         echo $html;
     }
 }
@@ -290,10 +292,10 @@ function dump($array, $depth = 0, $scripts = false) {
     }
 
     echo '<div class="dump-array">';
-    if(is_array($array)) {
+    if(is_array($array) || is_object($array)) {
         foreach ($array as $key => $value) {
             echo '<div class="dump-array__element">';
-            if (is_array($value)) {
+            if (is_array($value) || is_object($array)) {
                 echo '<button class="dump-array__button"></button>';
                 echo '<strong>'.$key.'</strong> => ';
                 dump($value, $depth + 1, true);
@@ -304,7 +306,7 @@ function dump($array, $depth = 0, $scripts = false) {
             echo '</div>';
         }
     } else {
-        var_dump($array);
+        echo '<pre style="color: lime">'.$array.'</pre>';
     }
     echo '</div>';
 }
