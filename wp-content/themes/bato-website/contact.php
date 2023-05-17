@@ -9,7 +9,6 @@ foreach ($fields as $field_name => $field) {
 }
 
 $shortcode = $form['shortcode'];
-$title_forms = $form['title_forms'];
 
 get_header();
 ?>
@@ -20,28 +19,18 @@ get_header();
             <div class="contact-page__wrapper">
                 <div class="contact-page__info">
 
-                    <?php if (!empty($title)) : ?>
-                        <div class="contact-page__title title title_basic"><?php echo $title ?></div>
-                    <?php endif ?>
-
-                    <?php if (!empty($text)) : ?>
-                        <div class="contact-page__text text"><?php echo $text ?></div>
-                    <?php endif ?>
+                    <?php insertTitle($title, 'contact-page__title title title_basic') ?>
+                    <?php insertText($text, 'contact-page__text text') ?>
 
                     <?php if (!empty($contacts)) : ?>
                         <div class="contact-page__columns">
 
                             <?php foreach ($contacts as $item) : ?>
-                                <?php
-                                    $title = $item['title'];
-                                    $items_elem = $item['items'];
-                                ?>
-
                                 <div class="contact-page__col contact-item">
-                                    <div class="contact-item__title"><?php echo $title ?></div>
+                                    <?php insertTitle($item['title'], 'contact-item__title') ?>
 
-                                    <?php if (!empty($items_elem)) : ?>
-                                        <?php foreach ($items_elem as $item_elem) : ?>
+                                    <?php if (!empty($item['items'])) : ?>
+                                        <?php foreach ($item['items'] as $item_elem) : ?>
                                             <?php
                                                 $name = $item_elem['name'];
                                                 $mode = $item_elem['mode'];
@@ -64,22 +53,17 @@ get_header();
                             <?php endforeach ?>
 
                         </div>
-
                     <?php endif ?>
 
                 </div>
 
                 <?php if (!empty($shortcode)) : ?>
                     <div class="contact-page__form">
-
-                        <?php if (!empty($title_forms)) : ?>
-                            <h3 class="contact-page__form-title title title_basic"><?php echo $title_forms ?></h3>
-                        <?php endif ?>
+                        <?php insertTitle($form['title_forms'], 'contact-page__form-title title title_basic', 'h3') ?>
 
                         <?php if (!empty($shortcode)) : ?>
                             <?php echo do_shortcode($shortcode) ?>
                         <?php endif ?>
-
                     </div>
                 <?php endif ?>
 

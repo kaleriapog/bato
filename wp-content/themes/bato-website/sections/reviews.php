@@ -76,17 +76,12 @@
                     <ul class="section-about-reviews__items">
 
                         <?php foreach ($reviews as $key => $review) : ?>
-                            <?php
-                                $text = $review['review_text'];
-                                $name = $review['review_name'];
-                            ?>
-
                             <li class="section-about-reviews__item anim-item anim-item-<?php echo $key ?>">
                                 <div class="reviews-item-bg"></div>
                                 <div class="section-about-reviews__item-content">
-                                    <span class="quotation-mark go-opacity">“</span>
-                                    <div class="section-about-reviews__item-text custom-scrollbar go-opacity"><?php echo $text ?></div>
-                                    <div class="section-about-reviews__item-name go-opacity"><?php echo $name ?></div>
+                                    <span class="quotation-mark">“</span>
+                                    <?php insertText($review['review_text'], 'section-about-reviews__item-text custom-scrollbar') ?>
+                                    <?php insertText($review['review_name'], 'section-about-reviews__item-name') ?>
                                 </div>
                             </li>
                         <?php endforeach ?>
@@ -99,18 +94,13 @@
                         <div class="swiper-wrapper">
 
                             <?php foreach ($reviews as $key => $review) : ?>
-                                <?php
-                                    $text = $review['review_text'];
-                                    $name = $review['review_name'];
-                                ?>
-
                                 <div class="swiper-slide">
                                     <div class="section-about-reviews__item">
                                         <div class="reviews-item-bg"></div>
                                         <div class="section-about-reviews__item-content">
                                             <span class="quotation-mark">“</span>
-                                            <div class="section-about-reviews__item-text custom-scrollbar"><?php echo $text ?></div>
-                                            <div class="section-about-reviews__item-name"><?php echo $name ?></div>
+                                            <?php insertText($review['review_text'], 'section-about-reviews__item-text custom-scrollbar') ?>
+                                            <?php insertText($review['review_name'], 'section-about-reviews__item-name') ?>
                                         </div>
                                     </div>
                                 </div>
@@ -118,13 +108,10 @@
 
                         </div>
                     </div>
-
                     <div class="reviews-slider__scrollbar slider-scrollbar"></div>
                 </div>
             </div>
-
             <div class="reviews-items-light"></div>
-
         </div>
     </div>
 </section>

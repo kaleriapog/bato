@@ -9,9 +9,7 @@
 <section class="section-cards" id="section-cards">
     <div class="section-cards__inner main-size">
 
-        <?php if (!empty($cards_title)) : ?>
-            <h1 class="title_basic"><?php echo $cards_title ?></h1>
-        <?php endif ?>
+        <?php insertTitle($cards_title, 'title_basic', 'h1') ?>
 
         <?php if (!empty($cards_services)) : ?>
             <div class="cards-services">
@@ -22,15 +20,8 @@
                             <div class="card-services-wrapp">
                                 <div class="card-services-blur">
                                     <div class="card-description">
-
-                                        <?php if (!empty($item['card_title'])) : ?>
-                                            <h3 class="card-title"><?php echo $item['card_title'] ?></h3>
-                                        <?php endif ?>
-
-                                        <?php if (!empty($item['card_text'])) : ?>
-                                            <div class="card-text"><?php echo $item['card_text'] ?></div>
-                                        <?php endif ?>
-
+                                        <?php insertTitle($item['card_title'], 'card-title', 'h3') ?>
+                                        <?php insertText($item['card_text'], 'card-text') ?>
                                     </div>
                                     <div class="card-icon"></div>
                                 </div>

@@ -14,15 +14,8 @@
     <div class="section-about-hero__wrapper">
         <div class="main-size">
             <div class="section-about-hero__content">
-
-                <?php if (!empty($title)) : ?>
-                    <div class="title-large"><?php echo $title ?></div>
-                <?php endif ?>
-
-                <?php if (!empty($text)) : ?>
-                    <div class="section-about-hero__text"><?php echo $text ?></div>
-                <?php endif ?>
-
+                <?php insertTitle($title, 'title-large') ?>
+                <?php insertText($text, 'section-about-hero__text') ?>
             </div>
         </div>
     </div>

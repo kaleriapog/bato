@@ -17,24 +17,15 @@
 
             <?php if (!empty($title) || !empty($links)) : ?>
                 <div class="section-about-follow__content">
-
-                    <?php if (!empty($title)) : ?>
-                        <h2 class="title title_basic"><?php echo strip_tags($title, '<br>, <span>, <strong>, <mark>, <i>, <em>, <b>') ?></h2>
-                    <?php endif ?>
+                    <?php insertTitle($title, 'title title_basic', 'h2') ?>
 
                     <?php if (!empty($links)) : ?>
                         <ul class="section-about-follow__links">
                             <?php foreach ($links as $key => $link) : ?>
-                                <?php
-                                    $name = $link['link']['title'];
-                                    $url = $link['link']['url'];
-                                ?>
-
-                                <li class="section-about-follow__link"><a href="<?php echo $url ?>"><?php echo $name ?></a></li>
+                                <li class="section-about-follow__link"><a href="<?php echo $link['link']['url'] ?>" target="_blank" rel="nofollow"><?php echo $link['link']['title'] ?></a></li>
                             <?php endforeach  ?>
                         </ul>
                     <?php endif ?>
-
                 </div>
             <?php endif ?>
 

@@ -10,9 +10,7 @@
     <div class="section-contact__inner main-size">
         <div class="section-contact__description">
 
-            <?php if (!empty($contact_title)) : ?>
-                <h2 class="title_basic title"><?php echo $contact_title ?></h2>
-            <?php endif ?>
+            <?php insertTitle($contact_title, 'title_basic title', 'h2') ?>
 
             <?php if (!empty($contact_phrase)) : ?>
                 <div class="section-contact__phrase">

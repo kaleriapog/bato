@@ -16,23 +16,9 @@ get_header();
         <div class="main-size">
             <div class="section-privacy__wrapper">
 
-                <?php if(!empty($title)) : ?>
-                    <div class="section-privacy__title title_basic">
-                        <?php echo $title ?>
-                    </div>
-                <?php endif ?>
-
-                <?php if(!empty($subtitle)) : ?>
-                    <div class="section-privacy__subtitle">
-                        <?php echo $subtitle ?>
-                    </div>
-                <?php endif ?>
-                
-                <?php if(!empty($text)) : ?>
-                    <div class="section-privacy__text">
-                        <?php echo $text ?>
-                    </div>
-                <?php endif ?>
+                <?php insertTitle($title, 'section-privacy__title title_basic') ?>
+                <?php insertTitle($subtitle, 'section-privacy__subtitle') ?>
+                <?php insertText($text, 'ection-privacy__text') ?>
                 
             </div>
         </div>

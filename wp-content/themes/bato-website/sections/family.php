@@ -18,9 +18,7 @@
         <div class="section-about-family__wrapper">
             <div class="section-about-family__content">
 
-                <?php if (!empty($title)) : ?>
-                    <div class="section-about-family__title title title_basic"><?php echo $title ?></div>
-                <?php endif ?>
+                <?php insertTitle($title, 'section-about-family__title title title_basic') ?>
 
                 <?php if (!empty($images)) : ?>
                     <ul class="section-about-family__images family-images-desktop">

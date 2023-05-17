@@ -9,9 +9,7 @@
 <section class="section-team" id="section-team">
     <div class="section-team__inner main-size">
 
-        <?php if (!empty($team_title)) : ?>
-            <h2 class="title_basic"><?php echo $team_title ?></h2>
-        <?php endif ?>
+        <?php insertTitle($team_title, 'title_basic', 'h2') ?>
 
         <?php if (!empty($team_items)) : ?>
             <div class="section-team__items">
@@ -26,15 +24,8 @@
                                     <div class="cube-item front-cube">
                                         <div class="front-cube-inner">
                                             <div class="front-cube-content">
-
-                                                <?php if (!empty($item["team_name"])) : ?>
-                                                    <span class="section-team__card-team-name"><?php echo $item["team_name"] ?></span>
-                                                <?php endif ?>
-
-                                                <?php if (!empty($item["team_name"])) : ?>
-                                                    <span class="section-team__card-team-position"><?php echo $item["team_position"] ?></span>
-                                                <?php endif ?>
-
+                                                <?php insertText($item["team_name"], 'section-team__card-team-name', 'span') ?>
+                                                <?php insertText($item["team_position"], 'section-team__card-team-position', 'span') ?>
                                             </div>
                                         </div>
                                     </div>
@@ -42,11 +33,7 @@
                                     <div class="cube-item bottom-cube">
                                         <div class="photo-cube-inner">
                                             <div class="photo-cube-img-wrapp">
-
-                                                <?php if (!empty($item['team_image'])) : ?>
-                                                    <?php insertImage($item['team_image']) ?>
-                                                <?php endif ?>
-
+                                                <?php insertImage($item['team_image']) ?>
                                             </div>
                                         </div>
                                     </div>
@@ -57,9 +44,7 @@
                     </div>
 
                 <?php endforeach ?>
-
             </div>
-
         <?php endif ?>
 
     </div>
