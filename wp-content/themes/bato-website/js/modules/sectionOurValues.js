@@ -17,23 +17,23 @@ export default function sectionOurValues(el) {
     const windowHeight = window.innerHeight;
     const heightListMask = windowHeight - headerHeight - titleHeight + 10;
 
-    mask.style.height = `${heightListMask}px`;
-
-    // animation track for items
-    timelineSectionOurValues
-        .fromTo( [".section-our-values__items-list"], { transform: `translateY(20vh)` }, { transform: "translateY(-70%)", ease: Linear.easeNone })
-        .fromTo( [".our-values-fake-mask"], {}, {height: '300px', opacity: 1, duration: '0.1', ease: Linear.easeNone }, '<')
-
-    new ScrollMagic.Scene({
-      triggerElement: ".section-our-values",
-      offset: mediaLaptop ? -70 : -110,
-      triggerHook: "onLeave",
-      duration: itemsTrack.offsetHeight * 3,
-    })
-      .setPin(".section-our-values")
-      .setTween(timelineSectionOurValues)
-      .addTo(controller)
-      .reverse(true);
+    // mask.style.height = `${heightListMask}px`;
+    //
+    // // animation track for items
+    // timelineSectionOurValues
+    //     .fromTo( [".section-our-values__items-list"], { transform: `translateY(20vh)` }, { transform: "translateY(-70%)", ease: Linear.easeNone })
+    //     .fromTo( [".our-values-fake-mask"], {}, {height: '300px', opacity: 1, duration: '0.1', ease: Linear.easeNone }, '<')
+    //
+    // new ScrollMagic.Scene({
+    //   triggerElement: ".section-our-values",
+    //   offset: mediaLaptop ? -70 : -110,
+    //   triggerHook: "onLeave",
+    //   duration: itemsTrack.offsetHeight * 3,
+    // })
+    //   .setPin(".section-our-values")
+    //   .setTween(timelineSectionOurValues)
+    //   .addTo(controller)
+    //   .reverse(true);
 
     // animation item
     ourValuesItems.forEach((item, idx) => {

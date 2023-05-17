@@ -28,7 +28,7 @@
 
         </div>
         <div class="circles-about">
-            <?php insertImage('effect-about.png') ?>
+            <?php insertImage('effect-about.png', '', 0) ?>
         </div>
     </div>
 </section>

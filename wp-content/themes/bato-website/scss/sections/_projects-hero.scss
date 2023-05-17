@@ -15,13 +15,17 @@
     }
   }
 
+  .title {
+    animation-delay: 1.8s;
+  }
+
   &__text {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 300;
     line-height: 1.6;
     opacity: 0;
-    animation: main_animation_title 1.5s ease forwards 1s;
+    animation: main_animation_title 1.5s ease forwards 2.2s;
 
     @include media-mobile {
       font-size: 16px;

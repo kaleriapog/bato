@@ -1131,16 +1131,16 @@ header.inited {
 
   .title_basic {
     opacity: 0;
-    transform: translate3d(0px, 2em, 0px) scale3d(1, 1, 1) rotateX(0deg)
-      rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
-    transform-style: preserve-3d;
-    transition: opacity 1.5s, transform 1.5s;
+    //transform: translate3d(0px, 2em, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    //  rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
+    //transform-style: preserve-3d;
+    //transition: opacity 1.5s, transform 1.5s;
   }
 
   .section-accordion__description {
     @include main-animation;
     transition: opacity 1.5s, transform 1.5s;
-    transition-delay: 1.2s;
+    transition-delay: 1s;
   }
 
   .section-accordion__rating {
@@ -1159,22 +1159,15 @@ header.inited {
   @for $i from 0 through 8 {
     .accordion__item-#{$i} {
       transition-delay: #{$i * 0.2 + 0.5}s;
-      //animation: translate-item-team
-      //2s
-      //$main-transition-timing
-      //#{$i *
-      //  0.2 +
-      //  0.5}s
-      //forwards;
     }
   }
 
   &.animation {
     .title_basic {
-      opacity: 0;
-      transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg)
-        rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-      transform-style: preserve-3d;
+      //opacity: 0;
+      //transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      //  rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      //transform-style: preserve-3d;
     }
 
     .section-accordion__description {
@@ -1474,119 +1467,6 @@ body.windows {
   }
 }
 
-#donation-popup {
-  display: none;
-  width: 272px;
-  text-align: center;
-  //position: fixed;
-  right: 30px;
-  bottom: 15px;
-  padding: 24px 15px;
-  background-color: rgba(6, 4, 6, 0.15);
-  opacity: 1;
-  visibility: visible;
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border-radius: 2px;
-  -webkit-box-shadow: 0 0 80px rgba(6, 255, 255, 0.25);
-  box-shadow: 0 0 80px rgba(6, 255, 255, 0.25);
-  // -webkit-animation: donationBoxShadow 2s infinite linear;
-  // animation: donationBoxShadow 2s infinite linear;
-  -webkit-transition: -webkit-transform 1s ease-in, right 1s,
-    opacity 1.4s ease-in;
-  transition: -webkit-transform 1s ease-in, right 1s, opacity 1.4s ease-in;
-  -o-transition: transform 1s ease-in, right 1s, opacity 1.4s ease-in;
-  transition: transform 1s ease-in, right 1s, opacity 1.4s ease-in;
-  transition: transform 1s ease-in, -webkit-transform 1s ease-in, right 1s,
-    opacity 1.4s ease-in;
-  //z-index: 999;
-}
-
-#donation-popup.hidden {
-  -webkit-transform: translateX(calc(100% + 30px));
-  -ms-transform: translateX(calc(100% + 30px));
-  transform: translateX(calc(100% + 30px));
-  opacity: 0;
-}
-
-@media screen and (max-width: 767px) {
-  #donation-popup {
-    right: 50%;
-    -webkit-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
-  }
-
-  #donation-popup.hidden {
-    right: 0;
-    opacity: 0;
-  }
-}
-
-#donation-popup h2 {
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  margin-bottom: 16px;
-  font-size: 20px;
-}
-
-#donation-popup-close {
-  background-color: #060406;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  position: absolute;
-  top: -11px;
-  right: -11px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-shadow: 0 0 16px rgba(6, 255, 255, 0.1);
-  box-shadow: 0 0 16px rgba(6, 255, 255, 0.1);
-  border: solid 1px rgba(205, 205, 205, 0.25);
-  cursor: pointer;
-  -webkit-transition: border 0.3s;
-  -o-transition: border 0.3s;
-  transition: border 0.3s;
-}
-
-#donation-popup-close img {
-  width: 8px;
-  display: block;
-}
-
-#ukrainian-flag {
-  width: 54px;
-  height: 54px;
-  margin-bottom: 24px;
-  margin-top: -51px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-#ukrainian-flag::before {
-  content: "";
-  display: block;
-  background-color: #2559b5;
-  height: 27px;
-}
-
-#ukrainian-flag::after {
-  content: "";
-  display: block;
-  background-color: #f7d648;
-  height: 27px;
-}
-
 .section-about-hq {
   &__interactive.active {
     .section-about-hq__images-globe,
@@ -1652,26 +1532,6 @@ body.windows {
   .reviews-items {
     position: relative;
   }
-
-  //.reviews-items-light {
-  //  position: absolute;
-  //  width: 200px;
-  //  height: 200px;
-  //  background: radial-gradient(
-  //    49.41% 49.24% at 35.41% 46.21%,
-  //    #00ffff 53.18%,
-  //    rgba(0, 158, 212, 0.5) 100%
-  //  );
-  //  filter: blur(125px);
-  //  top: 20px;
-  //  right: 180px;
-  //  transform: translate(-50%, -50%);
-  //  opacity: 0.6;
-  //
-  //  @include media-laptop {
-  //    right: -43vw;
-  //  }
-  //}
 }
 
 @keyframes size-pin {

@@ -5,6 +5,7 @@ import fixedHeader from "./modules/fixed-header.js";
 document.addEventListener("DOMContentLoaded", () => {
   const sectionAReviews = document.querySelector(".section-about-reviews__pin-section");
   const sections = document.querySelectorAll(".section");
+  const projectsItems = document.querySelectorAll(".section-projects__item");
   const sectionHero = document.querySelector(".section-projects-hero");
   const target = document.querySelector(".section-projects");
 
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(target);
 
   animationSections(sections, 0);
+  animationSections(projectsItems, 0);
   sectionAboutReviews(sectionAReviews);
   fixedHeader(sectionHero);
 });

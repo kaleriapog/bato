@@ -6,20 +6,30 @@
 <?php if (!empty($fields)) : ?>
 
 <section class="section-our-values section">
-    <div class="main-size">
-        <div class="section-our-values__wrapper">
-            <div class="section-our-values__content">
-                <div class="section-our-values-scene-trigger-start"></div>
 
-                <?php if (!empty($title)) : ?>
+    <?php if (!empty($title)) : ?>
+
+        <div class="section-our-values__sticky">
+            <div class="main-size">
+                <div class="section-our-values__content">
                     <div class="title_basic title our-values-fake-mask-parent"><?php echo $title ?>
                         <div class="our-values-fake-mask"></div>
                     </div>
-                <?php endif ?>
+                </div>
+            </div>
+            <div class="section-our-values__items-mask"></div>
+        </div>
+
+    <?php endif ?>
+
+
+    <div class="section-our-values__wrapper">
+        <div class="main-size">
+            <div class="section-our-values__content">
+<!--                <div class="section-our-values-scene-trigger-start"></div>-->
 
                 <?php if (!empty($items)) : ?>
                     <div class="section-our-values__items">
-                        <div class="section-our-values__items-mask"></div>
                         <ul class="section-our-values__items-list">
 
                             <?php foreach ($items as $key => $our_values_item) : ?>
@@ -49,12 +59,13 @@
 
                         </ul>
                     </div>
-                    <div class="section-our-values-scene-trigger-end"></div>
+<!--                    <div class="section-our-values-scene-trigger-end"></div>-->
                 <?php endif ?>
 
             </div>
         </div>
     </div>
+
 </section>
 
 <?php endif ?>

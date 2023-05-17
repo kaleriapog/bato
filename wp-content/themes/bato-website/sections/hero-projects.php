@@ -9,7 +9,7 @@
     <div class="main-size">
         <div class="section-projects-hero__wrapper">
             <div class="section-projects-hero__content">
-                <?php insertTitle($title, 'title-large', 'h1') ?>
+                <?php insertTitle($title, 'title-large title', 'h1') ?>
                 <?php insertText($text, 'section-projects-hero__text') ?>
             </div>
         </div>

@@ -15,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const menuMainItems = document.querySelectorAll(".header-menu .menu-item a");
   const socialMedia = document.querySelectorAll(".social-media .menu-item a");
-  const linkContactPhrase = document.querySelectorAll(
-    ".section-contact__phrase a"
-  );
+  const linkContactPhrase = document.querySelectorAll( ".section-contact__phrase a");
   const heroHomeFirst = document.querySelector(".section-banner");
   const sectionService = document.querySelectorAll(".section-cards");
   const sectionAbout = document.querySelectorAll(".section-about");
@@ -27,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionContact = document.querySelectorAll(".section-contact");
   const sectionAccordion = document.querySelectorAll(".section-accordion");
   const sectionTechnologies = document.querySelectorAll(".section-technologies");
-
+  const safari = document.querySelector("body").classList.contains("body-safari")
   const footer = document.querySelectorAll(".footer");
   const accordionBlock = document.querySelectorAll(".accordion");
   const footerMain = document.querySelector(".footer");
@@ -49,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
   fixedHeader(heroHomeFirst);
   interactiveBlock(footerMain);
 
-  if (!document.querySelector("body").classList.contains("body-safari")) {
+  if (!safari) {
     animationWave(cardTitleItems);
   }
 
-  if (document.querySelector("body").classList.contains("body-safari")) {
+  if (safari) {
     cardTitleItems.forEach((item) => {
       item.classList.add("animation-no-wave");
     });
@@ -70,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (video) {
     let videoPlayOnLoad = true
 
-    // if(videoPlayOnLoad) {
       function isSafariNoVideo() {
         //hide video on safari if the user has power saving mode enabled
         //monitor whether the browser has paused the video
@@ -81,16 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
             heroHomeFirst.classList.add("no-video")
             videoPlayOnLoad = false
           }
-        // })
       }
 
-    // }
-
-    video.addEventListener("pause", () => {
-      if(videoPlayOnLoad) {
-          isSafariNoVideo()
+      if(safari) {
+        video.addEventListener("pause", () => {
+          if(videoPlayOnLoad) {
+            isSafariNoVideo()
+          }
+        })
       }
-    })
 
     window.innerWidth <= 1024 ? video.pause() : video.play();
     const observerOptions = {

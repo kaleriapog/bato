@@ -19,7 +19,7 @@
     }
 
     .section-creative-space__ball {
-      animation: bounce 2.5s linear 1.5s infinite;
+      animation: bounce 10s linear 1.5s forwards;
     }
   }
 
@@ -79,9 +79,25 @@
 }
 
 @keyframes bounce {
-  0% {transform: translate3d(0, 0, 0) rotate(0deg);}
-  25% {transform: translate3d(0, -185px, 0) rotate(90deg);}
-  50% {transform: translate3d(0, 0, 0) rotate(180deg);}
-  75% {transform: translate3d(0, -185px, 0) rotate(270deg);}
-  100% {transform: translate3d(0, 0, 0) rotate(360deg);}
+  //0% {transform: translate3d(0, 0, 0) rotate(0deg);}
+  //25% {transform: translate3d(0, -185px, 0) rotate(90deg);}
+  //50% {transform: translate3d(0, 0, 0) rotate(180deg);}
+  //75% {transform: translate3d(0, -185px, 0) rotate(270deg);}
+  //100% {transform: translate3d(0, 0, 0) rotate(360deg);}
+
+  0% {transform: translate3d(0, 0, 0) rotate(1260deg);}
+  8% {transform: translate3d(0, -185px, 0) rotate(1170deg);}
+  16% {transform: translate3d(0, 0, 0) rotate(1080deg);}
+  23% {transform: translate3d(0, -175px, 0) rotate(990deg);}
+  30% {transform: translate3d(0, 0, 0) rotate(900deg);}
+  37% {transform: translate3d(0, -150px, 0) rotate(810deg);}
+  44% {transform: translate3d(0, 0, 0) rotate(720deg);}
+  51% {transform: translate3d(0, -135px, 0) rotate(630deg);}
+  58% {transform: translate3d(0, 0, 0) rotate(540deg);}
+  65% {transform: translate3d(0, -90px, 0) rotate(450deg);}
+  72% {transform: translate3d(0, 0, 0) rotate(360deg);}
+  79% {transform: translate3d(0, -45px, 0) rotate(270deg);}
+  86% {transform: translate3d(0, 0, 0) rotate(180deg);}
+  91% {transform: translate3d(0, -20px, 0) rotate(90deg);}
+  98% {transform: translate3d(0, 0, 0) rotate(0deg);}
 }

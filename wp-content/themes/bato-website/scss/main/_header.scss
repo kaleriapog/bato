@@ -70,7 +70,7 @@
       bottom: 0;
       height: 100vh;
       padding: 25px;
-      transform: translateY(-100%);
+      transform: translateY(-101%);
       border-bottom: 100vh solid $color-main;
     }
 
@@ -155,7 +155,7 @@
       align-items: center;
       justify-content: space-between;
       position: absolute;
-      top: 26px;
+      top: 30px;
       left: 25px;
       right: 25px;
     }
@@ -164,19 +164,19 @@
       left: 15px;
       right: 15px;
     }
-
-    span {
-      @include media-laptop {
-        @include montserrat;
-        display: inline-block;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 12px;
-        letter-spacing: 0.05em;
-        margin-right: 5px;
-        text-transform: uppercase;
-      }
-    }
+    //
+    //span {
+    //  @include media-laptop {
+    //    @include montserrat;
+    //    display: inline-block;
+    //    font-size: 12px;
+    //    font-weight: 500;
+    //    line-height: 12px;
+    //    letter-spacing: 0.05em;
+    //    margin-right: 5px;
+    //    text-transform: uppercase;
+    //  }
+    //}
 
     .navigation-icon-close {
       @include media-laptop {
@@ -184,8 +184,9 @@
         align-items: center;
       }
 
-      div {
-        width: 20px;
+      svg {
+        width: 22px;
+        padding: 2px;
       }
     }
   }

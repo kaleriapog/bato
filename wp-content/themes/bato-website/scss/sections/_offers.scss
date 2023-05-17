@@ -25,9 +25,7 @@
     width: 100%;
     padding: 50px 40px 10px;
     position: relative;
-    mix-blend-mode: normal;
     line-height: 1.75;
-    @include blur-card;
     @include card-border;
 
     @include media-tablet {
@@ -51,8 +49,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      opacity: 5%;
-      mix-blend-mode: overlay;
+      opacity: 0.15;
     }
 
     .card-title {
