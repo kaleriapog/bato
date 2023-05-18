@@ -214,9 +214,34 @@ function create_cropped_folder() {
 
 
 /* insert link START */
-function insertLink($link, $class = '', $child_class = '') {
-    if (!empty($link)) {
-        get_template_part('elements/link', '' , array('link' => $link, 'class' => $class));
+function insertLink($link, $class = 'button-default', $child_class = '') {
+    if(!empty($link['url'])) {
+        $attr = '';
+        $title = '';
+        $current_link = trailingslashit($link['url']);
+        $current_url = trailingslashit(home_url($wp->request));
+    
+        if(!empty($current_link) && $current_link == $current_url) {
+            $class .= ' current';
+        }
+
+        $attr .= ' class="'.$class.'"';
+        $attr .= ' href="'.$current_link.'"';
+    
+        if(!empty($link['title'])) {
+            $title = $link['title'];
+            $attr .= ' title="'.$title.'"';
+        }
+    
+        if(!empty($link['target']) && ($link['target'] == '_blank')) {
+            $attr .= ' target="_blank"';
+            $attr .= ' rel="nofollow"';
+        }
+    
+        $html = '<a '.$attr.'>';
+        $html .= '<span class="'.$class.'__link '.$child_class.'">'.$title.'</span>';
+        $html .= '</a>';
+        echo $html;
     }
 }
 /* insert link END */
