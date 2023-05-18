@@ -814,11 +814,14 @@
     gap: 50px;
     flex-wrap: wrap;
     transform: translateY(-400px);
+    position: sticky;
+    top: calc(50vh - 250px);
     @extend %sectionAboutHqMap;
 
     @include media-laptop {
       gap: 20px;
       transform: translateY(0);
+      position: static;
     }
 
     &.family-images-desktop {
@@ -926,6 +929,14 @@
     }
   }
 
+  &__content {
+    height: 450vh;
+
+    @include media-laptop {
+      height: auto;
+    }
+  }
+
   &__images-column {
     max-width: calc((100% - 100px) / 3);
     width: 400px;
@@ -1030,7 +1041,7 @@
     //@extend %sectionAboutHqMap;
 
     @include media-laptop {
-      height: auto;
+      height: 23.83vw;
     }
 
     @include media-mobile {

@@ -10,11 +10,11 @@
         <div class="section-projects__list">
 
             <?php foreach ($fields['projects_list'] as $item) : ?>
-                <a class="section-projects__item" href="<?php echo $item['link']['url'] ?>" target="_blank" rel="nofollow">
+                <div class="section-projects__item">
 
                     <?php if (!empty($item['image'])) : ?>
                         <div class="section-projects__item-image-wrap">
-                            <div class="section-projects__item-image-inner">
+                            <a class="section-projects__item-image-inner" href="<?php echo $item['link']['url'] ?>" target="_blank" rel="nofollow">
                                 <div class="section-projects__item-image"><?php insertImage($item['image']) ?></div>
                                 
                                 <?php if (!empty($item['link'])) : ?>
@@ -24,7 +24,7 @@
                                         </div>
                                     </div>
                                 <?php endif ?>
-                            </div>
+                            </a>
                         </div>
                     <?php endif ?>
 
@@ -46,7 +46,7 @@
                             <?php endforeach ?>
                         </div>
                     <?php endif ?>
-                </a>
+                </div>
             <?php endforeach ?>
         </div>
     </div>

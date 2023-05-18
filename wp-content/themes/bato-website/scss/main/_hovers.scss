@@ -26,18 +26,6 @@
     .cube-item.front-cube:hover {
       background-position: 0 0;
     }
-
-    //.cube-item.front-cube {
-    //  .front-cube-inner {
-    //    &:hover:before {
-    //      transform: translate(0, 0);
-    //
-    //      @include media-laptop {
-    //        transform: translate(-100%, -100%);
-    //      }
-    //    }
-    //  }
-    //}
   }
 
   .section-about-team {
@@ -65,17 +53,17 @@
       }
     }
   }
-
-  .section-about-follow {
-    &__link {
-      a {
-        &:hover {
-          color: #fff;
-          border-color: #fff;
-        }
-      }
-    }
-  }
+  //
+  //.section-about-follow {
+  //  &__link {
+  //    a {
+  //      &:hover {
+  //        color: #fff;
+  //        border-color: #fff;
+  //      }
+  //    }
+  //  }
+  //}
 
   .section-about-ready {
     .button-default {

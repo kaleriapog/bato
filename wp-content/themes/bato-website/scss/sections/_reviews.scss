@@ -145,8 +145,10 @@
     .reviews-slider__scrollbar {
       width: 700px;
       max-width: 100%;
-      margin: 0 auto;
-      padding-top: 15px;
+      background-color: darkgrey;
+      margin: 15px auto 0;
+      height: fit-content;
+      border-radius: 6px;
 
       div {
         background: cyan;

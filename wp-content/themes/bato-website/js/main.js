@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const socialMedia = document.querySelectorAll(".social-media .menu-item a");
   const cursorBlock = document.querySelector('.radial-gradient');
 
-     animationWave(menuMainItems);
-     animationWave(socialMedia);
+ animationWave(menuMainItems);
+ animationWave(socialMedia);
 
   const cookiesBlock = document.querySelector(".block-cookies");
   const footer = document.querySelectorAll(".footer");

@@ -29,7 +29,7 @@ export default function animationAboutFamily(el) {
         )
         .fromTo(
             [".section-about-family__image.image-0 .section-about-family__image-bg"],
-            {},
+            {backgroundColor: "rgba(0, 0, 0, 0.6)"},
             {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
             "<"
         )
@@ -41,7 +41,7 @@ export default function animationAboutFamily(el) {
         )
         .fromTo(
             [".section-about-family__image.image-1 .section-about-family__image-bg"],
-            {},
+            {backgroundColor: "rgba(0, 0, 0, 0.35)"},
             {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
             "<"
         )
@@ -53,70 +53,70 @@ export default function animationAboutFamily(el) {
         )
         .fromTo(
             [".section-about-family__image.image-2 .section-about-family__image-bg"],
-            {},
+            {backgroundColor: "rgba(0, 0, 0, 0.6)"},
             {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
             "<"
         );
 
-    if (mediaMobile) {
-      timelineSectionAboutFamily
-          .fromTo(
-              [".section-about-family__image.image-3"],
-              {},
-              {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
-              "<"
-          )
-          .fromTo(
-              [
-                ".section-about-family__image.image-3 .section-about-family__image-bg",
-              ],
-              {},
-              {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
-              "<"
-          )
-          .fromTo(
-              [".section-about-family__image.image-4"],
-              {},
-              {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
-              "<"
-          )
-          .fromTo(
-              [
-                ".section-about-family__image.image-4 .section-about-family__image-bg",
-              ],
-              {},
-              {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
-              "<"
-          )
-          .fromTo(
-              [".section-about-family__image.image-5"],
-              {},
-              {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
-              "<"
-          )
-          .fromTo(
-              [
-                ".section-about-family__image.image-5 .section-about-family__image-bg",
-              ],
-              {},
-              {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
-              "<"
-          )
-          .fromTo(
-              [".section-about-family__image.image-6"],
-              {},
-              {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
-              "<"
-          )
-          .fromTo(
-              [
-                ".section-about-family__image.image-6 .section-about-family__image-bg",
-              ],
-              {},
-              {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
-              "<"
-          );
-    }
+    // if (mediaMobile) {
+    //   timelineSectionAboutFamily
+    //       .fromTo(
+    //           [".section-about-family__image.image-3"],
+    //           {},
+    //           {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
+    //           "<"
+    //       )
+    //       .fromTo(
+    //           [
+    //             ".section-about-family__image.image-3 .section-about-family__image-bg",
+    //           ],
+    //           {},
+    //           {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
+    //           "<"
+    //       )
+    //       .fromTo(
+    //           [".section-about-family__image.image-4"],
+    //           {},
+    //           {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
+    //           "<"
+    //       )
+    //       .fromTo(
+    //           [
+    //             ".section-about-family__image.image-4 .section-about-family__image-bg",
+    //           ],
+    //           {},
+    //           {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
+    //           "<"
+    //       )
+    //       .fromTo(
+    //           [".section-about-family__image.image-5"],
+    //           {},
+    //           {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
+    //           "<"
+    //       )
+    //       .fromTo(
+    //           [
+    //             ".section-about-family__image.image-5 .section-about-family__image-bg",
+    //           ],
+    //           {},
+    //           {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
+    //           "<"
+    //       )
+    //       .fromTo(
+    //           [".section-about-family__image.image-6"],
+    //           {},
+    //           {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
+    //           "<"
+    //       )
+    //       .fromTo(
+    //           [
+    //             ".section-about-family__image.image-6 .section-about-family__image-bg",
+    //           ],
+    //           {},
+    //           {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
+    //           "<"
+    //       );
+    // }
 
     const observerOptions = {
       root: null,
@@ -137,7 +137,6 @@ export default function animationAboutFamily(el) {
     }
 
     observer.observe(target);
-
 
     function throttle(func, limit) {
       let inThrottle;
@@ -163,9 +162,9 @@ export default function animationAboutFamily(el) {
             : ".section-about-family__content",
         triggerHook: "onLeave",
         duration: mediaMobile ? "100%" : "200%",
-        offset: mediaTabletC ? -(window.screen.width / 3) : mediaMobile ? -80 : 50,
+        // offset: mediaTabletC ? -(window.screen.width / 3) : mediaMobile ? -80 : 50,
       })
-          .setPin(".section-about-family__content")
+          // .setPin(".section-about-family__content")
           // .addIndicators({name: 'section-interactive'})
           .setTween(timelineSectionAboutFamily)
           .addTo(controller)

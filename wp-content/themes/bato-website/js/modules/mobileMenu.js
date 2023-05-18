@@ -39,23 +39,23 @@ export default function mobileMenu() {
     preloaderMenuMob.classList.remove("preloader-menu-mob-start");
   });
 
-  if (menuItem) {
-    menuItem.forEach((el) => {
-      el.addEventListener("click", () => {
-        setTimeout(() => {
-          header.classList.remove("open-header-menu");
-        }, 400);
-        navBlockHeader.classList.remove("open-menu");
-
-        if (!page.classList.contains("visible")) {
-          page.classList.add("visible");
-        }
-        if (preloaderMenuMob.classList.contains("preloader-menu-mob-start")) {
-          preloaderMenuMob.classList.remove("preloader-menu-mob-start");
-        }
-      });
-    });
-  }
+  // if (menuItem) {
+  //   menuItem.forEach((el) => {
+  //     el.addEventListener("click", () => {
+  //       setTimeout(() => {
+  //         header.classList.remove("open-header-menu");
+  //       }, 400);
+  //       navBlockHeader.classList.remove("open-menu");
+  //
+  //       if (!page.classList.contains("visible")) {
+  //         page.classList.add("visible");
+  //       }
+  //       if (preloaderMenuMob.classList.contains("preloader-menu-mob-start")) {
+  //         preloaderMenuMob.classList.remove("preloader-menu-mob-start");
+  //       }
+  //     });
+  //   });
+  // }
 
   window.addEventListener("resize", () => {
     navBlockHeader.classList.add("no-transition");

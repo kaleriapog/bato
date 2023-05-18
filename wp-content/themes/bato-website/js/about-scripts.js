@@ -20,8 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionAboutFamily = document.querySelector(".section-about-family");
   const sections = document.querySelectorAll(".section");
   const secondBlockInPage = document.querySelector(".section-about-our-story");
+  const sectionFollowLinks = document.querySelectorAll(".section-about-follow__link a");
 
   animationWave(cardTitleItems);
+  animationWave(sectionFollowLinks);
 
   teamCubes();
   animationSections(sections, 0.1);

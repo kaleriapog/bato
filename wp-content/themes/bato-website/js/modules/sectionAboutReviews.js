@@ -36,16 +36,22 @@ export default function sectionAboutReviews(el) {
                     "<"
                 )
                 .fromTo(
+                    [`.anim-item-${idx-1}`],
+                    {},
+                    {opacity: "0", ease: Linear.easeNone},
+                    "<"
+                )
+                .fromTo(
                     [`.anim-item-${idx} .reviews-item-bg`],
                     {},
                     {opacity: "0", ease: Linear.easeNone},
                     "<"
-                );
+                )
+
         }
     });
 
     if (!media600) {
-
             function toggleScrollMagic() {
                 _offset = document.querySelector(".header").offsetHeight;
 
