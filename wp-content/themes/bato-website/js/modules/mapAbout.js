@@ -4,8 +4,6 @@ export default function mapAbout(el) {
     const mediaLaptop = window.innerWidth <= 1024
 
     if(!mediaLaptop) {
-
-        let _offset;
         let controller = new ScrollMagic.Controller()
 
         function toggleScrollMagic() {
@@ -23,7 +21,7 @@ export default function mapAbout(el) {
                 duration: mediaMobile ? '200%' : '300%',
                 triggerHook: 0
             })
-                .setPin('.section-about-hq__interactive')
+                // .setPin('.section-about-hq__interactive')
                 .setTween(
                     new TimelineMax()
                         .fromTo(['.image-globe-active'], {}, {opacity: '1', ease: Linear.easeNone})

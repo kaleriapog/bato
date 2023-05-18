@@ -521,17 +521,25 @@
   }
 
   &__interactive-height {
-    position: relative;
+    //position: relative;
     margin: auto;
     display: flex;
     align-items: center;
 
-    @include media-height-1000 {
-      height: 100vh;
-    }
+    position: sticky;
+    top: 0;
+    height: 100vh;
+
+    //@include media-height-1000 {
+    //  height: 100vh;
+    //}
 
     @include media-height-780 {
       max-width: 1200px;
+    }
+
+    @include media-laptop {
+      position: relative;
     }
 
     @include media-mobile {
@@ -540,12 +548,17 @@
   }
 
   &__interactive {
-    flex: 1;
+    //flex: 1;
     width: 100%;
     margin: auto;
-    overflow: hidden;
+    //overflow: hidden;
     opacity: 0;
     transition: opacity 0.5s ease 0.7s;
+    height: 400vh;
+
+    @include media-laptop {
+      height: auto;
+    }
 
     .image-globe-active, .image-globe-active-dots {
       height: auto;
