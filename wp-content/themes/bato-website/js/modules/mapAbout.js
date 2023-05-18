@@ -21,7 +21,6 @@ export default function mapAbout(el) {
                 duration: mediaMobile ? '200%' : '300%',
                 triggerHook: 0
             })
-                // .setPin('.section-about-hq__interactive')
                 .setTween(
                     new TimelineMax()
                         .fromTo(['.image-globe-active'], {}, {opacity: '1', ease: Linear.easeNone})
@@ -30,7 +29,6 @@ export default function mapAbout(el) {
                         .fromTo(['.pin-kh'], {}, {opacity: '1', ease: Linear.easeNone}, '<')
                         .fromTo(['.pin-kh'], {}, {opacity: '1', ease: Linear.easeNone}, '-=0.5') // empty scroll
                 )
-                // .addIndicators({name: 'section-interactive'})
                 .addTo(controller)
                 .reverse(true);
 

@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
       function isSafariNoVideo() {
         //hide video on safari if the user has power saving mode enabled
         //monitor whether the browser has paused the video
-        // video.addEventListener("pause", () => {
           const mediaLaptop = window.innerWidth <= 1024;
 
           if (!mediaLaptop) {

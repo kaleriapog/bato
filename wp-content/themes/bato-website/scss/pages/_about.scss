@@ -4,8 +4,6 @@
   }
 
   .body-wrapp {
-    //padding-top: 145px;
-    //overflow: hidden;
     max-width: 100vw;
     position: relative;
 
@@ -84,8 +82,6 @@
     max-width: 730px;
     width: 100%;
     margin: 0 auto 0;
-    //position: relative;
-    //z-index: 2;
   }
 
   &__wrapper {
@@ -120,7 +116,6 @@
   }
 
   .lottie-people-inner {
-    //height: 100vh;
     width: 180vh;
 
     @include media-height-900 {
@@ -482,7 +477,6 @@
   &.animation {
     .section-about-hq__title {
       animation: main_animation 1.5s ease  forwards;
-
     }
 
     .section-about-hq__interactive {
@@ -521,18 +515,12 @@
   }
 
   &__interactive-height {
-    //position: relative;
     margin: auto;
     display: flex;
     align-items: center;
-
     position: sticky;
     top: 0;
     height: 100vh;
-
-    //@include media-height-1000 {
-    //  height: 100vh;
-    //}
 
     @include media-height-780 {
       max-width: 1200px;
@@ -548,10 +536,8 @@
   }
 
   &__interactive {
-    //flex: 1;
     width: 100%;
     margin: auto;
-    //overflow: hidden;
     opacity: 0;
     transition: opacity 0.5s ease 0.7s;
     height: 400vh;
@@ -976,7 +962,6 @@
           transform: translate(0, calc(50% + 250px));
 
           @include media-laptop {
-            //transform: translate(0, calc(50% + 17vw));
             transform: translate(0, 0);
           }
         }
@@ -984,7 +969,6 @@
           transform: translate(0, calc(-50% - 250px));
 
           @include media-laptop {
-            //transform: translate(0, calc(-50% - 17vw));
             transform: translate(0, 0);
           }
         }
@@ -997,7 +981,6 @@
           transform: translate(-100%, calc(50% + 50px)) rotate(5deg);
 
           @include media-laptop {
-            //transform: translate(-100%, calc(50% + 20px)) rotate(5deg);
             transform: translate(0, 0);
           }
         }
@@ -1006,7 +989,6 @@
           transform: translate(calc(-100% - 50px), calc(-50% - 50px));
 
           @include media-laptop {
-            //transform: translate(calc(-100% - 20px), calc(-50% - 20px));
             transform: translate(0, 0);
           }
 
@@ -1038,7 +1020,6 @@
     max-width: 400px;
     height: 400px;
     position: relative;
-    //@extend %sectionAboutHqMap;
 
     @include media-laptop {
       height: 23.83vw;
@@ -1051,8 +1032,6 @@
 
     &:last-child {
       @include media-mobile {
-        //width: calc((100vw / 2) - 20px);
-        //height: calc((100vw / 2) - 20px);
         display: none;
       }
     }
@@ -1176,11 +1155,6 @@
       color: $color-main;
       transition: color 0.3s, border-color 0.3s;
       border-bottom: 1px solid transparent;
-
-      //&:hover {
-      //  color: #fff;
-      //  border-color: #fff;
-      //}
     }
   }
 
@@ -1230,20 +1204,6 @@
       max-width: 260px;
     }
   }
-
-  //.button-default {
-  //  transform: translateY(-10%);
-  //  opacity: 0;
-  //  transition: opacity 0.7s ease 1s, transform 0.7s ease 1s, border-color 0.7s ease;
-  //
-  //  &:hover {
-  //    border-color: $color-main;
-  //  }
-  //}
-  //
-  //.button-default__link {
-  //  font-size: 19px;
-  //}
 
   .button-big-color {
     padding: 5px 34px 5px 0;

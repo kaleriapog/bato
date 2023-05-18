@@ -1,7 +1,6 @@
 export default function preloader() {
   const preloaderBlock = document.querySelector(".preloader");
   const page = document.querySelector(".page");
-  const halo = document.querySelector(".halo");
   const bodyWrapp = document.querySelector(".body-wrapp");
 
   if (preloaderBlock) {

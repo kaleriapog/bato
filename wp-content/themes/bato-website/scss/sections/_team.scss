@@ -30,7 +30,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    //margin: 0 -10px;
 
     @include media-mobile-horizontal {
       gap: 10px;

@@ -24,15 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animationWave(cardTitleItems);
   animationWave(sectionFollowLinks);
-
   teamCubes();
   animationSections(sections, 0.1);
-
   heroAbout(sectionAboutHero);
   sectionOurValues(sectionAboutOurValues);
   mapAbout(sectionAboutMap);
   sectionAboutReviews(sectionAReviews);
   animationAboutFamily(sectionAboutFamily);
   fixedHeader(secondBlockInPage);
-
 });

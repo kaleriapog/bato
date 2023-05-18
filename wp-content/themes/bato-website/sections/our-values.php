@@ -26,7 +26,6 @@
     <div class="section-our-values__wrapper">
         <div class="main-size">
             <div class="section-our-values__content">
-<!--                <div class="section-our-values-scene-trigger-start"></div>-->
 
                 <?php if (!empty($items)) : ?>
                     <div class="section-our-values__items">
@@ -59,7 +58,6 @@
 
                         </ul>
                     </div>
-<!--                    <div class="section-our-values-scene-trigger-end"></div>-->
                 <?php endif ?>
 
             </div>

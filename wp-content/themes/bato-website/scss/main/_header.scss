@@ -35,7 +35,6 @@
     right: 0;
     opacity: 0;
     transform: translateY(0);
-    //animation: visibleHeader 1s linear forwards;
   }
 
   &__inner {
@@ -164,19 +163,6 @@
       left: 15px;
       right: 15px;
     }
-    //
-    //span {
-    //  @include media-laptop {
-    //    @include montserrat;
-    //    display: inline-block;
-    //    font-size: 12px;
-    //    font-weight: 500;
-    //    line-height: 12px;
-    //    letter-spacing: 0.05em;
-    //    margin-right: 5px;
-    //    text-transform: uppercase;
-    //  }
-    //}
 
     .navigation-icon-close {
       @include media-laptop {

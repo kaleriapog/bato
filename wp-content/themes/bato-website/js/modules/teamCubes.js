@@ -21,7 +21,6 @@ export default function teamCubes() {
   ];
 
   function arrayRandElement(arr) {
-    // let random = Math.floor(Math.random() * arr.length);
     let random = "rotateX(90deg)";
     return random;
   }

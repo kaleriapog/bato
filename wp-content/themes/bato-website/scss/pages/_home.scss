@@ -120,21 +120,6 @@ body {
           height: 20px;
         }
       }
-
-      //.pin-bg__big, .pin-bg__small {
-      //    width: 80px;
-      //    height: 80px;
-      //    position: absolute;
-      //    z-index: 2;
-      //    top: 50%;
-      //    left: 50%;
-      //    transform: translate(-50%, -50%);
-      //    animation: size-pin 2s linear alternate-reverse infinite;
-      //}
-      //
-      //.pin-bg__small {
-      //    animation: size-pin 2s linear 1s alternate-reverse infinite;
-      //}
     }
 
     .pin-dots {
@@ -142,13 +127,11 @@ body {
       left: 55%;
       right: 0;
       bottom: 0;
-      //top: 5%;
       top: 6%;
       width: 46vw;
       height: 93%;
       clip-path: inset(0 100% 0 0);
       @extend %sectionAboutHqMap;
-
       @include media-height-820 {
         top: -5%;
       }
@@ -272,7 +255,6 @@ html {
   right: 70px;
   bottom: 60px;
   z-index: 10;
-  //transition: transform 0.5s ease-in-out;
 
   .text-only {
     font-family: "Montserrat", sans-serif;
