@@ -9,10 +9,7 @@ export default function animationAboutFamily(el) {
     let timelineSectionAboutFamily = new TimelineMax();
     const mediaMobile = window.screen.width <= 767;
     const mediaLaptop = window.innerWidth <= 1024;
-    const mediaTabletC =
-        window.screen.width <= 1024 &&
-        window.screen.width > 767 &&
-        window.screen.height > 750;
+
     if (!mediaMobile) {
       timelineSectionAboutFamily.fromTo(
           [".section-about-family__title h2"],
@@ -24,37 +21,37 @@ export default function animationAboutFamily(el) {
     timelineSectionAboutFamily
         .fromTo(
             [".section-about-family__image.image-0"],
-            {},
-            {x: 0, y: 0, rotation: 0, ease: Linear.easeNone}
+            {'-webkit-filter':'grayscale(100%)', filter: 'grayscale(100%)'},
+            {x: 0, y: 0, rotation: 0, '-webkit-filter':'grayscale(0%)', filter: 'grayscale(0%)', ease: Linear.easeNone}
         )
         .fromTo(
             [".section-about-family__image.image-0 .section-about-family__image-bg"],
             {backgroundColor: "rgba(0, 0, 0, 0.6)"},
-            {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
+            {backgroundColor: "rgba(0, 0, 0, 0.2)", ease: Linear.easeNone},
             "<"
         )
         .fromTo(
             [".section-about-family__image.image-1"],
-            {},
-            {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
+            {'-webkit-filter':'grayscale(100%)', filter: 'grayscale(100%)'},
+            {x: 0, y: 0, rotation: 0, '-webkit-filter':'grayscale(0%)', filter: 'grayscale(0%)', ease: Linear.easeNone},
             "<"
         )
         .fromTo(
             [".section-about-family__image.image-1 .section-about-family__image-bg"],
             {backgroundColor: "rgba(0, 0, 0, 0.35)"},
-            {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
+            {backgroundColor: "rgba(0, 0, 0, 0.2)", ease: Linear.easeNone},
             "<"
         )
         .fromTo(
             [".section-about-family__image.image-2"],
-            {},
-            {x: 0, y: 0, rotation: 0, ease: Linear.easeNone},
+            {'-webkit-filter':'grayscale(100%)', filter: 'grayscale(100%)'},
+            {x: 0, y: 0, rotation: 0, '-webkit-filter':'grayscale(0%)', filter: 'grayscale(0%)', ease: Linear.easeNone},
             "<"
         )
         .fromTo(
             [".section-about-family__image.image-2 .section-about-family__image-bg"],
             {backgroundColor: "rgba(0, 0, 0, 0.6)"},
-            {backgroundColor: "rgba(0, 0, 0, 0.35)", ease: Linear.easeNone},
+            {backgroundColor: "rgba(0, 0, 0, 0.2)", ease: Linear.easeNone},
             "<"
         );
 
