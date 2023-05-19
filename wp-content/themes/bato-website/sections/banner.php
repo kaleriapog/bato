@@ -42,7 +42,7 @@
     </div>
     <div class="section-banner__bg">
 
-        <?php if (!empty($video)) : ?>
+        <?php if (!empty($video) && !is_mobile()) : ?>
             <video autoplay muted playsinline preload="true" loop id="video-bg">
                 <source src="<?php echo $video['url'] ?>" type="video/mp4">
             </video>
@@ -61,7 +61,7 @@
         <?php endif ?>
 
         <div class="banner-circle-light">
-            <?php insertImage('effect-home-hero.png') ?>
+            <?php insertImage('effect-home-hero.png', '', 0) ?>
         </div>
     </div>
     <div class="halo halo-hiden"></div>

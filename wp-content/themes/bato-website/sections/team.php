@@ -24,8 +24,8 @@
                                     <div class="cube-item front-cube">
                                         <div class="front-cube-inner">
                                             <div class="front-cube-content">
-                                                <?php insertText($item["team_name"], 'section-team__card-team-name', 'span') ?>
-                                                <?php insertText($item["team_position"], 'section-team__card-team-position', 'span') ?>
+                                                <?php insertTitle($item["team_name"], 'section-team__card-team-name', 'span') ?>
+                                                <?php insertTitle($item["team_position"], 'section-team__card-team-position', 'span') ?>
                                             </div>
                                         </div>
                                     </div>

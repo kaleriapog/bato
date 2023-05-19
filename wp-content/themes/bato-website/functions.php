@@ -64,8 +64,10 @@ function theme_custom_logo_support() {
 add_action('after_setup_theme', 'theme_custom_logo_support');
 
 /* add js/css START */
-add_action('get_footer', 'enqueue_js_css');
+add_filter( 'wpcf7_load_css', '__return_false' );
+add_action('wp_footer', 'enqueue_js_css');
 function enqueue_js_css() {
+    
     wp_enqueue_style('bato-website-style', get_stylesheet_uri());
 
 /*     wp_deregister_script( 'jquery' );
@@ -117,6 +119,27 @@ function enqueue_js_css() {
     }
 }
 /* add js/css END */
+
+
+
+/* force css to footer START */
+function enqueue_css_in_footer() {
+    // Get all registered styles
+    global $wp_styles;
+
+    // Loop through each registered style
+    foreach ($wp_styles->queue as $handle) {
+        $style = $wp_styles->registered[$handle];
+
+        // Check if the style is from a plugin
+        if (strpos($style->src, '/plugins/') !== false) {
+            // Move the plugin style to the footer
+            $wp_styles->add_data($handle, 'group', 1);
+        }
+    }
+}
+add_action('wp_footer', 'enqueue_css_in_footer');
+/*force css to footer END */
 
 
 /* insert image START */
@@ -336,3 +359,19 @@ function dump($array, $depth = 0, $scripts = false) {
     echo '</div>';
 }
 /* dump END */
+
+
+/* check mobile START */
+function is_mobile() {
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    $mobileKeywords = array('Android', 'iPhone', 'iPad', 'Windows Phone');
+    
+    foreach ($mobileKeywords as $keyword) {
+        if (stripos($userAgent, $keyword) !== false) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+/* check mobile END */
