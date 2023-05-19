@@ -8,6 +8,7 @@ export default function sectionAboutReviews(el) {
     let durationReviews = items.length * 800;
     let mediaLaptop = window.innerWidth <= 1024
     let media600 = window.innerHeight < 600
+    let trigger = el.querySelector('.section-about-reviews__wrapper')
 
     items.forEach((item, idx) => {
         let lastItem = items.length - 1 === idx;
@@ -52,25 +53,25 @@ export default function sectionAboutReviews(el) {
     });
 
     if (!media600) {
-            function toggleScrollMagic() {
-                _offset = document.querySelector(".header").offsetHeight;
+        function toggleScrollMagic() {
+            _offset = document.querySelector(".header").offsetHeight;
 
-                controller.destroy(true);
-                if (window.innerWidth > 1024) {
-                    controller = new ScrollMagic.Controller();
+            controller.destroy(true);
+            if (window.innerWidth > 1024) {
+                controller = new ScrollMagic.Controller();
 
-                    new ScrollMagic.Scene({
-                        triggerElement: el,
-                        duration: durationReviews,
-                        triggerHook: "onLeave",
-                    })
-                        .setPin(el)
-                        .setTween(timelineSectionAboutReviews)
-                        .addTo(controller)
-                        .offset(_offset * -1)
-                        .reverse(true);
-                }
+                el.style.height = durationReviews + window.innerHeight + 'px';
+
+                new ScrollMagic.Scene({
+                    triggerElement: el,
+                    duration: durationReviews,
+                    triggerHook: 0,
+                })
+                    .setTween(timelineSectionAboutReviews)
+                    .addTo(controller)
+                    .reverse(true);
             }
+        }
 
         toggleScrollMagic();
 

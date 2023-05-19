@@ -132,12 +132,12 @@ body {
 header.inited {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 1s linear 3s;
+  transition: opacity 1s linear 3s, border 0.5s;
 }
 
 .page-template-projects, .page-template-contact {
   header.inited {
-    transition: opacity 1s linear 1s;
+    transition: opacity 1s linear 1s, border 0.5s;
   }
 }
 
@@ -760,7 +760,7 @@ header.inited {
 
     .item-photo {
       opacity: 1;
-      transform: translateY(0) scale(0.99);
+      transform: translateY(0);
     }
   }
 

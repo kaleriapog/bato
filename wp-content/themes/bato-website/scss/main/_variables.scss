@@ -44,6 +44,12 @@ $mediaHeight-820: 820px;
 $mediaHeight-600: 600px;
 $mediaHeight-500: 500px;
 
+@mixin media-large {
+  @media (min-width: 2000px) {
+    @content;
+  }
+}
+
 @mixin media-tablet {
   @media (max-width: $mediaWidthTablet) {
     @content;

@@ -3,7 +3,7 @@ import animationSections from "./modules/animationSections.js";
 import fixedHeader from "./modules/fixed-header.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sectionAReviews = document.querySelector(".section-about-reviews__pin-section");
+  const sectionAReviews = document.querySelector(".section-about-reviews");
   const sections = document.querySelectorAll(".section");
   const projectsItems = document.querySelectorAll(".section-projects__item");
   const sectionHero = document.querySelector(".section-projects-hero");

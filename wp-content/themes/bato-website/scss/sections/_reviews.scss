@@ -1,14 +1,19 @@
 .section-about-reviews {
-
   @include media-tablet {
     padding: 50px 0;
   }
   
-  .section-about-reviews__pin-section {
+  &__pin-section {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    position: sticky;
+    top: 90px;
+
+    @include media-laptop {
+      position: static;
+    }
   }
 
   .main-size {
@@ -133,6 +138,13 @@
   }
 
   .reviews-slider {
+    max-width: 700px;
+    margin: auto;
+
+    @include media-mobile {
+     max-width: 100%;
+    }
+
     @media screen and (min-width: 1025px) {
       position: absolute;
       left: -9999px;
@@ -140,6 +152,12 @@
 
     @include media-height-550 {
         position: static;
+    }
+
+    .swiper-slide {
+       @include media-laptop {
+         max-width: 700px;
+       }
     }
 
     .reviews-slider__scrollbar {
