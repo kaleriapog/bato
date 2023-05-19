@@ -118,6 +118,10 @@
   .lottie-people-inner {
     width: 180vh;
 
+    @include media-large {
+      width: 100%;
+    }
+
     @include media-height-900 {
       width: 100%;
     }
@@ -528,6 +532,7 @@
 
     @include media-laptop {
       position: relative;
+      height: auto;
     }
 
     @include media-mobile {
