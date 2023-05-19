@@ -64,58 +64,82 @@ function theme_custom_logo_support() {
 add_action('after_setup_theme', 'theme_custom_logo_support');
 
 /* add js/css START */
-add_action('get_footer', 'enqueue_js_css');
+add_filter( 'wpcf7_load_css', '__return_false' );
+add_action('wp_footer', 'enqueue_js_css');
 function enqueue_js_css() {
+    
     wp_enqueue_style('bato-website-style', get_stylesheet_uri());
 
 /*     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), array(), false, true );
     wp_enqueue_script( 'jquery' ); */
 
-    wp_enqueue_script('connection_scripts_smooth-scrollbar',  get_template_directory_uri() . '/js/smooth-scrollbar.js',array('jquery'),null,true);
-    wp_enqueue_script('connection_scripts_main',  get_template_directory_uri() . '/js/main.js',array('jquery'),null,true);
+    wp_enqueue_script('connection_scripts_smooth-scrollbar',  get_template_directory_uri() . '/js/smooth-scrollbar.js',array(),null,true);
+    wp_enqueue_script('connection_scripts_main',  get_template_directory_uri() . '/js/main.js',array(),null,true);
 
 
     $template_slug = get_page_template_slug();
-    if ($template_slug === 'home.php') {
-        wp_enqueue_script('connection_script_tweenLite', get_template_directory_uri() . '/js/TweenLite.min.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_script_tweenMax', get_template_directory_uri() . '/js/TweenMax.min.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/home.js',array('jquery'),null,true);
+
+    if (is_front_page()) {
+        wp_enqueue_script('connection_script_tweenLite', get_template_directory_uri() . '/js/TweenLite.min.js',array(),null,true);
+        wp_enqueue_script('connection_script_tweenMax', get_template_directory_uri() . '/js/TweenMax.min.js',array(),null,true);
+        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/home.js',array(),null,true);
     }
 
     if ($template_slug === 'about.php') {
         wp_enqueue_style('connection_style', get_template_directory_uri() . '/swiper-bundle.min.css');
 
-        wp_enqueue_script('connection_script_swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_script_scroll-magic', get_template_directory_uri() . '/js/ScrollMagic.min.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_script_scroll-magic_debug', get_template_directory_uri() . '/js/debug.addIndicators.min.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_lottie', get_template_directory_uri() . '/js/lottie.min.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_lottie-player', get_template_directory_uri() . '/js/lottie-player.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_lottie-interactivity', get_template_directory_uri() . '/js/lottie-interactivity.min.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_script_animation_gsap', get_template_directory_uri() . '/js/animation.gsap.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/about-scripts.js',array('jquery'),null,true);
+        wp_enqueue_script('connection_script_swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js',array(),null,true);
+        wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js',array(),null,true);
+        wp_enqueue_script('connection_script_scroll-magic', get_template_directory_uri() . '/js/ScrollMagic.min.js',array(),null,true);
+        wp_enqueue_script('connection_script_scroll-magic_debug', get_template_directory_uri() . '/js/debug.addIndicators.min.js',array(),null,true);
+        wp_enqueue_script('connection_lottie', get_template_directory_uri() . '/js/lottie.min.js',array(),null,true);
+        wp_enqueue_script('connection_lottie-player', get_template_directory_uri() . '/js/lottie-player.js',array(),null,true);
+        wp_enqueue_script('connection_lottie-interactivity', get_template_directory_uri() . '/js/lottie-interactivity.min.js',array(),null,true);
+        wp_enqueue_script('connection_script_animation_gsap', get_template_directory_uri() . '/js/animation.gsap.js',array(),null,true);
+        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/about-scripts.js',array(),null,true);
     }
 
     if ($template_slug === 'contact.php') {
-        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/contact-scripts.js',array('jquery'),null,true);
+        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/contact-scripts.js',array(),null,true);
     }
 
     if ($template_slug === 'projects.php') {
         wp_enqueue_style('connection_style', get_template_directory_uri() . '/swiper-bundle.min.css');
 
-        wp_enqueue_script('connection_script_swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js',array('jquery'),null,true);        
-        wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_script_scroll-magic', get_template_directory_uri() . '/js/ScrollMagic.min.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_script_animation_gsap', get_template_directory_uri() . '/js/animation.gsap.js',array('jquery'),null,true);
-        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/projects-scripts.js',array('jquery'),null,true);
+        wp_enqueue_script('connection_script_swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js',array(),null,true);        
+        wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js',array(),null,true);
+        wp_enqueue_script('connection_script_scroll-magic', get_template_directory_uri() . '/js/ScrollMagic.min.js',array(),null,true);
+        wp_enqueue_script('connection_script_animation_gsap', get_template_directory_uri() . '/js/animation.gsap.js',array(),null,true);
+        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/projects-scripts.js',array(),null,true);
     }
 
     if ($template_slug === 'privacy.php') {
-        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/privacy.js',array('jquery'),null,true);
+        wp_enqueue_script('connection_scripts-module', get_template_directory_uri() . '/js/privacy.js',array(),null,true);
     }
 }
 /* add js/css END */
+
+
+
+/* force css to footer START */
+function enqueue_css_in_footer() {
+    // Get all registered styles
+    global $wp_styles;
+
+    // Loop through each registered style
+    foreach ($wp_styles->queue as $handle) {
+        $style = $wp_styles->registered[$handle];
+
+        // Check if the style is from a plugin
+        if (strpos($style->src, '/plugins/') !== false) {
+            // Move the plugin style to the footer
+            $wp_styles->add_data($handle, 'group', 1);
+        }
+    }
+}
+add_action('wp_footer', 'enqueue_css_in_footer');
+/*force css to footer END */
 
 
 /* insert image START */
@@ -216,6 +240,7 @@ function create_cropped_folder() {
 /* insert link START */
 function insertLink($link, $class = 'button-default', $child_class = '') {
     if(!empty($link['url'])) {
+        global $wp;
         $attr = '';
         $title = '';
         $current_link = trailingslashit($link['url']);
@@ -247,10 +272,9 @@ function insertLink($link, $class = 'button-default', $child_class = '') {
 /* insert link END */
 
 
-
 /* insert title START */
 function insertTitle($text = '', $class='title', $tag = 'div', $child = '') {
-    if (!empty($text)) {
+    if (!empty($text) && !empty(trim($text))) {
         $text = strip_tags($text, '<br><strong><span>');
         $child_class = '';
         
@@ -273,19 +297,18 @@ function insertTitle($text = '', $class='title', $tag = 'div', $child = '') {
 /* insert title END */
 
 
-
 /* insert text START */
-function insertText($text = '', $class='', $tag = 'div') {
-    if (!empty($text)) {
-        $html  = '<'.$tag;
-        $html .= ' class="'.$class.'"';
-        $html .= '>';
+function insertText($text = '', $class='') {
+    if (!empty($text) && !empty(trim($text))) {
+        $html = '';
+        $html .= '<div class="'.$class.'">';
         $html .= $text;
-        $html .= '</'.$tag.'>';
+        $html .= '</div>';
         echo $html;
     }
 }
 /* insert text END */
+
 
 
 /* dump START */
@@ -336,3 +359,19 @@ function dump($array, $depth = 0, $scripts = false) {
     echo '</div>';
 }
 /* dump END */
+
+
+/* check mobile START */
+function is_mobile() {
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    $mobileKeywords = array('Android', 'iPhone', 'iPad', 'Windows Phone');
+    
+    foreach ($mobileKeywords as $keyword) {
+        if (stripos($userAgent, $keyword) !== false) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+/* check mobile END */

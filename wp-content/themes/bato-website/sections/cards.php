@@ -9,7 +9,7 @@
 <section class="section-cards" id="section-cards">
     <div class="section-cards__inner main-size">
 
-        <?php insertTitle($cards_title, 'title_basic', 'h1') ?>
+        <?php insertTitle($cards_title, 'title_basic', 'h2') ?>
 
         <?php if (!empty($cards_services)) : ?>
             <div class="cards-services">

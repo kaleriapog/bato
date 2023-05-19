@@ -30,8 +30,8 @@
                                             <div class="front-cube-inner">
                                                 <div class="front-cube-content">
                                                     <div class="section-team__card-team-description">
-                                                        <span class="section-team__card-team-name"><?php echo $item_name ?></span>
-                                                        <span class="section-team__card-team-position"><?php echo $item_position ?></span>
+                                                        <?php insertTitle($item_name, 'section-team__card-team-name', 'span') ?>
+                                                        <?php insertTitle($item_position, 'section-team__card-team-position', 'span') ?>
                                                         <span class="section-team__card-team-text"><?php echo $item_text ?></span>
                                                     </div>
                                                 </div>

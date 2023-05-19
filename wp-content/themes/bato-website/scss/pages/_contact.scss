@@ -319,6 +319,7 @@
     .invalid {
       .wpcf7-response-output,
       .wpcf7-not-valid-tip {
+        display: block;
         color: $color-red;
         @include media-tablet {
           font-size: 12px;
@@ -327,6 +328,7 @@
       }
       .wpcf7-response-output {
         text-align: center;
+        margin-top: 1rem;
       }
     }
 
