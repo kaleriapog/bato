@@ -216,12 +216,21 @@
       max-width: 800px;
     }
 
-    &:not(:first-child) {
+    &:not(:last-child) {
       position: absolute;
       top: 0;
       transform: translateY(100vh);
       left: 0;
       right: 0;
+      z-index: 1;
+    }
+
+    &:first-child {
+      transform: translateY(0);
+    }
+
+    &:last-child {
+      transform: translateY(100vh);
       z-index: 1;
     }
 
