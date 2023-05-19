@@ -247,10 +247,9 @@ function insertLink($link, $class = 'button-default', $child_class = '') {
 /* insert link END */
 
 
-
 /* insert title START */
 function insertTitle($text = '', $class='title', $tag = 'div', $child = '') {
-    if (!empty($text)) {
+    if (!empty($text) && !empty(trim($text))) {
         $text = strip_tags($text, '<br><strong><span>');
         $child_class = '';
         
@@ -273,19 +272,18 @@ function insertTitle($text = '', $class='title', $tag = 'div', $child = '') {
 /* insert title END */
 
 
-
 /* insert text START */
-function insertText($text = '', $class='', $tag = 'div') {
-    if (!empty($text)) {
-        $html  = '<'.$tag;
-        $html .= ' class="'.$class.'"';
-        $html .= '>';
+function insertText($text = '', $class='') {
+    if (!empty($text) && !empty(trim($text))) {
+        $html = '';
+        $html .= '<div class="'.$class.'">';
         $html .= $text;
-        $html .= '</'.$tag.'>';
+        $html .= '</div>';
         echo $html;
     }
 }
 /* insert text END */
+
 
 
 /* dump START */

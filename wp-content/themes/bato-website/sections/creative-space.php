@@ -13,8 +13,10 @@
             <?php insertText($fields['text'], 'section-creative-space__text') ?>
 
             <div class="section-creative-space__media">
-                <div class="section-creative-space__ball">
-                    <?php insertImage('space-ball.svg') ?>
+                <div class="section-creative-space__ball-wrap">
+                    <div class="section-creative-space__ball">
+                        <?php insertImage('space-ball.png') ?>
+                    </div>
                 </div>
 
                 <?php if(!empty($fields['logo_name'])) : ?>
