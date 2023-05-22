@@ -153,10 +153,12 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
                 $file_url = _IMAGES_.'/'.$file;
             }
             $file_title =  pathinfo($file, PATHINFO_FILENAME);
+            $file_name =  pathinfo($file, PATHINFO_FILENAME);
             $extension = pathinfo($file, PATHINFO_EXTENSION);
         } else {
             $file_url = $file['url'];
             $file_title = $file['alt'];
+            $file_name = $file['filename'];
             $extension = pathinfo($file['filename'], PATHINFO_EXTENSION);
         }
         if (!str_contains($file_url, "http")) {
@@ -209,9 +211,8 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
                 $content = str_replace('<?xml version="1.0" encoding="UTF-8"?>', '', $content);
             }
         } else {
-
             /* srcsets START */
-     /*       $srcset = '';
+            $srcset = '';
             $crop_path = wp_get_upload_dir()['baseurl'] . '/bato-cropped';
             $crop_folder = wp_get_upload_dir()['basedir'] . '/bato-cropped';
             $mediaQueries = [
@@ -226,14 +227,14 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
                 if ($width == 'original') {
                     $imagePath = $file_url;
                 } else {
-                    $imageLocalPath = $crop_folder . '/' . $file_title . '-' . $width . '.' . $extension;
-                    $imagePath = $crop_path . '/' . $file_title . '-' . $width . '.' . $extension;
+                    $imageLocalPath = $crop_folder . '/' . $file_name . '-' . $width . '.' . $extension;
+                    $imagePath = $crop_path . '/' . $file_name . '-' . $width . '.' . $extension;
 
                     if (!file_exists($imageLocalPath)) {
                         $image_editor = wp_get_image_editor($file_url);
                         if (!is_wp_error($image_editor)) {
                             $image_editor->resize($width, 0);
-                            $resized_file = wp_unique_filename($crop_folder, $file_title . '-' . $width . '.' . $extension);
+                            $resized_file = $file_name . '-' . $width . '.' . $extension;
                             $saved = $image_editor->save($crop_folder . '/' . $resized_file);
 
                             if (!is_wp_error($saved)) {
@@ -250,7 +251,7 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
                 $imagePath = str_replace('http://', 'https://', $imagePath);
             }
 
-            $srcset = rtrim($srcset, ', ');*/
+            $srcset = rtrim($srcset, ', ');
             /* srcsets END */
 
             $content = '<img 
@@ -291,6 +292,14 @@ function insertLink($link, $class = 'button-default', $child_class = '') {
         $title = '';
         $current_link = trailingslashit($link['url']);
         $current_url = trailingslashit(home_url($wp->request));
+
+        $child_parentclass = $class.'__link ';
+        if(!empty($class)) {
+            $class_arr = explode(' ', $class);
+            if(!empty($class_arr[0])) {
+                $child_parentclass = $class_arr[0].'__link ';
+            }
+        }
     
         if(!empty($current_link) && $current_link == $current_url) {
             $class .= ' current';
@@ -310,7 +319,7 @@ function insertLink($link, $class = 'button-default', $child_class = '') {
         }
     
         $html = '<a '.$attr.'>';
-        $html .= '<span class="'.$class.'__link '.$child_class.'">'.$title.'</span>';
+        $html .= '<span class="'.$child_parentclass.$child_class.'">'.$title.'</span>';
         $html .= '</a>';
         echo $html;
     }
