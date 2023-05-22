@@ -9,7 +9,7 @@
     <div class="main-size">
         <div class="section-about-ready__wrapper">
             <?php insertTitle($title, 'title title_basic') ?>
-            <?php insertLink($link, 'button-big-color') ?>
+            <?php insertLink($link, 'button-default button-big-color') ?>
         </div>
     </div>
 </section>

@@ -1506,3 +1506,10 @@ body.windows {
     }
   }
 }
+
+
+.section-team__items, .section-accordion__items, .cards-services, .section-offers__cards {
+  & > * {
+    backface-visibility: hidden;
+  }
+}
