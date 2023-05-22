@@ -32,8 +32,6 @@ export default function sectionOurValues(el) {
     const lastItemHeight = ourValuesItems[ourValuesItems.length - 1].offsetHeight;
     const itemsWrapper = document.querySelector(".section-our-values__items");
 
-    console.log(`${lastItemHeight * 1.3}px`)
-
     itemsWrapper.style.marginBottom = `-${lastItemHeight + 50}px`;
     el.nextElementSibling.style.marginTop = `${lastItemHeight}px`;
   }
