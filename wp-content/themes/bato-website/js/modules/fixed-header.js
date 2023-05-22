@@ -32,7 +32,6 @@ export default function fixedHeader(sectionTrigger) {
             }
 
             if(prevScrollPos < currentScrollPos) {
-
                 // header.style.opacity = 0
                 header.style.transition = 'opacity 0.3s linear 0s, border 0.5s, transform 0.5s linear 0s'
                 header.style.transform = 'translateY(-100%)'

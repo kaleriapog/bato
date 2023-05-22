@@ -255,6 +255,7 @@ html {
   right: 70px;
   bottom: 60px;
   z-index: 10;
+  transition: transform 0.3s linear;
 
   .text-only {
     font-family: "Montserrat", sans-serif;
