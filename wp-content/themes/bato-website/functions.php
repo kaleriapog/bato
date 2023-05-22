@@ -211,7 +211,7 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
         } else {
 
             /* srcsets START */
-            $srcset = '';
+     /*       $srcset = '';
             $crop_path = wp_get_upload_dir()['baseurl'] . '/bato-cropped';
             $crop_folder = wp_get_upload_dir()['basedir'] . '/bato-cropped';
             $mediaQueries = [
@@ -246,7 +246,11 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
                 $srcset .= $imagePath . ' ' . $width . 'w, ';
             }
 
-            $srcset = rtrim($srcset, ', ') . '"';
+            if (is_ssl()) {
+                $imagePath = str_replace('http://', 'https://', $imagePath);
+            }
+
+            $srcset = rtrim($srcset, ', ');*/
             /* srcsets END */
 
             $content = '<img 
