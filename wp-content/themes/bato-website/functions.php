@@ -209,15 +209,57 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
                 $content = str_replace('<?xml version="1.0" encoding="UTF-8"?>', '', $content);
             }
         } else {
+
+            /* srcsets START */
+            $srcset = '';
+            $crop_path = wp_get_upload_dir()['baseurl'] . '/bato-cropped';
+            $crop_folder = wp_get_upload_dir()['basedir'] . '/bato-cropped';
+            $mediaQueries = [
+                '(min-width: 1200px)' => 'original',
+                '(max-width: 1199px)' => 1200,
+                '(max-width: 1024px)' => 1024,
+                '(max-width: 767px)' => 767,
+                '(max-width: 480px)' => 375
+            ];
+
+            foreach ($mediaQueries as $mediaQuery => $width) {
+                if ($width == 'original') {
+                    $imagePath = $file_url;
+                } else {
+                    $imageLocalPath = $crop_folder . '/' . $file_title . '-' . $width . '.' . $extension;
+                    $imagePath = $crop_path . '/' . $file_title . '-' . $width . '.' . $extension;
+
+                    if (!file_exists($imageLocalPath)) {
+                        $image_editor = wp_get_image_editor($file_url);
+                        if (!is_wp_error($image_editor)) {
+                            $image_editor->resize($width, 0);
+                            $resized_file = wp_unique_filename($crop_folder, $file_title . '-' . $width . '.' . $extension);
+                            $saved = $image_editor->save($crop_folder . '/' . $resized_file);
+
+                            if (!is_wp_error($saved)) {
+                                $imagePath = $crop_path . '/' . $resized_file;
+                            }
+                        }
+                    }
+                }
+
+                $srcset .= $imagePath . ' ' . $width . 'w, ';
+            }
+
+            $srcset = rtrim($srcset, ', ') . '"';
+            /* srcsets END */
+
             $content = '<img 
                 class="'.$class.'" 
                 src="'.$file_url. '" 
                 alt="'.$file_title.'"
                 width="'.$width.'"
                 height="'.$height.'" 
+                srcset="'.$srcset.'" 
                 '.$lazyload.' 
             />';
         }
+
         if (!empty($content)) {
             if ($return) {
                 return $content;

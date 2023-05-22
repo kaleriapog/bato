@@ -32,7 +32,7 @@
                                                     <div class="section-team__card-team-description">
                                                         <?php insertTitle($item_name, 'section-team__card-team-name', 'span') ?>
                                                         <?php insertTitle($item_position, 'section-team__card-team-position', 'span') ?>
-                                                        <span class="section-team__card-team-text"><?php echo $item_text ?></span>
+                                                        <?php insertTitle($item_text, 'section-team__card-team-text', 'span') ?>
                                                     </div>
                                                 </div>
                                             </div>
