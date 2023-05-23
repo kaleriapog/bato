@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<meta name="p:domain_verify" content="8c4ebfbe04b8294e2c9379ddc0abcc4f"/>
-	<title><?php bloginfo( 'name' ); ?></title>
+	<title><? wp_title(':'); ?></title>
 	<?php wp_head(); ?>
 	
 	<!-- Google Tag Manager -->

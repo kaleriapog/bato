@@ -531,9 +531,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "clone": [
-                                "group_63fe36da000ce"
-                            ],
+                            "clone": "",
                             "display": "seamless",
                             "layout": "block",
                             "prefix_label": 0,
@@ -662,5 +660,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684840787
+    "modified": 1684845436
 }
