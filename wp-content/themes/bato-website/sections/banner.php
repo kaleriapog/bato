@@ -14,9 +14,9 @@
         <div class="section-banner__description">
             <div class="headline">
 
-                <?php if(!empty($title)) { ?>
+                <?php if(!empty($title_banner)) { ?>
 
-                    <?php insertTitle($title, 'title_basic title title-banner', 'h1') ?>
+                    <?php insertTitle($title_banner, 'title_basic title title-banner', 'h1') ?>
 
                 <?php } ?>
 
