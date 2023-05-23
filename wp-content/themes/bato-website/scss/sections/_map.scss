@@ -1,0 +1,39 @@
+.section-map {
+    padding: 100px 0;
+    margin-bottom: -100px;
+
+    @include media-mobile {
+        padding: 50px 0;
+        margin-bottom: 0;
+    }
+}
+
+.section-map__title {
+    width: 885px;
+    max-width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;    
+    text-align: center;
+    line-height: 1.31;
+    color: #fff;
+    margin: 0 auto 30px;
+
+    @include media-mobile {
+        font-size: 18px;
+        line-height: 1.333;
+    }
+}
+
+/* .section-map__image {
+    @include media-mobile {
+        display: none;
+    }
+}
+
+.section-map__image-mobile {
+    display: none;
+
+    @include media-mobile {
+        display: block;
+    }
+} */
