@@ -1,9 +1,14 @@
-<?php 
-    $current_file_name = basename(__FILE__, '.php');
-    include(__DIR__.'/../core/fields-generator.php');
+<?php
+    $fields = get_field('reviews', 'options');
+
+    if(!empty($fields)) {
+        foreach ($fields as $field_name => $field) {
+            ${"$field_name"} = $field;
+        }
+    }
 ?>
 
-<?php if (!empty($fields) && !empty($reviews)) : ?>
+<?php if (!empty($fields) && !empty($list)) : ?>
 
 <section class="section-about-reviews section">
     <div class="section-about-reviews__pin-section">
@@ -75,13 +80,13 @@
                 <div class="reviews-items">
                     <ul class="section-about-reviews__items">
 
-                        <?php foreach ($reviews as $key => $review) : ?>
+                        <?php foreach ($list as $key => $review) : ?>
                             <li class="section-about-reviews__item anim-item anim-item-<?php echo $key ?>">
                                 <div class="reviews-item-bg"></div>
                                 <div class="section-about-reviews__item-content">
                                     <span class="quotation-mark">“</span>
-                                    <?php insertText($review['review_text'], 'section-about-reviews__item-text custom-scrollbar') ?>
-                                    <?php insertText($review['review_name'], 'section-about-reviews__item-name') ?>
+                                    <?php insertText($review['text'], 'section-about-reviews__item-text custom-scrollbar') ?>
+                                    <?php insertText($review['author'], 'section-about-reviews__item-name') ?>
                                 </div>
                             </li>
                         <?php endforeach ?>
@@ -93,14 +98,14 @@
                     <div class="swiper">
                         <div class="swiper-wrapper">
 
-                            <?php foreach ($reviews as $key => $review) : ?>
+                            <?php foreach ($list as $key => $review) : ?>
                                 <div class="swiper-slide">
                                     <div class="section-about-reviews__item">
                                         <div class="reviews-item-bg"></div>
                                         <div class="section-about-reviews__item-content">
                                             <span class="quotation-mark">“</span>
-                                            <?php insertText($review['review_text'], 'section-about-reviews__item-text custom-scrollbar') ?>
-                                            <?php insertText($review['review_name'], 'section-about-reviews__item-name') ?>
+                                            <?php insertText($review['text'], 'section-about-reviews__item-text custom-scrollbar') ?>
+                                            <?php insertText($review['author'], 'section-about-reviews__item-name') ?>
                                         </div>
                                     </div>
                                 </div>
