@@ -29,7 +29,9 @@
                     <?php endif ?>
 
                     <div class="section-projects__item-content">
- 
+
+                        <?php insertLink($item['link'], 'button-default section-projects__item-mobile-link') ?>
+
                         <?php if (!empty($item['date'])) : ?>
                             <time datetime="<?php echo $item['date'] ?>" class="section-projects__item-date"><?php echo $item['date'] ?></time>
                         <?php endif ?>

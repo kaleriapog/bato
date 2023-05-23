@@ -1,5 +1,5 @@
 .footer {
-    padding: 0 0 100px;
+    padding: 0 0 65px;
     position: relative;
 
     @include media-laptop {
@@ -12,25 +12,6 @@
         padding: 0 0 50px;
     }
 
-    &__inner {
-        padding-top: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-top: solid 1px $color-border-second;
-
-        @include media-tablet {
-            padding-top: 40px;
-            justify-content: start;
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        @include media-mobile {
-            padding-top: 30px;
-        }
-    }
-
     .logo-small {
         max-width: 90px;
 
@@ -38,30 +19,85 @@
             display: none;
         }
     }
+}
 
-    .social-media {
-        display: flex;
+.footer__inner {
+    padding-top: 50px;
+    border-top: solid 1px $color-border-second;
+
+    @include media-tablet {
+        padding-top: 40px;
+    }
+
+    @include media-mobile {
+        padding-top: 30px;
+    }
+}
+
+.footer__main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    gap: 25px;
+
+    @include media-mobile {
+        flex-direction: column;
         align-items: center;
-        flex-wrap: wrap;
+    }
+}
 
-        @include media-tablet {
-            justify-content: space-between;
-        }
+.footer-menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 15px 65px;
 
-        .menu-item {
-            @include font-social-media;
-            margin-left: 65px;
+    @include font-social-media;
+    
+    @include media-mobile {
+        gap: 15px;
 
-            @include media-tablet {
-                margin: 0;
-                font-size: 16px;
-                line-height: 20px;
-                text-transform: uppercase;
-            }
-
-            @include media-mobile {
-                font-size: 12px;
-            }
+        a {
+            font-size: 12px;
         }
     }
 }
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include media-mobile {
+        flex-direction: initial;
+        gap: 15px;
+
+        a {
+            font-size: 12px;
+        }
+    }
+}
+
+/* footer-socials START */
+.footer-socials {
+    padding-top: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-socials__item {
+    color: #fff;
+    transition: 0.3s;
+
+    @include desktop-only {
+        &:hover {
+            opacity: 0.8;
+            transform: scale(0.9);
+        }
+    }
+}
+/* footer-socials END */

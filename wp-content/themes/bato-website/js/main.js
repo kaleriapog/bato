@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const menuMainItems = document.querySelectorAll(".header-menu .menu-item a");
-  const socialMedia = document.querySelectorAll(".social-media .menu-item a");
+  const footerMenu = document.querySelectorAll(".footer-menu .menu-item a");
 
   animationWave(menuMainItems);
-  animationWave(socialMedia);
+  animationWave(footerMenu);
 
   const footer = document.querySelectorAll(".footer");
   let blocksToScroll = document.querySelectorAll(".custom-scrollbar");

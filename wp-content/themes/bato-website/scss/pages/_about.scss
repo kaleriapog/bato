@@ -473,7 +473,7 @@
   }
 }
 
-.section-about-hq {
+/* .section-about-hq {
   @include media-mobile-horizontal {
     display: none;
   }
@@ -702,7 +702,7 @@
       line-height: 1.333;
     }
   }
-}
+} */
 
 .section-about-family {
   padding: 50px 0 100px;
@@ -1216,6 +1216,15 @@
     .button-default__link {
       font-size: 19px;
       color: $color-hover;
+    }
+  }
+
+  .section-about-ready__link {
+    font-size: 32px;
+    margin-bottom: 0;
+
+    @include media-tablet {
+      font-size: 24px;
     }
   }
 }
