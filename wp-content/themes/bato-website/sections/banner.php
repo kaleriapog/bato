@@ -13,32 +13,30 @@
     <div class="section-banner__inner main-size">
         <div class="section-banner__description">
             <div class="headline">
-                <div class="headline__inner">
-                    <div class="headline-items">
 
-                        <?php if (!empty($big_title)) : ?>
-                            <?php foreach ($big_title as $item) : ?>
-                                <div class="headline-item">
-                                    <?php insertImage($item, 'headline__letter') ?>
-                                </div>
-                            <?php endforeach ?>
-                        <?php endif ?>
+                <?php if(!empty($title)) { ?>
 
-                    </div>
-                </div>
+                    <?php insertTitle($title, 'title_basic title title-banner', 'h1') ?>
+
+                <?php } ?>
+
+            </div>
 
                 <?php if (!empty($subtitles)) : ?>
                     <p class="subtitle"><?php echo $subtitles[0]["subtitle"] ?></p>
                 <?php endif ?>
 
-            </div>
-
-            <?php if (!empty($link)) : ?>
-                <div class="section-banner__button">
-                    <?php insertLink($link) ?>
-                </div>
-            <?php endif ?>
         </div>
+
+        <?php if (!empty($email)) : ?>
+            <div class="section-banner__button">
+                <span class="section-banner__button-title">Write to us</span>
+                <a href="mailto:<?php echo $email ?>" class="button button-banner">
+                    <span><?php echo $email ?></span>
+                </a>
+            </div>
+        <?php endif ?>
+
     </div>
     <div class="section-banner__bg">
 

@@ -48,6 +48,7 @@
     justify-content: center;
     background-color: $main-color-bg;
     border-radius: 9px;
+    position: relative;
 
     @include media-width-small {
       width: 28vw;
@@ -57,6 +58,23 @@
     @include media-mobile-500 {
       width: 120px;
       height: 105px;
+    }
+
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.02);
     }
   }
 

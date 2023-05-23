@@ -20,9 +20,9 @@
     <?php 
         get_template_part('sections/banner', NULL, 
             [
-                'big_title' => $big_title,
+                'title' => $title,
                 'subtitles' => $subtitles,
-                'link' => $link,
+                'email' => $email,
                 'video' => $video,
                 'image_bg_mobile' => $image_bg_mobile,
                 'image_bg_if_not_video' => $image_bg_if_not_video
