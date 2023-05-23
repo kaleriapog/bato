@@ -2,7 +2,7 @@
 
 	<div class="main-size">
 		<div class="footer__inner">
-			<div class="logo-small"><?php the_custom_logo(); ?></div>
+			<div class="logo-small"><?php insertImage('logo.png'); ?></div>
 			<div class="footer__social">
 				<?php
 					wp_nav_menu(
@@ -18,7 +18,7 @@
 	</div>
 </footer>
 
-<?php get_template_part('template-parts/cookie-block', null) ?>
+<?php //get_template_part('template-parts/cookie-block') ?>
 
 </div>
 

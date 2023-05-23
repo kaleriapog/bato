@@ -140,22 +140,7 @@
       }
     }
   }
-
-  .block-cookies {
-    &__link {
-      &:hover {
-        color: $color-main;
-      }
-    }
-
-    &__button { 
-      &:hover {
-        background-color: $color-main;
-        color: $main-color-bg;
-      }
-    }
-  }
-
+  
   .section-accordion {
     &__rating {
       &:hover {

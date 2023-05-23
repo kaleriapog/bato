@@ -55,20 +55,23 @@ class TextScramble {
 export default function animationText() {
   const subtitleTeg = document.querySelector(".subtitle");
 
-  const subTitleArr = JSON.parse(subTitles);
-  const subTitleArrForAnimation = subTitleArr.map((item) => item.subtitle);
+  if(subtitleTeg) {
+    const subTitleArr = JSON.parse(subTitles);
+    const subTitleArrForAnimation = subTitleArr.map((item) => item.subtitle);
+  
+    setTimeout(() => {
+      const fx = new TextScramble(subtitleTeg);
+      let counter = 0;
+      const next = () => {
+        fx.setText(subTitleArrForAnimation[counter]).then(() => {
+          setTimeout(next, 3000);
+        });
+        counter = (counter + 1) % subTitleArrForAnimation.length;
+      };
+      next();
+    }, 6000);
+  
+    subtitleTeg.style.animation = "main_animation_title 2s ease 2.5s forwards";
+  }
 
-  setTimeout(() => {
-    const fx = new TextScramble(subtitleTeg);
-    let counter = 0;
-    const next = () => {
-      fx.setText(subTitleArrForAnimation[counter]).then(() => {
-        setTimeout(next, 3000);
-      });
-      counter = (counter + 1) % subTitleArrForAnimation.length;
-    };
-    next();
-  }, 6000);
-
-  subtitleTeg.style.animation = "main_animation_title 2s ease 2.5s forwards";
 }
