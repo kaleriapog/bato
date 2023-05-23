@@ -3,24 +3,29 @@
     include(__DIR__.'/../core/fields-generator.php');
 ?>
 
-<?php if (!empty($fields['projects_list'])) : ?>
+<?php if (!empty($fields['list'])) : ?>
 
 <section class="section-projects section">
     <div class="main-size">
         <div class="section-projects__list">
 
-            <?php foreach ($fields['projects_list'] as $item) : ?>
+            <?php foreach ($fields['list'] as $item) : ?>
+                <?php
+                    $link['url'] = $item['url'];
+                    $link['title'] = __('View live version', 'theme'); 
+                    $link['target'] = 'blank'; 
+                ?>
                 <div class="section-projects__item">
 
                     <?php if (!empty($item['image'])) : ?>
                         <div class="section-projects__item-image-wrap">
-                            <a class="section-projects__item-image-inner" href="<?php echo $item['link']['url'] ?>" target="_blank" rel="nofollow">
+                            <a class="section-projects__item-image-inner" href="<?php echo $link['url'] ?>" target="_blank" rel="nofollow">
                                 <div class="section-projects__item-image"><?php insertImage($item['image']) ?></div>
                                 
-                                <?php if (!empty($item['link'])) : ?>
+                                <?php if (!empty($item['url'])) : ?>
                                     <div class="section-projects__item-overlay">
                                         <div class="button-default button-big-color">
-                                            <span class="section-projects__item-link button-default__link button-big-color__link"><?php echo $item['link']['title'] ?></span>
+                                            <span class="section-projects__item-link button-default__link button-big-color__link"><?php echo $link['title'] ?></span>
                                         </div>
                                     </div>
                                 <?php endif ?>
@@ -30,7 +35,7 @@
 
                     <div class="section-projects__item-content">
 
-                        <?php insertLink($item['link'], 'button-default section-projects__item-mobile-link') ?>
+                        <?php insertLink($link, 'button-default section-projects__item-mobile-link') ?>
 
                         <?php if (!empty($item['date'])) : ?>
                             <time datetime="<?php echo $item['date'] ?>" class="section-projects__item-date"><?php echo $item['date'] ?></time>

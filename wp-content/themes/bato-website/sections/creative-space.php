@@ -19,15 +19,13 @@
                     </div>
                 </div>
 
-                <?php if(!empty($fields['logo_name'])) : ?>
-                    <a class="button-default button-big-color" href="<?php echo $fields['link'] ?>" target="_blank" rel="nofollow">
-                        <span class="button-default__link">
-                            <div class="section-creative-space__logo_name">
-                                <?php insertImage($fields['logo_name']) ?>
-                            </div>
-                        </span>
-                    </a>
-                <?php endif ?>
+                <a class="button-default button-big-color" href="<?php echo $fields['link'] ?>" target="_blank" rel="nofollow">
+                    <span class="button-default__link">
+                        <div class="section-creative-space__logo_name">
+                            <?php insertImage('dribbble.png') ?>
+                        </div>
+                    </span>
+                </a>
 
             </div>
         </div>
