@@ -21,7 +21,7 @@ foreach ($fields as $field_name => $field) {
     <?php 
         get_template_part('sections/banner', NULL, 
             [
-                'title' => $title,
+                'title_banner' => $title_banner,
                 'subtitles' => $subtitles,
                 'email' => $email,
                 'video' => $video,

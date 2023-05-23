@@ -14,7 +14,7 @@
             <?php insertLink($about_link) ?>
         </div>
         <div class="circles-about">
-            <?php insertImage('effect-about.png', '', 0) ?>
+            <?php insertImage('about-home-effect.png', '', 0) ?>
         </div>
     </div>
 </section>
