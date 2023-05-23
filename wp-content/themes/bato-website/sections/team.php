@@ -1,12 +1,9 @@
 <?php 
-    if(!empty($args)) {
-        foreach ($args as $field_name => $field) {
-            ${"$field_name"} = $field;
-        }
-    }
+    $current_file_name = basename(__FILE__, '.php');
+    include(__DIR__.'/../core/fields-generator.php');
 ?>
 
-<section class="section-team" id="section-team">
+<section class="section-team section" id="section-team">
     <div class="section-team__inner main-size">
 
         <?php insertTitle($team_title, 'title_basic', 'h2') ?>

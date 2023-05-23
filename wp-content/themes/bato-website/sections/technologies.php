@@ -1,9 +1,9 @@
 <?php
-if(!empty($args)) {
-    foreach ($args as $field_name => $field) {
-        ${"$field_name"} = $field;
+    if(!empty($args)) {
+        foreach ($args as $field_name => $field) {
+            ${"$field_name"} = $field;
+        }
     }
-}
 ?>
 
 <section class="section-technologies" id="section-technologies">
