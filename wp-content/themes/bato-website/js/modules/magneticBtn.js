@@ -1,6 +1,8 @@
 export default function magneticBtn(link) {
   if (!link) return;
 
+  console.log(link)
+
   link.forEach((el) => {
     const linkContactPhraseContent = el.innerHTML;
 

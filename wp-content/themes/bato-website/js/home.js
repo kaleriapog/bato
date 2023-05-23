@@ -29,11 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelectorAll(".footer");
   const accordionBlock = document.querySelectorAll(".accordion");
   const footerMain = document.querySelector(".footer");
+  const linkBanner = document.querySelectorAll(".button-banner");
 
   animationText();
   accordion(accordionBlock);
   teamCubes();
   magneticBtn(linkContactPhrase);
+  magneticBtn(linkBanner);
   animationSections(sectionService);
   animationSections(sectionAbout);
   animationSections(sectionOffers);

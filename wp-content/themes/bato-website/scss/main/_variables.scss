@@ -5,6 +5,7 @@ $main-color-bg-second: #060606;
 $main-color-bg-preloader: #121212;
 $color-nav: #cdcdcd;
 $color-hover: #06ffff;
+$color-light-blue: #06ffff;
 $color-white: #ffffff;
 $color-text: #bbbbbb;
 $color-text-second: #999999;
@@ -348,9 +349,14 @@ $main-transition-timing: cubic-bezier(0.22, 0.17, 0, 0.98);
 @mixin font-subtitle-banner {
   font-size: 36px;
   font-weight: 300;
-  line-height: 50px;
+  line-height: 1.38;
   color: $color-text-second;
   @include poppins;
+
+  @include media-mobile {
+    font-size: 24px;
+    line-height: 1.41;
+  }
 }
 
 @mixin font-text {
