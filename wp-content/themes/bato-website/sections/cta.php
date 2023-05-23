@@ -9,7 +9,9 @@
     <div class="main-size">
         <div class="section-about-ready__wrapper">
             <?php insertTitle($title, 'title title_basic') ?>
-            <?php insertLink($link, 'button-default button-big-color') ?>
+            <?php if (!empty($link)): ?>
+                <a class="section-about-ready__link underline" href="<?php echo $link['url'] ?>"><?php echo $link['title'] ?></a>
+            <?php endif ?>
         </div>
     </div>
 </section>

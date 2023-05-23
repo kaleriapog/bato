@@ -549,3 +549,16 @@
     }
   }
 }
+
+.section-projects__item-mobile-link {
+  color: #06FFFF;
+  font-size: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: -10px;
+  display: none;
+
+  @include media-tablet {
+    display: inline-block;
+  }
+}
