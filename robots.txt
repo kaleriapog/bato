@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: */uploads
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://bato.dev/sitemap.xml
