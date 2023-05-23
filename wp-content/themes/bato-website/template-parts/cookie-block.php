@@ -14,6 +14,7 @@
     
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            let el = document.querySelector('.block-cookies');
             let button = el.querySelector('.block-cookies__button')
 
             button.addEventListener('click', () => {

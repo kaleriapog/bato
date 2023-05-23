@@ -121,25 +121,38 @@ function enqueue_js_css() {
 /* add js/css END */
 
 
+/* ACF theme options START */
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(
+        array(
+            'page_title' => 'Options',
+            'menu_title' => 'Options',
+            'menu_slug' => 'theme-options',
+            'capability' => 'edit_posts',
+            'parent_slug' => '',
+            'position' => false,
+        )
+    );
+}
+/* ACF theme options END */
+
+
+
 
 /* force css to footer START */
 function enqueue_css_in_footer() {
-    // Get all registered styles
     global $wp_styles;
 
-    // Loop through each registered style
     foreach ($wp_styles->queue as $handle) {
         $style = $wp_styles->registered[$handle];
 
-        // Check if the style is from a plugin
         if (strpos($style->src, '/plugins/') !== false) {
-            // Move the plugin style to the footer
             $wp_styles->add_data($handle, 'group', 1);
         }
     }
 }
 add_action('wp_footer', 'enqueue_css_in_footer');
-/*force css to footer END */
+/* force css to footer END */
 
 
 /* insert image START */

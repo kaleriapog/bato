@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ".section-cards .card-title"
   );
   const menuMainItems = document.querySelectorAll(".header-menu .menu-item a");
-  const socialMedia = document.querySelectorAll(".social-media .menu-item a");
+  const footerMenu = document.querySelectorAll(".footer-menu .menu-item a");
   const linkContactPhrase = document.querySelectorAll( ".section-contact__phrase a");
   const heroHomeFirst = document.querySelector(".section-banner");
   const sectionService = document.querySelectorAll(".section-cards");
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menuMainItems.forEach((item) => {
       item.classList.add("animation-no-wave");
     });
-    socialMedia.forEach((item) => {
+    footerMenu.forEach((item) => {
       item.classList.add("animation-no-wave");
     });
   }

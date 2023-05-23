@@ -1,11 +1,12 @@
 <?php
-    $fields = get_fields();
 
-    foreach ($fields as $field_name => $field) {
-        ${"$field_name"} = $field;
-    }
+get_header();
 
-    get_header();
+$fields = get_fields();
+
+foreach ($fields as $field_name => $field) {
+    ${"$field_name"} = $field;
+}
 ?>
 
 <?php if (!empty($subtitles)) : ?>
