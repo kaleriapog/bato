@@ -1,6 +1,9 @@
 <?php 
-    $current_file_name = basename(__FILE__, '.php');
-    include(__DIR__.'/../core/fields-generator.php');
+    if(!empty($args)) {
+        foreach ($args as $field_name => $field) {
+            ${"$field_name"} = $field;
+        }
+    }
 ?>
 
 <section class="section-numbers" id="section-numbers">
