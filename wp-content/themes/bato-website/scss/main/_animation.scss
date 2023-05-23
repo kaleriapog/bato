@@ -169,7 +169,8 @@ header.inited {
       }
 
       @include media-mobile {
-        top: 47%;
+        top: 160px;
+        width: 170px;
       }
 
       .banner-circles {
@@ -275,7 +276,7 @@ header.inited {
     }
   }
 
-  .button-default {
+  .button-banner, .section-banner__button {
     opacity: 0;
     transform: translateY(30px);
     animation: opacity 1s linear 3s forwards,
@@ -288,13 +289,14 @@ header.inited {
   position: relative;
 
   .circles-about {
+    max-width: 745px;
+    width: 100%;
     position: absolute;
     top: 1%;
     bottom: 0;
     right: 0;
     left: -1%;
-    max-width: 745px;
-    width: 100%;
+    z-index: -1;
 
     @include media-laptop {
       top: -60%;

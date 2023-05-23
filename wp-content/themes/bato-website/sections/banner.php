@@ -23,7 +23,9 @@
             </div>
 
                 <?php if (!empty($subtitles)) : ?>
-                    <p class="subtitle"><?php echo $subtitles[0]["subtitle"] ?></p>
+                    <div class="section-banner__subtitle">
+                        <p class="subtitle"><?php echo $subtitles[0]["subtitle"] ?></p>
+                    </div>
                 <?php endif ?>
 
         </div>
@@ -31,7 +33,7 @@
         <?php if (!empty($email)) : ?>
             <div class="section-banner__button">
                 <span class="section-banner__button-title">Write to us</span>
-                <a href="mailto:<?php echo $email ?>" class="button button-banner">
+                <a href="mailto:<?php echo $email ?>" class="button button-banner magnetic">
                     <span><?php echo $email ?></span>
                 </a>
             </div>
