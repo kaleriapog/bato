@@ -18,7 +18,7 @@
     <?php get_template_part('core/block-loader'); ?>
 
     <?php 
-        get_template_part('sections/banner', NULL, 
+/*         get_template_part('sections/banner', NULL, 
             [
                 'big_title' => $big_title,
                 'subtitles' => $subtitles,
@@ -27,7 +27,7 @@
                 'image_bg_mobile' => $image_bg_mobile,
                 'image_bg_if_not_video' => $image_bg_if_not_video
             ]
-        );
+        ); */
 
         get_template_part('sections/about', NULL, 
             [
