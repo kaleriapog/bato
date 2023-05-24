@@ -21,7 +21,7 @@
                 
                 <?php if (!empty($rating)) : ?>
 
-                    <a href="<?php echo $rating['link']['url'] ?>" target="<?php echo $rating['link']['target'] ? $rating['link']['target'] : '_self' ?>" class="section-about-reviews__rating">
+                    <a class="section-about-reviews__rating" href="<?php echo $rating['url'] ?>" target="_blank" rel="nofollow">
 
                         <?php if (!empty($rating['logo'])) : ?>
                             <div class="section-about-reviews__rating-image">

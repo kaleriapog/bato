@@ -1,6 +1,7 @@
 import animationWave from "./modules/animationWave.js";
 import mobileMenu from "./modules/mobileMenu.js";
 import animationFooter from "./modules/animationFooter.js";
+import magneticBtn from "./modules/magneticBtn.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (navigator.platform !== "MacIntel") {
@@ -44,4 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   }
+  
+  const linkItem = document.querySelectorAll(".magnetic");
+  magneticBtn(linkItem);
 });

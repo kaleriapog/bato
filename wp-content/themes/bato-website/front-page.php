@@ -67,8 +67,7 @@ foreach ($fields as $field_name => $field) {
 
         get_template_part('sections/team', NULL, 
             [
-                'team_title' => $team_title,
-                'team_items' => $team_items,
+                'fields' => $team_block,
             ]
         );
 

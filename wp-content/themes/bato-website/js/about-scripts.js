@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionAboutMap = document.querySelector(".section-about-hq");
   const sectionAReviews = document.querySelector(".section-about-reviews");
   const sectionAboutFamily = document.querySelector(".section-about-family");
-  const sections = document.querySelectorAll(".section");
+  const sections = document.querySelectorAll(".section:not(.map)");
+  const sectionsMap = document.querySelectorAll(".map");
   const secondBlockInPage = document.querySelector(".section-about-our-story");
   const sectionFollowLinks = document.querySelectorAll(".section-about-follow__link a");
 
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   animationWave(sectionFollowLinks);
   teamCubes();
   animationSections(sections, 0.1);
+  animationSections(sectionsMap, 0.4);
   heroAbout(sectionAboutHero);
   sectionOurValues(sectionAboutOurValues);
   mapAbout(sectionAboutMap);

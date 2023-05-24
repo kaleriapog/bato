@@ -4,10 +4,27 @@
 ?>
 
 <?php if (!empty($fields)) : ?>
-    <section class="section-map section">
-        <div class="section-map__wrapper main-size">
-            <?php insertTitle($text, 'section-map__title') ?>
-            <?php insertImage('map-new.png', 'section-map__image') ?>
+    <section class="map section">
+        <div class="map__wrapper main-size">
+            <?php insertTitle($text, 'map__title') ?>
+            
+            <div class="map__content">
+                <?php insertImage('map-new.png', 'map__image') ?>
+
+                <div class="map__pin pin pin_left">
+                    <?php insertImage('pin__ellipse-big.svg') ?>
+                    <?php insertImage('pin__ellipse-small.svg') ?>
+                    <div class="pin__icon"><?php insertImage('pin-map.svg') ?></div>
+                    <div class="pin__light"></div>
+                </div>
+
+                <div class="map__pin pin pin_right">
+                    <?php insertImage('pin__ellipse-big.svg') ?>
+                    <?php insertImage('pin__ellipse-small.svg') ?>
+                    <div class="pin__icon"><?php insertImage('pin-map.svg') ?></div>
+                    <div class="pin__light"></div>
+                </div>
+            </div>
         </div>
     </section>
 <?php endif ?>
