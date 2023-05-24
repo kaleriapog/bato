@@ -1,7 +1,6 @@
 import animationText from "./modules/animationText.js";
 import animationWave from "./modules/animationWave.js";
 import teamCubes from "./modules/teamCubes.js";
-import magneticBtn from "./modules/magneticBtn.js";
 import animationSections from "./modules/animationSections.js";
 import animationFooter from "./modules/animationFooter.js";
 import accordion from "./modules/accordion.js";
@@ -34,8 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   animationText();
   accordion(accordionBlock);
   teamCubes();
-  magneticBtn(linkContactPhrase);
-  magneticBtn(linkBanner);
   animationSections(sectionService);
   animationSections(sectionAbout);
   animationSections(sectionOffers);
