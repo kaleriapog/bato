@@ -1,45 +1,35 @@
 <?php 
-    if(!empty($args)) {
-        foreach ($args as $field_name => $field) {
-            ${"$field_name"} = $field;
-        }
-    }
+    $current_file_name = basename(__FILE__, '.php');
+    include(__DIR__.'/../core/fields-generator.php');
 ?>
 
-<?php if (!empty($accordion)) : ?>
-
-<?php
-    $accordion_title = $accordion['description']['title'];
-    $accordion_text = $accordion['description']['text'];
-    $accordion_items = $accordion['items'];
-    $accordion_rating = $accordion['rating'];
-?>
+<?php if (!empty($fields)) : ?>
 
 <section class="section-accordion">
     <div class="main-size">
         <div class="section-accordion__wrapper">
             <div class="section-accordion__text">
 
-                <?php insertTitle($accordion_title, 'title_basic title') ?>
-                <?php insertText($accordion_text, 'section-accordion__description') ?>
+                <?php insertTitle($description['title'], 'title_basic title') ?>
+                <?php insertText($description['text'], 'section-accordion__description') ?>
 
-                <?php if (!empty($accordion_rating)) : ?>
+                <?php if (!empty($rating)) : ?>
 
-                    <a href="<?php echo $accordion_rating['link']['url'] ?>" target="<?php echo $accordion_rating['link']['target'] ? $accordion_rating['link']['target'] : '_self'; ?>" class="section-accordion__rating">
+                    <a href="<?php echo $rating['link']['url'] ?>" target="<?php echo $rating['link']['target'] ? $rating['link']['target'] : '_self'; ?>" class="section-accordion__rating">
 
-                        <?php if (!empty($accordion_rating['logo'])) : ?>
+                        <?php if (!empty($rating['logo'])) : ?>
                             <div class="section-accordion__rating-image">
-                                <?php insertImage($accordion_rating['logo']) ?>
+                                <?php insertImage($rating['logo']) ?>
                             </div>
                         <?php endif ?>
 
-                        <?php if (!empty($accordion_rating['rating_number'])) : ?>
+                        <?php if (!empty($rating['rating_number'])) : ?>
                             <div class="section-accordion__rating-inner">
-                                <span class="section-accordion__rating-number"><?php echo $accordion_rating['rating_number'] ?></span>
+                                <span class="section-accordion__rating-number"><?php echo $rating['rating_number'] ?></span>
                                 <span class="section-accordion__rating-stars">
                                     <?php insertImage('rating-stars.svg') ?>
                                     
-                                    <svg class="rating-stars-color" style="clip-path: inset(0 calc(100% - (100% * <?php echo $accordion_rating['rating_number'] ?>) / 5) 0 0)" width="75" height="15" viewBox="0 0 75 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="rating-stars-color" style="clip-path: inset(0 calc(100% - (100% * <?php echo $rating['rating_number'] ?>) / 5) 0 0)" width="75" height="15" viewBox="0 0 75 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.5 0L9.18386 5.18237H14.6329L10.2245 8.38525L11.9084 13.5676L7.5 10.3647L3.09161 13.5676L4.77547 8.38525L0.367076 5.18237H5.81614L7.5 0Z" fill="url(#paint0_linear_1919_254)" />
                                         <path d="M22.5 0L24.1839 5.18237H29.6329L25.2245 8.38525L26.9084 13.5676L22.5 10.3647L18.0916 13.5676L19.7755 8.38525L15.3671 5.18237H20.8161L22.5 0Z" fill="url(#paint1_linear_1919_254)" />
                                         <path d="M37.5 0L39.1839 5.18237H44.6329L40.2245 8.38525L41.9084 13.5676L37.5 10.3647L33.0916 13.5676L34.7755 8.38525L30.3671 5.18237H35.8161L37.5 0Z" fill="url(#paint2_linear_1919_254)" />
@@ -82,10 +72,10 @@
                 <?php endif ?>
             </div>
 
-            <?php if (!empty($accordion_items)) : ?>
+            <?php if (!empty($items)) : ?>
 
                 <ul class="section-accordion__items accordion">
-                    <?php foreach ($accordion_items as $key => $accordion_item) : ?>
+                    <?php foreach ($items as $key => $accordion_item) : ?>
                         <li class="accordion__item accordion__item-<?php echo $key ?>">
                             <div class="accordion__item-inner">
                                 <div class="accordion__item-content">

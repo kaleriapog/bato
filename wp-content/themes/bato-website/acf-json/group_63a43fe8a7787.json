@@ -16,6 +16,37 @@
                 "id": ""
             },
             "layouts": {
+                "layout_646dfcc8417be": {
+                    "key": "layout_646dfcc8417be",
+                    "name": "about",
+                    "label": "About",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_646dfcd4417bf",
+                            "label": "About",
+                            "name": "about",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_623384a1233d4"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_646c99c8b2f90": {
                     "key": "layout_646c99c8b2f90",
                     "name": "accordion",
@@ -660,5 +691,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684845436
+    "modified": 1684929815
 }

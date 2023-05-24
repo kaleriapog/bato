@@ -9,7 +9,7 @@
 
     &.animation {
         .map__title,
-        .map__image {
+        .map__content {
             opacity: 1;
             transform: translateY(0) scale(1);
         }
@@ -60,9 +60,6 @@
 
 .map__content {
     position: relative;
-}
-
-.map__image {
     transition: 1s ease-out;
     opacity: 0;
     transform: scale(0.8);   

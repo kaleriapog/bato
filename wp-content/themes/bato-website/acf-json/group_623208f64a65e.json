@@ -1,6 +1,6 @@
 {
     "key": "group_623208f64a65e",
-    "title": "Banner block",
+    "title": "Block: Banner",
     "fields": [
         {
             "key": "field_623786882933d",
@@ -19,10 +19,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_646c78d0e0fae",
+            "key": "field_62325de74c9c7",
             "label": "Title",
-            "name": "title_banner",
-            "type": "wysiwyg",
+            "name": "title",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -32,10 +32,10 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_6232095463d33",
@@ -78,7 +78,7 @@
             ]
         },
         {
-            "key": "field_646c794e250f7",
+            "key": "field_6232097863d34",
             "label": "Email",
             "name": "email",
             "type": "email",
@@ -181,5 +181,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684913886
+    "modified": 1684930648
 }

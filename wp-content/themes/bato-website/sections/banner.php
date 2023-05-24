@@ -1,38 +1,29 @@
 <?php 
-/*     $current_file_name = basename(__FILE__, '.php');
-    include(__DIR__.'/../core/fields-generator.php'); */
-
-    if(!empty($args)) {
-        foreach ($args as $field_name => $field) {
-            ${"$field_name"} = $field;
-        }
-    }
+    $current_file_name = basename(__FILE__, '.php');
+    include(__DIR__.'/../core/fields-generator.php');
 ?>
 
 <section class="section-banner">
     <div class="section-banner__inner main-size">
         <div class="section-banner__description">
             <div class="headline">
-
-                <?php if(!empty($title_banner)) { ?>
-
-                    <?php insertTitle($title_banner, 'title_basic title title-banner', 'h1') ?>
-
-                <?php } ?>
-
+                <?php insertTitle($title, 'title_basic title title-banner', 'h1') ?>
             </div>
 
-                <?php if (!empty($subtitles)) : ?>
-                    <div class="section-banner__subtitle">
-                        <p class="subtitle"><?php echo $subtitles[0]["subtitle"] ?></p>
-                    </div>
-                <?php endif ?>
-
+            <?php if (!empty($subtitles)) : ?>
+                <script>
+                    const subTitles = '<?php echo json_encode($subtitles); ?>';
+                </script>
+                
+                <div class="section-banner__subtitle">
+                    <p class="subtitle"><?php echo $subtitles[0]["subtitle"] ?></p>
+                </div>
+            <?php endif ?>
         </div>
 
         <?php if (!empty($email)) : ?>
             <div class="section-banner__button">
-                <span class="section-banner__button-title">Write to us</span>
+                <span class="section-banner__button-title"><?php _e('Write to us', 'theme') ?></span>
                 <a href="mailto:<?php echo $email ?>" class="button button-banner magnetic">
                     <span><?php echo $email ?></span>
                 </a>
