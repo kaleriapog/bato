@@ -21,7 +21,7 @@
         {
             "key": "field_646c78d0e0fae",
             "label": "Title",
-            "name": "title",
+            "name": "title_banner",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -181,5 +181,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1684830861
+    "modified": 1684913886
 }
