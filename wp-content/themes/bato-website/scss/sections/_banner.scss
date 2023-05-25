@@ -1,6 +1,7 @@
 .section-banner {
   width: 100vw;
   height: 100vh;
+  min-height: 500px;
   display: flex;
   align-items: center;
   position: relative;
@@ -169,7 +170,7 @@
     font-size: 16px;
     font-weight: 300;
     line-height: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 22px;
     color: $color-text-second;
 
     @include media-mobile {

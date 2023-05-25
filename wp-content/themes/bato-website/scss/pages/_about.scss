@@ -1176,6 +1176,14 @@
 
 .section-about-reviews + .section-about-ready {
   padding-top: 150px;
+
+  @include media-laptop {
+    padding-top: 100px;
+  }
+
+  @include media-mobile {
+    padding-top: 50px;
+  }
 }
 
 .section-about-ready {
@@ -1207,6 +1215,10 @@
 
     @include media-mobile {
       max-width: 260px;
+    }
+
+    @include media-mobile-500 {
+      max-width: 100%;
     }
   }
 
