@@ -1,5 +1,5 @@
 .section-projects {
-  padding: 15px 0 100px;
+  padding: 100px 0;
 
   @include media-laptop {
     padding: 15px 0 50px;
@@ -44,6 +44,7 @@
     }
 
     &-image-inner {
+      display: block;
       position: relative;
       height: 100%;
       z-index: 1;

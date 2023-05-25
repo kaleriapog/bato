@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <div class="about-decorative-page">
-    <?php insertImage('effect-about.png', '', 0) ?>
+    <?php insertImage('about-home-effect.png', '', 0) ?>
 </div>
 
 <main id="primary" class="site-main">
