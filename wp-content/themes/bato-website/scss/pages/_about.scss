@@ -1204,9 +1204,8 @@
   }
 
   &.animation {
-    .button-default {
-      transform: translateY(0);
-      opacity: 1;
+    .section-about-ready__link {
+      animation: main_animation_title 1.5s ease 0.5s both;
     }
   }
 

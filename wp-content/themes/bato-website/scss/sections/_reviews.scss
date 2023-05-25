@@ -46,6 +46,10 @@
     .reviews-items {
       opacity: 1;
     }
+
+    .reviews-slider {
+      animation: main_animation 1.5s ease 1.2s both;
+    }
   }
 
   .title {

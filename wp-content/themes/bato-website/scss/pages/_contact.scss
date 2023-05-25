@@ -43,29 +43,34 @@
   }
 
   &.animation {
-    .contact-page__info,
-    .contact-page__form,
-    .contact-page__map-main {
-      opacity: 1;
-      transform: translateY(0);
+    .title {
+      animation: main_animation_title 1.5s ease 1.5s both;
     }
 
-    .contact-page__text,
-    .contact-page__columns {
-      opacity: 0;
-      will-change: transform, opacity;
-      transform: translate3d(0px, 3em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
-      transform-style: preserve-3d;
-      animation: main_animation_title 1.5s ease forwards;
+    .text {
+      animation: main_animation_title 1.5s ease 1.7s both;
+    }
+
+    .contact-page__form {
+      animation: main_animation_title 1.5s ease 1.7s both;
+    }
+
+    .contact-item {
+      animation: main_animation_title 1.5s ease 2s both;
+
+      &:nth-child(2) {
+        animation-delay: 2.2s;
+      }
+    }
+
+    .contact-page__map-main {
+      animation: main_animation_title 1.5s ease 2s both;
     }
   }
 
   &__info {
     max-width: 400px;
     width: 100%;
-    opacity: 0;
-    transition: opacity 1.5s, transform 1.5s;
-    transition-delay: 0.5s;
 
     @include media-laptop {
       max-width: 100%;
@@ -177,9 +182,9 @@
     position: relative;
     z-index: 10;
     background-color: $color-form-bg;
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 1.5s, transform 1.5s;
+    //opacity: 0;
+    //transform: translateY(100px);
+    //transition: opacity 1.5s, transform 1.5s;
 
     @include media-1440 {
       max-width: 55%;

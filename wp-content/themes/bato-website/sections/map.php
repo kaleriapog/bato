@@ -9,7 +9,7 @@
             <?php insertTitle($text, 'map__title') ?>
             
             <div class="map__content">
-                <?php insertImage('map-new.png', 'map__image') ?>
+                <?php insertImage('new-map.png', 'map__image') ?>
 
                 <div class="map__pin pin pin_left">
                     <?php insertImage('pin__ellipse-big.svg') ?>
