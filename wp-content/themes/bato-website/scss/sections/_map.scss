@@ -26,14 +26,28 @@
             top: 28%;
 
             @include media-tablet {
+                right: 13%;
+                top: 22%;
+            }
+
+            @include media-mobile {
                 right: 16%;
                 top: 35%;
             }
         }
 
         @include media-tablet {
+            left: 14.2%;
+            top: 29%;
+        }
+
+        @include media-mobile {
             left: 19.2%;
             top: 42%;
+        }
+
+        .pin__icon {
+            background: none;
         }
     }
 }

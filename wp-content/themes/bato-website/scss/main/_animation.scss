@@ -301,7 +301,7 @@ header.inited {
     @include media-laptop {
       top: -60%;
       bottom: 0;
-      right: 35%;
+      right: 38%;
       left: auto;
     }
 
@@ -672,22 +672,18 @@ header.inited {
 
   .section-team__items-wrapp {
     width: calc(25% - 20px);
-    height: var(--cube-width);
-    margin: 0 10px 20px;
+    aspect-ratio: 1/1;
 
     @include media-tablet {
       width: calc(33.33% - 20px);
-      margin: 0 10px 20px;
     }
 
     @include media-955 {
       width: calc(50% - 30px);
-      margin: 0 10px 20px;
     }
 
     @include media-mobile {
       width: calc(50% - 15px);
-      margin: 0 5px 10px;
     }
   }
 
