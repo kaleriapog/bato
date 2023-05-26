@@ -37,7 +37,7 @@
                                     <div class="cube-item bottom-cube">
                                         <div class="photo-cube-inner">
                                             <div class="photo-cube-img-wrapp">
-                                                <?php insertImage($item_team_image) ?>
+                                                <?php insertImage($item_team_image, '', 1, 1) ?>
                                             </div>
                                         </div>
                                     </div>

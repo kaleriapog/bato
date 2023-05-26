@@ -5,10 +5,17 @@ remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
 
-/* defines START */
-define('_TP_', get_stylesheet_directory_uri()); //theme path
-define('_IMAGES_', _TP_ . '/images'); //images path
-/* defines END */
+
+/* REMOVE GUTENBERG STYLES START */
+add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
+function smartwp_remove_wp_block_library_css() {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('global-styles');
+    wp_dequeue_style('classic-theme-styles');
+}
+/* REMOVE GUTENBERG STYLES END */
+
 
 
 /* menus START */
@@ -23,17 +30,6 @@ function bato_website_setup() {
 }
 /* menus END */
 
-
-
-/* REMOVE GUTENBERG STYLES START */
-add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css' );
-function smartwp_remove_wp_block_library_css() {
-    wp_dequeue_style('wp-block-library');
-    wp_dequeue_style('wp-block-library-theme');
-    wp_dequeue_style('global-styles');
-    wp_dequeue_style('classic-theme-styles');
-}
-/* REMOVE GUTENBERG STYLES END */
 
 
 add_filter('script_loader_tag', 'add_type_attribute', 10, 3);
@@ -87,7 +83,7 @@ function enqueue_js_css() {
     }
 
     if ($template_slug === 'about.php') {
-        wp_enqueue_style('connection_style', get_template_directory_uri() . '/swiper-bundle.min.css');
+        wp_enqueue_style('connection_style', get_template_directory_uri() . '/css/swiper-bundle.min.css');
 
         wp_enqueue_script('connection_script_swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js',array(),null,true);
         wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js',array(),null,true);
@@ -105,7 +101,7 @@ function enqueue_js_css() {
     }
 
     if ($template_slug === 'projects.php') {
-        wp_enqueue_style('connection_style', get_template_directory_uri() . '/swiper-bundle.min.css');
+        wp_enqueue_style('connection_style', get_template_directory_uri() . '/css/swiper-bundle.min.css');
 
         wp_enqueue_script('connection_script_swiper', get_template_directory_uri() . '/js/swiper-bundle.min.js',array(),null,true);        
         wp_enqueue_script('connection_script_gsap', get_template_directory_uri() . '/js/gsap.js',array(),null,true);
@@ -156,14 +152,14 @@ add_action('wp_footer', 'enqueue_css_in_footer');
 
 
 /* insert image START */
-function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100, $crop = 0, $return = 0) {
+function insertImage($file, $class = '', $lazy = 1, $enable_srcset = 0, $return = 0) {
     if (!empty($file)) {
         if(!is_array($file)) {
             $url = parse_url($file);
             if (!empty($url['scheme'])) {
                 $file_url = $file;
             } else {
-                $file_url = _IMAGES_.'/'.$file;
+                $file_url = get_stylesheet_directory_uri().'/images/'.$file;
             }
             $file_title =  pathinfo($file, PATHINFO_FILENAME);
             $file_name =  pathinfo($file, PATHINFO_FILENAME);
@@ -183,10 +179,9 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
             $file_url = $protocol . $_SERVER['HTTP_HOST'] . $file_url;
         }
 
+        $lazyload = '';
         if($lazy) {
-            $lazyload = 'loading="lazy"';
-        } else {
-            $lazyload = '';
+            $lazyload = 'loading="lazy" decoding="async"';
         }
 
         if ($extension == 'svg') {
@@ -215,8 +210,8 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
                 $content = '<img 
                     class="' . $class . '" 
                     src="' . $file_url . '" 
-                    width="' . $width . '"
-                    height="' . $height . '" 
+                    width="100"
+                    height="100" 
                     alt="status_'.$status_code.'" 
                     '.$lazyload.'
                 />';
@@ -224,57 +219,67 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
                 $content = str_replace('<?xml version="1.0" encoding="UTF-8"?>', '', $content);
             }
         } else {
-            $srcset = '';
+
+            $pictureSources = '';
+            
             /* srcsets START */
-            /* 
-            $crop_path = wp_get_upload_dir()['baseurl'] . '/bato-cropped';
-            $crop_folder = wp_get_upload_dir()['basedir'] . '/bato-cropped';
+            if ($enable_srcset) {
+                $crop_path = wp_get_upload_dir()['baseurl'] . '/bato-cropped';
+                $crop_folder = wp_get_upload_dir()['basedir'] . '/bato-cropped';
+            
+                $mediaQueries = [
+                    1024,
+                    768,
+                    480,
+                    320,
+                ];
 
-            $mediaQueries = [
-                1024,
-                768,
-                480,
-                320,
-            ];
-
-            foreach ($mediaQueries as $mediaQuery => $width) {
-                $imageLocalPath = $crop_folder . '/' . $file_name . '-' . $width . '.' . $extension;
-                $imagePath = $crop_path . '/' . $file_name . '-' . $width . '.' . $extension;
-
-                if (!file_exists($imageLocalPath)) {
-                    $image_editor = wp_get_image_editor($file_url);
-                    if (!is_wp_error($image_editor)) {
-                        $image_editor->resize($width, 0);
-                        $resized_file = $file_name . '-' . $width . '.' . $extension;
-                        $saved = $image_editor->save($crop_folder . '/' . $resized_file);
-
-                        if (!is_wp_error($saved)) {
-                            $imagePath = $crop_path . '/' . $resized_file;
+                $image_editor = wp_get_image_editor($file_url);
+                $image_size = $image_editor->get_size();
+                $image_width = $image_size['width'];
+            
+                foreach ($mediaQueries as $mediaQuery => $width) {
+                    if($image_width > $width) {
+                        $imageLocalPath = $crop_folder . '/' . $file_name . '-' . $width . '.' . $extension;
+                        $imagePath = $crop_path . '/' . $file_name . '-' . $width . '.' . $extension;
+                
+                        if (!file_exists($imageLocalPath)) {
+                            
+                            if (!is_wp_error($image_editor)) {
+                                $image_editor->resize($width, 0);
+                                $resized_file = $file_name . '-' . $width . '.' . $extension;
+                                $saved = $image_editor->save($crop_folder . '/' . $resized_file);
+                
+                                if (!is_wp_error($saved)) {
+                                    $imagePath = $crop_path . '/' . $resized_file;
+                                }
+                            }
                         }
+                
+                        if (is_ssl()) {
+                            $imagePath = str_replace('http://', 'https://', $imagePath);
+                        }
+                
+                        $pictureSources .= '<source media="(max-width: ' . $width . 'px)" srcset="' . $imagePath . ' 1x" />';
                     }
                 }
-
-                if (is_ssl()) {
-                    $imagePath = str_replace('http://', 'https://', $imagePath);
-                }
-
-                $srcset .= $imagePath . ' ' . $width . 'w, ';
-
+            
+                $pictureSources = rtrim($pictureSources, ', ');
             }
-
-
-            $srcset = rtrim($srcset, ', '); */
             /* srcsets END */
-
-            $content = '<img 
-                class="'.$class.'" 
-                src="'.$file_url. '" 
-                alt="'.$file_title.'"
-                width="'.$width.'"
-                height="'.$height.'" 
-                srcset="'.$srcset.'" 
-                '.$lazyload.' 
-            />';
+            
+            $content = '<picture>' .
+                $pictureSources .
+                '<img 
+                    class="' . $class . '" 
+                    src="' . $file_url . '" 
+                    alt="' . $file_title . '"
+                    width="100"
+                    height="100" 
+                    ' . $lazyload . ' 
+                />' .
+            '</picture>';
+            
         }
 
         if (!empty($content)) {
@@ -283,13 +288,6 @@ function insertImage($file, $class = '', $lazy = 1, $width = 100, $height = 100,
             }
             echo $content;
         }
-    }
-}
-add_action('wp_login', 'create_cropped_folder', 10, 2);
-function create_cropped_folder() {
-    $dir_path = get_template_directory() . '/images/cropped';
-    if (!is_dir($dir_path)) {
-        wp_mkdir_p($dir_path);
     }
 }
 /* insert image END */
