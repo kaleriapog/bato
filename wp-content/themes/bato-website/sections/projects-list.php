@@ -13,7 +13,7 @@
                 <?php
                     $link['url'] = $item['url'];
                     $link['title'] = __('View live version', 'theme'); 
-                    $link['target'] = 'blank'; 
+                    $link['target'] = '_blank'; 
                 ?>
                 <div class="section-projects__item">
 
