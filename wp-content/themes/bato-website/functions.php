@@ -228,10 +228,10 @@ function insertImage($file, $class = '', $lazy = 1, $enable_srcset = 0, $return 
                 $crop_folder = wp_get_upload_dir()['basedir'] . '/bato-cropped';
             
                 $mediaQueries = [
-                    1024,
-                    768,
-                    480,
                     320,
+                    480,
+                    768,
+                    1024,
                 ];
 
                 $image_editor = wp_get_image_editor($file_url);

@@ -41,13 +41,13 @@
             <?php endif ?>
 
             <div class="section-banner__bg-image">
-                <?php insertImage('image-for-safari.png', '', 0, 1) ?>
+                <?php insertImage('image-for-safari.png', '', 1, 1) ?>
             </div>
         <?php endif ?>
 
         <?php if (!empty($image_bg_mobile)) : ?>
             <div class="section-banner__bg-mobile">
-                <?php insertImage($image_bg_mobile, '', 0) ?>
+                <?php insertImage($image_bg_mobile, '', 0, 1) ?>
             </div>
         <?php endif ?>
 
