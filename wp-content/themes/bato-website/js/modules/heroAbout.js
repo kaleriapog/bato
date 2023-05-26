@@ -23,8 +23,9 @@ export default function sliderTeam(el) {
 
   animScroll.addEventListener("DOMLoaded", function () {
     const mediaMobile = window.innerWidth <= 767;
+    const mediaHeight600 = window.innerHeight <= 600 && window.innerWidth <= 767;
 
-    new ScrollMagic.Scene({ triggerElement: ".lottie-people-inner", duration: mediaMobile ? '90%' : 1800,  offset: mediaMobile ? -80 : 0, triggerHook: 0})
+    new ScrollMagic.Scene({ triggerElement: ".lottie-people-inner", duration: mediaHeight600 ? '140%' : mediaMobile ? '120%' : 1800,  offset: mediaMobile ? -80 : 0, triggerHook: 0})
         .setPin(".lottie-people-inner")
         .setTween(new TimelineMax({ repeat: 0 })
             .fromTo(['.lottie-mask'], {}, {opacity: 0, duration: 0.2, ease: Linear.easeNone})

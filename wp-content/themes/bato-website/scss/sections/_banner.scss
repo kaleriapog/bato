@@ -8,8 +8,8 @@
   visibility: hidden;
 
   @include media-laptop {
-    height: 100vh;
-    padding-bottom: 100px;
+    height: auto;
+    padding: 155px 0 100px 0;
   }
 
   @include media-mobile {
@@ -154,7 +154,7 @@
     pointer-events: none;
 
     @include media-laptop {
-      height: 90vh;
+      height: auto;
       flex-direction: column;
       justify-content: center;
     }
@@ -184,8 +184,13 @@
     bottom: 52px;
     pointer-events: all;
 
-    @include media-mobile {
+    @include media-laptop {
       position: static;
+      padding-top: 100px;
+    }
+
+    @include media-mobile {
+      padding-top: 0;
     }
 
     .magnetic-link {

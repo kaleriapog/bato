@@ -91,12 +91,15 @@
 
 .footer-socials__item {
     color: #fff;
-    transition: 0.3s;
+
+    svg {
+        transition: opacity 0.3s, transform 0.3s;
+    }
 
     @include desktop-only {
-        &:hover {
-            opacity: 0.8;
-            transform: scale(0.9);
+        &:hover svg {
+            opacity: 0.8 !important;
+            transform: scale(0.9) !important;
         }
     }
 }

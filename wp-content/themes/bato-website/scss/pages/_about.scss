@@ -37,7 +37,8 @@
 
   @include media-mobile {
     top: -0.3%;
-    left: -76%;
+    right: 70%;
+    width: 100%;
     max-width: 325px;
     transform: translate(100%, 0) rotate(332deg);
   }
@@ -124,6 +125,10 @@
 
     @include media-height-900 {
       width: 100%;
+    }
+
+    @include tablet-second {
+      width: 180vh;
     }
 
     @include media-height-700 {
@@ -714,7 +719,7 @@
 
   @include media-laptop {
     margin-bottom: 0;
-    padding: 100px;
+    padding: 100px 0;
   }
 
   @include media-mobile {
@@ -933,11 +938,15 @@
     width: 400px;
 
     @include media-laptop {
-      max-width: calc((100% - 40px) / 3);
+      max-width: 23.83vw;;
       opacity: 0;
       will-change: transform, opacity;
       transform: translate3d(0px, 4em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 4deg);
       transform-style: preserve-3d;
+    }
+
+    @include media-mobile {
+      max-width: calc((100% - 40px) / 3);
     }
 
     &:nth-child(1) {
@@ -1028,6 +1037,8 @@
 
     @include media-laptop {
       height: 23.83vw;
+      width: 23.83vw;
+      filter: grayscale(100%);
     }
 
     @include media-mobile {
@@ -1057,9 +1068,6 @@
     background-color: rgba(0, 0, 0, 0.6);
     @extend %sectionAboutHqMap;
 
-    @include media-laptop {
-      display: none;
-    }
   }
 }
 
@@ -1071,6 +1079,10 @@
   }
 
   @include media-tablet {
+    padding: 100px 0 50px;
+  }
+
+  @include media-mobile {
     padding: 0 0 50px;
   }
 
@@ -1169,7 +1181,13 @@
     }
 
     .section-about-follow__link {
-      opacity: 1;
+      animation: main_animation_title 1.5s ease 0.5s both;
+    }
+
+    @for $i from 0 through 8 {
+      .section-about-follow__link:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.2 + 0.7}s;
+      }
     }
   }
 }

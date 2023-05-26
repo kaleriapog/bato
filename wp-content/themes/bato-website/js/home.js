@@ -7,6 +7,7 @@ import accordion from "./modules/accordion.js";
 import fixedHeader from "./modules/fixed-header.js";
 import interactiveBlock from "./modules/interactive-block.js";
 import homeAnimationPause from "./modules/homeAnimationPause.js";
+import magneticBtn from "./modules/magneticBtn.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardTitleItems = document.querySelectorAll(
@@ -29,22 +30,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const accordionBlock = document.querySelectorAll(".accordion");
   const footerMain = document.querySelector(".footer");
   const linkBanner = document.querySelectorAll(".button-banner");
+  const mediaMobileHeight = window.innerHeight <= 700 && window.innerWidth <= 767
+
+  const thresholdAbout = mediaMobileHeight ? 0.6 : 0.3
 
   animationText();
   accordion(accordionBlock);
   teamCubes();
-  animationSections(sectionService);
-  animationSections(sectionAbout);
-  animationSections(sectionOffers);
-  animationSections(sectionTeam, 0.1);
-  animationSections(sectionNumbers);
-  animationSections(sectionContact);
-  animationSections(sectionAccordion);
-  animationSections(sectionTechnologies);
-  animationFooter(footer);
+  setTimeout(() => {
+    animationSections(sectionService);
+    animationSections(sectionAbout, thresholdAbout);
+    animationSections(sectionOffers);
+    animationSections(sectionTeam, 0.1);
+    animationSections(sectionNumbers);
+    animationSections(sectionContact);
+    animationSections(sectionAccordion);
+    animationSections(sectionTechnologies);
+    animationFooter(footer);
+  }, 2000)
+
   homeAnimationPause();
   fixedHeader(heroHomeFirst);
   interactiveBlock(footerMain);
+  magneticBtn(linkContactPhrase);
 
   if (!safari) {
     animationWave(cardTitleItems);

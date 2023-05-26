@@ -158,8 +158,8 @@ header.inited {
   &__bg {
     .banner-circle-light {
       position: absolute;
-      top: 37%;
-      left: -19%;
+      top: 42%;
+      left: -25%;
       width: 420px;
       height: 420px;
 
@@ -956,6 +956,10 @@ header.inited {
   @for $i from 0 through 8 {
     .accordion__item-#{$i} {
       transition-delay: #{$i * 0.2 + 0.5}s;
+
+      @include media-laptop {
+        transition-delay: #{$i * 0.2 + 1.7}s;
+      }
     }
   }
 
@@ -987,7 +991,25 @@ footer {
   opacity: 0;
 
   &.animation {
-    animation: opacity 3s ease forwards 1s;
+    animation: opacity 3s ease forwards 0.3s;
+
+    .logo-small {
+      animation: main_animation_title 1.5s ease 0.5s both;
+    }
+
+    .footer-socials__item, .footer-contacts__item {
+      animation: main_animation_title 1.5s ease 0.5s both;
+    }
+
+    .menu-item {
+      animation: animation_opacity 1.5s ease 0.5s both;
+    }
+
+    @for $i from 0 through 10 {
+      .menu-item:nth-child(#{$i}), .footer-socials__item:nth-child(#{$i}) .footer-contacts__item:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.2 + 0.5}s;
+      }
+    }
   }
 }
 
@@ -1150,6 +1172,15 @@ footer {
   }
 }
 
+@keyframes animation_opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes translate_to_top {
   0% {
     transform: translateY(120%);
@@ -1254,67 +1285,6 @@ body.windows {
     box-shadow: 0 0 80px rgba(6, 255, 255, 0.15);
   }
 }
-
-/* .section-about-hq {
-  &__interactive.active {
-    .section-about-hq__images-globe,
-    .section-about-hq__images-countries {
-      transform: scale(7.6) translate(-2%, 2.5%);
-
-      @include media-height-820 {
-        transform: scale(7.6) translate(-2%, 1%);
-      }
-    }
-
-    .section-about-hq__images-globe {
-      opacity: 0;
-    }
-
-    .section-about-hq__images-countries {
-      opacity: 1;
-    }
-
-    .section-about-hq__images {
-      .pin-1 {
-        top: 12vw;
-        right: calc(13.6% - 90px);
-
-        @include media-height-min-820 {
-          top: 19vw;
-        }
-
-        @include media-1366 {
-          right: calc(14.4% - 90px);
-        }
-
-        @include media-mobile {
-          right: calc(13.4% - 10px);
-        }
-      }
-
-      .pin-2 {
-        top: 16vw;
-        right: calc(91% - 90px);
-
-        @include media-height-min-820 {
-          top: 23vw;
-        }
-
-        @include media-1366 {
-          right: calc(91.4% - 90px);
-        }
-
-        @include media-mobile {
-          right: calc(89.4% - 10px);
-        }
-      }
-    }
-
-    .section-about-hq__images .pin-dots {
-      animation: pin-dots 2s linear 1s forwards;
-    }
-  }
-} */
 
 .section-about-reviews {
   .reviews-items {
