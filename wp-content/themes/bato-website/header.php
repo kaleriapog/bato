@@ -25,11 +25,11 @@
 		<header id="masthead" class="header">
 			<div class="header__inner main-size"> 
 
-				<div class="logo"><?php the_custom_logo(); ?></div>
+				<div class="logo"><?php insertImage('logo.png'); ?></div>
 
 				<nav id="header-navigation" class="header__navigation">
 					<div class="navigation-bar">
-						<div class="logo"><?php the_custom_logo(); ?></div>
+						<div class="logo"><?php insertImage('logo.png'); ?></div>
 						<div class="navigation-icon-close">
 							<div><?php insertImage('icon-close-nav-header.svg') ?></div>
 						</div>

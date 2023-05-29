@@ -19,7 +19,7 @@
                     </div>
                 </div>
 
-                <a class="button-default button-big-color" href="<?php echo $fields['link'] ?>" target="_blank" rel="nofollow">
+                <a class="button-default button-big-color" href="<?php echo $fields['url'] ?>" target="_blank" rel="nofollow">
                     <span class="button-default__link">
                         <div class="section-creative-space__logo_name">
                             <?php insertImage('dribbble.png') ?>
