@@ -21,7 +21,7 @@ export default function mobileMenu() {
     }, 500);
     navBlockHeader.classList.add("open-menu");
     page.classList.add("no-scroll");
-    preloaderMenuMob.classList.add("preloader-menu-mob-start");
+    // preloaderMenuMob.classList.add("preloader-menu-mob-start");
   });
 
   // close nav
@@ -32,14 +32,17 @@ export default function mobileMenu() {
     navBlockHeader.classList.remove("open-menu");
     page.classList.add("visible");
     page.classList.remove("no-scroll");
-    preloaderMenuMob.classList.remove("preloader-menu-mob-start");
+    // preloaderMenuMob.classList.remove("preloader-menu-mob-start");
   });
 
-  window.addEventListener("resize", () => {
-    navBlockHeader.classList.add("no-transition");
-
-    setTimeout(() => {
-      navBlockHeader.classList.remove("no-transition");
-    }, 1500);
-  })
+  //removal of the smooth appearance of the menu when switching from the desktop version of the site to the mobile one
+  // window.addEventListener("resize", (e) => {
+  //   if(mediaSwitchToLaptop) {
+  //     navBlockHeader.classList.add("no-transition");
+  //
+  //     setTimeout(() => {
+  //       navBlockHeader.classList.remove("no-transition");
+  //     }, 1500);
+  //   }
+  // })
 }

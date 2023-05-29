@@ -13,6 +13,12 @@
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+
+        .map__content {
+            @include media-mobile {
+                margin: 0 -40px;
+            }
+        }
     }
 
     .map__pin {
@@ -114,9 +120,12 @@
     }
 
     .pin__light {
+        width: 30px;
+        height: 30px;
+
         @include media-mobile {
-            width: 40px;
-            height: 40px;
+            width: 20px;
+            height: 20px;
         }
     }
 }

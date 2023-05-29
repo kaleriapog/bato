@@ -405,6 +405,10 @@
     @include media-mobile {
       padding-bottom: 55px;
     }
+
+    img {
+      object-fit: cover;
+    }
   }
 
   &__map {
