@@ -730,17 +730,6 @@ header.inited {
       @include media-mobile-small-360 {
         padding: 10px;
       }
-
-      &::after {
-        content: "";
-        background: url("./images/noise_team.png") center center / cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 20%;
-      }
     }
 
     .front-cube-inner {
