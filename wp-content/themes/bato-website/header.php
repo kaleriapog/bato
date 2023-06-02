@@ -25,7 +25,7 @@
 		<header id="masthead" class="header">
 			<div class="header__inner main-size"> 
 
-				<div class="logo"><?php insertImage('logo.png'); ?></div>
+				<a class="logo" href="<?php echo home_url() ?>"><?php insertImage('logo.png'); ?></a>
 
 				<nav id="header-navigation" class="header__navigation">
 					<div class="navigation-bar">

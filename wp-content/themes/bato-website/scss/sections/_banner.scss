@@ -1,25 +1,33 @@
 .section-banner {
   width: 100vw;
   height: 100vh;
-  min-height: 500px;
+  min-height: 670px;
   display: flex;
   align-items: center;
   position: relative;
   visibility: hidden;
 
   @include media-laptop {
-    height: auto;
     padding: 155px 0 100px 0;
   }
 
   @include media-mobile {
-    height: auto;
     display: block;
     padding: 155px 0 165px 0;
   }
 
   @include media-mobile-horizontal {
     padding-top: 80px;
+  }
+
+  .section-banner__inner {
+    height: 100%;
+
+    @include media-laptop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 
   .title-banner {

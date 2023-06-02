@@ -14,7 +14,7 @@
     <div class="section-about-hero__wrapper">
         <div class="main-size">
             <div class="section-about-hero__content">
-                <?php insertTitle($title, 'title-large') ?>
+                <?php insertTitle($title, 'title-large', 'h1') ?>
                 <?php insertText($text, 'section-about-hero__text') ?>
             </div>
         </div>

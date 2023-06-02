@@ -10,7 +10,7 @@
         <div class="section-accordion__wrapper">
             <div class="section-accordion__text">
 
-                <?php insertTitle($description['title'], 'title_basic title') ?>
+                <?php insertTitle($description['title'], 'title_basic title', 'h2') ?>
                 <?php insertText($description['text'], 'section-accordion__description') ?>
 
                 <?php if (!empty($rating)) : ?>

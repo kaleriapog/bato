@@ -13,7 +13,7 @@
             </div>
 
             <div class="section-about-our-story__content">
-                <?php insertTitle($title, 'title title_basic') ?>
+                <?php insertTitle($title, 'title title_basic', 'h2') ?>
                 <?php insertText($text, 'section-about-our-story__text') ?>
             </div>
         </div>

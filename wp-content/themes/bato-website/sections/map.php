@@ -6,7 +6,7 @@
 <?php if (!empty($fields)) : ?>
     <section class="map section">
         <div class="map__wrapper main-size">
-            <?php insertTitle($text, 'map__title') ?>
+            <?php insertTitle($text, 'map__title', 'h2') ?>
             
             <div class="map__content">
                 <?php insertImage('new-map.png', 'map__image') ?>
